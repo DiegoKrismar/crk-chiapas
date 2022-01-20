@@ -1,0 +1,1 @@
+﻿var textForPages = ["¡Hola,Soy Aztek!                                                                                                                                Siempre estoy buscando                                                                             algo para hacer,                                                                     experimentar y/o aprender."];

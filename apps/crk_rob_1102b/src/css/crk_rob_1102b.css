@@ -1,0 +1,435 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+    background-image:
+        url(../img/crk_rob_1102b_clic.png),
+        url(../img/crk_rob_1102b_fondo.png),
+        url(../img/red_inf_2216a_personaje.png),
+        url(../img/red_inf_2216a_titulo.png);
+    }
+/*
+==============================================
+CSS DISENO GENERAL ( NO SE CAMBIAN TAMANOS O 
+POSICIONES O MARGENES, SOLO FONDOS, TIPOGRAFIA
+BORDES, SOMBRAS, COLOR Y DISEÑO GENERAL)
+==============================================
+*/
+.d_contegrlact{
+    background-image: url(../img/crk_rob_1102b_fondo.png);
+    background-color: #E5E7E8;
+    background-repeat: repeat;
+    background-size: 13%;
+}
+.d_contegrlactinf{
+    background-color: transparent;
+}
+/*
+==============================================
+CSS DISENO ESPECIFICO
+==============================================
+*/
+.d_linea1, .d_linea2, .d_linea3{
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    opacity: 0.72;
+}
+.d_linea1{
+    background-color: #CE5E0B;
+    height: 6%;
+    bottom: 0%;
+}
+.d_linea2{
+    background-color: #E26C14;
+    height: 3.5%;
+    bottom: 7%;
+}
+.d_linea3{
+    background-color: #EB7919;
+    height: 1.5%;
+    bottom: 11.5%;
+}
+
+.d_clic{
+    position: absolute;
+    background: url(../img/crk_rob_1102b_clic.png) no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-color: #1062A0;
+    border-radius: 500rem;
+    width: 10%;
+    height: 7%;
+    right: 0%;
+    bottom: 28%;
+}
+
+.d_personaje{
+    position: absolute;
+    background: url(../img/crk_rob_1102b_personaje.png) no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    width: 25%;
+    height: 70%;
+    bottom: 3%;
+    right: -5%;
+}
+
+.d_contenidoin{
+    position: absolute;
+    background-color: #1062A0;
+    border-radius: 2.5rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .35);
+    width: 95%;
+    height: 70%;
+    left: 2.5%;
+    top: 0%;
+}
+.d_recuadro{
+    position: absolute;
+    background-color: #F6F6F6;
+    border-radius: 2rem;
+    width: 96%;
+    height: 96%;
+    top:2%;
+    left: 2%;
+    
+}
+.d_letras{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.d_letrasin{
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    top: 2%;
+    left: 1.5%;
+}
+.d_cuadroCrucigrama{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.fila{
+    background-color: none;
+    width: 100%;
+    height: 6.7%;
+}
+
+.d_inputOn {
+	position: relative;
+	float: left;
+	width: 7.69231%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	box-sizing: border-box;
+}
+
+.d_input{
+    position: relative;
+    float: left;
+    background-color: none;
+    border: none;
+    color: #006C7C;
+    font-family: Verdana;
+    font-size: 1.7rem;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, .35);
+    width: 6.2%;
+    height: 90%;
+    margin: .2%;
+    
+    cursor: pointer;
+}
+
+.d_palabras{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0%;
+    right: 0%;
+    
+}
+
+.d_palabrasin{
+    position: absolute;
+    overflow: hidden;
+    background: #DAAC38;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, .35);
+    width: 98%;
+    height: 90%;
+    bottom: 0%;
+    right: 1%;
+}
+.d_franja{
+    position: absolute;
+    background-color: rgba(255,255,255,0.2);
+    width: 90%;
+    height: 85%;
+    top:5%;
+    left: 5%;
+}
+.d_sombra{
+    position: absolute;
+    background-color: rgba(0,0,0,0.15);
+    width: 100%;
+    height: 10%;
+    bottom: 0%;
+    left: 0%;
+}
+.d_title{
+    position: relative;
+    float: left;
+    background: url(../img/crk_rob_1102b_titulo.png) no-repeat;
+    background-size: contain;
+    background-position: left;
+    width: 25%;
+    height: 30%;
+    top:0%;
+    left: 0%;
+    
+    transform: rotate(-12deg);
+    -webkit-transform: rotate(-12deg);
+}
+.d_opciones{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    left: 11%;
+    top:15%;
+}
+.d_opcionesin{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+}
+.d_opcion, .d_opcion_bien, .d_opcion_mal{
+    position: absolute;
+    background: #E5E7E8;
+    border-radius: 1rem;
+    font-family: Verdana;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 45%;
+    height: 25%;
+}
+.d_opcion_bien{
+    border: 2px solid #528C1C;
+    color: #528C1C;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.d_opcion_mal{
+    border: 2px solid #AD1A17;
+    color: #AD1A17;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.prueba {
+	width: 6.7%;
+	height: 7.5%;
+	background-color: none;
+	opacity: 0.5;
+	border-radius: 36px;
+}
+.d_opcion:nth-child(1){
+    color: #A67C52;
+    top: 0%;
+    left: 0%;}
+.d_opcion:nth-child(2){
+    color: #A67C52;
+    top:37%;
+    left: 0%;
+}
+.d_opcion:nth-child(3){
+    color: #00ACA7;
+    bottom: 0%;
+    left: 0%;
+}
+.d_opcion:nth-child(4){
+    color: #EB7919;
+    top: 0%;
+    right: 0%;
+}
+.d_opcion:nth-child(5){
+    color: #0071BC;
+    top: 37%;
+    right: 0%;
+}
+.d_opcion:nth-child(6){
+    color: rgb(135, 41, 133);
+    bottom: 0%;
+    right: 0%;
+}
+
+.d_file1 {
+    font-size: 2.4rem;
+}
+.d_file2 {
+    font-size: 3.4rem;
+}
+.d_file1 {
+    font-size: 2.4rem;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 0px;
+    border: 0px;
+}
+
+.d_input:hover {
+	animation: sacudir 0.5s 1;
+	-webkit-animation: sacudir 0.5s 1;
+}
+
+/*
+==============================================
+CSS KEYFRAMES
+==============================================
+*/
+@keyframes sacudir {
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+
+	25% {
+		transform: rotate(-5deg) scale(1.1);
+	}
+
+	75% {
+		transform: rotate(5deg) scale(1.1);
+	}
+
+	100% {
+		transform: rotate(0deg) scale(1);
+	}
+}
+
+@-webkit-keyframes sacudir {
+	0% {
+		-webkit-transform: rotate(0deg) scale(1);
+	}
+
+	25% {
+		-webkit-transform: rotate(-5deg) scale(1.1);
+	}
+
+	75% {
+		-webkit-transform: rotate(5deg) scale(1.1);
+	}
+
+	100% {
+		-webkit-transform: rotate(0deg) scale(1);
+	}
+}
+
+/*
+==============================================
+CSS MEDIA lANDSCAPE (PORTRAIT ES TODO LO QUE
+ESTE ANTES)
+==============================================
+*/
+@media (orientation: landscape) {
+    .d_clic{
+        width: 6%;
+        height: 8%;
+        right: 28%;
+        bottom: 16%;
+    }
+    .d_personaje{
+        width: 50%;
+        height: 27%;
+        bottom: 3%;
+        right: -5%;
+    }
+    .d_contenidoin{
+        width: 70%;
+        height: 81%;
+        left: 0%;
+        top: 0%;
+    }
+    .d_recuadro{
+        width: 96%;
+        height: 96%;
+        top:2%;
+        left: 2%;
+    }
+    .d_input{font-size: 1.6rem;}
+    .d_palabras{
+        width: 30%;
+        height: 100%;
+        top: 0%;
+        right: 0%;
+    }
+    .d_palabrasin{
+        border-radius: 3rem;
+        width: 90%;
+        height: 85%;
+        bottom: 5%;
+        right: 0%;
+    }
+    .d_franja{
+        width: 80%;
+        height: 85%;
+        top:5%;
+        left: 10%;
+    }
+    .d_sombra{
+        width: 100%;
+        height: 10%;
+        bottom: 0%;
+        left: 0%;
+    }
+    .d_title{
+        width: 100%;
+        height: 20%;
+        top:0%;
+        left: 7%;
+        transform: none;
+    }
+    .d_opciones {
+        position: absolute;
+        width: 90%;
+        height: 62%;
+        left: 5%;
+        top: 13%;
+    }
+    .d_opcionesin {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        left: 15%;
+    }
+    .d_opcion,
+    .d_opcion_bien,
+    .d_opcion_mal {
+        position: absolute;
+        background: #e5e7e8;
+        border-radius: 1rem;
+        font-family: Verdana;
+        font-size: 1.3rem;
+        text-align: center;
+        width: 100%;
+        height: 12%;
+        left: 0%;
+    }
+    .d_opcion:nth-child(1){top: 0%;}
+    .d_opcion:nth-child(2){top: 17%;}
+    .d_opcion:nth-child(3){top: 34%;}
+    .d_opcion:nth-child(4){top: 51%;}
+    .d_opcion:nth-child(5){top: 68%;}
+    .d_opcion:nth-child(6){top: 85%;}
+
+}

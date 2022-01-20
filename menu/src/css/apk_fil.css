@@ -1,0 +1,224 @@
+@charset "utf-8";
+/*
+==============================================
+CSS TIPOGRAFÍA
+==============================================
+*/
+@font-face {
+	font-family: "Fedra Sans Condensed Std";
+	src: url("../font/FedraSansStdNormal.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Fedra Sans Condensed Std";
+	src: url("../font/FedraSansStdNormal.eot");
+}
+/*
+==============================================
+CSS GENERAL
+==============================================
+*/
+html {
+	font-size: 16px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+body {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	background-color: #f2f2f2;
+}
+/*
+==============================================
+CSS HEADER
+==============================================
+*/
+.d_apkheader {
+	width: 100%;
+	height: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #fbaf3a;
+	box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25);
+}
+.d_apkheaderpleca {
+	width: 50%;
+	height: 6rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #04629b;
+	background-image: url(../img/apk_fil_next.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-bottom-right-radius: 7rem;
+	box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25);
+	/*background-image: url(../img/apk_fil_next.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #04629B;
+    mask-image: url(../img/apk_fil_mask.svg);
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    //-webkit-mask-image: url(../img/apk_fil_mask.svg);
+    //-webkit-mask-size: cover;
+    //-webkit-mask-repeat: no-repeat;*/
+}
+/*.d_apkheaderpleca polygon{
+    fill: #04629b;
+}*/
+.d_apkheaderlogokrismar {
+	width: 13rem;
+	height: 3.4rem;
+	position: absolute;
+	left: 2rem;
+	top: 1rem;
+}
+.d_apkheaderlogokrismarsvg path {
+	fill: #ffffff;
+}
+.d_apkheaderlogofil {
+	width: 17rem;
+	height: 3.5rem;
+	position: absolute;
+	right: 2rem;
+	top: 0.75rem;
+}
+.d_apkheaderlogofilsvg path,
+.d_apkheaderlogofilsvg polygon,
+.d_apkheaderlogofilsvg rect {
+	fill: #231f20;
+}
+/*
+==============================================
+CSS SECTION
+==============================================
+*/
+.d_apksection {
+	//width: calc(100% - 4rem);
+	//height: calc(100% - 10rem);
+	width: 96%;
+	//height: 82%;
+	position: absolute;
+	top: 5rem;
+	left: 0;
+	//background-color: red;
+	padding: 3.6rem 2rem 3.6rem 2rem;
+	//padding: 4% 2% 4% 2%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.d_apksectionin {
+	display: table;
+	/* background-color: coral; */
+	margin: auto;
+	position: relative;
+}
+.d_apksectionin_center {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.d_apksectionminiatura {
+	//width: calc(33% - 2rem);
+	width: 33.33%;
+	float: left;
+	//background-color: floralwhite;
+	//padding: 0 1rem 0 1rem;
+	position: relative;
+}
+.d_apksectionminiaturaimg {
+	width: 16rem;
+	height: 10.7rem;
+	position: relative;
+	margin: auto;
+	background-image: url(../img/red_geo_5104a.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 1rem;
+	box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+.d_apksectionminiaturaimglight {
+	width: 100%;
+	height: 70%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url(../img/apk_fil_light.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.d_apksectionminiaturatxt {
+	width: 100%;
+	height: 3.3rem;
+	float: left;
+	/* background-color: floralwhite; */
+	font-family: "Fedra Sans Condensed Std";
+	font-size: 1rem;
+	text-align: center;
+	color: #4d4d4d;
+	//display: flex;
+	//justify-content: center;
+	//align-items: center;
+}
+
+.btn {
+	background: #06659c;
+	border-radius: 25px;
+	color: white;
+	font-size: 2rem;
+	padding: 5px 10px;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	30% {
+		transform: scale(1.2);
+	}
+	50% {
+		transform: scale(0.9);
+	}
+	80% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@media only screen and (max-width: 1000px) {
+	/*****SIZE HTML*****/
+	html {
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 850px) {
+	/*****SIZE HTML*****/
+	html {
+		font-size: 12px;
+	}
+}
+@media only screen and (max-width: 720px) {
+	/*****SIZE HTML*****/
+	html {
+		font-size: 10px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	/*****SIZE HTML*****/
+	html {
+		font-size: 8px;
+	}
+}

@@ -1,0 +1,383 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+    display: none;
+    position: fixed;
+    background-image:
+        url(../img/crk_comun_interfaz_grain.png),
+        url(../img/crk_comun_interfaz_mosaic.png),
+        url(../img/crk_comun_interfaz_personaje.png),
+        url(../img/crk_comun_interfaz_texture.png);
+}
+/*
+==============================================
+CSS TIPOGRAFÍA
+==============================================
+*/
+@font-face {
+	font-family: "Berlin Sans FB";
+	src: url("../font/BRLNSR.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Berlin Sans FB";
+    src: url("../font/BRLNSR.eot");
+}
+/*
+==============================================
+CSS HTML
+==============================================
+*/
+html{
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/*
+==============================================
+CSS BODY
+==============================================
+*/
+body{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    min-width: 280px;
+    min-height: 500px;
+    overflow: hidden;
+}
+/*
+==============================================
+CSS HEADER
+==============================================
+*/
+.d_headergrl{
+    width: 100%;
+    background-color: #F15A24;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+}
+.d_headergrltitle{
+    width: calc(100% - 12rem);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.d_headergrltitletxt{
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-indent: 1rem;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Berlin Sans FB";
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding-right: 1rem;
+}
+.d_headergrlbtnsalir, .d_headergrlbtnsobjetivos, .d_headergrlbtnsinstrucciones{
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_headergrlbtnssalirsvg > path, .d_headergrlbtnsinstruccionessvg > path, .d_headergrlbtnsobjetivossvg > path{
+    fill: #ffffff;
+}
+/*
+==============================================
+CSS CONTENIDO
+==============================================
+*/
+.d_contegrl{
+    width: 100%;
+    height: calc(100% - 3rem);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    background-image: url(../img/crk_comun_interfaz_texture.png), url(../img/crk_comun_interfaz_mosaic.png);
+    background-size: cover, auto;
+    background-position: right, center;
+    background-repeat: no-repeat, repeat;
+}
+/*
+==============================================
+CSS EMERGENTES
+==============================================
+*/
+.d_emergentes{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0,0,0,.65);
+    display: none;
+}
+.d_emergenteoconte{
+    position: absolute;
+    background-color: #ffffff;
+    background-image: url(../img/crk_comun_interfaz_texture.png);
+    background-size: 90%;
+    background-position: -60% 0%;
+    background-repeat: repeat-y;
+    min-width: 12rem;
+    max-width: calc(100% - 4rem);
+    min-height: 12rem;
+    max-height: calc(100% - 4rem);
+}
+.d_emergenteobjetivos, .d_emergenteinstrucciones{
+    font-family: "Berlin Sans FB";
+    color: #343434;
+    font-size: 1.2rem;
+    padding: 1rem 8rem 1rem 3.2rem;
+    height: 100%;
+}
+.d_emergenteobjetivos > li {
+    list-style: none;
+}
+.d_emergenteobjetivos > li::before {
+    content: "\2756";
+    color: #8CC63F;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1.6rem;
+}
+.d_emergentepleca{
+    width: 2.6rem;
+    height: 100%;
+    background-color: #F15A24;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: "Berlin Sans FB";
+    color: #f2f2f2;
+    font-size: 2rem;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+.d_emergenteplecalogo{
+    width: 100%;
+    height: 2.6rem;
+    background-color: aqua;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.d_emergenteclose{
+    width: 2rem;
+    height: 2rem;
+    background-color: #8CC63F;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.d_emergenteclosesvg > path{
+    fill: #ffffff;
+}
+.d_emergentepersonaje{
+    width: 8rem;
+    height: 8.6rem;
+    background-image: url(../img/crk_comun_interfaz_personaje.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    right: -0.5rem;
+}
+.d_devices .d_emergenteobjetivos, .d_devices .d_emergenteinstrucciones, .d_devices .d_emergentereiniciar, .d_devices .d_emergenteborrar{
+    padding: 1.4rem 1rem 1rem 3.6rem;
+}
+.d_devices .d_emergentepersonaje{
+    display: none;
+}
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_preloadergrl{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #343434;
+}
+.d_preloadergrlconte{
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    top: calc(50% - 10rem);
+    left: calc(50% - 10rem);
+    min-width: 12rem;
+    min-height: 8rem;
+}
+.d_preloadergrlicon{
+    width: 100%;
+    height: 70%;
+}
+.d_preloadergrliconsvg{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    bottom: 10%;
+    left: 25%;
+}
+.d_preloadergrliconsvg > rect{
+    fill: #8CC63F;
+    -webkit-animation: preloader 2s infinite;
+    animation: preloader 2s infinite;
+}
+.d_preloadergrliconsvg > path{
+    fill: #ffffff;
+}
+.d_preloadergrlitext{
+    width: 100%;
+    height: 30%;
+    font-family: "Berlin Sans FB";
+    color: #f2f2f2;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.4rem;
+}
+/*
+==============================================
+CSS KEYFRAMES
+==============================================
+*/
+@keyframes preloader {
+    0% {
+        y: 160;
+    }
+    100% {
+        y: 0;
+    }
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*****BODY*****/
+    body{
+        min-width: 450px;
+        min-height: 220px;
+    }
+    /*****DETECCION DE ORIENTACION*****/
+    .d_helperResources{
+        position: absolute;
+    }
+}
+@media only screen and (max-height: 500px) {
+    /*****PRELOADER*****/
+    .d_preloadergrlconte{
+        height: 12rem;
+    }
+    .d_preloadergrlconte{
+        top: calc(50% - 6rem);
+    }
+    /*****SIZE HTML*****/
+    html{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 9px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    /*****EMERGENTES*****/
+    .d_emergentepersonaje{
+        display: none;
+    }
+    .d_emergenteobjetivos, .d_emergenteinstrucciones{
+        padding: 1rem 1rem 1rem 3.2rem;
+    }
+    /*****SIZE HTML*****/
+    html{
+        font-size: 8px;
+    }
+    .d_btnsopcgrlevalsvg, .d_btnsopcgrlnextsvg{
+        height: 12px !important ; 
+    }
+}
+@media only screen and (max-width: 500px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 7px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    /*****SIZE HTML*****/
+    html{
+        font-size: 6px;
+    }
+}

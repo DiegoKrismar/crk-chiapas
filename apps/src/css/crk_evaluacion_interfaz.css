@@ -1,0 +1,378 @@
+@charset "utf-8";
+/*
+==============================================
+CSS FULLSCREEN
+==============================================
+*/
+.addfullscreen .d_headergrl, .addfullscreen .d_headergrltitle, .addfullscreen .d_btnsgrlmaxsvg, .addfullscreen .d_headrecrono{
+    display: none;
+}
+.addfullscreen .d_btnsgrlminsvg{
+    display: block;
+}
+.addfullscreen .d_contegrl{
+    height: 100%;
+}
+.addfullscreen .d_btnsolucion{
+    top: 0.5rem;
+    right: 0.5rem;
+}
+.addfullscreen .d_btngrlexpand{
+    top: auto;
+    bottom: 0.5rem;
+    right: 0.5em;
+    background-color: #F15A24;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+/*
+==============================================
+CSS CONTENIDO
+==============================================
+*/
+.d_contegrleva{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_contegrlevacenter{
+    width: calc(100% - 6rem);
+    height: calc(100% - 8rem);
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
+.d_contegrlevacenterin{
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    top: 2rem;
+    left: 2rem;
+    position: absolute;
+}
+.d_contegrlevascroll{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.d_contegrlevapreguntas{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*
+==============================================
+CSS HEADER
+==============================================
+*/
+.d_headergrltitle{
+    width: calc(100% - 17rem);
+    position: absolute;
+    float: inherit;
+}
+.d_headrecrono{
+    width: 5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 12rem;
+}
+.d_headrecrono > div{
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Berlin Sans FB";
+    color: #ffffff;
+    font-size: 1.4rem;
+    text-align: center;
+}
+/*
+==============================================
+CSS BTNS PIEZAS
+==============================================
+*/
+.d_btnsopcgrl{
+    position: absolute;
+    right: calc(50% - 4rem);
+    bottom: 0.5rem;
+}
+.d_btnsopcgrldelete, .d_btnsopcgrleval{
+    width: 3rem;
+    height: 3rem;
+    float: left;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 0.5rem 0 0.5rem;
+    background-color: #F15A24;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_btnsopcgrldeletesvg > path, .d_btnsopcgrlevalsvg > path, .d_btnsgrlmaxsvg > path, .d_btnsgrlminsvg > path{
+    fill: #ffffff;
+}
+.d_btnsgrlmaxsvg{
+    display: block;
+}
+.d_btnsgrlminsvg{
+    display: none;
+}
+.d_btngrlexpand{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    top: 0;
+    right: 9rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_btnsolucion{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    background-color: #8CC63F;
+    top: 4rem;
+    right: 1rem;
+    border-radius: 50%;
+    display: none;
+}
+.d_btnsolucion_pulse{
+    animation: pulse 1s infinite;
+}
+.d_btnsolucion > svg{
+    /* cursor: pointer; */
+}
+.d_btnsolucion > svg > path{
+    fill: #ffffff;
+}
+.d_btnsoluciontxt{
+    position: absolute;
+    height: 3rem;
+    right: 3.5rem;
+    top: 0;
+    font-family: "Berlin Sans FB";
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0rem 1rem 0rem 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+    background-color: #8CC63F;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+/*
+==============================================
+CSS EMERGENTES
+==============================================
+*/
+.d_emergenteborrar{
+    font-family: "Berlin Sans FB";
+    color: #009EB3;
+    font-size: 1.6rem;
+    padding: 1rem 8rem 1rem 3.2rem;
+    height: 100%;
+    text-align: center;
+}
+.d_emergenteborrar > span{
+    font-family: "Berlin Sans FB";
+    color: #343434;
+    font-size: 1.2rem;
+}
+.d_emergenteborrarbtns{
+    display: table;
+    margin: auto;
+}
+.d_emergenteborrarbtnsaceptar, .d_emergenteborrarbtnscancelar{
+    width: 3rem;
+    height: 3rem;
+    background-color: #8CC63F;
+    float: left;
+    margin: 1rem 1rem 1rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_emergenteborrarbtnsaceptarsvg > path, .d_emergenteborrarbtnscancelarsvg > path{
+    fill: #ffffff;
+}
+.d_emergenteevaluacion{
+    font-family: "Berlin Sans FB";
+    color: #343434;
+    font-size: 1.2rem;
+    padding: 1rem 8rem 1rem 3.6rem;
+    height: 100%;
+}
+.d_emergenteevaluacion div{
+    width: calc(50% - 1rem);
+    float: left;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.d_emergenteevaluacion div:nth-child(2n){
+    color: #8CC63F;
+    font-weight: bold;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*****HEADER*****/
+    .d_headergrl{
+        width: auto;
+        height: 100%;
+        top: 0;
+        left: auto;
+        right: 0;
+    }
+    .d_headergrltitle {
+        width: calc(100% - 3rem);
+        float: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,.1);
+    }
+    .d_headergrltitletxt{
+        //color: #343434;
+        color: #f2f2f2;
+        text-shadow: 0 0 0.2rem rgba(0,0,0,.5);
+    }
+    .d_headergrlbtnsalir, .d_headergrlbtnsobjetivos, .d_headergrlbtnsinstrucciones{
+        float: none;
+    }
+    .d_headrecrono{
+        right: 3rem;
+    }
+    .d_headrecrono > div{
+        //color: #343434;
+        color: #f2f2f2;
+        text-shadow: 0 0 0.2rem rgba(0,0,0,.5);
+    }
+    /*****CONTENIDO*****/
+    .d_contegrl{
+        height: 100%;
+        width: calc(100% - 3rem);
+    }
+    .d_contegrlevacenter{
+        width: calc(100% - 6rem);
+        height: calc(100% - 9rem);
+        top: 6rem;
+    }
+    /*****BTN PIEZAS*****/
+    .d_btnsopcgrl{
+        right: 0;
+        bottom: 0;
+    }
+    .d_btnsopcgrldelete, .d_btnsopcgrleval{
+        float: inherit;
+        margin: 0;
+        background-color: transparent;
+        background-image: none;
+    }
+    .d_btngrlexpand{
+        top: 9rem;
+        right: 0;
+        background-color: transparent;
+        background-image: none;
+    }
+    .d_btnsolucion{
+        right: 4rem;
+        display: none;
+    }
+    /*****FULLSCREEN*****/
+    .addfullscreen .d_contegrl{
+        width: 100%;
+        height: 100%;
+    }
+    .addfullscreen .d_btnsopcgrl{
+        right: 0.5rem;
+    }
+    .addfullscreen .d_btnsopcgrldelete, .addfullscreen .d_btnsopcgrleval{
+        background-color: #F15A24;
+        background-image: url(../img/crk_comun_interfaz_grain.png);
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    .addfullscreen .d_btngrlexpand{
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    .addfullscreen .d_btnsolucion{
+        top: 4rem;
+        right: 0.5rem;
+    }
+    .addfullscreen .d_contegrlevacenter{
+        width: calc(100% - 8rem);
+        height: calc(100% - 6rem);
+        top: 3rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    /*****EMERGENTES*****/
+    .d_emergenteborrar, .d_emergenteevaluacion{
+        padding: 1rem 1rem 1rem 3.2rem;
+    }
+}
+/*
+==============================================
+CSS KEYFRAMES
+==============================================
+*/
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

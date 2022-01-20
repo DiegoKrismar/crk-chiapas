@@ -1,0 +1,403 @@
+@charset "utf-8";
+/*
+
+==============================================
+
+CSS PRELOADER
+
+==============================================
+
+*/
+
+.d_helperResources {
+    display: none;
+    background-image: url(../img/crk_rob_1101a.jpg);
+}
+/*
+
+==============================================
+
+CSS FULLSCREEN
+
+==============================================
+
+*/
+
+/*.addfullscreen .d_controlgrlminsvg{
+
+    display: block;
+
+}
+
+.addfullscreen .d_controlgrlmaxsvg{
+
+    display: none;
+
+}*/
+
+.addfullscreen .d_footerbtnsexpand {
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #F15A24;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    border-radius: 50%;
+}
+.addfullscreen .d_headergrl {
+    display: none;
+}
+.addfullscreen .d_contegrl {
+    height: 100%;
+    top: 0;
+}
+.addfullscreen .d_controlsgrl {
+    height: 100%;
+}
+.addfullscreen .d_footerbtnsmaxsvg {
+    display: none;
+}
+.addfullscreen .d_footerbtnsminsvg {
+    display: block;
+}
+.addfullscreen .d_videogrlsourceintro, .addfullscreen .d_videogrlsource {
+    width: 100%;
+    height: 100%;
+}
+/*
+
+==============================================
+
+CSS HEADER
+
+==============================================
+
+*/
+
+.d_headergrltitle {
+    width: calc(100% - 9rem);
+}
+/*
+
+==============================================
+
+CSS VIDEO
+
+==============================================
+
+*/
+
+.d_videogrlsourceintro {
+    width: 100%;
+    height: 100%;
+    /*position: absolute;
+        margin-top: 3rem;*/
+}
+.d_videogrlsource {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*display: none;*/
+}
+/*
+
+==============================================
+
+CSS FOOTER
+
+==============================================
+
+*/
+
+.d_controlsgrl {
+    width: 100%;
+    height: calc(100% - 3rem);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.d_controlsgrlin {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .65);
+}
+.d_controlsgrlemergente {
+    width: 100%;
+    position: absolute;
+    bottom: calc(50% - 6.5rem);
+    left: 0;
+    padding-top: 1rem;
+}
+.d_controlgrlbtns {
+    display: table;
+    margin: auto;
+}
+.d_controlgrlplay {
+    width: 6rem;
+    height: 6rem;
+    background-color: #009EB3;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .5);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    float: left;
+    margin-left: .6rem;
+    margin-right: .6rem;
+}
+.d_controlgrltimeline {
+    width: 100%;
+    height: 6rem;
+    position: relative;
+}
+.d_controlgrltimeline>input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: .3rem;
+    height: .4rem;
+    width: 80%;
+    outline: 0px;
+    border: 0;
+    position: absolute;
+    left: 10%;
+    top: calc(50% - .3rem);
+}
+input[type=range]::-moz-range-track {
+    -moz-appearance: none;
+    border-radius: 15px;
+    border: 30px;
+    height: 30px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border-radius: 50%;
+    background-color: #009EB3;
+    border-width: .1rem;
+    border-color: #ffffff;
+    border-style: solid;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .5);
+}
+input[type=range]::-moz-range-thumb {
+    -moz-appearance: none;
+    border-radius: 50%;
+    background-color: #009EB3;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+.d_controlgrlsound {
+    width: 3rem;
+    height: 3rem;
+    background-color: #009EB3;
+    float: left;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: .6rem;
+    margin-right: .6rem;
+    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .5);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    display: none;
+}
+.d_controlgrlunmutesvg, .d_controlgrlplaysvg {
+    display: block;
+}
+.d_controlgrlpausesvg, .d_controlgrlmutesvg, .d_controlgrlminsvg {
+    display: none;
+}
+.d_controlgrlunmutesvg>path, .d_controlgrlmutesvg>path, .d_controlgrlplaysvg>path, .d_controlgrlpausesvg>path {
+    fill: #ffffff;
+}
+.d_controlgrlomitir {
+    bottom: 80px;
+    display: table;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #F15A24;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+.d_footerbtnsexpand {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 6rem;
+}
+.d_footerbtnsmaxsvg>path, .d_footerbtnsminsvg>path {
+    fill: #ffffff;
+}
+.d_footerbtnsmaxsvg {
+    display: block;
+}
+.d_footerbtnsminsvg {
+    display: none;
+}
+/*
+
+==============================================
+
+CSS MEDIA
+
+==============================================
+
+*/
+
+@media only screen and (max-height: 400px) {
+    /*****FOOTER*****/
+    /*.d_controlgrltimeline{
+
+        height: 3rem;
+
+    }
+
+    .d_controlsgrlemergente{
+
+        bottom: initial;
+
+        top: calc(50% - 6rem);
+
+    }*/
+    /*****FULLSCREEN*****/
+    /*.addfullscreen .d_controlgrltimeline{
+
+        height: 6rem;
+
+    }
+
+    .addfullscreen .d_controlsgrlemergente{
+
+        bottom: calc(50% - 8rem);
+
+        top: initial;
+
+    }*/
+}
+@media (orientation: landscape) {
+    /*****HEADER*****/
+    .d_headergrl {
+        width: auto;
+        height: 100%;
+        top: 0;
+        left: auto;
+        right: 0;
+    }
+    .d_headergrltitle {
+        width: calc(100% - 3rem);
+        float: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .1);
+    }
+    .d_headergrltitletxt {
+        color: #343434;
+    }
+    .d_headergrlbtnsalir, .d_headergrlbtnsobjetivos, .d_headergrlbtnsinstrucciones {
+        float: none;
+    }
+    /*****FOOTER*****/
+    .d_controlsgrl {
+        width: calc(100% - 3rem);
+        height: calc(100% - 3rem);
+        background-color: transparent;
+    }
+    .d_controlsgrlin {
+        height: 6rem;
+    }
+    .d_controlsgrlemergente {
+        bottom: 0;
+        padding-top: 0;
+        height: 6rem;
+    }
+    .d_controlgrlbtns {
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+        display: table;
+        margin: 0;
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+    .d_controlgrlplay {
+        width: 5rem;
+        height: 5rem;
+        margin: 0;
+        position: absolute;
+        left: 0;
+    }
+    .d_controlgrlsound {
+        display: block;
+        position: absolute;
+        right: 0.5rem;
+        top: 1rem;
+        bottom: 1rem;
+        margin: 0;
+    }
+    .d_controlgrltimeline {
+        width: calc(100% - 10.5rem);
+        height: 5rem;
+        position: absolute;
+        left: 6rem;
+        top: 0.5rem;
+    }
+    .d_controlgrltimeline>input[type=range] {
+        width: 90%;
+        left: 5%;
+    }
+    .d_controlgrlomitir {
+        bottom: 7rem;
+    }
+    .d_footerbtnsexpand {
+        top: 6rem;
+        right: 0;
+    }
+    /*****VIDEO*****/
+    .d_videogrlsourceintro {
+        height: calc(100% - 3rem);
+        bottom: 0;
+        margin-top: 3rem;
+    }
+    .d_videogrlsource {
+        height: calc(100% - 3rem);
+        bottom: 0;
+    }
+    /*****CONTENIDO*****/
+    .d_contegrl {
+        width: calc(100% - 3rem);
+        height: 100%;
+    }
+    /*****FULLSCREEN*****/
+    .addfullscreen .d_contegrl {
+        width: 100%;
+    }
+    .addfullscreen .d_headergrltitle {
+        display: none;
+    }
+    .addfullscreen .d_controlsgrl {
+        width: 100%;
+    }
+    .addfullscreen .d_footerbtnsexpand {
+        top: 0.5rem;
+        right: 0.5rem;
+    }

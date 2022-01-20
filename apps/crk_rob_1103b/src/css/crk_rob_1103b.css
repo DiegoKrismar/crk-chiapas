@@ -1,0 +1,450 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+      background-image:
+          url(../img/crk_rob_1103b_clic.png),
+          url(../img/crk_rob_1103b_fondo.png),
+          url(../img/crk_rob_1103b_imagenes.png),
+          url(../img/crk_rob_1103b_imagenes2.png),
+          url(../img/crk_rob_1103b_personaje.png),
+          url(../img/crk_rob_1103b_personaje1.png);
+      }
+/*
+==============================================
+CSS DISENO GENERAL ( NO SE CAMBIAN TAMANOS O 
+POSICIONES O MARGENES, SOLO FONDOS, TIPOGRAFIA
+BORDES, SOMBRAS, COLOR Y DISEÑO GENERAL)
+==============================================
+*/
+.d_contegrlact{
+    background-image: url(../img/crk_rob_1103b_fondo.png);
+    background-color: #E8D9C8;
+    background-repeat: repeat;
+    background-size: 20%;
+}
+.d_contegrlactinf{background-color: transparent;}
+/*
+==============================================
+CSS DISENO ESPECIFICO
+==============================================
+*/
+.d_clic{
+    position: absolute;
+    background: url(../img/crk_rob_1103b_clic.png) no-repeat;
+    background-color: #EB7919;
+    background-size: 50%;
+    background-position: center;
+    border-radius: 50rem;
+    width: 9%;
+    height: 6%;
+    left:0%;
+    bottom:0%;
+}
+.d_personaje, .d_personaje1, .d_personaje_bien, .d_personaje1_bien, .d_personaje_mal, .d_personaje1_mal {
+    position: absolute;
+    background: url(../img/crk_rob_1103b_personaje.png) no-repeat;
+    background-size: 300% 200%;
+    width: 42%;
+    height: 20%;
+    top:8%;
+    right:-3%;
+}
+.d_personaje{background-position: 50% 0%;}
+.d_personaje1{background-position: 0% 0%;}
+.d_personaje_bien{background-position: 0% 100%;}
+.d_personaje1_bien{
+    background-position: 100% 0%;
+    top:8.5%;
+    right: -3%;
+}
+
+.d_personaje1_mal{
+    background-position: 50% 101%;
+    top:8.2%;
+}
+.d_personaje_mal{background-position: 100% 100%;}
+
+.d_triangulo{
+    position: absolute;
+    background-color: #EB7919;
+    clip-path: polygon(0% 0%,0% 100%,100% 100%);
+    -webkit-clip-path: polygon(0% 0%,0% 100%,100% 100%);
+    overflow: hidden;
+    width: 10%;
+    height: 5%;
+    top: 7.5%;
+    left:61%;
+    transform: rotate(50deg);
+    -webkit-transform: rotate(50deg);
+}
+.d_triangulosombra{
+    position: absolute;
+    background-color: rgba(0,0,0,0.15);
+    width: 100%;
+    height: 20%;
+    left: 0%;
+    bottom: 0%;
+}
+.d_cuadro{
+    position: absolute;
+    background-color: #EB7919;
+    border-radius: 1.8rem;
+    overflow: hidden;
+    width: 85%;
+    height: 10%;
+    top:0%;
+    left:0%;
+}
+.d_cuadrosombra{
+    position: absolute;
+    background-color: rgba(0,0,0,0.15);
+    width: 100%;
+    height: 10%;
+    left: 0%;
+    bottom: 0%;
+}
+.d_cuadrobrillo{
+    position: absolute;
+    background-color: rgba(255,255,255,0.3);
+    width: 100%;
+    height: 10%;
+    top:0%;
+    left: 0%;
+}
+
+.d_texto{
+    position: absolute;
+    color: #FFF;
+    font-family: Verdana;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top:0%;
+    left: 0%;
+}
+.d_recuadro{
+    position: absolute;
+    background:#3399CC;
+    border-radius: 3rem;
+    width: 95%;
+    height: 77%;
+    bottom: 1%;
+    left: 2.5%;
+}
+.d_hoja, .d_hoja2{
+    position: absolute;
+    width: 90%;
+    height: 94%;
+    top: 3%;
+    left: 5%;
+}
+.d_hoja{
+    background-color: #FFFF;
+    transform: rotate(1deg);
+    -webkit-transform: rotate(1deg);
+}
+.d_hoja2{
+    background-color: #E4E8FD;
+    transform: rotate(-1.8deg);
+    -webkit-transform: rotate(-1.8deg);
+}
+.d_imagenes{
+    position: absolute;
+    width: 75%;
+    height: 90%;
+    top:5%;
+    left:13%;
+    transform: rotate(-1deg);
+    -webkit-transform: rotate(-1deg);
+    display: none;
+}
+.d_imagen1, .d_imagen2, .d_imagen3, .d_imagen4, .d_imagen5, .d_imagen6{
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    cursor: pointer;
+}
+.d_imagen1{
+    top:0%;
+    left: 0%;
+}
+.d_imagen2{
+    top:0%;
+    right:0%;
+}
+.d_imagen3{
+    top:35%;
+    left: 0%;
+}
+.d_imagen4{
+    top:35%;
+    right: 0%;
+}
+.d_imagen5{
+    bottom: 0;
+    left: 0%;
+}
+.d_imagen6{
+    bottom:0%;
+    right:0%;
+}
+
+.d_imagenHover:hover{
+      transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+      cursor : pointer;
+}
+
+.d_color{
+    position: absolute;
+    background-color: #C8C8C8;
+    border-radius: 3rem;
+    width: 90%;
+    height: 90%;
+    top:5%;
+    left: 5%;
+    cursor: pointer;
+}
+
+.d_select .d_color {background-color: #DAAC38;}
+
+/*
+==============================================
+DIV ROBOTS
+==============================================
+*/
+.d_robot1, .d_robot2, .d_robot3, .d_robot4, .d_robot5, .d_robot6, .d_robot7, .d_robot8, .d_robot9, .d_robot10, .d_robot11, .d_robot12, .d_robot13, .d_robot14, .d_robot15{
+    position: absolute;
+    background: url(../img/crk_rob_1103b_imagenes2.png) no-repeat;
+    background-size:500% 300%;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+.d_robot1{background-position: 0% 0%;}
+.d_robot2{background-position: 24.5% 0%;}
+.d_robot3{background-position: 49.3% 0%;}
+.d_robot4{background-position: 74% 0%;}
+.d_robot5{background-position: 98.5% 0%;}
+.d_robot6{background-position: 0% 50%;}
+.d_robot7{background-position: 24.5% 50%;}
+.d_robot8{background-position: 49.3% 50%;}
+.d_robot9{background-position: 74% 50%;}
+.d_robot10{background-position: 98.5% 50%;}
+.d_robot11{background-position: 0% 100%;}
+.d_robot12{background-position: 24.5% 100%;}
+.d_robot13{background-position: 49.3% 100%;}
+.d_robot14{background-position: 74% 100%;}
+.d_robot15{background-position: 98.5% 100%;}
+
+.d_bien .d_robot1{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 0% 0%;
+}
+.d_bien .d_robot2{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 24.5% 0%;
+}
+.d_bien .d_robot3{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 49.3% 0%;
+}
+.d_bien .d_robot4{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 74% 0%;
+}
+.d_bien .d_robot5{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 98.5% 0%;
+}
+.d_bien .d_robot6{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 0% 50%;
+}
+.d_bien .d_robot7{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 24.5% 50%;
+}
+.d_bien .d_robot8{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 49.3% 50%;
+}
+.d_bien .d_robot9{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 74% 50%;
+}
+.d_bien .d_robot10{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 98.5% 50%;
+}
+.d_bien .d_robot11{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 0% 100%;
+}
+.d_bien .d_robot12{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 24.5% 100%;
+}
+.d_bien .d_robot13{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 49.3% 100%;
+}
+.d_bien .d_robot14{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 74% 100%;
+}
+.d_bien .d_robot15{
+    background: url(../img/crk_rob_1103b_imagenes.png) no-repeat;
+    background-size:500% 300%;
+    background-position: 98.5% 100%;
+}
+
+
+.d_bien .d_color{
+    background-color: #DAAC38;
+    border: solid 0.8rem #528C1C;
+    box-sizing: border-box;
+    -wbkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.d_mal .d_color{
+    background-color: #C8C8C8;
+    border:solid 0.8rem #AD1A17;
+    box-sizing: border-box;
+    -wbkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+
+/*
+==============================================
+CSS MEDIA lANDSCAPE (PORTRAIT ES TODO LO QUE
+ESTE ANTES)
+==============================================
+*/
+@media (orientation: landscape) {
+    .d_clic{
+        background-size: 50%;
+        width: 6%;
+        height: 9%;
+        left:4%;
+        bottom:1%;
+}
+    .d_personaje, .d_personaje1, .d_personaje_bien, .d_personaje1_bien, .d_personaje_mal, .d_personaje1_mal {
+        width: 31%;
+        height: 34%;
+        top:-2%;
+        right:2%;
+}
+    .d_personaje1_bien{
+        top:-0.5%;
+        right: 2%;
+}
+    .d_personaje1_mal{top:-1.5%;}
+    .d_triangulo{
+        width: 5%;
+        height: 8%;
+        top: 9.6%;
+        left:60.6%;
+        transform: rotate(10deg);
+        -webkit-transform: rotate(10deg);
+}
+    .d_cuadro{
+        width: 60%;
+        height: 15%;
+        top:2%;
+        left:2%;
+}
+    .d_recuadro{
+        border-radius: 3rem;
+        width: 88%;
+        height: 75%;
+        bottom: 2%;
+        left: 6%;
+}
+    .d_hoja, .d_hoja2{
+        position: absolute;
+        width: 94%;
+        height: 90%;
+        top: 5%;
+        left: 3%;
+}
+    .d_hoja{
+        transform: rotate(1deg);
+        -webkit-transform: rotate(1deg);
+}
+    .d_hoja2{
+        transform: rotate(-1.8deg);
+        -webkit-transform: rotate(-1.8deg);
+}
+    .d_imagenes{
+        position: absolute;
+        width: 80%;
+        height: 87%;
+        top:7%;
+        left:10%;
+        transform: rotate(-1deg);
+        -webkit-transform: rotate(-1deg);
+}
+    .d_imagen1, .d_imagen2, .d_imagen3, .d_imagen4, .d_imagen5, .d_imagen6{
+        position: absolute;
+        width: 30%;
+        height: 50%;
+}
+    .d_imagen1{
+        top:0%;
+        left: 0%;
+}
+    .d_imagen2{
+        top:0%;
+        left:35%;
+}
+    .d_imagen3{
+        top:0%;
+        right: 0%;
+        left: 70%;
+}
+    .d_imagen4{
+        bottom:0%;
+        left: 0%;
+        top: 50%;
+}
+    .d_imagen5{
+        bottom: 0%;
+        left: 35%;
+}
+    .d_imagen6{
+        bottom:0%;
+        right:0%;
+}
+    .d_color{
+        width: 90%;
+        height: 90%;
+        top:5%;
+        left: 5%;
+        cursor: pointer;
+}
+    .d_texto{
+        font-size: 1.8rem;
+    }
+}
