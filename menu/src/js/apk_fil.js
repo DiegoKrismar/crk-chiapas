@@ -34,7 +34,6 @@ if (dispositivo == "Tableta") {
 		["8. Leyes de la robótica", "crk_rob_1105a"],
 		["9. Ventajas y desventajas de los robots", "crk_rob_1104a"],
 		["10. ¿Qué tanto sabes de la robótica?", "crk_rob_1106a"],
-<<<<<<< HEAD
 		["Manual del docente. Introducción a la mecánica", "crk_mec_1200"],
 		["1. Introducción a la mecánica", "crk_mec_1201a"],
 		["2. Introducción a las máquinas simples","crk_mec_1201b"],
@@ -45,31 +44,17 @@ if (dispositivo == "Tableta") {
 		["1. La cuña","crk_mec_1206a"],
 		["1. El tornillo","crk_mec_1207a"],
 		["1. Los engranes","crk_mec_1208a"],
-		["¿Qué tanto sabes de máquinas simples?", "crk_mec_1209a"]
-=======
-		[""],
-		[""],
-		[""],
-		[""],
-		[""],
-		[""],
-		[""],
-		[""],
-		[""],
-		[""],
+		["¿Qué tanto sabes de máquinas simples?", "crk_mec_1209a"],
 		["1. Corriente eléctrica","crk_ele_1301a"],
-		["2. Introducción a la electrónica","crk_ele_1301b"],
-		["3. Diagrama pictórico y esquemático","crk_ele_1301c"],
-		["1. La protoboard","crk_ele_1302a"],
-		["1. La resistencia", "crk_ele_1303a"],
-		["2. Pinta tu resistencia","crk_ele_1303b"],
-		["1. Diodo emisor de luz","crk_ele_1304a"],
-		["1. Interruptores y botones","crk_ele_1305a"],
-		["1. Potenciómetros y fotorresistencias","crk_ele_1306a"],
-		["1. Zumbador o buzzer","crk_ele_1307a"],
-		[""],
-		[""]
->>>>>>> development2
+         ["2. Introducción a la electrónica","crk_ele_1301b"],
+         ["3. Diagrama pictórico y esquemático","crk_ele_1301c"],
+         ["1. La protoboard","crk_ele_1302a"],
+         ["1. La resistencia", "crk_ele_1303a"],
+         ["2. Pinta tu resistencia","crk_ele_1303b"],
+         ["1. Diodo emisor de luz","crk_ele_1304a"],
+         ["1. Interruptores y botones","crk_ele_1305a"],
+         ["1. Potenciómetros y fotorresistencias","crk_ele_1306a"],
+         ["1. Zumbador o buzzer","crk_ele_1307a"],
 	];
 }
 
