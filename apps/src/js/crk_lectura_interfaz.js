@@ -3,7 +3,7 @@
 *                                    CONSTANTES
 *
 *************************************************************************************/
-var rutaPdf = "src/pdf/pdfCrk/"; //Ruta del pdf adicional
+var rutaPdf = "../src/pdf/"; //Ruta del pdf adicional
 var prefijoPdf; //Prefijo del pdf adicional
 /***********************************************************************************
 * 
@@ -54,6 +54,6 @@ function descargaPdf(){
 	* ENTRADAS: Ninguna.
 	* SALIDAS: Ninguna.
     * VARIABLES****/
-    url = IP+rutaPdf+prefijoPdf+".pdf";//Dirección
+    url = '../'+prefijoPdf+'/src/pdf/'+prefijoPdf+".pdf";//Dirección
     window.open(url, '_blank');//Abre en nueva ventana.
 }

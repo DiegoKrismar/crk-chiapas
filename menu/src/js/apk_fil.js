@@ -33,7 +33,18 @@ if (dispositivo == "Tableta") {
 		["7. Clasifica a los robots", "crk_rob_1103b"],
 		["8. Leyes de la robótica", "crk_rob_1105a"],
 		["9. Ventajas y desventajas de los robots", "crk_rob_1104a"],
-		["10. ¿Qué tanto sabes de la robótica?", "crk_rob_1106a"]
+		["10. ¿Qué tanto sabes de la robótica?", "crk_rob_1106a"],
+		["Manual del docente. Introducción a la mecánica", "crk_mec_1200"],
+		["1. Introducción a la mecánica", "crk_mec_1201a"],
+		["2. Introducción a las máquinas simples","crk_mec_1201b"],
+		["1. Plano inclinado","crk_mec_1202a"],
+		["1. El eje y la rueda","crk_mec_1203a"],
+		["1. La palanca","crk_mec_1204a"],
+		["1. La polea","crk_mec_1205a"],
+		["1. La cuña","crk_mec_1206a"],
+		["1. El tornillo","crk_mec_1207a"],
+		["1. Los engranes","crk_mec_1208a"],
+		["¿Qué tanto sabes de máquinas simples?", "crk_mec_1209a"]
 	];
 }
 
