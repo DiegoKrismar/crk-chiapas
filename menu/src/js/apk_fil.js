@@ -33,7 +33,29 @@ if (dispositivo == "Tableta") {
 		["7. Clasifica a los robots", "crk_rob_1103b"],
 		["8. Leyes de la robótica", "crk_rob_1105a"],
 		["9. Ventajas y desventajas de los robots", "crk_rob_1104a"],
-		["10. ¿Qué tanto sabes de la robótica?", "crk_rob_1106a"]
+		["10. ¿Qué tanto sabes de la robótica?", "crk_rob_1106a"],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""],
+		["1. Corriente eléctrica","crk_ele_1301a"],
+		[""],
+		[""],
+		[""],
+		[""],
+		["2. Pinta tu resistencia","crk_ele_1303b"],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""],
+		[""]
 	];
 }
 
