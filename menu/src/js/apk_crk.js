@@ -50,6 +50,7 @@ const titleNomenclatura = [
     ["1. La polea","crk_mec_1205a"],
     ["1. La cuña","crk_mec_1206a"],
     ["1. El tornillo","crk_mec_1207a"],
+    ["2. Ensambla un elevador de canicas","crk_mec_1207b"],
     ["1. Los engranes","crk_mec_1208a"],
     ["¿Qué tanto sabes de máquinas simples?", "crk_mec_1209a"],
     ["1. Corriente eléctrica","crk_ele_1301a"],

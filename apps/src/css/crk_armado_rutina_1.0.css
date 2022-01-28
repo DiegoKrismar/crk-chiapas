@@ -1,0 +1,1109 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+    display: none;
+    background-image:
+        url(../img/crk_armado_rutina_spritepiezas.png);
+}
+/*
+==============================================
+CSS FULLSCREEN
+==============================================
+*/
+.addfullscreen .d_menupasosgrl, .addfullscreen .d_footerbtnsmaxsvg{
+    display: none;
+}
+
+.addfullscreen .d_footerbtnsminsvg{
+    display: block;
+}
+.addfullscreen .d_btnsopcgrl{
+    top: 0.5rem;
+    right: 4rem;
+}
+.addfullscreen .d_btngrlnext, .addfullscreen .d_btngrlprev{
+    bottom: 0.5rem;
+}
+.addfullscreen .d_footerbtnsexpand{
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #F15A24;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    border-radius: 50%;
+}
+.addfullscreen .d_contegrl{
+    height: 100% !important;
+}
+.addfullscreen .d_btngrltextstep{
+    bottom: 0.5rem;
+}
+.addfullscreen .d_laminaropeconte{
+    height: calc(100% - 8rem);
+    top: 4rem;
+}
+.addfullscreen .d_stepsfloat{
+    bottom: 1rem;
+    height: calc(100% - 2rem);
+}
+/*
+==============================================
+CSS ANIMACION INCIO
+==============================================
+*/
+.d_hideAnima .d_btnsopcgrl, .d_hideAnima .d_btngrlprev, .d_hideAnima .d_btngrlnext{
+    display: none;
+}
+.d_hideAnima .d_menupasosgrl{
+    opacity: 0;
+    bottom: -3rem;
+}
+.d_hideAnima .d_contegrl{
+    height: calc(100% - 3rem);
+    bottom: 0;
+}
+/*
+==============================================
+CSS CONTENIDO
+==============================================
+*/
+.d_contegrl{
+    height: calc(100% - 7rem);
+    bottom: 4rem;
+    overflow: hidden;
+}
+/*
+==============================================
+CSS MENU PASOS
+==============================================
+*/
+.d_menupasosgrl{
+    width: 100%;
+    height: 4rem;
+    background-color: #343434;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.d_menupasosgrlprevconte, .d_menupasosgrlnextconte{
+    width: 3rem;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    display: none !important;
+}
+.d_menupasosgrlprevsvg, .d_menupasosgrlnextsvg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_menupasosgrlprevsvg > path, .d_menupasosgrlnextsvg > path{
+    fill: #ffffff;
+}
+.d_menupasosgrlprev, .d_menupasosgrlnext{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    opacity: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_menupasosgrldisable > svg, .d_menupasosgrldisable > input{
+    cursor: default;
+    opacity: .4;
+}
+.d_menupasosgrlbtns{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.d_menupasosgrlbtns::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+.d_menupasosgrlbtns::-webkit-scrollbar-thumb {
+    background: rgba(0,158,179,0.5);
+}
+.d_menupasosgrlbtns::-webkit-scrollbar-thumb:hover {
+    background: #009EB3;
+}
+.d_menupasosgrlbtns::-webkit-scrollbar-thumb:active {
+    background-color: #009EB3;
+}
+.d_menupasosgrlbtns::-webkit-scrollbar-track {
+    background: #f2f2f2;
+}
+.d_menupasosgrlbtns::-webkit-scrollbar-track:hover,
+.d_menupasosgrlbtns::-webkit-scrollbar-track:active {
+    background: #f2f2f2;
+}
+.d_menupasosgrlbtnsblock{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_menupasosgrlbtnsinactive > div > div{
+    opacity: 0.4;
+}
+.d_menupasosbtnsconte{
+    //width: 200%;
+    position: absolute;
+    
+}
+.d_menupasosnum{
+    width: 3rem;
+    height: 3rem;
+    /*background-color: rgba(255,255,255,.2);*/
+    background-color: transparent;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    position: relative;
+}
+.d_addbtnpress{
+    background-color: rgba(255,255,255,.2);
+    color: #FCEE21;
+    font-size: 1.4rem;
+}
+.d_addbtnok{
+    background-color: #8CC63F;
+    color: #ffffff;
+}
+
+.d_flash {
+    animation: flash 3s infinite;
+}
+/*
+==============================================
+CSS BTNS PIEZAS
+==============================================
+*/
+.d_btnsopcgrl{
+    position: absolute;
+    right: 0.5rem;
+    top: 4rem;
+}
+.d_btnsopcgrlplay, .d_btnsopcgrlpiezas{
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 0.5rem 0 0.5rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    position: relative;
+}
+.d_footerbtnsexpand{
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 9rem;
+}
+.d_btnsopcgrlplay{
+    background-color: #8CC63F;
+    display: none;
+}
+.d_btnsopcgrlplayblock{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: default;
+}
+.d_btnsopcgrlplayinput{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    cursor: pointer;
+}
+.d_btnsopcgrlpiezas{
+    background-color: #DBD169;
+    animation: indiPiezas 2s infinite;
+    opacity: 1;
+    cursor: pointer;
+}
+.d_footerbtnsmaxsvg > path, .d_footerbtnsminsvg > path, .d_btnsopcgrlplaysvg > path, .d_btnsopcgrlreinsvg > path, .d_btnsopcgrlpiezassvg > path, .d_btngrlnextsvg > path, .d_btngrlprevsvg > path{
+    fill: #ffffff;
+}
+.d_footerbtnsmaxsvg{
+    display: block;
+}
+.d_footerbtnsminsvg{
+    display: none;
+}
+.d_btnsopcgrlplaysvg{
+    display: none;
+}
+.d_btnsopcgrlreinsvg{
+    display: block;
+}
+.d_btngrlnext, .d_btngrlprev{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    background-color: #009EB3;
+    border-radius: 50%;
+    bottom: 4.5rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_btngrlnext{
+    right: calc(50% - 4rem);
+}
+.d_btngrlprev{
+    left: calc(50% - 4rem);
+}
+.d_btngrlnextblock, .d_btngrlprevblock{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_btngrltextstep{
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    padding: 0.2rem;
+    position: absolute;
+    bottom: 4.5rem;
+    right: 1rem;
+}
+.d_btngrltextstep > span{
+    padding: 0 0.2rem 0 0.2rem;
+}
+.d_btngrltextstepnum{
+    color: #009EB3;
+}
+.d_btngrlinactive > svg{
+    opacity: .4;
+}
+.d_btngrlinactive > input{
+    opacity: .4;
+    cursor: default;
+}
+.d_btngrlnextsvg, .d_btngrlprevsvg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_btngrlnextbtn, .d_btngrlprevbtn{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+    border: 0;
+}
+.d_stepsfloat{
+    width: 16.5rem;
+    position: absolute;
+    bottom: 5rem;
+    left: 1rem;
+    height: calc(100% - 9rem);
+    overflow: auto;
+}
+.d_piezasgrlopcfloat{
+    width: 16rem;
+    height: 16rem;
+    float: right;
+    position: relative;
+}
+/*
+==============================================
+CSS SALTAR ANIMACION
+==============================================
+*/
+.d_saltaranima{
+    display: none;
+    padding: 0.5rem;
+    position:absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #F15A24;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+/*
+==============================================
+CSS EMERGENTES PASOS O PIEZAS
+==============================================
+*/
+/*
+.d_avisogrl{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.65);
+}
+.d_avisogrlconte{
+    width: 80%;
+    height: 12rem;
+    position: absolute;
+    left: 10%;
+    top: calc(50% - 6rem);
+    min-width: 14rem;
+}
+.d_avisogrlopc1, .d_avisogrlopc2{
+    width: 46%;
+    height: 100%;
+    background-color: #f2f2f2;
+    box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,.35);
+    border-radius: 0.5rem;
+}
+.d_avisogrlopc1{
+    float: left;
+}
+.d_avisogrlopc2{
+    float: right;
+}
+.d_avisogrltext{
+    width: calc(100% - 1rem);
+    height: calc(50% - 1rem);
+    float: left;
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+.d_avisogrlbtnspace{
+    width: 100%;
+    height: 50%;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+}
+.d_avisogrlbtn{
+    width: 5rem;
+    height: 5rem;
+    background-color: #8CC63F;
+    //background-color: #F15A24;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 0.2rem rgba(0,0,0,.35);
+    margin: 1rem auto auto auto;
+}
+.d_avisogrlbtnsvg{
+    width: 100%;
+    height: 100%;
+}
+.d_avisogrlbtnsvg > path{
+    fill: #f2f2f2;
+}
+.d_blockbarbtns{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+*/
+/*
+==============================================
+CSS EMERGENTES PIEZAS
+==============================================
+*/
+.d_piezasgrl{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.65);
+    display: none;
+}
+.d_piezasgrlin{
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: #ffffff;
+    background-image: url(../img/crk_comun_interfaz_mosaic.png);
+    background-size: 20%;
+    background-position: center;
+    background-repeat: repeat;
+}
+.d_piezasgrlconte{
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+.d_piezasgrlhead{
+    width: calc(100% - 1rem);;
+    float: left;
+    background-color: #F15A24;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d_piezasgrlbody{
+    width: 100%;
+    height: calc(100% - 5rem);
+    float: left;
+    background-color: rgba(255,255,255,1);
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.d_piezasgrlbody::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+    padding-top: 1rem;
+}
+.d_piezasgrlbody::-webkit-scrollbar-thumb {
+    background: rgba(0,158,179,0.35);
+    border-radius: 1rem;
+}
+.d_piezasgrlbody::-webkit-scrollbar-thumb:hover {
+    background: #009EB3;
+}
+.d_piezasgrlbody::-webkit-scrollbar-thumb:active {
+    background-color: #009EB3;
+}
+.d_piezasgrlbody::-webkit-scrollbar-track {
+    background: #f2f2f2;
+    border-radius: 1rem;
+}
+.d_piezasgrlbody::-webkit-scrollbar-track:hover,
+.d_piezasgrlbody::-webkit-scrollbar-track:active {
+    background: #f2f2f2;
+}
+.d_piezasgrlopc{
+    width: 20rem;
+    height: 20rem;
+    float: left;
+    position: relative;
+}
+/*
+.d_piezasgrlopc{
+    width: 100%;
+    height: 50%;
+    //max-width: 16rem;
+    //max-height: 16rem;
+    float: left;
+    position: relative;
+}
+*/
+.d_piezasgrlopcin{
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    //border-width: 0.2rem;
+    //border-style: solid;
+    //border-color: #8CC63F;
+    //box-sizing: border-box;
+    //-webkit-box-sizing: border-box;
+    //-moz-box-sizing: border-box;
+    border-radius: 0.5rem;
+    color: #4d4d4d;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0rem 0rem 0.1rem 0.1rem #8CC63F;
+    overflow: hidden;
+}
+.d_piezasgrlimg{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/crk_armado_rutina_spritepiezas.png);
+    background-size: 1000% 600%;
+    background-repeat: no-repeat;
+}
+.d_piezasgrlname{
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #8CC63F;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d_piezasgrlopcintext{
+    width: calc(100% - 1rem);
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 0.5rem 0 0.5rem;
+    color: #808080;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d_piezasgrldata{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 2.5rem;
+    border-radius: 50%;
+    background-color: #8CC63F;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1rem solid #ffffff;
+    box-sizing: border-box;
+}
+.d_piezassvg, .d_piezassvgcuenta, .d_piezassvgcuerda, .d_piezasvgstraw, .d_piezasvgstick, .d_piezasvgtopeL9mm{
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.d_piezassvg path, .d_piezassvg polygon, .d_piezassvg rect{
+    //stroke: rgb(127, 50, 23);
+    //stroke-width: 1px;
+    fill: rgb(221, 153, 64);
+}
+.d_piezassvgcuenta path, .d_piezassvgcuenta polygon, .d_piezassvgcuenta rect{
+    fill: rgb(255, 84, 0);
+}
+.d_piezassvgcuerda path, .d_piezassvgcuerda polygon, .d_piezassvgcuerda rect{
+    fill: rgb(198, 28, 0);
+}
+.d_piezasvgstraw path:nth-child(1){
+    fill: rgb(10, 131, 194);
+}
+.d_piezasvgstraw path:nth-child(2){
+    fill: rgb(6, 71, 105);
+}
+.d_piezasvgstraw path:nth-child(3){
+    fill: rgb(115, 194, 234);
+}
+.d_piezasvgstick path:nth-child(1){
+    fill: rgb(204, 204, 204);
+}
+.d_piezasvgstick path:nth-child(2){
+    fill: rgb(179, 179, 179);
+}
+.d_piezasvgstick path:nth-child(3){
+    fill: rgb(230, 230, 230);
+}
+.d_piezasvgtopeL9mm path:nth-child(1){
+    fill: rgb(127, 50, 23);
+}
+.d_piezasvgtopeL9mm path:nth-child(2){
+    fill: rgb(221, 153, 64);
+}
+.d_piezasvgtopeL9mm path:nth-child(3){
+    fill: rgb(127, 50, 23);
+}
+.d_piezasgrlclose{
+    width: 2.6rem;
+    height: 2.6rem;
+    position: absolute;
+    top: -1.3rem;
+    right: -1.3rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    background-color: #F15A24;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    border-radius: 50%;
+    border: 0.1rem solid #ffffff;
+    box-sizing: border-box;
+}
+/*
+==============================================
+CSS EMERGENTE LAMINA ROPE
+==============================================
+*/
+.d_laminarope{
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    cursor: default;
+    border-radius: 50%;
+    margin: 0 0.5rem 0 0.5rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    position: relative;
+    background-color: #009EB3;
+    opacity: 0.2;
+}
+.d_laminarope > svg{
+    width: 100%;
+    height: 100%;
+}
+.d_laminarope > svg > path{
+    fill: #ffffff;
+}
+.d_laminarope_pulse{
+    animation: indi 2s infinite;
+    opacity: 1;
+    cursor: pointer;
+}
+.d_laminaropeconte{
+    width: calc(100% - 4rem);
+    height: calc(100% - 9rem);
+    position: absolute;
+    top: 5rem;
+    left: 2rem;
+    background-color: #f1f1f1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 / 35%);
+}
+.d_laminaropeconteclose{
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    background-color: #F15A24;
+    border-radius: 50%;
+}
+.d_laminaropeconteclose > svg{
+    width: 100%;
+    height: 100%;
+}
+.d_laminaropeconteclose > svg > path{
+    fill: #ffffff;
+}
+/*EMERGENTE GESTOS*/
+.d_emergentegestos{
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    display: none;
+}
+.d_emergentegestoscenter, .d_emergentegestos_teclas{
+    width: 28.6rem;
+    height: 13rem;
+    position: absolute;
+    bottom: 6rem;
+    left: calc(50% - 14.3rem);
+    background-color: rgba(255,255,255,.65);
+    background-image: url(../img/crk_simulador_interfaz_gestos.png);
+    background-size: 100% 500%;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+}
+.d_emergentegestos_tactil{
+    background-position: 0% 75%;
+}
+.d_emergentegestos_mouse{
+    background-position: 0% 100%;
+}
+.d_emergentegestosclose{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    border-radius: 50%;
+    background-color: #009EB3;
+    cursor: pointer;
+    box-shadow: 0 0 0.2rem rgba(0,0,0,.5);
+}
+.d_emergentegestosclose > svg > path{
+    fill: #ffffff;
+}
+/*
+==============================================
+CSS POSICION DE PIEZAS EN SPRITE
+==============================================
+*/
+.b11x1{
+    background-position: 0% 0%;
+}
+.b7x4{
+    background-position: 11.11% 0%;
+}
+.b7x1{
+    background-position: 22.22% 0%;
+}
+.b4x3{
+    background-position: 33.33% 0%;
+}
+.b4x1{
+    background-position: 44.44% 0%;
+}
+.u6x{
+    background-position: 55.55% 0%;
+}
+.u5x{
+    background-position: 66.66% 0%;
+}
+.u4x{
+    background-position: 77.77% 0%;
+}
+.u3x{
+    background-position: 88.88% 0%;
+}
+.u2x{
+    background-position: 99.99% 0%;
+}
+.u1x{
+    background-position: 0% 20%;
+}
+.poleaA{
+    background-position: 11.11% 20%;
+}
+.poleaB{
+    background-position: 22.22% 20%;
+}
+.poleaC{
+    background-position: 33.33% 20%;
+}
+.hsmall{
+    background-position: 44.44% 20%;
+}
+.hlarge{
+    background-position: 55.55% 20%;
+}
+.hang8{
+    background-position: 66.66% 20%;
+}
+.grade7{
+    background-position: 77.77% 20%;
+}
+.flexLarge{
+    background-position: 88.88% 20%;
+}
+.circleBig{
+    background-position: 99.99% 20%;
+}
+.arrow{
+    background-position: 0% 40%;
+}
+.topeS11mm{
+    background-position: 11.11% 40%;
+}
+.topeL9mm{
+    background-position: 22.22% 40%;
+}
+.topeL6mm{
+    background-position: 33.33% 40%;
+}
+.cuerdaS, .cuerdaL{
+    background-position: 44.44% 40%;
+}
+.bu3x{
+    background-position: 55.55% 40%;
+}
+.uLcorto{
+    background-position: 66.66% 40%;
+}
+.strawS{
+    background-position: 77.77% 40%;
+}
+.strawL{
+    background-position: 88.88% 40%;
+}
+.stickS5mm, .stickM5mm{
+    background-position: 99.99% 40%;
+}
+.stickL5mm, .stickE5mm{
+    background-position: 0% 60%;
+}
+.clone{
+    background-position: 11.11% 60%;
+}
+.end{
+    background-position: 22.22% 60%;
+}
+.move{
+    background-position: 33.33% 60%;
+}
+.strawM{
+    background-position: 44.44% 60%;
+}
+.stickM4mm{
+    background-position: 55.55% 60%;
+}
+.liga{
+    background-position: 66.66% 60%;
+}
+.stickS4mm{
+    background-position: 77.77% 60%;
+}
+.topeS6mm{
+    background-position: 88.88% 60%;
+}
+.bu1x{
+    background-position: 99.99% 60%;
+}
+.uE{
+    background-position: 0% 80%;
+}
+.circleA{
+    background-position: 11.11% 80%;
+}
+.circleMiddle{
+    background-position: 22.22% 80%;
+}
+.circleC{
+    background-position: 33.33% 80%;
+}
+.circle1x{
+    background-position: 44.44% 80%;
+}
+.circle2x{
+    background-position: 55.55% 80%;
+}
+.arrowS{
+    background-position: 66.66% 80%;
+}
+.tornillo{
+    background-position: 77.77% 80%;
+}
+.poleaFull{
+    background-position: 88.88% 80%;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*****CONTENDIO*****/
+    .d_contegrl{
+        height: 100%;
+        bottom: 0;
+        width: calc(100% - 7rem);
+    }
+    /*****MENU PASOS*****/
+    .d_menupasosgrl{
+        width: 4rem;
+        height: 100%;
+        left: auto;
+        right: 3rem;
+    }
+    .d_menupasosgrlprevconte, .d_menupasosgrlnextconte{
+        width: 100%;
+        height: 3rem;
+        
+    }
+    .d_menupasosgrlprevconte > svg{
+        transform: rotate(90deg);
+    }
+    .d_menupasosgrlnextconte > svg{
+        transform: rotate(90deg);
+    }
+    .d_menupasosgrlbtns{
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    .d_btngrltextstep{
+        bottom: 0.5rem;
+        right: 8rem;
+    }
+    /*****BTNS PIEZAS*****/
+    .d_btnsopcgrl{
+        right: calc(7rem + 0.5rem);
+    }
+    .d_btngrlnext, .d_btngrlprev{
+        bottom: 0.5rem;
+    }
+    .d_btngrlnext{
+        right: calc(50% - 1rem);
+    }
+    .d_btngrlprev{
+        left: calc(50% - 7rem);
+    }
+    .d_footerbtnsexpand{
+        top: 9rem;
+        right: 0;
+    }
+    .d_stepsfloat{
+        bottom: 1rem;
+        height: calc(100% - 5rem);
+    }
+    /*EMERGENTE LAMINA ROPE*/
+    .d_laminaropeconte{
+        height: calc(100% - 12rem);
+        top: 8rem;
+    }
+    /*****FULLSCREEN*****/
+    .addfullscreen .d_btnsopcgrl{
+        top: 0.5rem;
+        right: 4rem;
+    }
+    .addfullscreen .d_btngrlprev{
+        left: calc(50% - 4rem);
+    }
+    .addfullscreen .d_btngrlnext{
+        right: calc(50% - 4rem);
+    }
+    .addfullscreen .d_footerbtnsexpand{
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    .addfullscreen .d_contegrl{
+        width: 100% !important;
+    }
+    .addfullscreen .d_saltaranima{
+        right: 1rem;
+    }
+    .addfullscreen .d_btngrltextstep{
+        right: 0.5rem;
+    }
+    /*****ANIMACION INICIO*****/
+    .d_hideAnima .d_headergrltitle{
+        width: calc(100% - 3rem);
+    }
+    .d_hideAnima .d_contegrl{
+        height: 100%;
+        bottom: 0;
+        width: calc(100% - 3rem);
+    }
+    /*****SALTAR ANIMACION*****/
+    .d_saltaranima{
+        right: 4rem;
+    }
+}
+/*
+==============================================
+CSS KEYFRAMES
+==============================================
+*/
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+      opacity: 1;
+      color: #FCEE21;
+  }
+  25%,
+  75% {
+      opacity: 0.2;
+       color: #ffffff;
+  }
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+      opacity: 1;
+      color: #FCEE21;
+  }
+  25%,
+  75% {
+      opacity: 0.2;
+      color: #ffffff;
+  }
+}
+@-webkit-keyframes indi{
+    0%{
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+    50%{
+        transform: scale(1.15) rotate(10deg);
+        box-shadow: 0 0 0.5rem rgb(0 158 179);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+}
+@-webkit-keyframes indiPiezas{
+    0%{
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+    50%{
+        transform: scale(1.15) rotate(10deg);
+        box-shadow: 0 0 0.5rem rgb(0, 0, 0, 0.5);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+}

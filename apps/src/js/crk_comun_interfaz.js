@@ -16,7 +16,8 @@ var getType;//Variable para saber si es simulador, aplicacion
 var getIframe;//Obtiene la ventana de iframe
 var getTypeapp = false;//Obtiene si es una aplicacion
 var intruccionTexto = "";//intrucciones de texto a voz
-var iniciada = true;
+var iniciada = false;//Define si las instrucciones se abrieron al principio
+var defineCategoria;//Define el tipo de categoria
 /*************************************************************************************
 *
 * 								FUNCIONES Y PROCEDIMIENTOS
@@ -35,7 +36,6 @@ $(document).ready(function(){
 		localStorage.setItem("configuraIntro", JSON.stringify(configuraIntro));
 	}
 	replaceIcons($('#d_emergenteinstrucciones').text());
-	
 });
 $(window).resize(function() {
     /*
@@ -46,6 +46,7 @@ $(window).resize(function() {
     */
     getChangeorientation();//Detecta el cambio de orientacion del dispositivo
     resizeEmergentes();//Centra los emergentes en el centro de la pantalla.
+    tootltipBtnsgrls();//Tooltip de botones generales
 });
 $(window).on('load',function(){
     /*
@@ -60,8 +61,10 @@ $(window).on('load',function(){
         $("#d_preloadergrl").hide();
     },200);
     $("#helperResources").hide();
+    
     setsizeIframe();//Establece el tamaño inicial de ventana del iframe
     resizeIframe();//Realiza el resize del iframe en PC
+    tootltipBtnsgrls();//Tooltip de botones generales
 });
 $(window).on("orientationchange",function(event){
     /*
@@ -80,6 +83,89 @@ $(window.parent).resize(function() {
     */
     resizeIframe();//Realiza el resize del iframe en PC
 });
+function tootltipBtnsgrls(){
+    /*
+	* NOMBRE: tootltipBtnsgrls.
+	* UTILIDAD: Tooltip de botones generales
+	* ENTRADAS: Ninguna.
+	* SALIDAS: Ninguna.
+	*/
+    if(pantallaCompleta === false){//En pantalla completa no aparecen los tooltips (caso particular que no se ajusta de btn pantalla completa)
+        $('.d_headergrlbtnsalir, .d_headergrlbtnsobjetivos, .d_headergrlbtnsinstrucciones, .d_footerbtnsexpand, .d_btngrlexpand, .d_btnsopcgrlrein, .d_btnsopcgrlnext, .d_btnsopcgrleval, .d_btnsopcgrldelete, .d_btnsopcgrllect').on("pointerover",function(){//Mouse over en btns
+            var getWindowwidth = $(document).outerWidth();//Ancho documento
+            var getWindowheight = $(document).outerHeight();//Alto documento
+            var getOffsettop = $(this).offset().top;//Posicion top de btn en curso
+            var getOffsetleft = $(this).offset().left;//Posicion left de btn en curso
+            var getWidth = $(this).outerWidth();//Ancho de btn en curso
+            var getHeight = $(this).outerHeight();//Alto de btn en curso
+            var getOffsetright = getWindowwidth-getOffsetleft-getWidth;//Posicion right de btn en curso
+            var getOffsetbottom = getWindowheight-getOffsettop;//Posicion bottom de btn en curso
+            var getName = $(this).attr('class');//Obtiene el nom,bre de la clase del btn
+            var setName;//Establece el nombre que va en el tooltip
+            var typeBtnbottom = false;//Define si son botones inferiores o superiores
+            switch (getName) {//Casos de btns
+                case "d_headergrlbtnsalir":
+                    setName = 'Salir';//Establece el nombre que va en el tooltip
+                    break;
+                case "d_headergrlbtnsobjetivos":
+                    setName = 'Objetivos';//Establece el nombre que va en el tooltip
+                    break;
+                case "d_headergrlbtnsinstrucciones":
+                    setName = 'Instrucciones';//Establece el nombre que va en el tooltip
+                    break;
+                case "d_footerbtnsexpand":
+                case "d_btngrlexpand":
+                    setName = 'Pantalla completa';//Establece el nombre que va en el tooltip
+                    break;
+                case "d_btnsopcgrlrein":
+                    setName = 'Reiniciar';//Establece el nombre que va en el tooltip
+                    if(getType === "pxb"){//Es actividad de pxb
+                        typeBtnbottom = false;//Aqui el btn de reiniciar se paso al header
+                    }else{
+                        typeBtnbottom = true;//Son botones inferiores
+                    }
+                    break;
+                case "d_btnsopcgrlnext":
+                    setName = 'Siguiente';//Establece el nombre que va en el tooltip
+                    typeBtnbottom = true;//Son botones inferiores
+                    break;
+                case "d_btnsopcgrleval":
+                    setName = 'Evaluar';//Establece el nombre que va en el tooltip
+                    typeBtnbottom = true;//Son botones inferiores
+                    break;
+                case "d_btnsopcgrldelete":
+                    setName = 'Borrar';//Establece el nombre que va en el tooltip
+                    typeBtnbottom = true;//Son botones inferiores
+                    break;
+                case "d_btnsopcgrllect":
+                    setName = 'Descargar PDF';//Establece el nombre que va en el tooltip
+                    typeBtnbottom = true;//Son botones inferiores
+                    break;
+                default:
+                    break;
+            }
+            $('.d_headergrltooltip').remove();//Quita el tooltip
+            if(getOrientation === "landscape"){//Caso horizontal
+                $('body').append('<div class="d_headergrltooltip">'+setName+'<div class="d_headergrltooltiparrowside"></div></div>');//Agrega el tooltip
+                $('.d_headergrltooltip').css({"top":getOffsettop,"right":"calc("+getWidth+"px + 1rem)","height":getHeight});//Posiciona el tooltip
+            }
+            if(getOrientation === "portrait"){//Caso vertical
+                if(typeBtnbottom){
+                    $('body').append('<div class="d_headergrltooltip">'+setName+'<div class="d_headergrltooltiparrowbottom"></div></div>');//Agrega el tooltip
+                    $('.d_headergrltooltip').css({"bottom":"calc("+getOffsetbottom+"px + 1rem)","right":getOffsetright,"height":getHeight});//Posiciona el tooltip
+                }else{
+                    $('body').append('<div class="d_headergrltooltip">'+setName+'<div class="d_headergrltooltiparrowtop"></div></div>');//Agrega el tooltip
+                    $('.d_headergrltooltip').css({"top":"calc("+getOffsettop+getHeight+"px + 1rem)","right":getOffsetright,"height":getHeight});//Posiciona el tooltip
+                }
+            }
+        });
+        $('.d_headergrlbtnsalir, .d_headergrlbtnsobjetivos, .d_headergrlbtnsinstrucciones, .d_footerbtnsexpand, .d_btngrlexpand, .d_btnsopcgrlrein, .d_btnsopcgrlnext, .d_btnsopcgrleval, .d_btnsopcgrldelete, .d_btnsopcgrllect').on("pointerout",function(){//Mouse out en btns
+            $('.d_headergrltooltip').remove();//Quita el tooltip
+        });
+    }else{//En pantalla completa
+        $('.d_headergrlbtnsalir, .d_headergrlbtnsobjetivos, .d_headergrlbtnsinstrucciones, .d_footerbtnsexpand, .d_btngrlexpand, .d_btnsopcgrlrein, .d_btnsopcgrlnext, .d_btnsopcgrleval, .d_btnsopcgrldelete, .d_btnsopcgrllect').off();//Quita evento mouseover y mouseout
+    }
+}
 function setsizeIframe(){
     /*
 	* NOMBRE: setsizeIframe.
@@ -202,12 +288,64 @@ function ocultaEmergentes(){
 	* ENTRADAS: Ninguna.
 	* SALIDAS: Ninguna.
 	*/
-	$("#d_emergentes").hide();//Oculta emergente
-	if(!iniciada){
-		iniciaActividad();
-		iniciada = true;
-	}
 
+	$("#d_emergentes").hide();//Oculta emergente
+
+    if(!iniciada){//Se cierran instrucciones por primera vez
+    
+        //iniciaActividad();
+        
+        console.log("CATEGORIA "+defineCategoria);
+        console.log("TIPO SIMULADOR "+getType);
+        
+        switch(defineCategoria){//Define el tipo de categoria
+            case "simulador":
+                switch(getType){//Define el tipo de simulador
+                    case "pxb":
+                        if(startInit){//Hay canvas 3d en la aplicacion
+                            $("#d_loadergrl").show();//Muestra cargador
+                            iniciaSimulador();//Inicia simulador 3d
+                            iniciaEntorno3dpxb();//Inicia entorno 3d de electronica
+                        }
+                        iniciaPxb();//nicia campos que se ocupan para programacion x bloques 
+                        break;
+                    case "armado":
+                        $("#d_saltaranima").show();
+                        $("#d_loadergrl").show();//Muestra cargador
+                        iniciaSimulador();//Inicia simulador 3d
+                        iniciaArmadomecanica();//Inicia armado de mecanica
+                        break;
+                    case "physi":
+                        $("#d_loadergrl").show();//Muestra cargador
+                        $("#d_emergentegestos").show();//Muestra cargador
+                        iniciaSimulador();//Inicia simulador 3d
+                        iniciaSimulacionmecanica();//Inicia simulacion mecanica
+                        break;
+                    case "instructivo":
+                        $("#d_loadergrl").show();//Muestra cargador
+                        iniciaSimulador();//Inicia simulador 3d
+                        iniciaInstructivomecanica();//Inicia instructivo mecanica
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case "apliacion":
+                iniciaActividad();
+                break;
+            case "evaluacion":
+                iniciaActividad();
+                break;
+            case "video":
+                break;
+            case "lectura":
+                break;
+            default:
+                break;
+        }
+
+        iniciada = true;//Define que las instrucciones ya se abrieron una vez
+    }
 }
 function resizeEmergentes(){
     /*
@@ -287,7 +425,6 @@ function getChangeorientation(){
     }else{
         getOrientation = "landscape";//Landscape
     }
-    //console.log(getOrientation);
 }
 function reiniciarVen(){
 	/*

@@ -17,7 +17,7 @@ var errores = 0;//Almacena los errores
 var porcentaje = null;//Almacena la efectividad en la actividad
 var device = null;//Determina la plataforma sobre la cual se ejecuta el script
 var iniciada = false; //Para saber si se acaba de iniciar la actividad 
-
+defineCategoria = "apliacion";//Define el tipo de categoria
 //Ninguno
 /*************************************************************************************
 *
@@ -49,12 +49,12 @@ $(window).on('load',function(){
 	* SALIDAS: Ninguna.
     */
     reajusteContegrl();//Reajusta div contenedor de la aplicacion
-	$(".d_emergenteclose").on("click", function(){
-		if(!iniciada){
-			iniciaActividad();
-			iniciada = true;
-		}
-	});
+	// $(".d_emergenteclose").on("click", function(){
+	// 	if(!iniciada){
+	// 		iniciaActividad();
+	// 		iniciada = true;
+	// 	}
+	// });
 	for(i=0; i<TOTACTIVIDADES; i++){
 		$(".d_marcadorgrl").append(" <div id='foquito"+i+"' class='d_marcadorgrlpoint'></div>")
 	}

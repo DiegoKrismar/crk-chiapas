@@ -1,0 +1,395 @@
+@charset "utf-8";
+/*
+==============================================
+CSS FULLSCREEN
+==============================================
+*/
+.addfullscreen .d_footerbtnsmaxsvg{
+    display: none;
+}
+
+.addfullscreen .d_footerbtnsminsvg{
+    display: block;
+}
+.addfullscreen .d_preguntasbtnopen{
+    top: 0.5rem;
+}
+.addfullscreen .d_contegrl{
+    height: 100%;
+    top: 0;
+}
+.addfullscreen .d_contegrlmenuopen{
+    height: 60%;
+}
+.addfullscreen .d_footerbtnsexpand{
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #F15A24;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+}
+.addfullscreen .d_forceopcdata{
+    top: 0.5rem;
+    right: 4.5rem;
+}
+.addfullscreen .d_simulacionreflexionicon{
+    top: 0.5rem;
+}
+.addfullscreen .d_simulacionreflexiontxt{
+    top: 0.5rem;
+}
+/*
+==============================================
+CSS CONTENIDO
+==============================================
+*/
+body{
+    background-color: #eaeaea;
+}
+.d_contegrl{
+    height: calc(100% - 3rem);
+    top: 3rem;
+    overflow: hidden;
+}
+/*
+==============================================
+CSS BTN EXPAND
+==============================================
+*/
+.d_footerbtnblock{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_footerbtnsexpand{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    right: 9rem;
+    top: 0rem;
+}
+.d_footerbtnsmaxsvg{
+    display: block;
+}
+.d_footerbtnsminsvg{
+    display: none;
+}
+.d_footerbtnsmaxsvg > path, .d_footerbtnsminsvg > path{
+    fill: #ffffff;
+}
+/*
+==============================================
+CSS MODIFICACION DE CANVAS
+==============================================
+*/
+.d_contegrlmenuopen{
+    height: calc(60% - 3rem);
+}
+/*
+==============================================
+CSS MODIFICACION DE BTNS INFERIORES
+==============================================
+*/
+.d_forceopcdata{
+    position: absolute;
+    display: table;
+    right: 0.5rem;
+    top: 3rem;
+}
+.d_forcedata{
+    height: 3rem;
+    float: left;
+    position: relative;
+    font-family: "Berlin Sans FB";
+    color: #808080;
+    font-size: 1.2rem;
+    text-align: center;
+    border-collapse: collapse;
+    margin-right: 0.2rem;
+}
+.d_forcedatain{
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+}
+.d_forcedata > tbody > tr:nth-child(1){
+    height: 50%;
+}
+.d_forcedata > tbody > tr > td{
+    padding: 0 0.2rem 0 0.2rem;
+}
+.d_forcedata > tbody > tr:nth-child(2) > td{
+    border-bottom: 0.1rem solid #adadad;
+}
+.d_forcedata > tbody > tr > td:nth-child(2), .d_forcedata > tbody > tr > td:nth-child(4){
+    color: #009eb3;
+}
+.d_btnssimulador{
+    position: absolute;
+    display: table;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+.d_btnsmenuopen{
+    bottom: calc(40% + 2.5rem);
+}
+.d_forceopcdatamenuopen{
+    left: calc(40% + 1rem);
+}
+/*
+==============================================
+CSS EMERGENTES PREGUNTAS
+==============================================
+*/
+.d_preguntasgrl{
+    width: 100%;
+    height: 40%;
+    bottom: -40%;
+    left: 0%;
+    background-color: #ffffff;
+    position: absolute;
+}
+.d_preguntasgrlmenuopen{
+    bottom: 0;
+}
+.d_preguntasgrlconte{
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+.d_preguntasgrlhead{
+    width: calc(100% - 1rem);;
+    float: left;
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 0.1rem solid #343434;
+    box-sizing: border-box;
+}
+.d_preguntasgrlbody{
+    width: 100%;
+    height: 100%;
+    float: left;
+    background-color: rgba(255,255,255,1);
+}
+.d_preguntastitle{
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 0;
+}
+.d_preguntasgrlclose{
+    width: 100%;
+    height: 2rem;
+    top: -2.5rem;
+    right: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    background-color: #009EB3;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: absolute;
+}
+.d_preguntascloseicon{
+    width: 2rem;
+    height: 0.4rem;
+    position: absolute;
+    top: calc(50% - 0.2rem);
+    left: calc(50% - 1rem);
+    background-color: #ffffff;
+    border-radius: 0.2rem;
+}
+/*
+==============================================
+CSS PREGUNTAS REFLEXION
+==============================================
+*/
+.d_simulacionreflexionicon{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 3.5rem;
+    left: 0.5rem;
+    background-color: #f2f2f2;
+    border: 0.05rem solid #b3b3b3;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    cursor: pointer;
+    animation: indiPiezas 2s infinite;
+}
+.d_simulacionreflexionicon svg{
+    width: 100%;
+    height: 100%;
+}
+.d_simulacionreflexiontxt{
+    position: absolute;
+    top: 3.5rem;
+    left: 4rem;
+    width: calc(100% - 4.5rem);
+    background-color: #f2f2f2;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    box-shadow: 0rem 0rem 0.2rem rgb(0,0,0,.35);
+    display: none;
+}
+.d_simulacionreflexiontxt p {
+    margin: 0;
+    padding: 0.5rem;
+    color: #808080;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+}
+/*EMERGENTE GESTOS*/
+.d_emergentegestos{
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    display: none;
+}
+.d_emergentegestoscenter{
+    width: 28.6rem;
+    height: 13rem;
+    position: absolute;
+    bottom: 4rem;
+    left: calc(50% - 14.3rem);
+    background-color: rgba(255,255,255,.65);
+    background-image: url(../img/crk_simulador_interfaz_gestos.png);
+    background-size: 100% 500%;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+}
+.d_emergentegestos_tactil{
+    background-position: 0% 75%;
+}
+.d_emergentegestos_mouse{
+    background-position: 0% 50%;
+}
+.d_emergentegestosclose{
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    border-radius: 50%;
+    background-color: #009EB3;
+    cursor: pointer;
+    box-shadow: 0 0 0.2rem rgba(0,0,0,.5);
+}
+.d_emergentegestosclose > svg > path{
+    fill: #ffffff;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*****CONTENDIO*****/
+    .d_contegrl{
+        width: calc(100% - 3rem);
+        height: 100%;
+        top: 0;
+    }
+    /*****HEAD*****/
+    .d_headergrltitle{
+        width: calc(100% - 3rem);
+    }
+    /*****FOOTER*****/
+    .d_footerbtnsexpand{
+        right: 0;
+        top: 9rem;
+    }
+    /*****EMERGENTE PREGUNTAS*****/
+    .d_preguntasgrl{
+        width: 40%;
+        height: calc(100% - 3rem);
+        top: 3rem;
+        left: -40%;
+    }
+    .d_preguntasgrlclose{
+        width: 2rem;
+        height: 4rem;
+        top: calc(50% - 2rem);
+        right: -2.5rem;
+        border-top-left-radius: 0rem;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+    .d_preguntascloseicon{
+        width: 0.4rem;
+        height: 2rem;
+        top: calc(50% - 1rem);
+        left: calc(50% - 0.2rem);
+    }
+    .d_preguntasgrlmenuopen{
+        left: 0;
+    }
+    /*****PREGUNTAS REFLEXION*****/
+    .d_simulacionreflexiontxt{
+        width: calc(100% - 8rem);
+    }
+    /*****MODIFICACION CANVAS*****/
+    .d_contegrlmenuopen{
+        width: 60% ;
+        height: 100%;
+        left: 40%;
+    }
+    /*****FULLSCREEN*****/
+    .addfullscreen .d_footerbtnsexpand{
+        right: 0.5rem;
+    }
+    .addfullscreen .d_preguntasgrl{
+        height: 100%;
+        top: 0rem;
+    }
+    .addfullscreen .d_contegrlmenuopen{
+        width: 60%;
+        height: 100%;
+        left: 40%;
+    }
+    /*****ELEMENTOS INFERIORES*****/
+    .d_forceopcdata{
+        right: 3.5rem;
+        top: 3rem;
+    }
+}
+/*
+==============================================
+CSS KEYFRAMES
+==============================================
+*/
+@-webkit-keyframes indiPiezas{
+    0%{
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+    50%{
+        transform: scale(1.1) rotate(-3deg);
+        box-shadow: 0 0 0.5rem rgb(0, 0, 0, 0.35);
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+}

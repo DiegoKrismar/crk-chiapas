@@ -6,7 +6,6 @@ CSS PRELOADER
 */
 .d_helperResources{
     display: none;
-    position: fixed;
     background-image:
         url(../img/crk_comun_interfaz_grain.png),
         url(../img/crk_comun_interfaz_mosaic.png),
@@ -101,6 +100,54 @@ CSS HEADER
 .d_headergrlbtnssalirsvg > path, .d_headergrlbtnsinstruccionessvg > path, .d_headergrlbtnsobjetivossvg > path{
     fill: #ffffff;
 }
+.d_headergrltooltip{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F15A24;
+    position: absolute;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: "Berlin Sans FB";
+    color: #ffffff;
+    font-size: 1.2rem;
+    background-image: url(../img/crk_comun_interfaz_grain.png);
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,.35);
+    border-radius: 0.5rem;
+}
+.d_headergrltooltiparrowside{
+    width: 0; 
+    height: 0; 
+    border-left: 0.5rem solid #F15A24;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent; 
+    position: absolute;
+    right: -0.5rem;
+    top: 1rem;
+}
+.d_headergrltooltiparrowtop{
+    width: 0; 
+    height: 0; 
+    border-bottom: 0.5rem solid #F15A24;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent; 
+    position: absolute;
+    top: -0.5rem;
+    right: 1rem;
+}
+.d_headergrltooltiparrowbottom{
+    width: 0; 
+    height: 0; 
+    border-top: 0.5rem solid #F15A24;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent; 
+    position: absolute;
+    bottom: -0.5rem;
+    right: 1rem;
+}
 /*
 ==============================================
 CSS CONTENIDO
@@ -131,6 +178,13 @@ CSS EMERGENTES
     left: 0%;
     background-color: rgba(0,0,0,.65);
     display: none;
+}
+.d_emergentesbackclose{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .d_emergenteoconte{
     position: absolute;
@@ -287,7 +341,13 @@ CSS KEYFRAMES
 CSS MEDIA
 ==============================================
 */
-@media (orientation: landscape) {
+@media screen and (orientation: portrait) {
+    /*****DETECCION DE ORIENTACION*****/
+    .d_helperResources{
+        position: fixed;
+    }
+}
+@media screen and (orientation: landscape) {
     /*****BODY*****/
     body{
         min-width: 450px;

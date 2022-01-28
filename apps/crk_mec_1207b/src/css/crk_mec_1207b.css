@@ -1,0 +1,404 @@
+@charset "utf-8";
+/*
+==============================================
+CSS MANIPULACION GRL
+==============================================
+*/
+.d_menupasosgrl{
+    display: none !important;
+}
+.d_btnsopcgrlpiezas{
+    display: none !important;
+}
+.d_headergrltitle{
+    width: calc(100% - 12rem);
+}
+.d_btnsopcgrl{
+    right: 0;
+    top: 13rem;
+    display: none;
+}
+.d_contegrl{
+    bottom: 0;
+}
+.d_contegrl{
+    height: calc(100% - 6rem);
+}
+.d_contegrl_resize{
+    width: 100%;
+    height: calc(100% - 18rem);
+    bottom: 12rem;
+}
+.d_btngrlprev, .d_btngrlnext{
+    display: none !important;
+}
+.d_footerbtnsexpand{
+    display: none;
+}
+.d_btngrltextstep{
+    display: none;
+}
+/*
+==============================================
+CSS FULLSCREEN
+==============================================
+*/
+.addfullscreen .d_pasospiezasgrl{
+    top: 0 !important;
+}
+.addfullscreen .d_footerbtnsexpand{
+    top: 10rem !important;
+}
+.addfullscreen .d_btnsopcgrl{
+    top: 10rem;
+}
+/*
+==============================================
+CSS ELEMENTOS MENU
+==============================================
+*/
+.d_menupiezasgrl{
+    width: 100%;
+    height: 12rem;
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    //background-color: rgba(242,242,242,1);
+    background-color: #ffffff;
+    //border-radius: 1rem;
+    border-width: 0.05rem 0 0 0;
+    border-style: solid;
+    border-color: #b3b3b3;
+    display: none;
+}
+.d_menupiezasgrl_block{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_menupiezasgrlin{
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    //background-color: rgba(0,0,0,.25);
+    //border-radius: 1rem;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.d_menupiezasgrlin::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+.d_menupiezasgrlin::-webkit-scrollbar-thumb {
+    background: rgba(0,158,179,0.5);
+    border-radius: 1rem;
+}
+.d_menupiezasgrlin::-webkit-scrollbar-thumb:hover {
+    background: #009EB3;
+}
+.d_menupiezasgrlin::-webkit-scrollbar-thumb:active {
+    background-color: #009EB3;
+}
+.d_menupiezasgrlin::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    border-radius: 1rem;
+}
+.d_menupiezasgrlin::-webkit-scrollbar-track:hover,
+.d_menupiezasgrlin::-webkit-scrollbar-track:active {
+    background: #e1e1e1;
+}
+.d_menupiezasgrlinscroll{
+    width: 171rem;
+    height: 100%;
+    display: table;
+}
+.d_menupiezasgrlin_inactive{
+    opacity: 0.5;
+}
+.d_menupiezagrlpieza{
+    width: auto;
+    height: 9rem;
+    float: left;
+}
+/*.d_menupiezasgrlzoom{
+    transform: scale(1.12);
+}*/
+.d_menupiezasgrlzoom{
+    width: 18rem;
+    height: 18rem;
+    position: absolute;
+    top: auto;
+    right: 0.5rem;
+    bottom: 12.5rem;
+    background-color: rgba(255,255,255,.45);
+    border-radius: 1rem;
+    display: none;
+}
+
+.d_menupiezasgrlzoomin{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background-color: white;
+    background-image: url(/crk-chiapas/apps/src/img/crk_armado_rutina_spritepiezas.png);
+    background-size: 1000% 600%;
+    background-repeat: no-repeat;
+    border-radius: 0.7rem;
+    box-shadow: 0 0 0.2rem rgba(0,0,0,.25);
+}
+.d_menupiezagrlpiezaimg{
+    width: 8rem;
+    height: 8rem;
+    //margin: auto;
+    margin: 0.5rem;
+    position: relative;
+    background-image: url(/crk-chiapas/apps/src/img/crk_armado_rutina_spritepiezas.png);
+    background-size: 1000% 600%;
+    background-repeat: no-repeat;
+}
+.d_menupiezagrlpiezaimg > input{
+    visibility: hidden;
+}
+.d_menupiezagrlpiezaimg > label{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    
+    cursor: pointer;
+}
+.d_menupiezagrlpiezaimg > input[type=checkbox]:checked + label{
+    border: 0.1rem solid #009EB3;
+    box-shadow: 0 0 0.5rem 0.1rem #009EB3 inset;
+}
+.d_menupiezagrlpiezatxt{
+    color: #808080;
+    width: 8rem;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+.d_menupiezasgrlfloat{
+    width: 100%;
+    height: 10rem;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    background-color: rgba(0,0,0,.2);
+}
+/*
+==============================================
+CSS ELEMENTOS PASOS
+==============================================
+*/
+.d_pasospiezasgrl{
+    width: 100%;
+    //height: 6rem;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    //background-color: floralwhite;
+    display: none;
+}
+.d_pasospiezagrlbtns{
+    width: 100%;
+    //height: 3rem;
+    float: left;
+    background-color: #343434;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.d_pasospiezagrlbtns::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+.d_pasospiezagrlbtns::-webkit-scrollbar-thumb {
+    background: rgba(0,158,179,0.5);
+}
+.d_pasospiezagrlbtns::-webkit-scrollbar-thumb:hover {
+    background: #009EB3;
+}
+.d_pasospiezagrlbtns::-webkit-scrollbar-thumb:active {
+    background-color: #009EB3;
+}
+.d_pasospiezagrlbtns::-webkit-scrollbar-track {
+    background: #e1e1e1;
+}
+.d_pasospiezagrlbtns::-webkit-scrollbar-track:hover,
+.d_pasospiezagrlbtns::-webkit-scrollbar-track:active {
+    background: #e1e1e1;
+}
+.d_pasospiezagrlbtnsscroll{
+    width: 54rem;
+}
+.d_pasospiezagrlbtn{
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,1);
+    position: relative;
+}
+.d_pasospiezagrlbtn_press{
+    background-color: rgba(255,255,255,.2);
+    color: #FCEE21;
+    font-size: 1.4rem;
+    //border: 0.15rem solid #ffffff;
+    //box-sizing: border-box;
+}
+.d_pasospiezagrlbtn_bien{
+    background-color: #8CC63F;
+    color: #ffffff;
+}
+.d_pasospiezagrltxt{
+    width: 100%;
+    float: left;
+    background-color: rgba(255,255,255,.45);
+    color: #808080;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    display: none;
+}
+.d_pasospiezagrlopction{
+    width: 100%;
+    //height: 3rem;
+    float: left;
+    background-color: rgba(255,255,255,.45);
+    
+}
+.d_pasospiezagrlopctionname{
+    padding: 0.5rem;
+    margin: 0.3rem 0.5rem 0.3rem 0.5rem;
+    background-color: #ffffff;
+    color: #808080;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    float: left;
+    display: table;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+.d_pasospiezagrlopctionname_resalte{
+    border: 0.05rem solid #8CC63F;
+    color: #8CC63F;
+}
+.d_pasospiezagrlopctionname_error{
+    padding: 0.5rem;
+    margin: 0.3rem 0.5rem 0.3rem 0.5rem;
+    background-color: #ffffff;
+    color: #ed1c24;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    float: left;
+    display: table;
+    border: 0.05rem solid #ed1c24;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*FULLSCREEN*/
+    .addfullscreen .d_pasospiezasgrl{
+        width: 100% !important;
+        top: 0 !important;
+    }
+    .addfullscreen .d_menupiezasgrl{
+        right: 0;
+    }
+    .addfullscreen .d_footerbtnsexpand{
+        top: 10rem !important;
+    }
+    .addfullscreen .d_contegrl{
+        top: 3rem;
+        height: calc(100% - 3rem);
+    }
+    .addfullscreen .d_contegrl_ajuste{
+        //right: 0;
+    }
+    .addfullscreen .d_footerbtnsexpand{
+        right: 12.5rem;
+    }
+    .addfullscreen .d_btnsopcgrl{
+        top: 10rem;
+        right: 16rem;
+    }
+    /*MANIPULACION GRL*/
+    .d_headergrltitle{
+        width: calc(100% - 3rem);
+    }
+    .d_contegrl{
+        width: calc(100% - 3rem);
+        //height: calc(100% - 6rem);
+        //top: 6rem;
+    }
+    .d_contegrl_ajuste{
+        height: calc(100% - 6rem);
+        top: 6rem;
+    }
+    .d_contegrl_resize{
+        width: calc(100% - 15rem);
+    }
+    .d_btnsopcgrl{
+        right: 15rem;
+    }
+    /*ELEMENTOS MENU*/
+    .d_menupiezasgrl{
+        width: 12rem;
+        height: 100%;
+        top: 0rem;
+        right: 3rem;
+        border-width: 0 0 0 0.05rem;
+    }
+    .d_menupiezasgrlinscroll{
+        width: 100%;
+        height: auto;
+    }
+    .d_menupiezagrlpieza{
+        width: 9rem;
+        height: auto;
+        //margin: 0.5rem auto 0.5rem auto;
+    }
+    .d_menupiezasgrlfloat{
+        width: 10rem;
+        height: 100%;
+        right: 100%;
+        bottom: 0;
+    }
+    .d_menupiezasgrlzoom{
+        top: 13.5rem;
+        right: 16rem;
+        bottom: auto;
+    }
+    /*ELEMENTOS PASOS*/
+    .d_pasospiezasgrl{
+        width: calc(100% - 3rem);
+        top: 3rem;
+    }
+    .d_pasospiezasgrl_reajuste{
+        width: calc(100% - 15rem);
+    }
+}

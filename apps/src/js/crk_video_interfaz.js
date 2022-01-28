@@ -19,6 +19,7 @@
  *************************************************************************************/
 var imgPoster = $("#d_videogrlsource").attr("poster"); //Detectamos imagen del poster
 var seekBar = false; //La barra no se mueve
+defineCategoria = "video";//Define el tipo de categoria
 /*************************************************************************************
  
  *

@@ -15,7 +15,7 @@ var errores = 0;//Almacena los errores
 var porcentaje = null;//Almacena la efectividad en la actividad
 var tmpSolucion=null;
 var iniciada = false; //Para saber si se acaba de iniciar la actividad 
-//Ninguno
+defineCategoria = "evaluacion";//Define el tipo de categoria
 /*************************************************************************************
 *
 * 								FUNCIONES Y PROCEDIMIENTOS
@@ -43,12 +43,12 @@ $(window).on('load',function(){
 	* ENTRADAS: Ninguno.
 	* SALIDAS: Ninguna.
     */
-	$(".d_emergenteclose").on("click", function(){
-		if(!iniciada){
-			iniciaActividad();
-			iniciada = true;
-		}
-	});
+	// $(".d_emergenteclose").on("click", function(){
+	// 	if(!iniciada){
+	// 		iniciaActividad();
+	// 		iniciada = true;
+	// 	}
+	// });
 	muestraInstrucciones();
 });
 $(window).on("orientationchange",function(event){

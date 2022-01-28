@@ -6,9 +6,10 @@
 const maxLengthPractices = 15000; //Numero de caracteres maximos en BD
 const expirationPractices = 31556952000; //Milisegundos que tiene de vigencia las practicas (1 año)
 getType = "pxb"; //Variable para saber si es simulador o armado
-const KEY = "49";
-const KEY_2 = "50";
-const KEY_3 = "51";
+const KEY = "81";
+const KEY_2 = "87";
+const KEY_3 = "69";
+const KEY_4 = "82"
 const domainsWithDB = [
 	"https://krismar.mx/KrismarApps/",
 	"https://www.krismar.mx/KrismarApps/",
@@ -67,24 +68,7 @@ $(window).resize(function () {
 
 	resetMenunavopen(); //Resetea menu nav superior
 });
-$(window).on("load", function () {
-	/*
-	 * NOMBRE: load.
-	 * UTILIDAD: Una vez abierto el dom
-	 * ENTRADAS: Ninguno.
-	 * SALIDAS: Ninguna.
-	 */
-	/*POR EL MOMENTO TODO ESTA CONTENIDO EN EL DOM DE LA INTERFAZ Y SE MUESTRAN SOLO LOS ELEMENTOS NECESARIOS, ESTO CAMBIARA AL HACER MODIFICACIONES EN LA INTERFAZ*/
-	$("nav, div, section").remove(".d_armado");
-	$("nav, div, section").remove(".d_instructivo");
-	$("nav, div, section").remove(".d_simulacion");
-	/****************************************************/
-	$("#" + vistaStart).trigger("click"); //Inicia con la vista de bloques al iniciar
-	vistaShow(); //Vistas que se ven en la aplicacion
-
-	$(".d_pxbbloquesviewspopup").hide(); //Oculta la ventana de carga/guardar
-	adjustInterface(); //Ajusta algunos elementos de la interfaz
-});
+$(window).on("load", function () {});
 $(window).on("orientationchange", function (event) {
 	/*
 	 * NOMBRE: orientationchange.
@@ -94,6 +78,24 @@ $(window).on("orientationchange", function (event) {
 	 */
 	resetViewactions(); //Resetea btn menu views
 });
+function iniciaPxb(){
+    /*
+    * NOMBRE: iniciaPxb.
+    * UTILIDAD: Inicia campos que se ocupan para programacion x bloques
+    * ENTRADAS: Ninguno.
+    * SALIDAS: Ninguna.
+    */
+    /*POR EL MOMENTO TODO ESTA CONTENIDO EN EL DOM DE LA INTERFAZ Y SE MUESTRAN SOLO LOS ELEMENTOS NECESARIOS, ESTO CAMBIARA AL HACER MODIFICACIONES EN LA INTERFAZ*/
+    $("nav, div, section").remove(".d_armado");
+    $("nav, div, section").remove(".d_instructivo");
+    $("nav, div, section").remove(".d_simulacion");
+    /****************************************************/
+    $("#"+vistaStart).trigger( "click" );//Inicia con la vista de bloques al iniciar
+    vistaShow()//Vistas que se ven en la aplicacion
+    
+    $(".d_pxbbloquesviewspopup").hide(); //Oculta la ventana de carga/guardar
+	adjustInterface(); //Ajusta algunos elementos de la interfaz
+}
 function addMovepreview() {
 	/*
 	 * NOMBRE: addMovepreview.
@@ -364,30 +366,43 @@ function closePreview() {
 			.parent("div")
 			.addClass("ocultaElemento");
 	}
+	for (let i = 0; i < pool_variables_push.length; i++) {
+		$("#" + pool_variables_push[i].nombre)
+			.parent("div")
+			.addClass("ocultaElemento");
+	}
 }
 
 //EVENTOS PARA SIMULADOR LOS PUSH BUTTON EN DESKTOP Y MOBILE
 $(document).keydown(function (e) {
 	//Evento con las flechas del teclado para HIGH
 	if (e.keyCode == KEY && vistaPrevia && !eventClick) {
-		$("#pushButton_9").attr("estado", "HIGH");
-		$("#pushButton_9").css({
+		$("#pushButton_0").attr("estado", "HIGH");
+		$("#pushButton_0").css({
 			"border-color": "green",
 			"border-width": "1px",
 			"border-style": "solid",
 		});
 		eventArrow = true;
 	} else if (e.keyCode == KEY_2 && vistaPrevia && !eventClick) {
-		$("#pushButton_10").attr("estado", "HIGH");
-		$("#pushButton_10").css({
+		$("#pushButton_1").attr("estado", "HIGH");
+		$("#pushButton_1").css({
 			"border-color": "green",
 			"border-width": "1px",
 			"border-style": "solid",
 		});
 		eventArrow = true;
 	} else if (e.keyCode == KEY_3 && vistaPrevia && !eventClick) {
-		$("#pushButton_11").attr("estado", "HIGH");
-		$("#pushButton_11").css({
+		$("#pushButton_2").attr("estado", "HIGH");
+		$("#pushButton_2").css({
+			"border-color": "green",
+			"border-width": "1px",
+			"border-style": "solid",
+		});
+		eventArrow = true;
+	} else if (e.keyCode == KEY_4 && vistaPrevia && !eventClick) {
+		$("#pushButton_3").attr("estado", "HIGH");
+		$("#pushButton_3").css({
 			"border-color": "green",
 			"border-width": "1px",
 			"border-style": "solid",
@@ -398,24 +413,32 @@ $(document).keydown(function (e) {
 $(document).keyup(function (e) {
 	//Evento con las flechas del teclado para LOW
 	if (e.keyCode == KEY && vistaPrevia && !eventClick) {
-		$("#pushButton_9").attr("estado", "LOW");
-		$("#pushButton_9").css({
+		$("#pushButton_0").attr("estado", "LOW");
+		$("#pushButton_0").css({
 			"border-color": "green",
 			"border-width": "0px",
 			"border-style": "solid",
 		});
 		eventArrow = false;
 	} else if (e.keyCode == KEY_2 && vistaPrevia && !eventClick) {
-		$("#pushButton_10").attr("estado", "LOW");
-		$("#pushButton_10").css({
+		$("#pushButton_1").attr("estado", "LOW");
+		$("#pushButton_1").css({
 			"border-color": "green",
 			"border-width": "0px",
 			"border-style": "solid",
 		});
 		eventArrow = false;
 	} else if (e.keyCode == KEY_3 && vistaPrevia && !eventClick) {
-		$("#pushButton_11").attr("estado", "LOW");
-		$("#pushButton_11").css({
+		$("#pushButton_2").attr("estado", "LOW");
+		$("#pushButton_2").css({
+			"border-color": "green",
+			"border-width": "0px",
+			"border-style": "solid",
+		});
+		eventArrow = false;
+	} else if (e.keyCode == KEY_4 && vistaPrevia && !eventClick) {
+		$("#pushButton_3").attr("estado", "LOW");
+		$("#pushButton_3").css({
 			"border-color": "green",
 			"border-width": "0px",
 			"border-style": "solid",
@@ -423,54 +446,57 @@ $(document).keyup(function (e) {
 		eventArrow = false;
 	}
 });
-$(document).on("pointerdown", "#pushButton_9", function () {
+// Eventos para moviles
+$(document).on("pointerdown", "#pushButton_0", function () {
 	//Evento al dar clic o touch en mobile
 	if (!eventArrow) {
-		$("#pushButton_9").attr("estado", "HIGH");
+		$("#pushButton_0").attr("estado", "HIGH");
 		eventClick = true;
 	}
 });
-$(document).on("pointerup", "#pushButton_9", function () {
+$(document).on("pointerup", "#pushButton_0", function () {
 	if (!eventArrow) {
-		$("#pushButton_9").attr("estado", "LOW");
+		$("#pushButton_0").attr("estado", "LOW");
 		eventClick = false;
 	}
 });
-$(document).on("pointerdown", "#pushButton_10", function () {
+$(document).on("pointerdown", "#pushButton_1", function () {
 	if (!eventArrow) {
-		$("#pushButton_10").attr("estado", "HIGH");
+		$("#pushButton_1").attr("estado", "HIGH");
 		eventClick = true;
 	}
 });
-$(document).on("pointerup", "#pushButton_10", function () {
+$(document).on("pointerup", "#pushButton_1", function () {
 	if (!eventArrow) {
-		$("#pushButton_10").attr("estado", "LOW");
+		$("#pushButton_1").attr("estado", "LOW");
 		eventClick = false;
 	}
 });
-$(document).on("pointerdown", "#pushButton_11", function () {
+$(document).on("pointerdown", "#pushButton_2", function () {
 	if (!eventArrow) {
-		$("#pushButton_11").attr("estado", "HIGH");
+		$("#pushButton_2").attr("estado", "HIGH");
 		eventClick = true;
 	}
 });
-$(document).on("pointerup", "#pushButton_11", function () {
+$(document).on("pointerup", "#pushButton_2", function () {
 	if (!eventArrow) {
-		$("#pushButton_11").attr("estado", "LOW");
+		$("#pushButton_2").attr("estado", "LOW");
+		eventClick = false;
+	}
+});
+$(document).on("pointerdown", "#pushButton_3", function () {
+	if (!eventArrow) {
+		$("#pushButton_3").attr("estado", "HIGH");
+		eventClick = true;
+	}
+});
+$(document).on("pointerup", "#pushButton_3", function () {
+	if (!eventArrow) {
+		$("#pushButton_3").attr("estado", "LOW");
 		eventClick = false;
 	}
 });
 function restartCSS() {
-	$("#led_0").css("background-color", "white");
-	$("#led_0").attr("estado", "LOW");
-	$("#led_0").parent("div").addClass("ocultaElemento");
-
-	$("#led_1").css("background-color", "white");
-	$("#led_1").attr("estado", "LOW");
-	$("#led_2").css("background-color", "white");
-	$("#led_2").attr("estado", "LOW");
-	$("#led_3").css("background-color", "white");
-	$("#led_3").attr("estado", "LOW");
 	$("#led_4").css("background-color", "white");
 	$("#led_4").attr("estado", "LOW");
 	$("#led_5").css("background-color", "white");
@@ -479,6 +505,14 @@ function restartCSS() {
 	$("#led_6").attr("estado", "LOW");
 	$("#led_7").css("background-color", "white");
 	$("#led_7").attr("estado", "LOW");
+	$("#led_10").css("background-color", "white");
+	$("#led_10").attr("estado", "LOW");
+	$("#led_11").css("background-color", "white");
+	$("#led_11").attr("estado", "LOW");
+	$("#led_12").css("background-color", "white");
+	$("#led_12").attr("estado", "LOW");
+	$("#led_13").css("background-color", "white");
+	$("#led_13").attr("estado", "LOW");
 
 	$("#rgb1").css("background-color", "white");
 	$("#rgb1").attr("estado", "LOW");
@@ -490,9 +524,10 @@ function restartCSS() {
 	$("#zumbador_8").css("display", "none");
 	$("#zumbador_9").css("display", "none");
 
-	$("#pushButton_9").attr("estado", "LOW");
-	$("#pushButton_10").attr("estado", "LOW");
-	$("#pushButton_11").attr("estado", "LOW");
+	$("#pushButton_0").attr("estado", "LOW");
+	$("#pushButton_1").attr("estado", "LOW");
+	$("#pushButton_2").attr("estado", "LOW");
+	$("#pushButton_3").attr("estado", "LOW");
 }
 
 var secuencial = [];
@@ -512,6 +547,11 @@ function funcionalidadPreview() {
 	//Solo muestra los elementos que hay
 	for (let i = 0; i < pool_variables_predefinidas.length; i++) {
 		$("#" + pool_variables_predefinidas[i].nombre)
+			.parent("div")
+			.removeClass("ocultaElemento");
+	}
+	for (let i = 0; i < pool_variables_push.length; i++) {
+		$("#" + pool_variables_push[i].nombre)
 			.parent("div")
 			.removeClass("ocultaElemento");
 	}
@@ -1744,7 +1784,9 @@ function combo(raiz, padre) {
 	alto();
 	$(padre).append(clon);
 	agregaBloqueL(saveDrag);
-
+	if($(clon).attr("subtipo") === "si"){
+		$(clon).find("div.d_pxbopcionbtntxt2").show()
+	}
 	return clon;
 }
 function recreaHTML(array, padre) {
@@ -1899,11 +1941,44 @@ function recreaHTMLCSS(bloque, contenido) {
 	 */
 	switch ($(bloque).attr("subtipo")) {
 		case "led":
-			let led_pin = contenido.pin;
+			let led_nombre = contenido.nombre;
+			switch (led_nombre) {
+				case "led_4":
+					
+					led_nombre = "Verde 1";
+					break;
+				case "led_5":
+					
+					led_nombre = "Amarillo 1";
+					break;
+				case "led_6":
+					
+					led_nombre = "Rojo 1";
+					break;
+				case "led_7":
+					
+					led_nombre = "Azul 1";
+					break
+				case "led_10":
+					
+					led_nombre = "Verde 2";
+					break;
+				case "led_11":
+					
+					led_nombre = "Amarillo 2";
+					break;
+				case "led_12":
+					
+					led_nombre = "Rojo 2";
+					break;
+				case "led_13":
+					
+					led_nombre = "Azul 2";
+			}
 			$(bloque).find("[tipo=icono]").css("background-color", contenido.color);
 			resizeObserver.observe($(bloque)[0]); //Agregar el listener del resize
 			$(bloque).find("span.confconte").prev().text(''); //Se le quitó el NOMBRE
-			$(bloque).find("span.confconte").text("(" + led_pin + "): = " + contenido.estado); //Insertar el PIN y el ESTADO
+			$(bloque).find("span.confconte").text("(" + led_nombre + "): = " + contenido.estado); //Insertar el PIN y el ESTADO
 			break;
 		case "rgb":
 			let color =
@@ -3105,6 +3180,7 @@ function showEditDelete() {
 	 */
 	bandera_menu = true;
 	showMessage("", 0);
+    $(".d_pxbnav").removeClass('d_pxbnav_menu');//Agrega estilos para quitar menu superior de navegacion
 	$("#menuCargar").css("display", "block");
 	$(".d_pxbbloquesviewspopuptitletxt").text("Mis proyectos");
 	$("#menuGuardar, #menuDescargar").css("display", "none");
@@ -3133,6 +3209,7 @@ function showWindowRead() {
 	bandera_menu = true;
 	configWindow = 1;
 	showMessage("", 0);
+    $(".d_pxbnav").removeClass('d_pxbnav_menu');//Agrega estilos para quitar menu superior de navegacion
 	$("#menuCargar").css("display", "block");
 	$(".d_pxbbloquesviewspopuptitletxt").text("Cargar proyecto");
 	$("#menuGuardar, #menuDescargar").css("display", "none");
@@ -3161,6 +3238,7 @@ function showWindowWrite() {
 	bandera_menu = false;
 	configWindow = 2;
 	//Por defecto, desactivar el btn de aceptar del guardado
+    $(".d_pxbnav").removeClass('d_pxbnav_menu');//Agrega estilos para quitar menu superior de navegacion
 	$(".d_pxbbloquesviewspopupcontebtnsaccept").show().css("opacity", ".5");
 	$("#menuCargar, #menuDescargar").css("display", "none");
 	$("#menuGuardar").css("display", "block");

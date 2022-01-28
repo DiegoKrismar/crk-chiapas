@@ -18,15 +18,15 @@ var altoSet;//Alto del canvas
 //var imgPrefijo = "src/img/crk_simulador_interfaz_";//Almacena parte de la ruta de archivos img
 
 //Al subir
-var gltfPrefijo = "src/interfaz/crk/gltf/crk_simulador_interfaz_";//Almacena parte de la ruta de archivos gltf
-var imgPrefijo = "src/interfaz/crk/img/crk_simulador_interfaz_";//Almacena parte de la ruta de archivos img
+var gltfPrefijo = "../src/gltf/crk_simulador_interfaz_";//Almacena parte de la ruta de archivos gltf
+var imgPrefijo = "../src/img/crk_simulador_interfaz_";//Almacena parte de la ruta de archivos img
 
 
-var rutaSRC = "src/img/";//Almacena parte de la ruta src
+var rutaSRC = "../src/img/";//Almacena parte de la ruta src
 var renderer, scene, camera, controls, grid, axesHelper, labelRenderer;
 var ambientLight, spotLight1, spotLight2;//Lights
 var mdfTexture, ledlightTexture, ledposTexture, lednegTexture;//Textures
-var mdfMaterial, strawMaterial, stickMaterial, ropeMaterial, metalMaterial, flexMaterial, ledlightMaterial, ledposMaterial, lednegMaterial;//Materials
+var mdfMaterial, strawMaterial, stickMaterial, ropeMaterial, metalMaterial, flexMaterial, ledlightMaterial, ledposMaterial, lednegMaterial,ultrasonicMaterial;//Materials
 var mdfinColor, mdfoutColor, strawColor, stickColor, cuentasColor, ropeColor, ledColor, resistanceColor, resistanceStrip1, resistanceStrip2, resistanceMultiplier, resistanceTolerance, metalColor, arrowinColor, arrowoutColor;//Colors
 var gltfClone, meshClone, helperClone, shapeGroup, groupClone;//Objects
 var strawGeometry, stickGeometry, sticklightGeometry;//Geometry
@@ -66,36 +66,31 @@ var groupprov = [];//Guarga los grupos de cada armado, para despues clonarlos
 var setRope = false;//Establece si hay animacion para cuerda
 var groupCatmull, pointsCatmull, geometryLine, materialLine, strokeLine, geometryTube, meshTube;//Almacena elementos para la cuerda
 var easeEffect = TWEEN.Easing.Quadratic.Out;//Efecto ease para tween
-var startInit = true;//Determina si hay canvas 3d en la aplicacion
+var startInit = false;//Determina si hay canvas 3d en la aplicacion
 
 var arrayGltf = [];//Guarda los GLTF que se construyen en cada practica.
+defineCategoria = "simulador";//Define el tipo de categoria
 /*************************************************************************************
 *
 * 								FUNCIONES Y PROCEDIMIENTOS
 *
 **************************************************************************************/
-$(document).ready(function(){
-    /*
-	* NOMBRE: ready.
-	* UTILIDAD: Detecta el documento esta listo
-	* SALIDAS: Ninguna.
-    */
-});
-$(window).resize(function() {
-    /*
-	* NOMBRE: resize.
-	* UTILIDAD: Detecta el resize del navegador
-	* ENTRADAS: Ninguno.
-	* SALIDAS: Ninguna.
-    */
-    if(startInit){//Hay canvas 3d en la aplicacion
-        reajusteConte3d();//Reajusta el contenido 3d en resize
-    }
-});
+$(document).ready(function(){});
+$(window).resize(function() {});
 $(window).on('load',function(){
     /*
 	* NOMBRE: load.
 	* UTILIDAD: Una vez abierto el dom
+	* ENTRADAS: Ninguno.
+	* SALIDAS: Ninguna.
+    */
+    muestraInstrucciones();//Muestra las instrucciones de la aplicación.
+});
+$(window).on("orientationchange",function(event){})
+function iniciaSimulador(){
+    /*
+	* NOMBRE: iniciaSimulador.
+	* UTILIDAD: Inicia simulacion 3d
 	* ENTRADAS: Ninguno.
 	* SALIDAS: Ninguna.
     */
@@ -108,19 +103,8 @@ $(window).on('load',function(){
         init();//Inicia ambiente 3D
     }else{
         $("#d_loadergrl").remove();//Oculta loader de construccion
-    }
-});
-$(window).on("orientationchange",function(event){
-    /*
-	* NOMBRE: orientationchange.
-	* UTILIDAD: Detecta cambio de orientacion del dispositivo
-	* ENTRADAS: Ninguno.
-	* SALIDAS: Ninguna.
-    */
-    if(startInit){//Hay canvas 3d en la aplicacion
-        reajusteConte3d();//Reajusta el contenido 3d en resize
-    }
-})
+    } 
+}
 function reajusteConte3d(){
     /*
 	* NOMBRE: reajusteConte3d.
@@ -291,11 +275,13 @@ function setTexture(){
 	* SALIDAS: Ninguna.
     * VARIABLES: Ninguna
     */
+   console.log(IP+imgPrefijo+"flexLarge_texture.png");
     mdfTexture = new THREE.TextureLoader().load( IP+imgPrefijo+"flexLarge_texture.png" );
     mdfTexture.wrapS = THREE.RepeatWrapping;
     mdfTexture.wrapT = THREE.RepeatWrapping;
     mdfTexture.repeat.set( 1, 1 );
     
+    console.log(IP+rutaSRC+'crk_entorno3d_rutina_sprite.png');
     ledlightTexture = new THREE.TextureLoader().load( IP+rutaSRC+'crk_entorno3d_rutina_sprite.png' );
     ledlightTexture.wrapS = THREE.RepeatWrapping;
     ledlightTexture.wrapT = THREE.RepeatWrapping;
@@ -331,6 +317,7 @@ function setColor(){
     stickColor = new THREE.Color("rgb(255, 255, 255)");
     ropeColor = new THREE.Color("rgb(0, 205, 230)");
     ledColor = new THREE.Color("rgb(0, 0, 0)");
+    ultrasonicColor = new THREE.Color("rgb(0, 0, 0)");
     resistanceColor = new THREE.Color(0xd9b477);
     resistanceStrip1 = new THREE.Color(0xab947e);
     resistanceStrip2 = new THREE.Color(0x504f4f);
@@ -350,8 +337,9 @@ function setMaterial(){
     stickMaterial = new THREE.MeshLambertMaterial({color: stickColor, side: THREE.DoubleSide});
     //mdfMaterial = new THREE.MeshLambertMaterial({ map: mdfTexture });
     ropeMaterial = new THREE.MeshLambertMaterial({color: ropeColor, side: THREE.DoubleSide});
-    metalMaterial = new THREE.MeshPhongMaterial( {color: metalColor, shininess: 100, emissive: 0x000000, specular: 0xffffff, side: THREE.FrontSide} );
+    metalMaterial = new THREE.MeshPhongMaterial( {color: metalColor, shininess: 100, emissive: 0x000000, side: THREE.FrontSide} );
     flexMaterial = new THREE.MeshLambertMaterial({map: mdfTexture, color: mdfinColor, side: THREE.DoubleSide});
+    ultrasonicMaterial = new THREE.MeshLambertMaterial({color: ultrasonicColor, transparent: true, opacity: 0.4, emissive: 0x000000});
     
     ledlightMaterial = new THREE.SpriteMaterial( { map: ledlightTexture, color: new THREE.Color( 0, 0, 0 ),transparent: true, blending: THREE.AdditiveBlending, opacity: 1});
     
@@ -472,6 +460,7 @@ function classaddGltf(namePieza,visible,num){
     */
     this.creaGltf = function(){
         var loaders = new THREE.GLTFLoader();
+        console.log(IP+gltfPrefijo+namePieza+".gltf");
         loaders.load(
             IP+gltfPrefijo+namePieza+".gltf",
             function(gltf){
@@ -508,6 +497,11 @@ function classaddGltf(namePieza,visible,num){
                         //Material de pieza flexible
                         if(item2.material.name === "Flex_inside"){
                             item2.material = flexMaterial;
+                        }
+                        
+                        //Material malla de ultrasonic
+                        if(item2.material.name === "ultrasonic_malla"){
+                            item2.material = ultrasonicMaterial;
                         }
                         
                         //Color de cuentas
@@ -667,11 +661,101 @@ function classaddUsb(name,aX,aY,aZ,bX,bY,bZ,cX,cY,cZ,dX,dY,dZ,visible,num){
     this.creaUsb = function(){
 
         //this.clone.name = "HOLA";
-        //CREA USB
-        this.cloneA = new classClonegltf("usb",aX,aY,aZ,0,-(girRad*90),0,true,num[2]);
-        this.cloneA.creaClonegltf();
+        
+        if(name === "acadapter"){
+            
+            //CREA ADAPTER
+            this.cloneA = new classClonegltf("energyadapter",aX,aY,aZ,0,-(girRad*90),0,true,num[2]);
+            this.cloneA.creaClonegltf();
 
+            //CREA JUMPERS
+
+            this.cloneB = new classClonegltf("pinPowerpos",bX,bY,bZ,0,0,0,true,num[0]);
+            this.cloneB.creaClonegltf();
+            
+            this.curveQuadbezier1 = new THREE.CubicBezierCurve3(
+                new THREE.Vector4(
+                    this.cloneA.clone.position.x,
+                    this.cloneA.clone.position.y,
+                    this.cloneA.clone.position.z+2.8,
+                    1
+                ),
+                new THREE.Vector4(
+                    this.cloneA.clone.position.x,
+                    this.cloneA.clone.position.y,
+                    this.cloneA.clone.position.z+8,
+                    1
+                ),
+                new THREE.Vector4(
+                    this.cloneB.clone.position.x,
+                    this.cloneB.clone.position.y+8,
+                    this.cloneB.clone.position.z,
+                    1
+                ),
+                new THREE.Vector4(
+                    this.cloneB.clone.position.x,
+                    this.cloneB.clone.position.y+0.7,
+                    this.cloneB.clone.position.z,
+                    1
+                )
+            );
+            this.curveGeometry1 = new THREE.TubeBufferGeometry(this.curveQuadbezier1, 80, 0.05, 40, false);
+            this.curveGeometry1.dynamic = true;
+            this.curveMaterial1 = new THREE.MeshLambertMaterial({color: 0x4d4d4d, side: THREE.DoubleSide});
+            this.curveMesh1 = new THREE.Mesh(this.curveGeometry1, this.curveMaterial1);
+            this.curveMesh1.visible = visible;
+            this.curveMesh1.name = "jumperPow "+num[0]+" "+num[1];
+            this.curveMesh1.newInfo = [];//Informacion adicional a objetos
+            this.curveMesh1.newInfo.val = ["wire"];
+            scene.add(this.curveMesh1);
+            
+
+            this.cloneC = new classClonegltf("pinPowerneg",cX,cY,cZ,0,0,0,true,num[1]);
+            this.cloneC.creaClonegltf();
+            
+
+            //CREA CURVA
+            this.curveQuadbezier2 = new THREE.CubicBezierCurve3(
+                new THREE.Vector4(
+                    this.cloneA.clone.position.x,
+                    this.cloneA.clone.position.y,
+                    this.cloneA.clone.position.z+2.8,
+                    1
+                ),
+                new THREE.Vector4(
+                    this.cloneA.clone.position.x,
+                    this.cloneA.clone.position.y,
+                    this.cloneA.clone.position.z+8,
+                    1
+                ),
+                new THREE.Vector4(
+                    this.cloneC.clone.position.x,
+                    this.cloneC.clone.position.y+8,
+                    this.cloneC.clone.position.z,
+                    1
+                ),
+                new THREE.Vector4(
+                    this.cloneC.clone.position.x,
+                    this.cloneC.clone.position.y+0.7,
+                    this.cloneC.clone.position.z,
+                    1
+                )
+            );
+            this.curveGeometry2 = new THREE.TubeBufferGeometry(this.curveQuadbezier2, 80, 0.05, 40, false);
+            this.curveGeometry2.dynamic = true;
+            this.curveMaterial2 = new THREE.MeshLambertMaterial({color: 0x4d4d4d, side: THREE.DoubleSide});
+            this.curveMesh2 = new THREE.Mesh(this.curveGeometry2, this.curveMaterial2);
+            this.curveMesh2.visible = visible;
+            this.curveMesh2.name = "jumperPow "+num[1]+" "+num[0];
+            this.curveMesh2.newInfo = [];//Informacion adicional a objetos
+            this.curveMesh2.newInfo.val = ["wire"];
+            scene.add(this.curveMesh2);
+        }
         if(name === "cdcable"){
+            
+            //CREA USB
+            this.cloneA = new classClonegltf("usb",aX,aY,aZ,0,-(girRad*90),0,true,num[2]);
+            this.cloneA.creaClonegltf();
 
             //CREA JUMPERS
 
@@ -757,6 +841,9 @@ function classaddUsb(name,aX,aY,aZ,bX,bY,bZ,cX,cY,cZ,dX,dY,dZ,visible,num){
             scene.add(this.curveMesh2);
         }
         if(name === "usbcable"){
+            //CREA USB
+            this.cloneA = new classClonegltf("usb",aX,aY,aZ,0,-(girRad*90),0,true,num[2]);
+            this.cloneA.creaClonegltf();
             //CREA USB DATA
             this.cloneB = new classClonegltf("usbdata",dX,dY,dZ,girRad*180,0,girRad*180,true,num[2]);
             this.cloneB.creaClonegltf();
@@ -821,6 +908,7 @@ function classCloneshape(namePieza,posX,posY,posZ,rotX,rotY,rotZ,scaY,visible,nu
         scene.add(this.clone);
     }
 }
+var saveTypeenergy = null;//Agrega dato para saber si es cdcable o acadapter
 function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
     /*
 	* NOMBRE: classClone.
@@ -846,7 +934,15 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
         this.clone.newInfo.objManipulated = false;
         this.clone.newInfo.usedLines = [];
         this.clone.newInfo.pinDifferent = [];
+        this.clone.newInfo.typeEnergy = null;//Agrega dato para saber si es cdcable o acadapter
         //this.clone.newInfo.pinConected = [1,1,1];
+        
+        if(namePieza === "usb"){//Esta pieza siempre va antes que los cables "pinPowerpos" y "pinPowerneg" y es para cdcable
+            saveTypeenergy = "usb";//Es cdcable
+        }
+        if(namePieza === "energyadapter"){//Esta pieza siempre va antes que los cables "pinPowerpos" y "pinPowerneg" y es para acadapter
+            saveTypeenergy = "energyadapter";// Es acadapter
+        }
         
         switch(namePieza){//Se asigna a cada componente el nombre
             case "protoboard":
@@ -872,6 +968,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 this.clone.newInfo.tooltipData = [null];
                 this.clone.newInfo.posLimite = [false,false];
                 this.clone.newInfo.areaLimit = ["none"];
+                this.clone.newInfo.typeEnergy = saveTypeenergy;//Agrega dato para saber si es cdcable o acadapter (sirve al momento de guardar y abrir practicas)
                 break;
             case "pinPowerneg":
                 this.clone.newInfo.name = "Cable energia";
@@ -880,6 +977,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 this.clone.newInfo.tooltipData = [null];
                 this.clone.newInfo.posLimite = [false,false];
                 this.clone.newInfo.areaLimit = ["none"];
+                this.clone.newInfo.typeEnergy = saveTypeenergy;//Agrega dato para saber si es cdcable o acadapter (sirve al momento de guardar y abrir practicas)
                 break;
             case "usbdata":
                 this.clone.newInfo.name = "Cable datos";
@@ -966,9 +1064,9 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 this.clone.newInfo.areaLimit = ["conectA"];
                 break;
             case "preset":
-                this.clone.newInfo.name = "Potenciometro";
+                this.clone.newInfo.name = "Potenciómetro";
                 this.clone.newInfo.polarity = "both";
-                this.clone.newInfo.val = ["Potenciometro",[null,null],"none"];
+                this.clone.newInfo.val = ["Potenciómetro",[null,null],null];
                 this.clone.newInfo.tooltipData = ["none"];
                 this.clone.newInfo.posLimite = [true,true];
                 this.clone.newInfo.areaLimit = ["conectA"];
@@ -982,6 +1080,16 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 this.clone.newInfo.tooltipData = [null];
                 this.clone.newInfo.posLimite = [true,true];
                 this.clone.newInfo.areaLimit = ["conectA"];
+                break;
+            case "ultrasonic":
+                this.clone.newInfo.name = "Ultrasónico";
+                this.clone.newInfo.polarity = "defined";
+                this.clone.newInfo.val = ["Ultrasónico",[null,null],"none"];
+                this.clone.newInfo.tooltipData = ["none"];
+                this.clone.newInfo.posLimite = [true,true];
+                this.clone.newInfo.areaLimit = ["conectA"];
+                
+                this.clone.newInfo.onpresetData = [];
                 break;
             default:
                 break;
@@ -1002,13 +1110,21 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
         this.cube1.name = "ind";
         this.data.add(this.cube1);
         
+        if(namePieza === "pinA"){//JUmper extras
+            addCoordlabel(this,1,2,0);//Asigna coordenada al objeto
+        }
+        if(namePieza === "pinB"){//JUmper extras
+            addCoordlabel(this,1,2,0,true);//Asigna coordenada al objeto
+        }
         if(namePieza === "pinPowerpos"){//cableenergia extras
             //Sprite positivo
             creaSprite(this.data,[0.3,0.3,0.3],[0,1.6,0.4],"labelpos",true);//Crea label positivo
+            addCoordlabel(this,1,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "pinPowerneg"){//cableenergia extras
             //Sprite negativo
             creaSprite(this.data,[0.3,0.3,0.3],[0,1.6,-0.4],"labelneg",true);//Crea label negativo
+            addCoordlabel(this,1,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "led"){//LED extras
             //Indicador 2
@@ -1038,6 +1154,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"led").append('<svg viewBox="0 0 75.451 68.89"><polygon fill="#EC2227" points="25.137,50.862 3.612,62.594 16.004,39.772 1.169,35.801 15.269,25.983 1.533,11.229 22.75,16.71 29.685,0.95 40.583,14.362 66.906,3.361 54.151,22.332 74.065,29.584 55.052,37.368 67.269,59.589 44.647,48.588 41.581,67.824"/><path fill="#010101" d="M29.813,1.901l10.146,12.487l0.471,0.58l0.69-0.288l24.44-10.215L54.093,21.523l-0.713,1.061l1.201,0.437 l18.098,6.591l-17.298,7.082l-1.038,0.425l0.54,0.982l11.189,20.351L45.472,48.434l-1.213-0.589l-0.212,1.332l-2.803,17.583 L25.761,50.787l-0.529-0.545l-0.667,0.364L4.859,61.344l11.282-20.776l0.605-1.115l-1.226-0.328L2.338,35.596l12.743-8.873 l0.946-0.659l-0.785-0.844L3.065,12.142l19.148,4.946l0.823,0.212l0.343-0.778L29.813,1.901 M29.557,0l-7.094,16.12L0,10.317 l14.51,15.585L0,36.006l15.262,4.085L2.365,63.843l22.678-12.359L41.917,68.89l3.117-19.557l23.43,11.394L55.76,37.618 l19.691-8.062l-20.528-7.476L68.25,2.257l-27.515,11.5L29.557,0L29.557,0z"/><polygon fill="#F6EB16" points="29.945,44.503 15.459,51.346 24.409,37.722 12.429,33.548 22.163,28.424 15.355,20.105 27.277,22.656 31.627,12.376 39.5,22.128 55.959,11.868 48.374,24.184 63.158,29.702 48.288,36.222 57.326,49.613 41.939,43.09 39.019,57.945"/><path fill="#010101" d="M31.762,13.34l7.071,8.758l0.556,0.689l0.751-0.468l14.278-8.9l-6.15,9.985l-0.638,1.036l1.14,0.426 l13.059,4.875l-13.191,5.784l-1.098,0.481l0.67,0.994l7.758,11.495L42.701,42.87l-1.134-0.48l-0.238,1.208l-2.57,13.07 l-8.161-12.089l-0.48-0.711l-0.776,0.366l-12.49,5.9l7.622-11.603l0.704-1.071l-1.21-0.422L13.68,33.455l8.174-4.303l1.083-0.57 l-0.775-0.948l-5.516-6.741l10.122,2.167l0.808,0.173l0.322-0.761L31.762,13.34 M57.502,10.317L39.611,21.47l-8.119-10.057 l-4.514,10.668l-12.913-2.764l7.323,8.949l-10.21,5.375l12.461,4.342l-9.574,14.574l15.706-7.419l9.506,14.083l3.034-15.431 l16.373,6.94l-9.646-14.292l15.45-6.774l-15.37-5.737L57.502,10.317L57.502,10.317z"/><polygon fill="#FFFFFF" points="33.278,40.22 25.279,43.998 30.27,36.406 22.514,33.629 29.013,31.172 25.177,26.493 31.763,27.905 34.249,22.026 38.801,27.666 47.423,20.777 42.95,30.255 52.309,31.176 43.68,35.559 48.709,43.021 40.087,39.36 38.422,47.841"/><path fill="#010101" d="M46.051,22.513L42.8,29.4l-0.605,1.283l1.412,0.139l6.949,0.684l-6.597,3.35l-1.009,0.512l0.632,0.938 l3.771,5.594l-6.502-2.76l-1.134-0.482l-0.238,1.209l-1.314,6.695l-4.23-6.268l-0.48-0.711l-0.776,0.366l-6.003,2.835l3.665-5.575 l0.698-1.063l-1.197-0.428l-5.878-2.104l4.577-1.73l1.303-0.493l-0.883-1.077l-2.488-3.035l4.784,1.025l0.809,0.174l0.322-0.762 l1.999-4.729l3.715,4.603l0.625,0.774l0.777-0.621L46.051,22.513 M48.796,19.04l-9.918,7.925l-4.764-5.902l-2.649,6.267 l-7.58-1.625l4.301,5.246l-7.119,2.691l8.436,3.021l-5.619,8.548l9.22-4.354l5.577,8.263l1.778-9.057l9.607,4.079l-5.656-8.393 l9.652-4.901l-10.358-1.02L48.796,19.04L48.796,19.04z"/></svg>');//Agrega svg al div del objeto
                 clearTimeout(setTime);//Limpia tiempo
             },100);
+            addCoordlabel(this,1.5,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "rgbc"){//LED extras
             //Indicador 2
@@ -1067,6 +1184,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"rgbc").append('<svg viewBox="0 0 75.451 68.89"><polygon fill="#EC2227" points="25.137,50.862 3.612,62.594 16.004,39.772 1.169,35.801 15.269,25.983 1.533,11.229 22.75,16.71 29.685,0.95 40.583,14.362 66.906,3.361 54.151,22.332 74.065,29.584 55.052,37.368 67.269,59.589 44.647,48.588 41.581,67.824"/><path fill="#010101" d="M29.813,1.901l10.146,12.487l0.471,0.58l0.69-0.288l24.44-10.215L54.093,21.523l-0.713,1.061l1.201,0.437 l18.098,6.591l-17.298,7.082l-1.038,0.425l0.54,0.982l11.189,20.351L45.472,48.434l-1.213-0.589l-0.212,1.332l-2.803,17.583 L25.761,50.787l-0.529-0.545l-0.667,0.364L4.859,61.344l11.282-20.776l0.605-1.115l-1.226-0.328L2.338,35.596l12.743-8.873 l0.946-0.659l-0.785-0.844L3.065,12.142l19.148,4.946l0.823,0.212l0.343-0.778L29.813,1.901 M29.557,0l-7.094,16.12L0,10.317 l14.51,15.585L0,36.006l15.262,4.085L2.365,63.843l22.678-12.359L41.917,68.89l3.117-19.557l23.43,11.394L55.76,37.618 l19.691-8.062l-20.528-7.476L68.25,2.257l-27.515,11.5L29.557,0L29.557,0z"/><polygon fill="#F6EB16" points="29.945,44.503 15.459,51.346 24.409,37.722 12.429,33.548 22.163,28.424 15.355,20.105 27.277,22.656 31.627,12.376 39.5,22.128 55.959,11.868 48.374,24.184 63.158,29.702 48.288,36.222 57.326,49.613 41.939,43.09 39.019,57.945"/><path fill="#010101" d="M31.762,13.34l7.071,8.758l0.556,0.689l0.751-0.468l14.278-8.9l-6.15,9.985l-0.638,1.036l1.14,0.426 l13.059,4.875l-13.191,5.784l-1.098,0.481l0.67,0.994l7.758,11.495L42.701,42.87l-1.134-0.48l-0.238,1.208l-2.57,13.07 l-8.161-12.089l-0.48-0.711l-0.776,0.366l-12.49,5.9l7.622-11.603l0.704-1.071l-1.21-0.422L13.68,33.455l8.174-4.303l1.083-0.57 l-0.775-0.948l-5.516-6.741l10.122,2.167l0.808,0.173l0.322-0.761L31.762,13.34 M57.502,10.317L39.611,21.47l-8.119-10.057 l-4.514,10.668l-12.913-2.764l7.323,8.949l-10.21,5.375l12.461,4.342l-9.574,14.574l15.706-7.419l9.506,14.083l3.034-15.431 l16.373,6.94l-9.646-14.292l15.45-6.774l-15.37-5.737L57.502,10.317L57.502,10.317z"/><polygon fill="#FFFFFF" points="33.278,40.22 25.279,43.998 30.27,36.406 22.514,33.629 29.013,31.172 25.177,26.493 31.763,27.905 34.249,22.026 38.801,27.666 47.423,20.777 42.95,30.255 52.309,31.176 43.68,35.559 48.709,43.021 40.087,39.36 38.422,47.841"/><path fill="#010101" d="M46.051,22.513L42.8,29.4l-0.605,1.283l1.412,0.139l6.949,0.684l-6.597,3.35l-1.009,0.512l0.632,0.938 l3.771,5.594l-6.502-2.76l-1.134-0.482l-0.238,1.209l-1.314,6.695l-4.23-6.268l-0.48-0.711l-0.776,0.366l-6.003,2.835l3.665-5.575 l0.698-1.063l-1.197-0.428l-5.878-2.104l4.577-1.73l1.303-0.493l-0.883-1.077l-2.488-3.035l4.784,1.025l0.809,0.174l0.322-0.762 l1.999-4.729l3.715,4.603l0.625,0.774l0.777-0.621L46.051,22.513 M48.796,19.04l-9.918,7.925l-4.764-5.902l-2.649,6.267 l-7.58-1.625l4.301,5.246l-7.119,2.691l8.436,3.021l-5.619,8.548l9.22-4.354l5.577,8.263l1.778-9.057l9.607,4.079l-5.656-8.393 l9.652-4.901l-10.358-1.02L48.796,19.04L48.796,19.04z"/></svg>');//Agrega svg al div del objeto
                 clearTimeout(setTime);//Limpia tiempo
             },100);
+            addCoordlabel(this,1.7,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "rgb"){//RGB extras
             //Indicador 2
@@ -1107,6 +1225,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"rgb").append('<svg viewBox="0 0 75.451 68.89"><polygon fill="#EC2227" points="25.137,50.862 3.612,62.594 16.004,39.772 1.169,35.801 15.269,25.983 1.533,11.229 22.75,16.71 29.685,0.95 40.583,14.362 66.906,3.361 54.151,22.332 74.065,29.584 55.052,37.368 67.269,59.589 44.647,48.588 41.581,67.824"/><path fill="#010101" d="M29.813,1.901l10.146,12.487l0.471,0.58l0.69-0.288l24.44-10.215L54.093,21.523l-0.713,1.061l1.201,0.437 l18.098,6.591l-17.298,7.082l-1.038,0.425l0.54,0.982l11.189,20.351L45.472,48.434l-1.213-0.589l-0.212,1.332l-2.803,17.583 L25.761,50.787l-0.529-0.545l-0.667,0.364L4.859,61.344l11.282-20.776l0.605-1.115l-1.226-0.328L2.338,35.596l12.743-8.873 l0.946-0.659l-0.785-0.844L3.065,12.142l19.148,4.946l0.823,0.212l0.343-0.778L29.813,1.901 M29.557,0l-7.094,16.12L0,10.317 l14.51,15.585L0,36.006l15.262,4.085L2.365,63.843l22.678-12.359L41.917,68.89l3.117-19.557l23.43,11.394L55.76,37.618 l19.691-8.062l-20.528-7.476L68.25,2.257l-27.515,11.5L29.557,0L29.557,0z"/><polygon fill="#F6EB16" points="29.945,44.503 15.459,51.346 24.409,37.722 12.429,33.548 22.163,28.424 15.355,20.105 27.277,22.656 31.627,12.376 39.5,22.128 55.959,11.868 48.374,24.184 63.158,29.702 48.288,36.222 57.326,49.613 41.939,43.09 39.019,57.945"/><path fill="#010101" d="M31.762,13.34l7.071,8.758l0.556,0.689l0.751-0.468l14.278-8.9l-6.15,9.985l-0.638,1.036l1.14,0.426 l13.059,4.875l-13.191,5.784l-1.098,0.481l0.67,0.994l7.758,11.495L42.701,42.87l-1.134-0.48l-0.238,1.208l-2.57,13.07 l-8.161-12.089l-0.48-0.711l-0.776,0.366l-12.49,5.9l7.622-11.603l0.704-1.071l-1.21-0.422L13.68,33.455l8.174-4.303l1.083-0.57 l-0.775-0.948l-5.516-6.741l10.122,2.167l0.808,0.173l0.322-0.761L31.762,13.34 M57.502,10.317L39.611,21.47l-8.119-10.057 l-4.514,10.668l-12.913-2.764l7.323,8.949l-10.21,5.375l12.461,4.342l-9.574,14.574l15.706-7.419l9.506,14.083l3.034-15.431 l16.373,6.94l-9.646-14.292l15.45-6.774l-15.37-5.737L57.502,10.317L57.502,10.317z"/><polygon fill="#FFFFFF" points="33.278,40.22 25.279,43.998 30.27,36.406 22.514,33.629 29.013,31.172 25.177,26.493 31.763,27.905 34.249,22.026 38.801,27.666 47.423,20.777 42.95,30.255 52.309,31.176 43.68,35.559 48.709,43.021 40.087,39.36 38.422,47.841"/><path fill="#010101" d="M46.051,22.513L42.8,29.4l-0.605,1.283l1.412,0.139l6.949,0.684l-6.597,3.35l-1.009,0.512l0.632,0.938 l3.771,5.594l-6.502-2.76l-1.134-0.482l-0.238,1.209l-1.314,6.695l-4.23-6.268l-0.48-0.711l-0.776,0.366l-6.003,2.835l3.665-5.575 l0.698-1.063l-1.197-0.428l-5.878-2.104l4.577-1.73l1.303-0.493l-0.883-1.077l-2.488-3.035l4.784,1.025l0.809,0.174l0.322-0.762 l1.999-4.729l3.715,4.603l0.625,0.774l0.777-0.621L46.051,22.513 M48.796,19.04l-9.918,7.925l-4.764-5.902l-2.649,6.267 l-7.58-1.625l4.301,5.246l-7.119,2.691l8.436,3.021l-5.619,8.548l9.22-4.354l5.577,8.263l1.778-9.057l9.607,4.079l-5.656-8.393 l9.652-4.901l-10.358-1.02L48.796,19.04L48.796,19.04z"/></svg>');//Agrega svg al div del objeto
                 clearTimeout(setTime);//Limpia tiempo
             },100);
+            addCoordlabel(this,1.7,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "switch"){//RGB extras
             //Indicador 2
@@ -1156,6 +1275,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"switch").append('<div><label><input type="checkbox" class="d_activeswitchcheckbos" id="d_activateswitch_'+num+'_btn_1"><span class="d_activateswitchslider round"></span></label><p>1</p></div><div><label><input type="checkbox" class="d_activeswitchcheckbos" id="d_activateswitch_'+num+'_btn_2"><span class="d_activateswitchslider round"></span></label><p>2</p></div><div><label><input type="checkbox" class="d_activeswitchcheckbos" id="d_activateswitch_'+num+'_btn_3"><span class="d_activateswitchslider round"></span></label><p>3</p></div><div><label><input type="checkbox" class="d_activeswitchcheckbos" id="d_activateswitch_'+num+'_btn_4"><span class="d_activateswitchslider round"></span></label><p>4</p></div>');//Agrega svg al div del objeto
                 clearTimeout(setTime);//Limpia tiempo
             },100);
+            addCoordlabel(this,2,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "preset"){//RGB extras
             //Indicador 2
@@ -1189,6 +1309,49 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"preset").append('<div class="d_activatepresetcircle"></div><div class="d_activatepresetbtns"><div class="d_activatepresetbtnleft d_disablebtn"><svg viewBox="0 0 30 30"><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M12.477,15.007c0.512,0.511,1.018,1.013,1.522,1.518 c2.081,2.077,4.16,4.155,6.238,6.233c0.414,0.413,0.525,0.959,0.304,1.473c-0.208,0.484-0.688,0.788-1.238,0.77 c-0.354-0.014-0.648-0.165-0.899-0.416c-1.728-1.729-3.457-3.457-5.187-5.186c-1.14-1.139-2.279-2.277-3.418-3.416 c-0.602-0.602-0.602-1.36,0.002-1.962c2.868-2.867,5.737-5.734,8.604-8.602c0.381-0.381,0.833-0.509,1.343-0.355 c0.489,0.149,0.794,0.498,0.882,1.007c0.074,0.426-0.035,0.811-0.347,1.123c-1.901,1.902-3.803,3.804-5.704,5.705 c-0.659,0.659-1.318,1.316-1.976,1.975C12.562,14.913,12.524,14.956,12.477,15.007z"/></svg></div><div class="d_activatepresetbtnright"><svg viewBox="0 0 30 30"><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M17.522,14.993c-0.512-0.511-1.019-1.013-1.522-1.518 c-2.081-2.077-4.16-4.155-6.238-6.233C9.348,6.829,9.237,6.283,9.458,5.77C9.667,5.285,10.147,4.981,10.697,5 c0.354,0.014,0.648,0.165,0.899,0.416c1.728,1.729,3.457,3.457,5.187,5.186c1.14,1.139,2.279,2.277,3.418,3.416 c0.602,0.602,0.602,1.36-0.002,1.962c-2.867,2.867-5.737,5.734-8.604,8.602c-0.381,0.381-0.833,0.509-1.343,0.354 c-0.489-0.149-0.794-0.498-0.882-1.007c-0.074-0.427,0.035-0.812,0.347-1.123c1.901-1.902,3.803-3.804,5.704-5.704 c0.659-0.659,1.318-1.316,1.976-1.976C17.438,15.087,17.476,15.044,17.522,14.993z"/></svg></div></div>');//Agrega svg al div del objeto
                 clearTimeout(setTime);//Limpia tiempo
             },100);
+            addCoordlabel(this,2,1,0);//Asigna coordenada al objeto
+        }
+        if(namePieza === "ultrasonic"){//Ultrasonic extras
+            //Indicador 2
+            this.cube2 = new THREE.Mesh( this.geometry, this.material );
+            this.cube2.position.set(0.25,0,0);
+            this.cube2.name = "ind";
+            //Indicador 3
+            this.cube3 = new THREE.Mesh( this.geometry, this.material );
+            this.cube3.position.set(0.5,0,0);
+            this.cube3.name = "ind";
+            //Indicador 4
+            this.cube4 = new THREE.Mesh( this.geometry, this.material );
+            this.cube4.position.set(0.75,0,0);
+            this.cube4.name = "ind";
+            this.data.add(this.cube2, this.cube3, this.cube4);
+            //Activate
+            this.labelDiv = document.createElement('div');
+            this.labelDiv.className = 'd_activateultrasonic';
+            this.labelDiv.textContent = '';
+            this.labelDiv.setAttribute("id", this.clone.name.replace(" ",''));//Quita el espacio al agregar id
+            this.labelDiv.setAttribute("name", this.clone.name);//Agrega nombre
+            this.cssDiv = new THREE.CSS2DObject( this.labelDiv );
+            this.cssDiv.width = 100;
+            this.cssDiv.height = 100;
+            this.cssDiv.position.set( 0.4, 3.8, 0 );
+            this.cssDiv.name = "activate";
+            this.cssDiv.visible = true;
+            this.data.add( this.cssDiv );
+            var setTime = setTimeout(function(){
+                //$("#"+num+"pushbutton").attr('onclick','objPress(this)');//Agrega evento onclick
+                $("#"+num+"ultrasonic").append('<svg viewBox="0 0 203 149.264"><path fill="#F3F3F3" stroke="#818181" stroke-width="0.5" stroke-miterlimit="10" d="M143,149.264c0,0-16.5-10-41-10s-42,10-42,10 L0,40C0,40,32.5,0,103,0s100,40,100,40L143,149.264z"/></svg><input type="range" id="d_ultrasonicSlider" value="0" min="0.0" max="1.0" step="0.01"/>');//Agrega svg al div del objeto
+                
+                
+                $(".d_activateultrasonic").on("pointerdown touchstart input", '#d_ultrasonicSlider', function(event){
+                    event.stopPropagation();
+                    console.log($(this).val());
+                });
+
+                
+                clearTimeout(setTime);//Limpia tiempo
+            },100);
+            addCoordlabel(this,3.4,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "resistance"){//Resistance extras
             //Indicador 2
@@ -1208,6 +1371,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
             this.cssDiv.name = "label";
             this.cssDiv.visible = false;
             this.data.add( this.cssDiv );
+            addCoordlabel(this,2,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "buzzer"){//Buzzer extras
             //Indicador 2
@@ -1251,6 +1415,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"buzzer_crash").append('<svg viewBox="0 0 75.451 68.89"><polygon fill="#EC2227" points="25.137,50.862 3.612,62.594 16.004,39.772 1.169,35.801 15.269,25.983 1.533,11.229 22.75,16.71 29.685,0.95 40.583,14.362 66.906,3.361 54.151,22.332 74.065,29.584 55.052,37.368 67.269,59.589 44.647,48.588 41.581,67.824"/><path fill="#010101" d="M29.813,1.901l10.146,12.487l0.471,0.58l0.69-0.288l24.44-10.215L54.093,21.523l-0.713,1.061l1.201,0.437 l18.098,6.591l-17.298,7.082l-1.038,0.425l0.54,0.982l11.189,20.351L45.472,48.434l-1.213-0.589l-0.212,1.332l-2.803,17.583 L25.761,50.787l-0.529-0.545l-0.667,0.364L4.859,61.344l11.282-20.776l0.605-1.115l-1.226-0.328L2.338,35.596l12.743-8.873 l0.946-0.659l-0.785-0.844L3.065,12.142l19.148,4.946l0.823,0.212l0.343-0.778L29.813,1.901 M29.557,0l-7.094,16.12L0,10.317 l14.51,15.585L0,36.006l15.262,4.085L2.365,63.843l22.678-12.359L41.917,68.89l3.117-19.557l23.43,11.394L55.76,37.618 l19.691-8.062l-20.528-7.476L68.25,2.257l-27.515,11.5L29.557,0L29.557,0z"/><polygon fill="#F6EB16" points="29.945,44.503 15.459,51.346 24.409,37.722 12.429,33.548 22.163,28.424 15.355,20.105 27.277,22.656 31.627,12.376 39.5,22.128 55.959,11.868 48.374,24.184 63.158,29.702 48.288,36.222 57.326,49.613 41.939,43.09 39.019,57.945"/><path fill="#010101" d="M31.762,13.34l7.071,8.758l0.556,0.689l0.751-0.468l14.278-8.9l-6.15,9.985l-0.638,1.036l1.14,0.426 l13.059,4.875l-13.191,5.784l-1.098,0.481l0.67,0.994l7.758,11.495L42.701,42.87l-1.134-0.48l-0.238,1.208l-2.57,13.07 l-8.161-12.089l-0.48-0.711l-0.776,0.366l-12.49,5.9l7.622-11.603l0.704-1.071l-1.21-0.422L13.68,33.455l8.174-4.303l1.083-0.57 l-0.775-0.948l-5.516-6.741l10.122,2.167l0.808,0.173l0.322-0.761L31.762,13.34 M57.502,10.317L39.611,21.47l-8.119-10.057 l-4.514,10.668l-12.913-2.764l7.323,8.949l-10.21,5.375l12.461,4.342l-9.574,14.574l15.706-7.419l9.506,14.083l3.034-15.431 l16.373,6.94l-9.646-14.292l15.45-6.774l-15.37-5.737L57.502,10.317L57.502,10.317z"/><polygon fill="#FFFFFF" points="33.278,40.22 25.279,43.998 30.27,36.406 22.514,33.629 29.013,31.172 25.177,26.493 31.763,27.905 34.249,22.026 38.801,27.666 47.423,20.777 42.95,30.255 52.309,31.176 43.68,35.559 48.709,43.021 40.087,39.36 38.422,47.841"/><path fill="#010101" d="M46.051,22.513L42.8,29.4l-0.605,1.283l1.412,0.139l6.949,0.684l-6.597,3.35l-1.009,0.512l0.632,0.938 l3.771,5.594l-6.502-2.76l-1.134-0.482l-0.238,1.209l-1.314,6.695l-4.23-6.268l-0.48-0.711l-0.776,0.366l-6.003,2.835l3.665-5.575 l0.698-1.063l-1.197-0.428l-5.878-2.104l4.577-1.73l1.303-0.493l-0.883-1.077l-2.488-3.035l4.784,1.025l0.809,0.174l0.322-0.762 l1.999-4.729l3.715,4.603l0.625,0.774l0.777-0.621L46.051,22.513 M48.796,19.04l-9.918,7.925l-4.764-5.902l-2.649,6.267 l-7.58-1.625l4.301,5.246l-7.119,2.691l8.436,3.021l-5.619,8.548l9.22-4.354l5.577,8.263l1.778-9.057l9.607,4.079l-5.656-8.393 l9.652-4.901l-10.358-1.02L48.796,19.04L48.796,19.04z"/></svg>');//Agrega svg al div del objeto
                 clearTimeout(setTime_crash);//Limpia tiempo
             },100);
+            addCoordlabel(this,2,1,0);//Asigna coordenada al objeto
         }
         if(namePieza === "pushbutton"){//Push button extras
             //Indicador 2
@@ -1284,6 +1449,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"pushbutton").append('<svg viewBox="0 0 50 50"><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M24.327,6.668c-2.749-1.83-6.51-1.854-9.351,0.214c-2.301,1.677-3.429,3.976-3.494,6.828c5.568,0,11.086,0,16.651,0C28.057,10.699,26.821,8.329,24.327,6.668z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M24.3,14.445c0,0.13,0,0.228,0,0.326 c0,2.176,0.003,2.518,0.003,4.693c0,4.226-0.004,4.787-0.002,9.014c0,1.035,0.81,1.851,1.819,1.854 c1.018,0.002,1.827-0.826,1.83-1.872c0.003-0.646,0.001-1.292,0.001-1.939c0-4.284,0-3.069,0-7.354c0-0.382,0-0.763,0-1.145 c-0.001-0.829-0.001-1.658-0.002-2.487c0-0.362,0-0.724,0-1.089C26.719,14.445,25.525,14.445,24.3,14.445z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M23.739,23.398c0.002-3.509,0-5.22,0-8.728 c0-0.079-0.007-0.158-0.011-0.249c-1.196,0-2.373,0-3.578,0c0,0.115,0,0.219,0,0.322c0,3.125,0,4.455-0.001,7.579 c0,0.334-0.011,0.667-0.027,1c-0.049,1.095,0.816,1.99,1.886,1.946C23.003,25.229,23.738,24.44,23.739,23.398z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M19.468,14.642c0-0.078-0.007-0.157-0.011-0.244 c-1.181,0-2.347,0-3.54,0c0,0.183,0,0.337,0,0.489c0,2.815,0,3.85,0.001,6.666c0,0.176,0.003,0.358,0.042,0.528 c0.208,0.924,1.013,1.513,1.915,1.411c0.933-0.105,1.593-0.856,1.594-1.82C19.47,18.734,19.469,17.578,19.468,14.642z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M15.174,19.778c-0.005-2.083-0.001-2.431-0.002-4.514 c0-0.219-0.002-0.438-0.006-0.657c-0.002-0.129-0.058-0.198-0.202-0.198c-1.077,0.004-2.153,0.002-3.269,0.002 c0,0.115,0.001,0.2,0,0.285c-0.011,1.852-0.026,1.97-0.031,3.821c-0.001,0.605-0.028,1.216,0.05,1.812 c0.088,0.675,0.519,1.146,1.171,1.349c0.672,0.207,1.29,0.076,1.796-0.446C15.077,20.825,15.175,20.323,15.174,19.778z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#343434" d="M13.759,38.66c-0.011,0.173-0.025,0.305-0.025,0.438 c-0.002,1.248-0.001,2.498-0.001,3.781c8.315,0,16.557,0,24.786,0c0-1.447,0-2.825,0-4.219 C30.248,38.66,22.012,38.66,13.759,38.66z"/> <path fill-rule="evenodd" clip-rule="evenodd" fill="#F15A24" d="M21.787,32.98c-2.04,0.039-3.459,1.885-3.042,3.841 c4.931,0,9.867,0,14.836,0c0.378-1.95-1.035-3.796-3.026-3.839C27.633,32.92,24.708,32.924,21.787,32.98z"/></svg>');//Agrega svg al div del objeto
                 clearTimeout(setTime);//Limpia tiempo
             },100);
+            addCoordlabel(this,2.4,1,0);//Asigna coordenada al objeto
         }
         /*if(namePieza === "pushbutton"){//Push button extras
             //Indicador 2
@@ -1335,7 +1501,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
             this.cssDiv = new THREE.CSS2DObject( this.labelDiv );
             this.cssDiv.width = 100;
             this.cssDiv.height = 100;
-            this.cssDiv.position.set( 0.15, 2, 0 );
+            this.cssDiv.position.set( 0.1, 4, 0 );
             this.cssDiv.name = "activate";
             this.cssDiv.visible = true;
             this.data.add( this.cssDiv );
@@ -1344,6 +1510,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 $("#"+num+"ldr").append('<div class="d_activateldrright"><svg viewBox="0 0 30 30"><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M14.993,12.478c-0.511,0.512-1.013,1.019-1.518,1.522 c-2.077,2.08-4.155,4.159-6.233,6.237c-0.413,0.414-0.959,0.525-1.473,0.304C5.285,20.333,4.981,19.853,5,19.303 c0.014-0.354,0.165-0.648,0.416-0.899c1.729-1.728,3.457-3.457,5.186-5.187c1.139-1.14,2.277-2.279,3.416-3.418 c0.602-0.602,1.36-0.602,1.962,0.002c2.867,2.867,5.734,5.736,8.602,8.604c0.381,0.381,0.509,0.833,0.354,1.343 c-0.149,0.489-0.498,0.794-1.007,0.882c-0.427,0.074-0.812-0.035-1.123-0.347c-1.902-1.901-3.804-3.803-5.704-5.704 c-0.659-0.658-1.316-1.317-1.976-1.976C15.087,12.563,15.044,12.524,14.993,12.478z"/></svg></div><div class="d_activateldrlight"><svg viewBox="0 0 38 38"><circle fill="#977126" cx="19" cy="19" r="7.948"/><path fill="#977126" d="M19,8.444c-0.823,0-1.49-0.667-1.49-1.49V1.49C17.51,0.667,18.177,0,19,0c0.823,0,1.491,0.667,1.491,1.49 v5.464C20.491,7.777,19.823,8.444,19,8.444z"/><path fill="#977126" d="M36.51,20.49h-5.465c-0.822,0-1.49-0.668-1.49-1.49s0.668-1.49,1.49-1.49h5.465 c0.822,0,1.49,0.668,1.49,1.49S37.333,20.49,36.51,20.49z"/><path fill="#977126" d="M6.954,20.49H1.49C0.667,20.49,0,19.822,0,19s0.667-1.49,1.49-1.49h5.464c0.823,0,1.49,0.668,1.49,1.49 S7.777,20.49,6.954,20.49z"/><path fill="#977126" d="M27.518,11.973c-0.382,0-0.763-0.146-1.055-0.437c-0.582-0.582-0.582-1.524,0-2.107l3.864-3.863 c0.581-0.583,1.525-0.583,2.107,0c0.582,0.582,0.582,1.524,0,2.106l-3.864,3.864C28.281,11.827,27.899,11.973,27.518,11.973z"/><path fill="#977126" d="M6.619,32.872c-0.381,0-0.763-0.146-1.054-0.438c-0.582-0.582-0.582-1.524,0-2.106l3.864-3.863 c0.582-0.582,1.525-0.582,2.107,0c0.582,0.582,0.582,1.524,0,2.107l-3.864,3.862C7.381,32.727,7,32.872,6.619,32.872z"/><path fill="#977126" d="M31.381,32.872c-0.381,0-0.763-0.146-1.054-0.438l-3.864-3.862c-0.582-0.583-0.582-1.525,0-2.107 s1.525-0.582,2.107,0l3.864,3.863c0.582,0.582,0.582,1.524,0,2.106C32.145,32.727,31.762,32.872,31.381,32.872z"/><path fill="#977126" d="M10.482,11.972c-0.381,0-0.763-0.146-1.054-0.437L5.565,7.672c-0.582-0.582-0.582-1.524,0-2.106 c0.581-0.583,1.525-0.583,2.107,0l3.864,3.863c0.582,0.582,0.582,1.524,0,2.106C11.245,11.826,10.864,11.972,10.482,11.972z"/><path fill="#977126" d="M19,38c-0.823,0-1.49-0.667-1.49-1.49v-5.464c0-0.823,0.667-1.49,1.49-1.49 c0.823,0,1.491,0.667,1.491,1.49v5.464C20.491,37.333,19.823,38,19,38z"/></svg></div><div class="d_activateldrleft d_disablebtn"><svg viewBox="0 0 30 30"><path fill-rule="evenodd" clip-rule="evenodd" fill="#009EB3" d="M15.006,17.521c0.511-0.512,1.013-1.018,1.517-1.522 c2.078-2.08,4.156-4.159,6.234-6.237c0.413-0.414,0.959-0.525,1.473-0.304c0.484,0.208,0.788,0.688,0.77,1.238 c-0.014,0.354-0.165,0.648-0.416,0.899c-1.729,1.728-3.457,3.457-5.186,5.187c-1.139,1.139-2.277,2.279-3.417,3.418 c-0.602,0.602-1.36,0.602-1.962-0.002c-2.867-2.868-5.734-5.737-8.602-8.604c-0.381-0.381-0.509-0.833-0.354-1.343 c0.149-0.489,0.498-0.794,1.007-0.882c0.427-0.074,0.812,0.035,1.123,0.347c1.902,1.901,3.804,3.803,5.704,5.704 c0.659,0.658,1.316,1.317,1.976,1.975C14.913,17.438,14.956,17.475,15.006,17.521z"/></svg></div>');//Agrega svg al div del objeto
                 clearTimeout(setTime);//Limpia tiempo
             },100);
+            addCoordlabel(this,1,1,0);//Asigna coordenada al objeto
         }
         
         
@@ -1356,7 +1523,36 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
             this.data.add( cubes );
         }*/
         
-        
+        function addCoordlabel(getThis, posX, posY, posZ, status){
+            /*
+            * NOMBRE: addCoordlabel.
+            * UTILIDAD: Asigna coordenada al objeto
+            * ENTRADAS: getThis > objeto en curso.
+            * SALIDAS: Ninguna.
+            * VARIABLES: Ninguna
+            */
+            getThis.labelDiv_coord = document.createElement('div');
+            getThis.labelDiv_coord.className = 'd_pxbentorno3dcoordmove';
+            getThis.labelDiv_coord.textContent = '';
+            getThis.labelDiv_coord.setAttribute("id", 'd_pxbentorno3dcoordmove_'+getThis.clone.name.replace(" ",''));//Quita el espacio al agregar id
+            getThis.cssDiv_coord = new THREE.CSS2DObject( getThis.labelDiv_coord );
+            getThis.cssDiv_coord.width = 100;
+            getThis.cssDiv_coord.height = 100;
+            getThis.cssDiv_coord.position.set( posX, posY, posZ );
+            getThis.cssDiv_coord.name = "coordinfo";
+            getThis.cssDiv_coord.visible = true;
+            getThis.data.add( getThis.cssDiv_coord );
+            var setTimecoord = setTimeout(function(){
+                //alert(getThis.clone.name.replace(" ",'').toString());
+                $("#d_pxbentorno3dcoordmove_"+getThis.clone.name.replace(" ",'').toString()).append('<div class="d_coordtxt d_coorA">Pin A:<span>0</span></div><div class="d_coordtxt d_coorB">Pin B:<span>0</span></div><div class="d_coordtxt d_coorC">Pin C:<span>0</span></div><div class="d_coordtxt d_coorD">Pin D:<span>0</span></div><div class="d_coordtxt d_coorE">Pin E:<span>0</span></div><div class="d_coordtxt d_coorF">Pin F:<span>0</span></div><div class="d_coordtxt d_coorG">Pin G:<span>0</span></div><div class="d_coordtxt d_coorH">Pin H:<span>0</span></div>');
+                console.log(status);
+                console.log("d_pxbentorno3dcoordmove_"+getThis.clone.name.replace(" ",'').toString());
+                if(status){//Si es jumper, un pin no muestra coordenada
+                    $("#d_pxbentorno3dcoordmove_"+getThis.clone.name.replace(" ",'').toString()).addClass('d_hideImportant');//Oculta coordenada de un pin (caso jumper)
+                }
+                clearTimeout(setTimecoord);//Limpia tiempo
+            },(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))?1000:100);
+        }
         function creaSprite(thisObj,scaleSet,positionSet,spriteType,spriteVisible){
             /*
             * NOMBRE: creaSprite.
