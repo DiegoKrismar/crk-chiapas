@@ -78,7 +78,7 @@ function iniciaEntorno3dpxb(){
         * ENTRADAS: event > evento orientacion.
         * SALIDAS: Ninguna.
         */
-        console.log("ORIENTATION CHANGE");
+        //console.log("ORIENTATION CHANGE");
         if(startInit){//Hay canvas 3d en la aplicacion
             reajusteConte3d();//Reajusta el contenido 3d en resize
         }
@@ -181,7 +181,7 @@ function dragDropcomponents(){
     $("#d_pxbentorno3d").droppable({//Al soltar componente
         over: function(event, ui){
             var getId = ui.helper.prevObject[0].id.split("_")[2];//Obtiene el nombre del componente con el id
-            console.log(getId);
+            //console.log(getId);
             addObjects(getId);//Agrega objetos con el drop
             emergenteGestosclose();//Cierra emergente de gestos
             ui.helper.remove();//Quita elemento de clone, al estar sobre lo droppable
@@ -200,10 +200,10 @@ function dragDropcomponents(){
                 * ENTRADAS: Ninguna.
                 * SALIDAS: Ninguna.
                 */
-                console.log(getIddata);
+                //console.log(getIddata);
                 allClones.forEach(function(item){//Busca el componente agragado
                     if(item.name.split(" ")[0] === getIddata){
-                        console.log(item);
+                        //console.log(item);
                         addNewcomponent = item;//Objeto que se agrega a escena
                         autostartRaycaster = true;//Se arrastra y suelta a escena
                         mouseStart = true;//Status para evento en touch (targetTouches)
@@ -220,7 +220,7 @@ function dragDropcomponents(){
         /*
         drop: function(event, ui){
             var getId = ui.helper.prevObject[0].id.split("_")[2];//Obtiene el nombre del componente con el id
-            console.log(getId);
+            //console.log(getId);
             addObjects(getId);//Agrega objetos con el drop
             emergenteGestosclose();//Cierra emergente de gestos
         }
@@ -304,7 +304,7 @@ function addObjects(useId){
         jumper = new classaddJumper(useId,setInitialpos[0][0],0.7,setInitialpos[0][1],0xffffff,setInitialpos[1][0],0.7,setInitialpos[1][1],true,[contObj,(contObj+1)]);
         jumper.creaJumper();
         contObj = contObj+2;//Agrega 2 objetos, porque son dos pines en el jumper
-        //console.log(jumper);
+        ////console.log(jumper);
     }else if(useId === "arduino"){//Agrega arduino
         gltfClone = new classClonegltf(useId,-4.15,-0.45,6,0,0,0,true,null);
         gltfClone.creaClonegltf();
@@ -403,7 +403,7 @@ function addRestcomponent(getIduse){
     }
     $(".d_pxbcomponentsbtnrest").off().on("pointerdown touchstart", function(){
         getIdbtnrest = $(this).attr('id').split("_")[3];//Obtiene el nombre del objeto que se va a eliminar
-        console.log("ICON PRESSED "+getIdbtnrest);
+        //console.log("ICON PRESSED "+getIdbtnrest);
         
         objetoGrl = null;//Resetea objeto almacenado
         objNamegrl = null;//Resetea objeto almacenado
@@ -421,7 +421,7 @@ function addRestcomponent(getIduse){
                 objetoGrl = item;//Obtiene el objeto a eliminar
                 objNamegrl = getIdbtnrest;//Obtiene el nombre del objeto a eliminar
                 
-                console.log("OBJETOS GRLS");
+                //console.log("OBJETOS GRLS");
                 statusDcfind = false;//No es cable dc
                 return true;//Sale del recorrido some  
             } 
@@ -443,7 +443,7 @@ function addRestcomponent(getIduse){
             getpinB = false;//Aplica para jumper
             scene.children.some(function(item){//Busca todos los objetos
                 if(item.name.split(" ")[1] === "pinPowerpos"){//Busca el objeto a eliminar cable DC
-                    console.log("CABLE ENERGY");
+                    //console.log("CABLE ENERGY");
 
                     objetoGrl = item;//Obtiene el objeto a eliminar
                     objNamegrl = getIdbtnrest;//Obtiene el nombre del objeto a eliminar
@@ -472,7 +472,7 @@ function addRestcomponent(getIduse){
             });
         }
         deleteBtn();//Eliminacion de cada objeto
-        console.log(scene.children);
+        //console.log(scene.children);
         removeRestcomponent(getIdbtnrest);//Agrega btn de eliminar component y funcionalidad del btn
     });
 }
@@ -484,7 +484,7 @@ function removeRestcomponent(getIduse){
 	* SALIDAS: Ninguna.
     */
     if(getIduse === 'powerbank' || getIduse === 'cdcable' || getIduse === 'usbcable' || getIduse === 'arduino' || getIduse === 'protoboard' || getIduse === 'acadapter'){//Componentes que no se mueven
-        console.log("REMOVE ICON "+getIduse);
+        //console.log("REMOVE ICON "+getIduse);
         $("#d_comp_rest_"+getIduse).siblings(".d_pxbtxt").css({"opacity":"1"});//Restaura la opacidad del txt
         $("#d_comp_rest_"+getIduse).siblings(".d_pxbimg").css({"opacity":"1"});//Restaura la opacidad del btn
         $("#d_comp_rest_"+getIduse).prev().remove();//Quita div de bloqueo
@@ -673,8 +673,8 @@ function specialcaseRaycaster(intersectsFinal){
         ["ultrasonic",[0,2.5,0]],
         ["ldr",[0,3.5,0]],
     ];//Almacena datos de posicion de raycaster para cada componente
-    console.log("NAME: "+addNewcomponent.name.split(" ")[1]);
-    console.log(savedPoscomponents);
+    //console.log("NAME: "+addNewcomponent.name.split(" ")[1]);
+    //console.log(savedPoscomponents);
     var getNamepos;//Almacena el index del array (savedPoscomponents), para saber que objeto es, mediante el nombre
 
     savedPoscomponents.forEach(function(itemS,indexS){//Recorre array
@@ -726,8 +726,8 @@ function startPointerDown(){
             }*/
         });
     }
-    console.log(intersects);
-    console.log(intersectsFinal);
+    //console.log(intersects);
+    //console.log(intersectsFinal);
     $(".d_pxbentorno3dcoordmove").addClass('d_hideImportant');//Oculta todas las coordenadas que siguen al objeto
     if(intersectsFinal.length != 0){//Intersecta con objeto dentro del canvas
         selectObj = intersectsFinal[0].object.parent;//Almacena el objeto que se selecciona
@@ -750,12 +750,12 @@ function startPointerDown(){
         if(getpinA || getpinB || getpinpowerA || getpinpowerB){//Aplica solo en jumper y cableenergia
             pinbGrl.newInfo.objManipulated = true;//Objeto ya fue manipulado
         }
-        console.log("******OBJETO*******");
-        console.log(objetoGrl);
-        console.log("******SCENE*******");
-        console.log(scene);
-        console.log("******OBJ B*******");
-        console.log(pinbGrl);
+        //console.log("******OBJETO*******");
+        //console.log(objetoGrl);
+        //console.log("******SCENE*******");
+        //console.log(scene);
+        //console.log("******OBJ B*******");
+        //console.log(pinbGrl);
     }else{
         updownObjs(null);//Coloca los objetos en su posicion
         showbtnPower();//Muestra btn de power play
@@ -887,8 +887,8 @@ function addLimitsobj(getObject){
         if(item.name === "data"){
             item.children.forEach(function(item2){
                 if(item2.name === "limitObj"){
-                    console.log(item2.getWorldPosition(new THREE.Vector3()));
-                    console.log(item2.geometry.parameters);
+                    //console.log(item2.getWorldPosition(new THREE.Vector3()));
+                    //console.log(item2.geometry.parameters);
                 }
             });
         }
@@ -1038,7 +1038,7 @@ function getDistance(intersectsPoint,getObject){
 	* ENTRADAS: intersectsPoint > interseccion con el puntero, getObject > objeto en curso.
 	* SALIDAS: Ninguna.
     */
-    //console.log((posX+0.25)+" "+intersectsPoint.x);
+    ////console.log((posX+0.25)+" "+intersectsPoint.x);
     if(intersectsPoint.x > (posX+0.25)){//Movimiento en X positivo
         posX = posX+0.25;//Se incrementa la distancia entre perforaciones de la protoboard
         adjustX();//Ajusta la posicion del objeto en X en relacion a los limites de movimiento
@@ -1056,7 +1056,7 @@ function getDistance(intersectsPoint,getObject){
         adjustZ();//Ajusta la posicion del objeto en Z en relacion a los limites de movimiento
     }
     getObject.position.y = 0.7;//El objeto seleccionado cambia a posicion Y fija
-    console.log(posX+" "+posZ);
+    //console.log(posX+" "+posZ);
     function adjustX(){
         /*
         * NOMBRE: adjustX.
@@ -1100,7 +1100,7 @@ function caseCable(getObject){
     //getObject > objeto seleccionado
     var valObj = false;//Identifica si localiza el cable en la comparacion
     if(getpinA || getpinB){//Casos para jumper, ya que lo que se selecciona son los pines, y hay que manipular el cable tambien
-        //console.log("*************JUMPER");
+        ////console.log("*************JUMPER");
         scene.children.forEach(function(item,index){//Busca todos los elementos del escenario
             if(item.name.split(" ")[0] === "jumper"){//Solo los cables
                 if((getObject.name.split(" ")[0] === item.name.split(" ")[1]) || (getObject.name.split(" ")[0] === item.name.split(" ")[2])){//Si el numero de cualquier de los dos pines (0 pinA) o (1 pinB), es igual al numero que tiene el cable ( wire 0 1), entonces el cable les pertenece.
@@ -1124,7 +1124,7 @@ function caseCable(getObject){
         });
     }
     else if(getpinpowerA || getpinpowerB){//Casos para cableenergia, y manipular su cable
-        //console.log("*************CABLE");
+        ////console.log("*************CABLE");
         scene.children.forEach(function(item,index){//Busca todos los elementos del escenario
             if(item.name.split(" ")[0] === "jumperPow"){//Solo los cables
                 if(getObject.name.split(" ")[0] === item.name.split(" ")[1]){//Si el numero del pinPower es igual al numero del cable
@@ -1234,8 +1234,8 @@ function deleteBtn(){
 
     if((getpinA || getpinB) || (getpinpowerA || getpinpowerB)){//Si es jumper o jumper DC
         
-        console.log("ENTRA CABLE");
-        console.log(getIdbtnrest);
+        //console.log("ENTRA CABLE");
+        //console.log(getIdbtnrest);
         delete saveDelete;
         var saveDelete = [];//Almacena los objetos del jumper a eliminar
 
@@ -1253,10 +1253,10 @@ function deleteBtn(){
             }
         }
         
-        console.log(saveDelete);
+        //console.log(saveDelete);
 
         for(i=0; i<=saveDelete.length-1; i++){//Recorre el array para eliminar los objetos de jumper
-            console.log(saveDelete[i]);
+            //console.log(saveDelete[i]);
             if(saveDelete[i].name.split(" ")[0] != "jumper" && saveDelete[i].name.split(" ")[0] != "jumperPow"){//Se descarta al cable, ya que este no esta en "allClones"
                 allClones.forEach(function(item,index){//Recorre el array "allClones"
                     if(item.name === saveDelete[i].name){//Busca el objeto a eliminar en "allClones"
@@ -1279,8 +1279,8 @@ function deleteBtn(){
             var getNameobj = objetoGrl.name.replace(" ",'');//Obtiene el nombre sin el espacio
             $("#"+getNameobj).remove();//Elimina el div (label) de la resistencia seleccionada
         }
-        //console.log(allClones);
-        //console.log(objetoGrl);
+        ////console.log(allClones);
+        ////console.log(objetoGrl);
         
         allClones.forEach(function(item,index){//Recorre el array "allClones"
             if(item.name === objetoGrl.name){//Busca el objeto a eliminar en "allClones"
@@ -1457,7 +1457,7 @@ function setAnimation(){
 	* SALIDAS: Ninguna.
     */
     if(startAnima === true){//Si hay animacion
-        //console.log("ANIMA");
+        ////console.log("ANIMA");
         curveFollow();//Points catmull siguen la posicion de las puntos clave  
     }
     if(reajusteAnima === true){//Reajusta canvas si se abre el menu
@@ -1551,14 +1551,14 @@ function playBtn(){
                 energyConected();//Si la energia + y - esta conectada a las lineas + y - respectivamente de la protoboard
                 
                 
-                console.log("PINES EN LA MISMA DE POLARIDAD = "+samelineenergyStatus);
-                console.log("OBJETOS MANIPULADOS = "+manipulatedStatus);
-                console.log("OBJETOS DENTRO PROTOBOARD = "+insideprotoboardStatus);
-                console.log("JUMPERS NO HACEN CORTO = "+crashpolarityStatus);
-                console.log("CABLE ENERGIA CONECTADO = "+conectenergyStatus);
+                //console.log("PINES EN LA MISMA DE POLARIDAD = "+samelineenergyStatus);
+                //console.log("OBJETOS MANIPULADOS = "+manipulatedStatus);
+                //console.log("OBJETOS DENTRO PROTOBOARD = "+insideprotoboardStatus);
+                //console.log("JUMPERS NO HACEN CORTO = "+crashpolarityStatus);
+                //console.log("CABLE ENERGIA CONECTADO = "+conectenergyStatus);
                 
-                //console.log("OBJETO MISMA FILA QUE CABLE ENERGIA = "+samerowStatus);
-                console.log("CABLE ENERGIA CONECTADO A + Y - = "+polarutyenergyStatus);
+                ////console.log("OBJETO MISMA FILA QUE CABLE ENERGIA = "+samerowStatus);
+                //console.log("CABLE ENERGIA CONECTADO A + Y - = "+polarutyenergyStatus);
                 
 
                 /////////El LED no va en esta parte
@@ -1574,7 +1574,7 @@ function playBtn(){
             
             
             if(samelineenergyStatus.includes(false) === false && manipulatedStatus === true && insideprotoboardStatus.includes(false) === false && crashpolarityStatus === true && conectenergyStatus === true && /*samerowStatus.includes(false) === false &&*/ polarutyenergyStatus === true){//Valida que todo este correctamente en la protoboard
-                console.log("******TODO CORECTO******");
+                //console.log("******TODO CORECTO******");
                 
                 valSteps();//Valida pasos instrucciones
                 
@@ -1667,8 +1667,8 @@ function valAllobjs(){
     
     getBuzzerrgbc = [];//Resetea almacenamiento de buzzer rgbc
 
-    console.log("LINE NAME ENERGY ************************");
-    console.log(newLineenergyname);
+    //console.log("LINE NAME ENERGY ************************");
+    //console.log(newLineenergyname);
     
     newLineenergyname.forEach(function(items,indexs){//Busca las lineas de energia por su nombre
         contResistance.push([0]);//Contador de resistencias por linea de energia
@@ -1701,13 +1701,13 @@ function valAllobjs(){
         flowEnergy.push([1.3]);//Almacena la corriente electrica que va en cada linea de energia
     });
     
-    console.log("?????????????????????????");
+    //console.log("?????????????????????????");
     
     newLineenergyname.forEach(function(items,indexs){//Busca las lineas de energia por su nombre
 
-        console.log(items);
+        //console.log(items);
 
-        console.log("LINEA "+indexs);
+        //console.log("LINEA "+indexs);
 
         var statusResistance = false;//Almacena si en la linea de energia hay resistencia
         var statusPushbutton = false;//Almacena si en la linea de energia hay pushbutton
@@ -1738,35 +1738,35 @@ function valAllobjs(){
                 statusPreset = true;//En la linea si hay preset
             }
             if(items2.split(" ")[1] === "buzzer"){//La linea si tiene buzzer
-                console.log("ENTRA BUZZER");
+                //console.log("ENTRA BUZZER");
                 getObjresistance = "Buzzer";//Rescata nombre dle objeto
                 statusBuzzer = true;//En la linea si hay buzzer
                 addBuzzer.push(soundBuzzer.clone());//Agrega el sonido a la variable
                 addBuzzer[addBuzzer.length-1].name = items2;//Le agrega el nombre del objeto buzzer en curso, para recuperarlo en onBuzzer();
             }
             if(items2.split(" ")[1] === "led"){//La linea si tiene led
-                console.log("ENTRA LED");
+                //console.log("ENTRA LED");
                 getObjresistance = "LED";//Rescata nombre dle objeto
                 statusLed = true;//En la linea si hay LED
             }
             if(items2.split(" ")[1] === "rgbc"){//La linea si tiene rgbc
-                console.log("ENTRA RGB camaleón");
+                //console.log("ENTRA RGB camaleón");
                 getObjresistance = "RGB camaleón";//Rescata nombre dle objeto
                 statusRgbc = true;//En la linea si hay LED
             }
             if(items2.split(" ")[1] === "rgb"){//La linea si tiene rgb
-                console.log("ENTRA RGB");
+                //console.log("ENTRA RGB");
                 getObjresistance = "RGB";//Rescata nombre dle objeto
                 statusRgb = true;//En la linea si hay RGB
                 setRgb = [0,0,0];//Almacena color rgb
             }
             if(items2.split(" ")[1] === "ldr"){//La linea si tiene ldr
-                console.log("ENTRA LDR");
+                //console.log("ENTRA LDR");
                 getObjresistance = "Fotorresistencia";//Rescata nombre dle objeto
                 statusLdr = true;//En la linea si hay ldr
             }
             if(items2.split(" ")[1] === "ultrasonic"){//La linea si tiene ldr
-                console.log("ENTRA ULTRASONICO");
+                //console.log("ENTRA ULTRASONICO");
                 getObjresistance = "Ultrasónico";//Rescata nombre dle objeto
                 statusUltrasonic = true;//En la linea si hay ldr
             }
@@ -1779,8 +1779,8 @@ function valAllobjs(){
             * ENTRADAS: Ninguna.
             * SALIDAS: Ninguna.
             */
-            console.log("NUMERO DE RESISTENCIAS LINEA "+indexs);
-            console.log(contResistance[indexs]);
+            //console.log("NUMERO DE RESISTENCIAS LINEA "+indexs);
+            //console.log(contResistance[indexs]);
             var setvalIntensity;//Almacena temporalmente el dato de la linea de energia
             var dataOhms = 0;//Dato asignado por el tipo/valor de Resistencia
             items.forEach(function(items2,indexs2){//Busca elementos de cada linea de energia
@@ -1809,7 +1809,7 @@ function valAllobjs(){
                 setvalIntensity = 0.4;//Se establece el valor minimo.
             }
             flowEnergy[indexs] = setvalIntensity;//Almacena en variable el nuevo dato de flujo de energia
-            console.log(setvalIntensity);
+            //console.log(setvalIntensity);
         }
         function conteoLeds(){
             /*
@@ -1818,8 +1818,8 @@ function valAllobjs(){
             * ENTRADAS: Ninguna.
             * SALIDAS: Ninguna.
             */
-            console.log("NUMERO DE LEDs LINEA "+indexs);
-            console.log(contLed[indexs]);
+            //console.log("NUMERO DE LEDs LINEA "+indexs);
+            //console.log(contLed[indexs]);
             var setvalIntensity;//Almacena temporalmente el dato de la linea de energia
             var dataOhms = 0.2;//Dato asignado por el tipo/valor de LED
             setvalIntensity = Number((flowEnergy[indexs]-(dataOhms*contLed[indexs])).toFixed(2));//Obtiene el valor de linea de energia, restandole el valor de componente
@@ -1827,7 +1827,7 @@ function valAllobjs(){
                 setvalIntensity = 0.4;//Se establece el valor minimo.
             }
             flowEnergy[indexs] = setvalIntensity;//Almacena en variable el nuevo dato de flujo de energia
-            console.log(setvalIntensity);
+            //console.log(setvalIntensity);
         }
         function conteoRgbs(){
             /*
@@ -1836,8 +1836,8 @@ function valAllobjs(){
             * ENTRADAS: Ninguna.
             * SALIDAS: Ninguna.
             */
-            console.log("NUMERO DE RGBs LINEA "+indexs);
-            console.log(contRgb[indexs]);
+            //console.log("NUMERO DE RGBs LINEA "+indexs);
+            //console.log(contRgb[indexs]);
             var setvalIntensity;//Almacena temporalmente el dato de la linea de energia
             var dataOhms = 0.2;//Dato asignado por el tipo/valor de RGB
             setvalIntensity = Number((flowEnergy[indexs]-(dataOhms*contRgb[indexs])).toFixed(2));//Obtiene el valor de linea de energia, restandole el valor de componente
@@ -1845,7 +1845,7 @@ function valAllobjs(){
                 setvalIntensity = 0.4;//Se establece el valor minimo.
             }
             flowEnergy[indexs] = setvalIntensity;//Almacena en variable el nuevo dato de flujo de energia
-            console.log(setvalIntensity);
+            //console.log(setvalIntensity);
         }
         function conteoRgbcs(){
             /*
@@ -1854,8 +1854,8 @@ function valAllobjs(){
             * ENTRADAS: Ninguna.
             * SALIDAS: Ninguna.
             */
-            console.log("NUMERO DE RGBcs LINEA "+indexs);
-            console.log(contRgbc[indexs]);
+            //console.log("NUMERO DE RGBcs LINEA "+indexs);
+            //console.log(contRgbc[indexs]);
             var setvalIntensity;//Almacena temporalmente el dato de la linea de energia
             var dataOhms = 0.2;//Dato asignado por el tipo/valor de RGBc
             setvalIntensity = Number((flowEnergy[indexs]-(dataOhms*contRgbc[indexs])).toFixed(2));//Obtiene el valor de linea de energia, restandole el valor de componente
@@ -1863,7 +1863,7 @@ function valAllobjs(){
                 setvalIntensity = 0.4;//Se establece el valor minimo.
             }
             flowEnergy[indexs] = setvalIntensity; //Almacena en variable el nuevo dato de flujo de energia
-            console.log(setvalIntensity);
+            //console.log(setvalIntensity);
         }
         function conteoBuzzers(){
             /*
@@ -1872,8 +1872,8 @@ function valAllobjs(){
             * ENTRADAS: Ninguna.
             * SALIDAS: Ninguna.
             */
-            console.log("NUMERO DE Buzzers LINEA "+indexs);
-            console.log(contBuzzer[indexs]);
+            //console.log("NUMERO DE Buzzers LINEA "+indexs);
+            //console.log(contBuzzer[indexs]);
             var setvalIntensity;//Almacena temporalmente el dato de la linea de energia
             var dataOhms = 0.4;//Dato asignado por el tipo/valor de Buzzer
             setvalIntensity = Number((flowEnergy[indexs]-(dataOhms*contBuzzer[indexs])).toFixed(2));//Obtiene el valor de linea de energia, restandole el valor de componente
@@ -1881,7 +1881,7 @@ function valAllobjs(){
                 setvalIntensity = 0.4;//Se establece el valor minimo.
             }
             flowEnergy[indexs] = setvalIntensity;//Almacena en variable el nuevo dato de flujo de energia
-            console.log(setvalIntensity);
+            //console.log(setvalIntensity);
         }
         
 
@@ -1896,13 +1896,13 @@ function valAllobjs(){
             */
             scene.children.forEach(function(itemes,indexes){//Busca en todo, el rgb a activar
                 if(items.includes(itemes.name) === true && itemes.name.split(" ")[1] === "rgb"){//Encuantra el rgb el la linea de energia que se va a activar (como las tres lineas de energia tienen el mismo RGB, entonces lo va a hacer tres veces con la misma info)
-                    console.log("RGBsssssssssssssssssssssssssssssssssssssss");
-                    console.log(itemes.name);
+                    //console.log("RGBsssssssssssssssssssssssssssssssssssssss");
+                    //console.log(itemes.name);
                     newLineenergypostemporary[indexs].forEach(function(ite1,ind1){
                         itemes.newInfo.usedLines.forEach(function(ite3,ind3){
                             if(ite1 === ite3){
-                                console.log("ind3*****************");
-                                console.log(ind3);
+                                //console.log("ind3*****************");
+                                //console.log(ind3);
                                 if(ind3 === 1){//Linea de energia esta conectado al pin 1 = R
                                     setRgb[0] = 1;//Se agrega color R
                                     letterRgb = "r";//Almacena dato R del RGB
@@ -1925,9 +1925,9 @@ function valAllobjs(){
 
                         });
                     });
-                    console.log("COLORES RGB");
-                    console.log(setRgb);
-                    console.log(pinRgb);
+                    //console.log("COLORES RGB");
+                    //console.log(setRgb);
+                    //console.log(pinRgb);
                 }
             });
         }
@@ -1941,14 +1941,14 @@ function valAllobjs(){
 
             scene.children.forEach(function(itemes,indexes){//Busca en todo, el rgb a activar
                 if(items.includes(itemes.name) === true && itemes.name.split(" ")[1] === "preset"){//Encuantra el preset el la linea de energia que se va a activar (como las dos lineas de energia tienen el mismo RGB, entonces lo va a hacer tres veces con la misma info)
-                    console.log("PRESETsssssssssssssssssssssssssssssssssssssss");
-                    console.log(itemes.name);
+                    //console.log("PRESETsssssssssssssssssssssssssssssssssssssss");
+                    //console.log(itemes.name);
                     newLineenergynegtemporary[indexs].forEach(function(ite1,ind1){
 
                         itemes.newInfo.usedLines.forEach(function(ite3,ind3){
                             if(ite1 === ite3){
-                                console.log("PRESET LINE");
-                                console.log(ind3);
+                                //console.log("PRESET LINE");
+                                //console.log(ind3);
                                 if(ind3 === 0){//Linea de energia esta conectado al pin 1
                                     itemes.newInfo.onpresetData.push(0);//Agrega pin conectado al preset, para saber cuantas lineas tiene conectado
                                 }
@@ -1959,12 +1959,12 @@ function valAllobjs(){
                         });
 
                     });
-                    console.log("PINES PRESET");
-                    console.log(itemes.newInfo.onpresetData);
+                    //console.log("PINES PRESET");
+                    //console.log(itemes.newInfo.onpresetData);
                 }
             });
         }
-        console.log("LINEA "+indexs+" TIENE RGBc "+statusRgbc+" Y BUZZER "+statusBuzzer);
+        //console.log("LINEA "+indexs+" TIENE RGBc "+statusRgbc+" Y BUZZER "+statusBuzzer);
         conteoResistencias();//Cuenta las resistencias en cada linea de energia
         conteoLeds();//Cuenta los LEDs en cada linea de energia
         conteoRgbs();//Cuenta los RGBs en cada linea de energia
@@ -1995,9 +1995,9 @@ function valAllobjs(){
             contPushbutton++//Agrega conteo para objeto
         }
         else if(statusSwitch){//Si tiene switch
-            //console.log(contSwitch);
-            //console.log("newpinSwitchget???????????");
-            //console.log(newpinSwitchget);
+            ////console.log(contSwitch);
+            ////console.log("newpinSwitchget???????????");
+            ////console.log(newpinSwitchget);
             //conteoResistencias();//Cuenta las resistencias en cada linea de energia
             savedataSwitch.push([[],[],[],[],[]]);//Resetea el nombre del boton y los leds (objetos) que prende
             items.forEach(function(items2,indexs2){//Busca elementos de cada linea de energia
@@ -2139,18 +2139,18 @@ function valAllobjs(){
         }
     });
     
-    console.log("FLOW ENERGY --------------------");
-    console.log(flowEnergy);
+    //console.log("FLOW ENERGY --------------------");
+    //console.log(flowEnergy);
 
-    console.log("OBJETOS BUTTON, SWITCH, PRESET, LDR, ULTRASONIC");
-    console.log(savedataButton);
-    console.log(savedataSwitch);
-    console.log(savedataPreset);
-    console.log(savedataLdr);
-    console.log(savedataUltrasonic);
+    //console.log("OBJETOS BUTTON, SWITCH, PRESET, LDR, ULTRASONIC");
+    //console.log(savedataButton);
+    //console.log(savedataSwitch);
+    //console.log(savedataPreset);
+    //console.log(savedataLdr);
+    //console.log(savedataUltrasonic);
     
-    console.log("OBJETOS BUZZER");
-    console.log(addBuzzer);
+    //console.log("OBJETOS BUZZER");
+    //console.log(addBuzzer);
 
 }
 function valSteps(){
@@ -2280,8 +2280,8 @@ function objPress(){
                 getElementclass[i].addEventListener('pointerdown', onactionPointerdown, false );//Inicia listener
                 getElementclass[i].addEventListener('pointerup', onactionPointerup, false);//Inicia listener
                 
-                console.log("contPushbutton++++++++++++++++");
-                console.log(activatePushbutton);
+                //console.log("contPushbutton++++++++++++++++");
+                //console.log(activatePushbutton);
                 
                 var saveKeysadded = [["1",49,97],["2",50,98],["3",51,99],["4",52,100],["5",53,101],["6",54,102],["7",55,103],["8",56,104],["9",57]];//Almacena las teclas, a las que se asignan un click en los botones
                 if(activatePushbutton){
@@ -2290,7 +2290,7 @@ function objPress(){
                     $(".d_emergentectrlpushbutton").remove();//Quita leyenda de teclas a presionar en botones
                     var saveKeysval = [];//Almacena los numeros de las teclas a mostrar en el mensaje emergente
                     for(var k=0; k<=savedataButton.length-1; k++){
-                        console.log(saveKeysadded[k][0]);
+                        //console.log(saveKeysadded[k][0]);
                         saveKeysval.push(saveKeysadded[k][0]);//Almacena los numeros de las teclas a mostrar en el mensaje emergente
                     }
                     var keysJoin = saveKeysval.join(', ');//Une el array de los numeros de las teclas a mostrar en el mensaje emergente
@@ -2313,7 +2313,7 @@ function objPress(){
             * SALIDAS: Ninguna.
             */
             var codeKey = event.which || event.keyCode;//Obtiene tecla presionada
-            console.log(codeKey);
+            //console.log(codeKey);
             for(var i = 0; i<=savedataButton.length-1; i++){
                 if(codeKey === saveKeysadded[i][1] || codeKey === saveKeysadded[i][2]){//Tecla del array a presionar
                     onactionPointerdown(getElementclass[i]);//Inicia la funcion de boton en curso
@@ -2340,7 +2340,7 @@ function objPress(){
             * ENTRADAS: Ninguna.
             * SALIDAS: Ninguna.
             */
-            console.log("PRESSED");
+            //console.log("PRESSED");
             var getnameAttr;///Obtiene el nombre del attr, que es igual al nombre del objeto
             if(keyPressed){
                 getnameAttr = $(value).attr('name');//Obtiene el nombre del attr, que es igual al nombre del objeto (viene de la tecla)
@@ -2498,7 +2498,7 @@ function objPress(){
                     if(item.name === getnameAttr){//Objetos con btn en el escenario
                         item.children.forEach(function(item2,index2){//Busca los btn del obj
                             if(Number(item2.name.split("_")[1]) === Number(getNumbtn)+4){//Busca el btn seleccionado en el div
-                                console.log(item2.name);
+                                //console.log(item2.name);
                                 item2.position.z = -0.22;//Nueva posicion
                             }
                         });
@@ -2513,15 +2513,15 @@ function objPress(){
 
                         if(getnameAttr === savedataSwitch[index2][0][0].replace(/['"]+/g, '')){//Busca objeto por nombre
 
-                            console.log("*************************************************IN");
-                            console.log("SWITCH PIN IN = "+getNumbtn);
-                            console.log("SWITCH PIN OUT = ");
-                            console.log(savedataSwitch[index2][0][1]);
-                            console.log(getnameAttr);
+                            //console.log("*************************************************IN");
+                            //console.log("SWITCH PIN IN = "+getNumbtn);
+                            //console.log("SWITCH PIN OUT = ");
+                            //console.log(savedataSwitch[index2][0][1]);
+                            //console.log(getnameAttr);
 
-                            console.log("saveChecked------------IN");
-                            console.log(saveChecked);
-                            console.log("ALMACENADO "+savedataSwitch[index2][0][1].length);
+                            //console.log("saveChecked------------IN");
+                            //console.log(saveChecked);
+                            //console.log("ALMACENADO "+savedataSwitch[index2][0][1].length);
                             
                             var contChecked = 0;//Conteo de btn, de acuerdo ala linea de energia
                             savedataSwitch[index2][0][1].forEach(function(item,index){//Busca btn de acuerdo a la linea de energia
@@ -2530,7 +2530,7 @@ function objPress(){
                                 }
                             });
                             
-                            console.log("CONTEO "+contChecked);
+                            //console.log("CONTEO "+contChecked);
 
 
                             if(contChecked === savedataSwitch[index2][0][1].length){//La cuenta de btn activados, coincide con la info de pinSwitch
@@ -2581,7 +2581,7 @@ function objPress(){
             }else{//Es unchecked
                 var getnameAttr = $(this).parent().parent().parent().attr('name');//Obtiene el nombre del attr, que es igual al nombre del objeto
                 var getNumbtn = $(this).attr('id').split("_")[4];//Obtiene el numero de btn del switch
-                //console.log(getnameAttr+" Inactive btn "+getNumbtn);
+                ////console.log(getnameAttr+" Inactive btn "+getNumbtn);
                 scene.children.forEach(function(item,index){//Busca todos los elementos hijos del objeto
                     if(item.name === getnameAttr){//Objetos con btn en el escenario
                         item.children.forEach(function(item2,index2){//Busca los btn del obj
@@ -2605,12 +2605,12 @@ function objPress(){
                         if(getnameAttr === savedataSwitch[index2][0][0].replace(/['"]+/g, '')){//Busca objeto por nombre
 
 
-                            console.log("*************************************************OUT");
+                            //console.log("*************************************************OUT");
 
-                            console.log("saveChecked------------OUT");
-                            console.log(saveChecked);
+                            //console.log("saveChecked------------OUT");
+                            //console.log(saveChecked);
 
-                            console.log("ALMACENADO "+savedataSwitch[index2][0][1].length);
+                            //console.log("ALMACENADO "+savedataSwitch[index2][0][1].length);
 
 
                             var contChecked = 0;//Conteo de btn, de acuerdo ala linea de energia
@@ -2620,7 +2620,7 @@ function objPress(){
                                 }
                             });
 
-                            console.log("CONTEO "+contChecked);
+                            //console.log("CONTEO "+contChecked);
 
 
                             if(contChecked != savedataSwitch[index2][0][1].length){//La cuenta de btn activados, coincide con la info de pinSwitch
@@ -2704,14 +2704,14 @@ function objPress(){
             getValenergy(this);//Obtiene maximo de energia almacenado por la cantidad de resistencias, led, rgb, buzzer y rgbc
             getdirectionPreset();//Obtiene la direccion del preset
             getinfoPreset(this);//Obtiene la info attr del div label en curso
-            console.log("PERILLA "+getnumPerilla);
+            //console.log("PERILLA "+getnumPerilla);
             newValpreset("left");
         });
         $(".d_activatepresetbtnright").off().on("pointerdown touchstart", function(){//Boton de giro a la derecha de la perilla
             getValenergy(this);//Obtiene maximo de energia almacenado por la cantidad de resistencias, led, rgb, buzzer y rgbc
             getdirectionPreset();//Obtiene la direccion del preset
             getinfoPreset(this);//Obtiene la info attr del div label en curso
-            console.log("PERILLA "+getnumPerilla);
+            //console.log("PERILLA "+getnumPerilla);
             newValpreset("right");
         });
         var setTime = setTimeout(function(){//Tiempo para el click
@@ -2723,7 +2723,7 @@ function objPress(){
 
         function newValpreset(data){
             if(getnumPerilla === 1){
-                console.log("ENTRA****** "+getnumPerilla);
+                //console.log("ENTRA****** "+getnumPerilla);
                 if(data === "left"){
                     if(contGir > 170 && contGir <= 270){
                        volumeSet = volumeSet-0.1;
@@ -2733,10 +2733,10 @@ function objPress(){
                         girPerilla = girPerilla-10;
                         contData = contData-jumpVal;//Disminuye opacity light (temporalmente)
                         rgbValue = rgbValue-0.035;
-                        //console.log(contGir);
+                        ////console.log(contGir);
                         setinfoPreset();//Establece acciones e info al giro del preset
                     }
-                    console.log("VOLUMEN "+volumeSet);
+                    //console.log("VOLUMEN "+volumeSet);
                 }
                 if(data === "right"){
                     if(contGir >= 170 && contGir < 270){
@@ -2747,14 +2747,14 @@ function objPress(){
                         girPerilla = girPerilla+10;
                         contData = contData+jumpVal;//Disminuye opacity light (temporalmente)
                         rgbValue = rgbValue+0.035;
-                        //console.log(contGir);
+                        ////console.log(contGir);
                         setinfoPreset();//Establece acciones e info al giro del preset
                     }
-                    console.log("VOLUMEN "+volumeSet);
+                    //console.log("VOLUMEN "+volumeSet);
                 }
             }
             if(getnumPerilla === 3){
-                console.log("ENTRA****** "+getnumPerilla);
+                //console.log("ENTRA****** "+getnumPerilla);
                 if(data === "left"){
                     if(contGir < 270 && contGir >= 170){
                        volumeSet = volumeSet+0.1;
@@ -2764,10 +2764,10 @@ function objPress(){
                         girPerilla = girPerilla-10;
                         contData = contData+jumpVal;//Disminuye opacity light (temporalmente)
                         rgbValue = rgbValue+0.035;
-                        //console.log(contGir);
+                        ////console.log(contGir);
                         setinfoPreset();//Establece acciones e info al giro del preset
                     }
-                    console.log("VOLUMEN "+volumeSet);
+                    //console.log("VOLUMEN "+volumeSet);
                 }
                 if(data === "right"){
                     if(contGir <= 270 && contGir > 170){
@@ -2778,10 +2778,10 @@ function objPress(){
                         girPerilla = girPerilla+10;
                         contData = contData-jumpVal;//Disminuye opacity light (temporalmente)
                         rgbValue = rgbValue-0.035;
-                        //console.log(contGir);
+                        ////console.log(contGir);
                         setinfoPreset();//Establece acciones e info al giro del preset
                     }
-                    console.log("VOLUMEN "+volumeSet);
+                    //console.log("VOLUMEN "+volumeSet);
                 }
             }
         }
@@ -2817,10 +2817,10 @@ function objPress(){
                         }
                     });
                 }
-                console.log("Energia total a dividir "+valMax+" - "+valMin+" = "+(valMax-valMin).toFixed(3));
+                //console.log("Energia total a dividir "+valMax+" - "+valMin+" = "+(valMax-valMin).toFixed(3));
             });
             jumpVal = (valMax-valMin)/27;//Cantidad de energia total de la linea, entre los pasos del ldr (27)
-            console.log("Cantidad a restar o sumar: "+jumpVal.toFixed(3));
+            //console.log("Cantidad a restar o sumar: "+jumpVal.toFixed(3));
         }
 
         function getdirectionPreset(objAct){
@@ -2832,8 +2832,8 @@ function objPress(){
             */
             
             
-            console.log(getnameAttr);
-            console.log(saveNamepreset);
+            //console.log(getnameAttr);
+            //console.log(saveNamepreset);
             
             if(saveNamepreset.includes(getnameAttr) === false){
                 
@@ -2887,8 +2887,8 @@ function objPress(){
             * SALIDAS: Ninguna.
             */
             
-            console.log("#######");
-            console.log(contData.toFixed(3));
+            //console.log("#######");
+            //console.log(contData.toFixed(3));
             
             
             $("#"+getidAttr).attr('contGir',contGir);//Almacena en el div label la info de perilla giros
@@ -2900,8 +2900,8 @@ function objPress(){
             setIntensitylightaction = 0.4;//Resetea la intensidad de los led o rgb
             setIntensitylightaction = contData.toFixed(2);//Opacity light
             
-            console.log("ENERGIA BASE "+valMin+" ENERGIA TOPE "+valMax);
-            console.log("ENERGIA ACTUAL "+setIntensitylightaction);
+            //console.log("ENERGIA BASE "+valMin+" ENERGIA TOPE "+valMax);
+            //console.log("ENERGIA ACTUAL "+setIntensitylightaction);
             
             
             setRgbintensitylight[1] = rgbValue.toFixed(2);
@@ -3015,13 +3015,13 @@ function objPress(){
         
         
         $(".d_activateldrleft").off().on("pointerdown touchstart", function(){//Boton de decremento de liminusidad
-            console.log("LEFT");
-            console.log(contLight);
+            //console.log("LEFT");
+            //console.log(contLight);
             getinfoLdr(this);//Obtiene la info attr del div label en curso
             if(contLight > 100 && contLight <= 200){
                 volumeSet = volumeSet-0.1;
             }
-            console.log(volumeSet);
+            //console.log(volumeSet);
             if(contLight > 0 && contLight <= 200){//Dentro del rango de giro de la perilla
                 contLight = contLight-10;//Disminuye rados de giro de la perilla
                 contLightcolor = (contLight/10)-1;
@@ -3031,7 +3031,7 @@ function objPress(){
                     contData = contData-jumpVal;//Disminuye opacity light (temporalmente)
                 //}
                 rgbValue = rgbValue-0.05;
-                //console.log(getidAttr);
+                ////console.log(getidAttr);
                 setinfoLdr();//Establece acciones e info al giro del preset
                 $("#"+getidAttr).find(".d_activateldrlight").find("svg").find("path").css({"opacity":(contLight/2)/100});
                 $("#"+getidAttr).find(".d_activateldrlight").find("svg").find("path").css({"fill":colorsLight[contLightcolor]});
@@ -3040,13 +3040,13 @@ function objPress(){
             }
         });
         $(".d_activateldrright").off().on("pointerdown touchstart", function(){//Boton de incremento de liminusidad
-            console.log("RIGHT");
-            console.log(contLight);
+            //console.log("RIGHT");
+            //console.log(contLight);
             getinfoLdr(this);//Obtiene la info attr del div label en curso
             if(contLight >= 100 && contLight < 200){
                 volumeSet = volumeSet+0.1;
             }
-            console.log(volumeSet);
+            //console.log(volumeSet);
             if(contLight >= 0 && contLight < 200){//Dentro del rango de giro de la perilla
                 contLight = contLight+10;//Aumenta rados de giro de la perilla
                 contLightcolor = (contLight/10)+1;
@@ -3056,7 +3056,7 @@ function objPress(){
                     contData = contData+jumpVal;//Aumenta opacity light (temporalmente)
                 //}
                 rgbValue = rgbValue+0.05;
-                //console.log(getidAttr);
+                ////console.log(getidAttr);
                 setinfoLdr();//Establece acciones e info al giro del preset
                 $("#"+getidAttr).find(".d_activateldrlight").find("svg").find("path").css({"opacity":(contLight/2)/100});
                 $("#"+getidAttr).find(".d_activateldrlight").find("svg").find("path").css({"fill":colorsLight[contLightcolor]});
@@ -3096,10 +3096,10 @@ function objPress(){
                         }
                     });
                 }
-                console.log("Energia total a dividir "+(valMax-valMin).toFixed(3));
+                //console.log("Energia total a dividir "+(valMax-valMin).toFixed(3));
             });
             jumpVal = (valMax-valMin)/20;//Cantidad de energia total de la linea, entre los pasos del ldr (20)
-            console.log("Cantidad a restar o sumar: "+jumpVal.toFixed(3));
+            //console.log("Cantidad a restar o sumar: "+jumpVal.toFixed(3));
         }
         
         
@@ -3140,8 +3140,8 @@ function objPress(){
             setIntensitylightaction = 0.4;//Resetea la intensidad de los led o rgb
             setIntensitylightaction = contData.toFixed(3);//Opacity light
 
-            console.log("ENERGIA BASE "+valMin+" ENERGIA TOPE "+valMax);
-            console.log("ENERGIA ACTUAL "+setIntensitylightaction);
+            //console.log("ENERGIA BASE "+valMin+" ENERGIA TOPE "+valMax);
+            //console.log("ENERGIA ACTUAL "+setIntensitylightaction);
             
             setRgbintensitylight[1] = rgbValue.toFixed(2);
 
@@ -3375,7 +3375,7 @@ function onPowerbank(item,objName){
 	* ENTRADAS: item > objeto en curso, objName > nombre del objeto.
 	* SALIDAS: Ninguna.
     */
-    //console.log(scene);
+    ////console.log(scene);
     if(objName === "energyadapter"){//Es AC adapter
         animaAcadapter = true;//Anima cable ac adapter
         saveconectedAcadapter = true;//Si hay AC adapter
@@ -3459,8 +3459,8 @@ function onLed(activeObj,setFlowdata,statusResis){
     * VARIABLES: Ninguna
     */
     
-    console.log("LED INICIA "+activeObj.name);
-    console.log("flowEnergy: "+setFlowdata);
+    //console.log("LED INICIA "+activeObj.name);
+    //console.log("flowEnergy: "+setFlowdata);
     
     if(setFlowdata <= 1 && statusResis === true){//Tiene resistencia
         startLed(activeObj);//Acciones para prender el LED.
@@ -3483,14 +3483,14 @@ function onLed(activeObj,setFlowdata,statusResis){
         */
         objLed.getObjectByName("data").children.forEach(function(item1,index1){//Busca objetos hijos
             if(item1.name === "light"){//Busca el objeto de sprite light
-                //console.log(item1);
+                ////console.log(item1);
                 item1.visible = true;//Prende light
                 item1.material.opacity = setFlowdata-0.2;//Intensidad de light
                 item1.scale.x = setFlowdata*3;//Tamaño de light
                 item1.scale.y = setFlowdata*3;//Tamaño de light
                 item1.scale.z = setFlowdata*3;//Tamaño de light
 
-                //console.log(item1.scale);
+                ////console.log(item1.scale);
             }
         });
         objLed.children[1].material.opacity = setFlowdata;//Opacidad de led
@@ -3504,7 +3504,7 @@ function offLed(which){
     * SALIDAS: Ninguna.
     * VARIABLES: Ninguna
     */
-    console.log("OFF LED");
+    //console.log("OFF LED");
     if(which === "all"){
         scene.children.forEach(function(item,index){//Busca en escena todos los objetos
             if(item.name.split(" ")[1] === "led"){//Busca en escena los objetos LED
@@ -3522,7 +3522,7 @@ function offLed(which){
                 });
                 item.children[1].material.opacity = 0.4;//Restaura la opacidad del led
             }else{
-                //console.log("NO HAY LEDs PRENDIDOS");
+                ////console.log("NO HAY LEDs PRENDIDOS");
             }
         });
     }else{
@@ -3540,11 +3540,11 @@ function offLed(which){
                         item1.visible = false;//Quita crash
                     }
                 });
-                console.log("LED TERMINA");
-                console.log(item.name);
+                //console.log("LED TERMINA");
+                //console.log(item.name);
                 item.children[1].material.opacity = 0.4;//Restaura la opacidad del led
             }else{
-                //console.log("NO HAY LEDs PRENDIDOS");
+                ////console.log("NO HAY LEDs PRENDIDOS");
             }
         });
     }
@@ -3560,8 +3560,8 @@ function onRgbc(activeObj,setFlowdata,statusResis){
     */
     
     
-    console.log("RGBc INICIA "+activeObj.name);
-    console.log("flowEnergy: "+setFlowdata);
+    //console.log("RGBc INICIA "+activeObj.name);
+    //console.log("flowEnergy: "+setFlowdata);
     
     if(setFlowdata <= 1 && statusResis === true){//Tiene resistencia
         startRgbc(activeObj);//Acciones para prender el RGBc.
@@ -3584,14 +3584,14 @@ function onRgbc(activeObj,setFlowdata,statusResis){
         */
         objRgbc.getObjectByName("data").children.forEach(function(item1,index1){//Busca objetos hijos
             if(item1.name === "light"){//Busca el objeto de sprite light
-                //console.log(item1);
+                ////console.log(item1);
                 item1.visible = true;//Prende light
                 item1.material.opacity = setFlowdata-0.2;//Intensidad de light
                 item1.scale.x = setFlowdata*3;//Tamaño de light
                 item1.scale.y = setFlowdata*3;//Tamaño de light
                 item1.scale.z = setFlowdata*3;//Tamaño de light
 
-                //console.log(item1.scale);
+                ////console.log(item1.scale);
             }
         });
         objRgbc.children[1].material.opacity = setFlowdata;//Opacidad de rgbc
@@ -3603,9 +3603,9 @@ function onRgbc(activeObj,setFlowdata,statusResis){
         
         
         
-        console.log("buzzerRgbc---------");
-        //console.log(buzzerRgbc);
-        console.log(getBuzzerrgbc);
+        //console.log("buzzerRgbc---------");
+        ////console.log(buzzerRgbc);
+        //console.log(getBuzzerrgbc);
         clearInterval(timeIntervalrgbc);//Limpia tiempo
         //buzzerRgbc.forEach(function(rgbcBuzzer){
             if(getBuzzerrgbc.length >= 2){//Si el RGBc tiene un buzzer en paralelo y el mismo componente de accion (button, preset, ldr)
@@ -3681,7 +3681,7 @@ function offRgbc(which){
     * SALIDAS: Ninguna.
     * VARIABLES: Ninguna
     */
-    console.log("OFF RGBc");
+    //console.log("OFF RGBc");
     if(which === "all"){
         scene.children.forEach(function(item,index){//Busca en escena todos los objetos
             if(item.name.split(" ")[1] === "rgbc"){//Busca en escena los objetos RGBc
@@ -3702,7 +3702,7 @@ function offRgbc(which){
                 item.getObjectByName("data").children[2].material.color = new THREE.Color(0x000000);//Color sprite
                 clearInterval(timeIntervalrgbc);//Limpia tiempo
             }else{
-                //console.log("NO HAY RGBc PRENDIDOS");
+                ////console.log("NO HAY RGBc PRENDIDOS");
             }
         });
         
@@ -3721,14 +3721,14 @@ function offRgbc(which){
                         item1.visible = false;//Quita crash
                     }
                 });
-                console.log("RGBc TERMINA");
-                console.log(item.name);
+                //console.log("RGBc TERMINA");
+                //console.log(item.name);
                 item.children[1].material.opacity = 0.4;//Restaura la opacidad del rgbc
                 clearInterval(timeIntervalrgbc);//Limpia tiempo
                 item.children[1].material.color = new THREE.Color(0x000000);//Color rgbc
                 item.getObjectByName("data").children[2].material.color = new THREE.Color(0x000000);//Color sprite
             }else{
-                //console.log("NO HAY RGBc PRENDIDOS");
+                ////console.log("NO HAY RGBc PRENDIDOS");
             }
         });
     }
@@ -3744,9 +3744,9 @@ function onRgb(activeObj,setFlowdata,getRgb,statusResis){
     
     
     
-    console.log("RGB INICIA "+activeObj.name);
-    console.log("flowEnergy: "+setFlowdata);
-    console.log(getRgb);
+    //console.log("RGB INICIA "+activeObj.name);
+    //console.log("flowEnergy: "+setFlowdata);
+    //console.log(getRgb);
     
     if(setFlowdata <= 1 && statusResis === true){//Tiene resistencia
         startRgb(activeObj);//Acciones para prender el RGB.
@@ -3767,13 +3767,13 @@ function onRgb(activeObj,setFlowdata,getRgb,statusResis){
         * SALIDAS: Ninguna.
         * VARIABLES: Ninguna
         */
-        console.log("ENTRA ONRGBDATA");
-        //console.log("RGB pin "+objRgb.newInfo.onrgbData);
+        //console.log("ENTRA ONRGBDATA");
+        ////console.log("RGB pin "+objRgb.newInfo.onrgbData);
         objRgb.getObjectByName("data").children.forEach(function(item1,index1){//Busca objetos hijos
             if(item1.name === "light"){//Busca el objeto de sprite light
-                //console.log(item1);
+                ////console.log(item1);
                 item1.visible = true;//Prende light
-                console.log(objRgb.newInfo.onrgbData);
+                //console.log(objRgb.newInfo.onrgbData);
                 if(objRgb.newInfo.onrgbData.length === 1){//Si solo hay un cable conectado al RGB
                     item1.material.opacity = setFlowdata-0.2;//Intensidad de light
                     item1.scale.x = setFlowdata*3;//Tamaño de light
@@ -3811,9 +3811,9 @@ function offRgb(which,getRgb){
     * SALIDAS: Ninguna.
     * VARIABLES: Ninguna
     */
-    console.log(getRgb);
-    console.log("OFF RGB");
-    console.log(which);
+    //console.log(getRgb);
+    //console.log("OFF RGB");
+    //console.log(which);
     if(which === "all"){
         scene.children.forEach(function(item,index){//Busca en escena todos los objetos
             if(item.name.split(" ")[1] === "rgb"){//Busca en escena los objetos RGB
@@ -3835,7 +3835,7 @@ function offRgb(which,getRgb){
                 item.children[1].material.color = new THREE.Color( 0, 0, 0 );//Restaura color rgb a cristal
                 item.newInfo.onrgbData = [];//Resetea si solo hay un cable conectado al RGB
             }else{
-                //console.log("NO HAY RGBs PRENDIDOS");
+                ////console.log("NO HAY RGBs PRENDIDOS");
             }
         });
     }else{
@@ -3844,8 +3844,8 @@ function offRgb(which,getRgb){
                 //item.newInfo.onrgbData = item.newInfo.onrgbData-1;
                 item.getObjectByName("data").children.forEach(function(item1,index1){//Busca objetos hijos
                     if(item1.name === "light"){//Busca el objeto de sprite light
-                        console.log("OPPSSSSSSS");
-                        console.log(item.newInfo.onrgbData);
+                        //console.log("OPPSSSSSSS");
+                        //console.log(item.newInfo.onrgbData);
                         if(item.newInfo.onrgbData.length === 1){
                             item1.visible = false;//Apaga light
                         }else{
@@ -3861,9 +3861,9 @@ function offRgb(which,getRgb){
                         item1.visible = false;//Quita crash
                     }
                 });
-                console.log("RGB TERMINA");
-                console.log(item.name);
-                console.log("RGB pin "+item.newInfo.onrgbData);
+                //console.log("RGB TERMINA");
+                //console.log(item.name);
+                //console.log("RGB pin "+item.newInfo.onrgbData);
                 if(item.newInfo.onrgbData.length === 1){//Si solo hay un cable conectado al RGB
                     item.children[1].material.opacity = 0.4;//Restaura la opacidad del rgb
                 }else{
@@ -3871,7 +3871,7 @@ function offRgb(which,getRgb){
                 }
                 eval("item.children[1].material.color."+getRgb[0]+" = 0");
             }else{
-                //console.log("NO HAY LEDs PRENDIDOS");
+                ////console.log("NO HAY LEDs PRENDIDOS");
             }
         });
     }
@@ -3888,7 +3888,7 @@ function creasoundBuzzer(){
     * VARIABLES: Ninguna
     */
     context.resume().then(() => {//Inicia esta funcion, porque si no, no lo reconoce Chome (tambien en el timbre.js, hay que agregar como variable global "var context;")
-        console.log('Playback resumed successfully');
+        //console.log('Playback resumed successfully');
     });
     var freq = T(1900);//Establece la frecuencia del sonido
     soundBuzzer = T("sin", {freq:freq, mul:1});//Crea el objeto con las caracteristicas
@@ -3902,8 +3902,8 @@ function onBuzzer(activeObj,setFlowdata,statusResis){
     * VARIABLES: Ninguna
     */
     
-    console.log("VOLUMEN BUZZER "+activeObj.name);
-    console.log("flowEnergy: "+setFlowdata);
+    //console.log("VOLUMEN BUZZER "+activeObj.name);
+    //console.log("flowEnergy: "+setFlowdata);
     
     
     var posBuzzer;//Almacena la posicion del objeto sonido del buzzer en curso
@@ -3914,9 +3914,9 @@ function onBuzzer(activeObj,setFlowdata,statusResis){
     });
 
     
-    console.log("BUZZER INICIA");
-    console.log(setFlowdata);
-    console.log(activeObj.name);
+    //console.log("BUZZER INICIA");
+    //console.log(setFlowdata);
+    //console.log(activeObj.name);
     
     if(setFlowdata <= 0.8 && statusResis === true){//Tiene resistencia
         startBuzzer(activeObj);//Acciones para prender el Buzzer.
@@ -3942,17 +3942,17 @@ function onBuzzer(activeObj,setFlowdata,statusResis){
                 item1.visible = true;//Muestra icono de sonido
                 addBuzzer[posBuzzer].play();//Empieza buzzer
                 
-                console.log("buzzerRgbc---------");
-                //console.log(buzzerRgbc);
-                console.log(getBuzzerrgbc);
+                //console.log("buzzerRgbc---------");
+                ////console.log(buzzerRgbc);
+                //console.log(getBuzzerrgbc);
                 
                 $(".d_buzzerline1, .d_buzzerline2, .d_buzzerline3").show();//Muestra todas las lineas del icono de sonido
                 var status = true;//Permite intercambio entre sonido menos y mas sonido
 
                 //buzzerRgbc.forEach(function(rgbcBuzzer){
-                    //console.log(rgbcBuzzer);
+                    ////console.log(rgbcBuzzer);
                     if(getBuzzerrgbc.length >= 2){//Si el Buzzer tiene un RGBc en paralelo y el mismo componente de accion (button, preset, ldr)
-                        console.log("BUZZER RGB ENTRA");
+                        //console.log("BUZZER RGB ENTRA");
                         intervalSound();//Cambio de sonido del Buzzer
                         function intervalSound(){
                             /*
@@ -4006,7 +4006,7 @@ function offBuzzer(which){
 	* SALIDAS: Ninguna.
     * VARIABLES: Ninguna
     */
-    console.log("OFF BUZZER");
+    //console.log("OFF BUZZER");
     var posBuzzer;//Almacena la posicion del objeto sonido del buzzer en curso
     addBuzzer.forEach(function(items,indexs){//Busca los sonidos buzzer almacenados
         if(which.includes(items.name) === true){//El objeto sonido y el nombre coinciden
@@ -4029,7 +4029,7 @@ function offBuzzer(which){
                     }
                 });
             }else{
-                //console.log("NO HAY LEDs PRENDIDOS");
+                ////console.log("NO HAY LEDs PRENDIDOS");
             }
         });
     }else{
@@ -4043,12 +4043,12 @@ function offBuzzer(which){
                         item1.visible = false;//Quita crash
                     }
                 });
-                console.log("BUZZER TERMINA");
-                console.log(item.name);
+                //console.log("BUZZER TERMINA");
+                //console.log(item.name);
                 addBuzzer[posBuzzer].pause();//Stop buzzer
                 clearTimeout(intervalBuzzer);
             }else{
-                //console.log("NO HAY LEDs PRENDIDOS");
+                ////console.log("NO HAY LEDs PRENDIDOS");
             }
         });
     }
@@ -4102,7 +4102,7 @@ function validaObjects(item){
     //Hace la validacion de los objetos, en relacion a los datos de los pasos en "valData"
     //item > objeto en curso.
     if(item.name.split(" ")[0] != "grl"){//Objetos que se arrastran y sueltan
-        //console.log(item.newInfo.polarity);
+        ////console.log(item.newInfo.polarity);
         if(item.newInfo.polarity === "both" || item.newInfo.polarity === "none"){//Caso para posicion de pines donde NO importa la posicion de positivo
             for(var i=0; i<=valData.length-1; i++){//For para las posiciones de "valData" que son los pasos
                 var incData = 0;//Conteo para saber si todos los items comparados (suma), coinciden con los items de "newInfo.val"
@@ -4150,7 +4150,7 @@ function energyObjects(item){
             var statusWarning = false;//Valida si hay o no warning en el objeto
             item.newInfo.posEnergy.forEach(function(item3,index3){//Busca la posicion de energia de cada objeto
                 if(item3 != null){//Si es diferente a null
-                    console.log(item3);
+                    //console.log(item3);
                     if(item3 != powerData[0] && item3 != powerData[1]){//Si tiene dato de positivo o negativo solamente
                         getName = item.newInfo.name;//Almacena el nombre dol objeto mal conectado a energia
                         nameEnergyfail = item.newInfo.name;//Almacena el nombre del objeto mal conectado a energia (para validar al final de todos los pasos conectados)
@@ -4194,13 +4194,13 @@ function samelineEnergy(item){
         if(statusArea){//Conectados en la misma area
             if(item.name.split(" ")[1] === "pinA" || item.name.split(" ")[1] === "pinB" || item.name.split(" ")[1] === "pinPowerpos" || item.name.split(" ")[1] === "pinPowerneg"){//Si es jumper o cable energia
                 if(item.name.split(" ")[1] === "pinA" || item.name.split(" ")[1] === "pinPowerpos"){//Solo imprime 1 warning, ya que el pin A y pin B tienen el mismo dato
-                    console.log("CRSH");
+                    //console.log("CRSH");
                     showWarning("sameenergy",item.newInfo.name);//Muestra las advertencias sobre coneccion de energia de objetos
                     samelineenergyStatus.push(false);//Objetos NO estan conectados en la misma linea de polaridad
                 }
 
             }else{//Todos los demas objetos
-                console.log("CRSH");
+                //console.log("CRSH");
                 showWarning("sameenergy",item.newInfo.name);//Muestra las advertencias sobre coneccion de energia de objetos
                 samelineenergyStatus.push(false);//Objetos NO estan conectados en la misma linea de polaridad
             }
@@ -4253,7 +4253,7 @@ function validaJumpers(){
         if(item.name.split(" ")[1] === "pinA" || item.name.split(" ")[1] === "pinB"){//Pines de cable
             if(item.name.split(" ")[1] === "pinA"){//Solo toma en cuenta 1 pin
                 if((item.newInfo.usedLines[0] === saveConectionpos && item.newInfo.usedLines[1] === saveConectionneg) || (item.newInfo.usedLines[0] === saveConectionneg && item.newInfo.usedLines[1] === saveConectionpos)){//Si el cable esta conectado a + y -, y en la misma posicion del cable energia y hace corto
-                    console.log("CRASHHHHHHHHHH");
+                    //console.log("CRASHHHHHHHHHH");
                     showWarning("choque","Cable");//Muestra las advertencias jumpers haciendo corto
                     crashpolarityStatus = false;//Jumpers hacen corto
                 }
@@ -4284,10 +4284,10 @@ function energyConected(){
         }
     });
     if(contEnergizer === true){//Hay energia correctamente
-        //console.log("ENERGY CONECTED");
+        ////console.log("ENERGY CONECTED");
         polarutyenergyStatus = true;//Los cables de energia SI estan conectados a la protoboard en su respectiva linea de energia
     }else{
-        //console.log("SAME POLARITY");//Conectado a la misma polaridad
+        ////console.log("SAME POLARITY");//Conectado a la misma polaridad
         showWarning("samepolarity","Cable energia");//Muestra las advertencias cable energia no esta conectado a la protoboard en su respectiva linea de energia
         polarutyenergyStatus = false;//Los cables de energia NO estan conectados a la protoboard en su respectiva linea de energia
     }
@@ -4321,7 +4321,7 @@ function addIndicador(getObject){
     getObject.newInfo.coordLine = [];//Limpia en que linea esta los pines "A,B,C..."
     getObject.newInfo.usedLines = [];
     
-    //console.log(getcenterposX);
+    ////console.log(getcenterposX);
     //saveInd = [[null,null]];
     
     incNum = 0;//Resetea inicio de posicion para guardar coordenadas en newInfo (posicion 0 es el nombre del objeto)
@@ -4592,9 +4592,9 @@ function getCoordinates(x,z,getPin,getObject){
         var getCoord = [];//Almacena los valores de x y y de cada pin
         zPos.forEach(function(item,index){//Recorre el array de posicion en columna
             if(item === z){//Un elemento del array "zPos" coincide con la posicion de un pin
-                /*console.log(areaLocate);
+                /*//console.log(areaLocate);
                 if(areaLocate === "digitalA"){
-                    console.log("ENTRA");
+                    //console.log("ENTRA");
                     getCoord.push(digitalCoord[index]);
                 }else{*/
                     getCoord.push(zCoord[index]);//Se guarda el dato recuperado coordenada en z
@@ -4633,8 +4633,8 @@ function getCoordinates(x,z,getPin,getObject){
                 pinbGrl.newInfo.usedLines = getObject.newInfo.usedLines;
             }
         }else if(areaLocate === "digitalA" || areaLocate === "digitalB" || areaLocate === "analogIn" || areaLocate === "poweR"){
-            console.log("getCoord-------");
-            console.log(getCoord);
+            //console.log("getCoord-------");
+            //console.log(getCoord);
             $(".d_"+getPin).show().find('span').text(getCoord[0]+", "+getCoord[1]);//Muestra coordenadas en div
         }else{//La energia se agrega solo una coordenada en x, porque en y no importa la posicion, ya que es negativo o positivo
             $(".d_"+getPin).show().find('span').text(getCoord[0]);//Muestra coordenadas en div
@@ -4775,9 +4775,9 @@ function validarEnergyneg(){
     //saveenergyNegnew = [[]];//Resetea las lineas de energia negativa finales
     //saveenergyNegnew[0] = saveenergyNeg[0];//Almacena la primer linea de energia del origen, a linea final
     
-    //console.log("FIRS POSITIVE ENERGY");
-    //console.log(saveenergyNeg);
-    //console.log(temporaryEnergyneg);
+    ////console.log("FIRS POSITIVE ENERGY");
+    ////console.log(saveenergyNeg);
+    ////console.log(temporaryEnergyneg);
     
     pinSwitchgetneg = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];//Resetea pin del Switch (solo de hace en energia negativa, porque es la primera que inicia. Si se resetea en positiva tambien, se borra lo guardado en negativo)
 
@@ -4878,23 +4878,23 @@ function validarEnergyneg(){
             
             var statusIn = true;//Indicador para que switch y todos los componentes entren una linea de comparacion a la vez
             
-            console.log("----------------------------------- "+getObj.name);
+            //console.log("----------------------------------- "+getObj.name);
             getObj.newInfo.usedLines.forEach(function(item2,index2){//Busca la posicion del pin que coincide por objeto
                 saveenergyNeg.forEach(function(item3,index3){//Busca la linea de energia en negativa
                     item3.forEach(function(item4,index4){//Busca los pines guardados en energia negativa
                         
                         if(item2 === item4 && statusIn === true){//Si un item de la linea de energia positiva incluye un pin del objeto, y es la primera vez que entra esa linea
-                            console.log("-------PIN COINCIDE "+getObj.name+" ++++++++");
+                            //console.log("-------PIN COINCIDE "+getObj.name+" ++++++++");
                             var statusSwitchin = false;//Status para saber si entra o no la info del switch
                             if(getObj.name.split(" ")[1] === "switch"){//Si es un Switch
                                 if(saveitemSwitch.includes(item2) === false){//Si un item de "saveitemSwitch" NO incluye un pin del objeto
 
-                                    console.log("saveallnameObjs!!!!!!!!!!!!!!!!!!!!!!");
-                                    console.log(saveallnameObjs);
-                                    console.log(getObj.name+" *********//////////------------");
-                                    console.log(item2);
+                                    //console.log("saveallnameObjs!!!!!!!!!!!!!!!!!!!!!!");
+                                    //console.log(saveallnameObjs);
+                                    //console.log(getObj.name+" *********//////////------------");
+                                    //console.log(item2);
 
-                                    console.log("index del switch "+index2);
+                                    //console.log("index del switch "+index2);
                                     if(index2 === 0){
                                         saveitemSwitch.push(getObj.newInfo.usedLines[0]);
                                         saveitemSwitch.push(getObj.newInfo.usedLines[4]);
@@ -4927,9 +4927,9 @@ function validarEnergyneg(){
                                         saveitemSwitch.push(getObj.newInfo.usedLines[7]);
                                         saveitemSwitch.push(getObj.newInfo.usedLines[3]);
                                     }
-                                    console.log("INNNNNNNNNNNNNNNN");
-                                    console.log(getObj.name);
-                                    console.log(saveitemSwitch);
+                                    //console.log("INNNNNNNNNNNNNNNN");
+                                    //console.log(getObj.name);
+                                    //console.log(saveitemSwitch);
 
                                     statusSwitchin = true;//Si entra info switch
 
@@ -4985,9 +4985,9 @@ function validarEnergyneg(){
             }
             
             if(objConnected){//Hay un objeto conectado y se Obtienen las posiciones de los pines que se van a agregar
-                //console.log("LINEAS CONECTADAS A "+getObj.name);
+                ////console.log("LINEAS CONECTADAS A "+getObj.name);
 
-                //console.log("pinindexEqual = "+saveindexEqual);
+                ////console.log("pinindexEqual = "+saveindexEqual);
                 getObj.newInfo.pinDifferent = [];
                 //getObj.newInfo.pinConected = {energizedLine:[],pinObj:[]};
                 if(getObj.newInfo.val[0] === "Interruptor"){//Switch, tiene varios pines
@@ -5107,7 +5107,7 @@ function validarEnergyneg(){
                         case 2://Pin index entrada
                         case 1://Pin index entrada
                         case 0://Pin index entrada
-                            //console.log("ULTRASONIC NO CONECTADO CORECTAMENTE DE + a -");
+                            ////console.log("ULTRASONIC NO CONECTADO CORECTAMENTE DE + a -");
                             showWarning("positivetonegative",getObj.newInfo.val[0]);//Muestra las advertencias sobre coneccion de energia de objetos de + a -
                             allowObj = false;//Determina que el objeto NO continua agregando info, ya que contiene un warning que no permitiria creae correctamente la linea de energia
                             break;
@@ -5128,27 +5128,27 @@ function validarEnergyneg(){
                             break;
                     }
                 }
-                //console.log("NOMBRE = "+getObj.name);
+                ////console.log("NOMBRE = "+getObj.name);
                 
-                //console.log("indexDifferent = ");
-                //console.log(saveindexDifferent);
+                ////console.log("indexDifferent = ");
+                ////console.log(saveindexDifferent);
             }
 
             
             
             if(inNegative && allowObj){//Si hay pines de un objeto conectado a la linea de energia negativa y NO hay algun warning al agregar objetos
-                console.log("***ENTRA NEGATIVO "+getObj.name);
+                //console.log("***ENTRA NEGATIVO "+getObj.name);
                 
                 if(statusLastitem){//Agrega
-                    console.log("((((( MISMA LINEA )))))");
-                    //console.log(statusLastitem);
-                    console.log("LAST INDEX "+statusLastindex);
+                    //console.log("((((( MISMA LINEA )))))");
+                    ////console.log(statusLastitem);
+                    //console.log("LAST INDEX "+statusLastindex);
                 }
                 if(statusMiddleitem){//Se agrega una linea nueva, con info de un componente de esa linea
-                    console.log("((((( LINEA NUEVA )))))");
-                    //console.log(statusMiddleitem);
-                    console.log("MIDDLE INDEX "+statusMiddleindex);
-                    //console.log(saveitemsNew);
+                    //console.log("((((( LINEA NUEVA )))))");
+                    ////console.log(statusMiddleitem);
+                    //console.log("MIDDLE INDEX "+statusMiddleindex);
+                    ////console.log(saveitemsNew);
                     addnameObjsneg.push([]);//Agrega nueva linea de nombres
                     findNamelines();//Encuentra los items que se van a agregar a la nueva linea de energia
                     saveindexLine = saveenergyNeg.length;//Se aumenta para crear una nueva linea de energia
@@ -5161,7 +5161,7 @@ function validarEnergyneg(){
                     }
                 }
 
-                //console.log("INDEX LINE "+saveindexLine);
+                ////console.log("INDEX LINE "+saveindexLine);
                 
                 var saveDifferentitempin = [];//Almacena las lineas item de energia que son diferentes a energia negativa
                 getObj.newInfo.usedLines.forEach(function(item2,index2){//Busca cada pin del objeto
@@ -5260,12 +5260,12 @@ function validarEnergyneg(){
                         }
                     });
                 }
-                //console.log("NOMBRE DE OBJETO QUE COINCIDE");
-                //console.log(objnameEqual);
+                ////console.log("NOMBRE DE OBJETO QUE COINCIDE");
+                ////console.log(objnameEqual);
                 addnameObjsneg[saveindexLine].forEach(function(item,index){//Busca en las linea en curso (antes de agregar nueva linea) de energia por nombre
                     if(item === objnameEqual){//El nombre coincide en la linea de energia, con el nombre de la nueva linea
-                        //console.log("INDEX DE NOMBRE IGUAL");
-                        //console.log(index);
+                        ////console.log("INDEX DE NOMBRE IGUAL");
+                        ////console.log(index);
                         savenamesNew = addnameObjsneg[saveindexLine].slice(0, index+1);//Almacena los nombres de los objetos que se van a copiar a la nueva linea de energia
                     }
                 });
@@ -5278,18 +5278,18 @@ function validarEnergyneg(){
         }
     }
     
-    console.log("////////NEGATIVO////////");
-    console.log(saveenergyNeg);
-    console.log("-------------------------------");
+    //console.log("////////NEGATIVO////////");
+    //console.log(saveenergyNeg);
+    //console.log("-------------------------------");
     
 
-    console.log("////////NEGATIVO FULL////////");
-    console.log(temporaryEnergyneg);
-    console.log("-------------------------------");
+    //console.log("////////NEGATIVO FULL////////");
+    //console.log(temporaryEnergyneg);
+    //console.log("-------------------------------");
     
-    console.log("////////NOMBRE NEGATIVO +////////");
-    console.log(addnameObjsneg);
-    console.log("---------------------------------");
+    //console.log("////////NOMBRE NEGATIVO +////////");
+    //console.log(addnameObjsneg);
+    //console.log("---------------------------------");
     
 }
 var saveenergyPos = [[]];//Almacena todas las lineas de energia positiva
@@ -5313,9 +5313,9 @@ function validarEnergypos(){
         }
     });
 
-    //console.log("FIRS POSITIVE ENERGY");
-    //console.log(saveenergyPos);
-    //console.log(temporaryEnergypos);
+    ////console.log("FIRS POSITIVE ENERGY");
+    ////console.log(saveenergyPos);
+    ////console.log(temporaryEnergypos);
     
     pinSwitchgetpos = [[],[],[],[],[],[],[],[],[],[]];//Resetea pin del Switch (solo de hace en energia negativa, porque es la primera que inicia. Si se resetea en positiva tambien, se borra lo guardado en negativo)
     
@@ -5415,23 +5415,23 @@ function validarEnergypos(){
             
             var statusIn = true;//Indicador para que switch y todos los componentes entren una linea de comparacion a la vez
             
-            console.log("----------------------------------- "+getObj.name);
+            //console.log("----------------------------------- "+getObj.name);
             getObj.newInfo.usedLines.forEach(function(item2,index2){//Busca la posicion del pin que coincide por objeto
                 saveenergyPos.forEach(function(item3,index3){//Busca la linea de energia en positiva
                     item3.forEach(function(item4,index4){//Busca los pines guardados en energia positiva
                         
                         if(item2 === item4 && statusIn === true){//Si un item de la linea de energia positiva incluye un pin del objeto, y es la primera vez que entra esa linea
-                            console.log("-------PIN COINCIDE "+getObj.name+" ++++++++");
+                            //console.log("-------PIN COINCIDE "+getObj.name+" ++++++++");
                             var statusSwitchin = false;//Status para saber si entra o no la info del switch
                             if(getObj.name.split(" ")[1] === "switch"){//Si es un Switch
                                 if(saveitemSwitch.includes(item2) === false){//Si un item de "saveitemSwitch" NO incluye un pin del objeto
 
-                                    //console.log("saveallnameObjs!!!!!!!!!!!!!!!!!!!!!!");
-                                    //console.log(saveallnameObjs);
-                                    console.log(getObj.name+" *********//////////------------");
-                                    console.log(item2);
+                                    ////console.log("saveallnameObjs!!!!!!!!!!!!!!!!!!!!!!");
+                                    ////console.log(saveallnameObjs);
+                                    //console.log(getObj.name+" *********//////////------------");
+                                    //console.log(item2);
 
-                                    console.log("index del switch "+index2);
+                                    //console.log("index del switch "+index2);
                                     if(index2 === 0){
                                         saveitemSwitch.push(getObj.newInfo.usedLines[0]);
                                         saveitemSwitch.push(getObj.newInfo.usedLines[4]);
@@ -5464,9 +5464,9 @@ function validarEnergypos(){
                                         saveitemSwitch.push(getObj.newInfo.usedLines[7]);
                                         saveitemSwitch.push(getObj.newInfo.usedLines[3]);
                                     }
-                                    console.log("INNNNNNNNNNNNNNNN");
-                                    console.log(getObj.name);
-                                    console.log(saveitemSwitch);
+                                    //console.log("INNNNNNNNNNNNNNNN");
+                                    //console.log(getObj.name);
+                                    //console.log(saveitemSwitch);
 
                                     statusSwitchin = true;//Si entra info switch
                                     
@@ -5522,11 +5522,11 @@ function validarEnergypos(){
 
             if(objConnected){//Hay un objeto conectado y se Obtienen las posiciones de los pines que se van a agregar
                 
-                //console.log("LINEAS CONECTADAS A "+getObj.name);
-                //console.log("pinindexEqual = "+saveindexEqual);
+                ////console.log("LINEAS CONECTADAS A "+getObj.name);
+                ////console.log("pinindexEqual = "+saveindexEqual);
                 getObj.newInfo.pinDifferent = [];
-                //console.log("saveindexLine++++++++++++++++++++++++++");
-                //console.log(saveindexLine);
+                ////console.log("saveindexLine++++++++++++++++++++++++++");
+                ////console.log(saveindexLine);
                 //getObj.newInfo.pinConected = {energizedLine:[],pinObj:[]};
                 if(getObj.newInfo.val[0] === "Interruptor"){//Switch, tiene varios pines
                     switch(saveindexEqual){//Casos para el pin index entrada
@@ -5583,7 +5583,7 @@ function validarEnergypos(){
                         case 1://Pin index entrada
                         case 2://Pin index entrada
                         case 3://Pin index entrada
-                            //console.log("RGB NO CONECTADO CORECTAMENTE DE + a -");
+                            ////console.log("RGB NO CONECTADO CORECTAMENTE DE + a -");
                             showWarning("positivetonegative",getObj.newInfo.val[0]);//Muestra las advertencias sobre coneccion de energia de objetos de + a -
                             allowObj = false;//Determina que el objeto NO continua agregando info, ya que contiene un warning que no permitiria creae correctamente la linea de energia
                             break;
@@ -5621,7 +5621,7 @@ function validarEnergypos(){
                             getObj.newInfo.pinDifferent.push(1);//Guarda pin index salida en objeto
                             break;
                         case 1://Pin index entrada
-                            //console.log("LED NO CONECTADO CORECTAMENTE DE + a -");
+                            ////console.log("LED NO CONECTADO CORECTAMENTE DE + a -");
                             showWarning("positivetonegative",getObj.newInfo.val[0]);//Muestra las advertencias sobre coneccion de energia de objetos de + a -
                             allowObj = false;//Determina que el objeto NO continua agregando info, ya que contiene un warning que no permitiria creae correctamente la linea de energia
                             break;
@@ -5638,7 +5638,7 @@ function validarEnergypos(){
                         case 1://Pin index entrada
                         case 2://Pin index entrada
                         case 3://Pin index entrada
-                            //console.log("ULTRASONIC NO CONECTADO CORECTAMENTE DE + a -");
+                            ////console.log("ULTRASONIC NO CONECTADO CORECTAMENTE DE + a -");
                             showWarning("positivetonegative",getObj.newInfo.val[0]);//Muestra las advertencias sobre coneccion de energia de objetos de + a -
                             allowObj = false;//Determina que el objeto NO continua agregando info, ya que contiene un warning que no permitiria creae correctamente la linea de energia
                             break;
@@ -5672,7 +5672,7 @@ function validarEnergypos(){
                             getObj.newInfo.pinDifferent.push(1);//Guarda pin index salida en objeto
                             break;
                         case 1://Pin index entrada
-                            //console.log("LED NO CONECTADO CORECTAMENTE DE + a -");
+                            ////console.log("LED NO CONECTADO CORECTAMENTE DE + a -");
                             showWarning("positivetonegative",getObj.newInfo.val[0]);//Muestra las advertencias sobre coneccion de energia de objetos de + a -
                             allowObj = false;//Determina que el objeto NO continua agregando info, ya que contiene un warning que no permitiria creae correctamente la linea de energia
                             break;
@@ -5686,7 +5686,7 @@ function validarEnergypos(){
                             getObj.newInfo.pinDifferent.push(1);//Guarda pin index salida en objeto
                             break;
                         case 1://Pin index entrada
-                            //console.log("BUZZER NO CONECTADO CORECTAMENTE DE + a -");
+                            ////console.log("BUZZER NO CONECTADO CORECTAMENTE DE + a -");
                             showWarning("positivetonegative",getObj.newInfo.val[0]);//Muestra las advertencias sobre coneccion de energia de objetos de + a -
                             allowObj = false;//Determina que el objeto NO continua agregando info, ya que contiene un warning que no permitiria creae correctamente la linea de energia
                             break;
@@ -5729,16 +5729,16 @@ function validarEnergypos(){
                             break;
                     }
                 }
-                //console.log("NOMBRE = "+getObj.name);
+                ////console.log("NOMBRE = "+getObj.name);
                 
-                console.log("indexDifferent = ");
-                console.log(saveindexDifferent);
+                //console.log("indexDifferent = ");
+                //console.log(saveindexDifferent);
                 
-                //console.log("=========================");
-                //console.log(getObj.name);
-                //console.log(getObj.newInfo.pinDifferent);
+                ////console.log("=========================");
+                ////console.log(getObj.name);
+                ////console.log(getObj.newInfo.pinDifferent);
                 
-                console.log("allowObj "+allowObj);
+                //console.log("allowObj "+allowObj);
             }
             
             /*if(getObj.name.split(" ")[1] === "led" || getObj.name.split(" ")[1] === "rgb" || getObj.name.split(" ")[1] === "buzzer"){
@@ -5757,15 +5757,15 @@ function validarEnergypos(){
             });
             
             if(inPositive && allowObj){//Si hay pines de un objeto conectado a la linea de energia positiva y NO hay algun warning al agregar objetos
-                console.log("***ENTRA POSITIVO "+getObj.name);
+                //console.log("***ENTRA POSITIVO "+getObj.name);
                 
                 if(statusLastitem){//Agrega
-                    console.log("((((( MISMA LINEA )))))");
-                    console.log("LAST INDEX "+statusLastindex);
+                    //console.log("((((( MISMA LINEA )))))");
+                    //console.log("LAST INDEX "+statusLastindex);
                 }
                 if(statusMiddleitem){//Se agrega una linea nueva, con info de un componente de esa linea
-                    console.log("((((( LINEA NUEVA )))))");
-                    console.log("MIDDLE INDEX "+statusMiddleindex);
+                    //console.log("((((( LINEA NUEVA )))))");
+                    //console.log("MIDDLE INDEX "+statusMiddleindex);
 
                     addnameObjspos.push([]);//Agrega nueva linea de nombres
                     findNamelines();//Encuentra los items que se van a agregar a la nueva linea de energia
@@ -5780,9 +5780,9 @@ function validarEnergypos(){
                     }
                 }
 
-                //console.log("INDEX LINE "+saveindexLine);
-                //console.log("saveindexDifferent++++++++++++++");
-                //console.log(saveindexDifferent);
+                ////console.log("INDEX LINE "+saveindexLine);
+                ////console.log("saveindexDifferent++++++++++++++");
+                ////console.log(saveindexDifferent);
                 
                 var saveDifferentitempin = [];//Almacena las lineas item de energia que son diferentes a energia positiva
                 //var saveDifferentindexpin = [];//Almacena las lineas index de energia que son diferentes a energia positiva
@@ -5796,8 +5796,8 @@ function validarEnergypos(){
                 if(inNegative === false){//No hay pines de un objeto conectado a la linea de energia negativa (esta parte se agrega si no choca con negativo)
                     var savelastItems = [];//Almacena datos de la lines de energia principal del objeto
                     var statusObjpin = true;//Almacena si es el primer dato del objeto o no
-                    console.log("saveDifferentitempin-------------");
-                    console.log(saveDifferentitempin);
+                    //console.log("saveDifferentitempin-------------");
+                    //console.log(saveDifferentitempin);
                     saveDifferentitempin.forEach(function(items,indexs){//Recorre los diferentes items, para agregarlos
                         if(getObj.name.split(" ")[1] === "rgb" || getObj.name.split(" ")[1] === "preset" || getObj.name.split(" ")[1] === "pushbutton" || getObj.name.split(" ")[1] === "ultrasonic"){//Caso de ciertos objetos con mas pines diferentes (RGB, preset, etc)
                             if(statusObjpin){//Si es el primer dato del objeto (esto es pora ocupar la primera linea de energia y en lugar de que sean 4 lineas, sean 3 lineas solamente)
@@ -5871,10 +5871,10 @@ function validarEnergypos(){
                         var saveConnectionindex = [];//Almacena que pines de los diferentes items son los que SI estan conectados a negativo
                         var saveConnectionitem = [];
                         var infoConnections = [];
-                        //console.log("FIXED??????????????????");
-                        //console.log(saveDifferentitempin);
-                        //console.log(saveDifferentindexpin);
-                        //console.log(savesilimarLines);
+                        ////console.log("FIXED??????????????????");
+                        ////console.log(saveDifferentitempin);
+                        ////console.log(saveDifferentindexpin);
+                        ////console.log(savesilimarLines);
                         
                         saveDifferentitempin.forEach(function(items,indexs){//Recorre los diferentes items, para agregarlos
                             var inPin = [];//Identifica si una linea choca con negativo o no
@@ -5899,14 +5899,14 @@ function validarEnergypos(){
                                 savelineEnergized[savesilimarLines[indexs]] = false;//No se completa el ciclo
                             }
                         });
-                        //console.log("??????????????????????????????");
-                        //console.log(infoConnections);
-                        //console.log(saveConnectionitem);
+                        ////console.log("??????????????????????????????");
+                        ////console.log(infoConnections);
+                        ////console.log(saveConnectionitem);
                         var contItem = 0;//Contador para datos almacenados en "saveConnectionitem"
                         infoConnections.forEach(function(items,indexs){//Busca si en la lineas que se van a gregar, estan chocan con negativo, o se agregan directo
                             if(items.includes(true) === true){//Si incluye "true", se agregan a los items extras que chocan, a la linea temporal
                                 temporaryEnergypos[savesilimarLines[indexs]].push(saveConnectionitem[contItem]);
-                                console.log("CAMBIO DE LINEA DE ENERGIA "+savesilimarLines[indexs]);
+                                //console.log("CAMBIO DE LINEA DE ENERGIA "+savesilimarLines[indexs]);
                                 contItem++;//Aumenta contador para datos almacenados en "saveConnectionitem"
                             }
                         }); 
@@ -5970,25 +5970,25 @@ function validarEnergypos(){
                     * ENTRADAS: Ninguna.
                     * SALIDAS: Ninguna.
                     */
-                    //console.log("OBJETO°°°°°°°°°°°°");
-                    //console.log(objeto.name);
-                    //console.log(objeto.newInfo.pinDifferent);
-                    //console.log(saveMiddleitem);
+                    ////console.log("OBJETO°°°°°°°°°°°°");
+                    ////console.log(objeto.name);
+                    ////console.log(objeto.newInfo.pinDifferent);
+                    ////console.log(saveMiddleitem);
                     objeto.newInfo.pinDifferent.forEach(function(item2,index2){//Busca los pines indices diferentes de cada objeto
                         if(objeto.newInfo.usedLines[item2] === saveMiddleitem){//Busca los items que son diferentes a la energia positiva que coincide, y que sea igual al item del objeto de la nueva linea de energia
-                            //console.log("ACCION==============");
-                            //console.log(objeto);
+                            ////console.log("ACCION==============");
+                            ////console.log(objeto);
                             objnameEqual = objeto.name;//Almacena el nombre del objeto de donde parte hacia atras para copiar a la nueva linea de energia
                         }
                     });
                 }
-                //console.log("NOMBRE DE OBJETO QUE COINCIDE");
-                //console.log(objnameEqual);
-                //console.log(addnameObjspos[saveindexLine]);
+                ////console.log("NOMBRE DE OBJETO QUE COINCIDE");
+                ////console.log(objnameEqual);
+                ////console.log(addnameObjspos[saveindexLine]);
                 addnameObjspos[saveindexLine].forEach(function(item,index){//Busca en las linea en curso (antes de agregar nueva linea) de energia por nombre
                     if(item === objnameEqual){//El nombre coincide en la linea de energia, con el nombre de la nueva linea
-                        //console.log("INDEX DE NOMBRE IGUAL");
-                        //console.log(index);
+                        ////console.log("INDEX DE NOMBRE IGUAL");
+                        ////console.log(index);
                         savenamesNew = addnameObjspos[saveindexLine].slice(0, index+1);//Almacena los nombres de los objetos que se van a copiar a la nueva linea de energia
                     }
                 });
@@ -6003,26 +6003,26 @@ function validarEnergypos(){
 
 
     
-    console.log("////////POSITIVO INICIAL////////");
-    console.log(saveenergyPos);
-    console.log("-------------------------------");
+    //console.log("////////POSITIVO INICIAL////////");
+    //console.log(saveenergyPos);
+    //console.log("-------------------------------");
     
-    console.log("////////POSITIVO FULL////////");
-    console.log(temporaryEnergypos);
-    console.log("-------------------------------");
+    //console.log("////////POSITIVO FULL////////");
+    //console.log(temporaryEnergypos);
+    //console.log("-------------------------------");
     
-    console.log("////////NOMBRE +////////");
-    console.log(addnameObjspos);
-    console.log("-------------------------------");
+    //console.log("////////NOMBRE +////////");
+    //console.log(addnameObjspos);
+    //console.log("-------------------------------");
     
-    console.log("////////INTERSECCIONES////////");
-    console.log("////////INTERSECCIONES////////");
-    console.log(saveintersectionPosneg);
-    console.log("-------------------------------");
+    //console.log("////////INTERSECCIONES////////");
+    //console.log("////////INTERSECCIONES////////");
+    //console.log(saveintersectionPosneg);
+    //console.log("-------------------------------");
     
-    console.log("////////LINEAS CON ENERGIA////////");
-    console.log(savelineEnergized);
-    console.log("-------------------------------");
+    //console.log("////////LINEAS CON ENERGIA////////");
+    //console.log(savelineEnergized);
+    //console.log("-------------------------------");
     
     
 }
@@ -6048,15 +6048,15 @@ function joinEnergy(){
     
     var contLines = 0;//Contador para aumentar las nuevas lineas
     
-    console.log("////////POSITIVO////////");
-    console.log(temporaryEnergypos);
-    console.log(addnameObjspos);
-    console.log("////////NEGATIVO////////");
-    console.log(saveenergyNeg);
-    console.log(addnameObjsneg);
-    console.log("////////PINSWITCHGET////////");
-    console.log(pinSwitchgetpos);
-    console.log(pinSwitchgetneg);
+    //console.log("////////POSITIVO////////");
+    //console.log(temporaryEnergypos);
+    //console.log(addnameObjspos);
+    //console.log("////////NEGATIVO////////");
+    //console.log(saveenergyNeg);
+    //console.log(addnameObjsneg);
+    //console.log("////////PINSWITCHGET////////");
+    //console.log(pinSwitchgetpos);
+    //console.log(pinSwitchgetneg);
     
     
     temporaryEnergypos.forEach(function(itemPos,indexPos){
@@ -6066,7 +6066,7 @@ function joinEnergy(){
                 if(itemNeg.includes(itemPos[itemPos.length-1]) === true){//Si la linea negativa incluye algun item final de la linea positiva
                 //if(itemPos[itemPos.length-1] === itemNeg[itemNeg.length-1]){//Si algun item final de la linea positiva es igual a un item final de la linea negativa
                     
-                    console.log("LINE POS "+indexPos+" LINE NEG "+indexNeg);
+                    //console.log("LINE POS "+indexPos+" LINE NEG "+indexNeg);
                     newLineenergyitem.push([]);//Crea linea nueva de lineas final de energia items
                     newLineenergyname.push([]);//Crea linea nueva de lineas final de energia names
                     newLineenergypostemporary.push([]);//Crea linea temporal de lineas finales positivo items
@@ -6111,16 +6111,16 @@ function joinEnergy(){
                 }
         });
     });
-    console.log("/////////FINAL ENERGY/////////");
-    console.log(newLineenergyitem);
-    console.log("//////////FINAL NAME//////////");
-    console.log(newLineenergyname);
-    console.log("///////FINAL TEMPORARY POS////////");
-    console.log(newLineenergypostemporary);
-    console.log("///////FINAL TEMPORARY NEG////////");
-    console.log(newLineenergynegtemporary);
-    console.log("///////FINAL NEWPINSWITCHGET////////");
-    console.log(newpinSwitchget);
+    //console.log("/////////FINAL ENERGY/////////");
+    //console.log(newLineenergyitem);
+    //console.log("//////////FINAL NAME//////////");
+    //console.log(newLineenergyname);
+    //console.log("///////FINAL TEMPORARY POS////////");
+    //console.log(newLineenergypostemporary);
+    //console.log("///////FINAL TEMPORARY NEG////////");
+    //console.log(newLineenergynegtemporary);
+    //console.log("///////FINAL NEWPINSWITCHGET////////");
+    //console.log(newpinSwitchget);
 }
 function saveObjinf(){
     /*
@@ -6198,7 +6198,7 @@ function openObjinf(){
         }
     }
     var get_components = JSON.parse(dataPractices[pos].saved_json);
-    console.log(get_components);
+    //console.log(get_components);
     openNew(get_components);//Abre el proyecto con la info almacenada
     showMessage('Práctica cargada con éxito', 1);
     emergenteGestosclose();//Cierra emergente de gestos
@@ -6212,7 +6212,7 @@ function deletePrev(){
     */
     var saveComponentsdelete = [];//Almacena nombre de objetos a eliminar
     scene.children.forEach(function(item,index){//Busca elementos de escena
-        //console.log(item.name);
+        ////console.log(item.name);
         if(item.type != 'GridHelper' && item.type != 'AmbientLight' && item.type != 'SpotLight' && item.type != 'Object3D' && item.name.split(" ")[1] != 'protoboard' && item.name.split(" ")[1] != 'planeGeometry' && item.name.split(" ")[1] != 'accontact'){//Elementos que no se deben de borrar
             if(item.name.split(" ")[1] === "pinPowerpos"){//Busca el objeto a eliminar
                 saveComponentsdelete.push(item.name);//Almacena nombre de objeto a eliminar
@@ -6225,7 +6225,7 @@ function deletePrev(){
             }
         }
     });
-    console.log(saveComponentsdelete);
+    //console.log(saveComponentsdelete);
     $(".d_pxbentorno3dcoordmove").remove();//Quita coordenadas de cada objeto
     saveComponentsdelete.forEach(function(itemName){//Recorre los nombres guardados
         scene.children.forEach(function(item){//Busca elementos de escena
@@ -6238,7 +6238,7 @@ function deletePrev(){
             energyadapter = null;//Resetea variable de objeto almacenado
             if(itemName === item.name){//Si el nombre almacenado coincide con un objeto
                 if(itemName.split(" ")[1] === "pinPowerpos"){//Busca el objeto a eliminar
-                    console.log("ENCUENTRA PIN A");
+                    //console.log("ENCUENTRA PIN A");
                     objetoGrl = item;//Obtiene el objeto a eliminar
                     objNamegrl = item.name.split(" ")[1];//Obtiene el nombre del objeto
                     var contJUmperpow = true;//Conteo de solo un cable de jumper de corriente
@@ -6336,7 +6336,7 @@ function openNew(set_components){
                 setNewdata('jumper');//Asigna el color a los componentes
             }else if(item.name.split(" ")[0] === "jumperPow"){//Caso cd cable (un solo cable)
                 if(statusJumperpow){//Acepta solo un cable de energia
-                    console.log(getTypeenergy);
+                    //console.log(getTypeenergy);
                     if(getTypeenergy === "usb"){//Es cdcable
                         addObjects("cdcable");//Agrega objetos con el nombre solamente (la numeracion se agrega en la funcion)
                         setNewdata('cdcable');//Asigna el color a los componentes
@@ -6399,13 +6399,13 @@ function openNew(set_components){
                         
                         saveDatacomponent.children[index].children.forEach(function(itemLight){//Busca elementos tooltip
                             if(itemLight.name === "light"){//Busca light
-                                console.log("CAMBIA COLOR");
-                                console.log(item.objColor);
+                                //console.log("CAMBIA COLOR");
+                                //console.log(item.objColor);
                                 //itemLight.material.color = new THREE.Color(0x0000ff);//Asigna color light
                                 itemLight.material.color = new THREE.Color(item.objColor[0], item.objColor[1], item.objColor[2]);//Asigna color light
                                 
+                                ////console.log(itemLight.material);
                                 //console.log(itemLight.material);
-                                console.log(itemLight.material);
                             }
                         });
                     }
@@ -6448,7 +6448,7 @@ function openNew(set_components){
                 var saveDatacomponent_b = scene.children[scene.children.length-2];//Guarda el el pinB del ultimo componente agregado
                 var saveDatacomponent_c = scene.children[scene.children.length-1];//Guarda el ultimo componente agregado (wire)
                 set_components.forEach(function(itemObjsaved){//Busca los datos guardados
-                    //console.log(itemObjsaved);
+                    ////console.log(itemObjsaved);
                     if(itemObjsaved.name === saveDatacomponent_a.name){//Busca el dato guardado con el pinA del jumper
                         saveDatacomponent_a.position.set(itemObjsaved.position.x,itemObjsaved.position.y,itemObjsaved.position.z);//Asigna posicion pinA
                         saveDatacomponent_a.rotation.set(itemObjsaved.rotation._x,itemObjsaved.rotation._y,itemObjsaved.rotation._z);//Asigna rotacion pinA
@@ -6460,8 +6460,8 @@ function openNew(set_components){
                         saveDatacomponent_b.newInfo = itemObjsaved.newInfo;//Asigna info pinB
                     }
                     if(itemObjsaved.name === saveDatacomponent_c.name){//Busca el dato guardado con el cable del jumper
-                        //console.log("ENTRA");
-                        //console.log(saveDatacomponent_c);
+                        ////console.log("ENTRA");
+                        ////console.log(saveDatacomponent_c);
                         saveDatacomponent_c.material.color = new THREE.Color(itemObjsaved.objColor[0], itemObjsaved.objColor[1], itemObjsaved.objColor[2]);//Asigna color wire
                     } 
                 });
@@ -6482,6 +6482,6 @@ function openNew(set_components){
             }
         }
     });
-    console.log("ABIERTO CORRECTAMENTE");
-    console.log(scene.children); 
+    //console.log("ABIERTO CORRECTAMENTE");
+    //console.log(scene.children); 
 }

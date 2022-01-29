@@ -244,7 +244,7 @@ function actualizaVideo() {
     valor = (100 / document.getElementById("d_videogrlsource").duration) * document.getElementById("d_videogrlsource").currentTime;
     document.getElementById("d_controlgrlseekbar").value = valor; //Se establece el valor calculado
     if (valor === 100) { //Se terminó de reproducir el video
-        console.log("END");
+        //console.log.log("END");
         bandFin = true;
         //skip();//Vuelve al inicio el video al terminar de reproducir
     }
@@ -272,9 +272,9 @@ function skip() {
     //video.currentTime = 0;
     //video.currentTime += 0;
     //video.play();
-    //console.log($("input[type=range]").val());
+    ////console.log.log($("input[type=range]").val());
     //$("input[type=range]").val(0); //Se establece el valor a 0 del seekbar
-    //console.log($("input[type=range]").val());
+    ////console.log.log($("input[type=range]").val());
     function resetVideo() {
         //this.src = this.src
         video.load();

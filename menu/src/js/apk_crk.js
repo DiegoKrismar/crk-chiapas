@@ -63,20 +63,11 @@ const titleNomenclatura = [
     ["1. Interruptores y botones","crk_ele_1305a"],
     ["1. Potenciómetros y fotorresistencias","crk_ele_1306a"],
     ["1. Zumbador o buzzer","crk_ele_1307a"],
+    ["5. El LED multicolor, RGB","crk_ele_1306b4"]
 ];
 /***********************************************************************************
 *                                    FUNCIONES
 *************************************************************************************/
-$(window).resize(function () {
-	/*
-	 * NOMBRE: resize.
-	 * UTILIDAD: Detecta el resize del navegador
-	 * ENTRADAS: Ninguno.
-	 * SALIDAS: Ninguna.
-	 */
-	resizeSection();
-});
-
 function resizeSection() {
 	/*
 	 * NOMBRE: resizeSection.
@@ -133,8 +124,8 @@ function activate(){
         {deviceData:deviceData},
         function(data){
             data = JSON.parse(data);
-            alert(data.activated);
             if(data.activated == true){ //Se ha activado
+                alert(data.activated);
                 localStorage.setItem('validate', data.activated);
                 showApps(); //Mostrar las apps
                 resizeSection();
@@ -145,15 +136,21 @@ function activate(){
     });
 }
 
-$(document).ready(function() {
-    if(validate == null){ //Sin registro de la app
-        $(".d_apksectionin_center").append(
+
+document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+        if(validate == null){ //Sin registro de la app
+            $(".d_apksectionin_center").append(
                 '<div class="d_apksectionminiaturatxt" style="font-size: 1.5rem" id="row_1">¡<b>Felicidades</b>, ha adquirido el <b>Nivel 1<b> de Crea Robótica con Krismar.!</div>'+
                 '<div class="d_apksectionminiaturatxt" style="font-size: 1.5rem" id="row_2">Para <b>activar</b> su curso y tener acceso a las aplicaciones, haga clic en el siguiente <b>botón</b>.</div>'+
                 '<div class="d_apksectionminiaturatxt id="row_3""><button class="btn" onclick="activate();">Activar</button></div>'
-        );
-    }else{ //Hay registro de la app
-        showApps();
-        resizeSection();
+                );
+        }else{ //Hay registro de la app
+            showApps();
+            resizeSection();
+        }
+        $(window).resize(function () {
+            resizeSection();
+        });
     }
-});
+}

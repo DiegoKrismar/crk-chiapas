@@ -90,7 +90,7 @@ function iniciaAnima(){
     * VARIABLES: Ninguna
     */
     
-    console.log("INICIA************");
+    //console.log("INICIA************");
     
     sumAnima = 1;//Conteo para triggers
     animaIntro = true;//Gira 360°
@@ -112,7 +112,7 @@ function iniciaAnima(){
     
     $(".d_btnsopcgrlexpand").fadeOut(0);//Oculta btn pantalla completa
     
-    console.log(totalPasos);
+    //console.log(totalPasos);
 
     typeAnima = false;//La animacion es de intro
     timeGrl = 200;//Tiempo general de animacion 200
@@ -121,7 +121,7 @@ function iniciaAnima(){
     function actionInterval(){
         if(sumAnima === totalPasos){
             clearInterval(interval);//Limpia intervalos
-            console.log("END");
+            //console.log("END");
             newTime = setTimeout(function(){
                 clearTimeout(newTime);//Limpia tiempo
                 iniciaArmado();//Inicia todo lo del armado despues de construirse los modelos 3D
@@ -130,7 +130,7 @@ function iniciaAnima(){
             sumAnima++;//Suma los pasos, hasta llegar a total de pasos
             $("#"+sumAnima).trigger("mouseup");//Inicia en el paso que sigue
         }
-        console.log(timeGrl);
+        //console.log(timeGrl);
     }
 };
 function iniciaBtns(){
@@ -270,7 +270,7 @@ function addAnimacamera(){
     * VARIABLES: Ninguna
     */
     if(animaIntro === false){//Animacion de la camara en cada paso
-        console.log("ANIMA CAMERA");
+        //console.log("ANIMA CAMERA");
         statusAnima = null;//Se quita el valor, para que no inicie con el ultimo que tenia guardado
         var addAnimatecamera = new TWEEN.Tween(prevPoscamera)//Animacion de la camara en cada paso
         .to({
@@ -450,7 +450,7 @@ function btnPasos(){
     do{//Busca el nuevo tamaño del btn
         conteo--;//Disminuye conteo
         newSizebtn = getBtnspace/conteo;//Obtiene nuevo tamano del btn
-        //console.log(newSizebtn);
+        ////console.log(newSizebtn);
     }while(newSizebtn < minSizebtn);//El tamano del btn queda lo mas cerca del tamano de 3 REM del HTML
     largeConte = Math.ceil(totalPasos/conteo);//El total de pasos entre los btns que entran en el conte, dan el % que debe de tener para mostrar todos los btns con las flechas de next y prev
     
@@ -500,7 +500,7 @@ function btnPasos(){
             totalBtnsview.push(sumaCont);
         }else{
             totalBtnsview.push(totalPasos);
-            console.log(totalBtnsview);
+            //console.log(totalBtnsview);
             return false;
         }
     }
@@ -531,9 +531,9 @@ function prevBtns(){
     if(conteClic === 0){
         $("#d_menupasosgrlprev").prop('disabled', true);//Deshabilita btn
         $("#d_menupasosgrlprevconte").addClass("d_menupasosgrldisable");//Agrega estilo de deshabilitado
-        //console.log("PREV END");
+        ////console.log("PREV END");
     }
-    //console.log(conteClic);
+    ////console.log(conteClic);
 }
 function nextBtns(){
     /*
@@ -556,9 +556,9 @@ function nextBtns(){
     if(conteClic === largeConte-1){
         $("#d_menupasosgrlnext").prop('disabled', true);//Deshabilita btn
         $("#d_menupasosgrlnextconte").addClass("d_menupasosgrldisable");//Agrega estilo de deshabilitado
-        //console.log("NEXT END");
+        ////console.log("NEXT END");
     }
-    //console.log(conteClic);
+    ////console.log(conteClic);
 }
 var statusGestos = true;//Indica que meergente de gestos aparece
 function eventBtnspasos(){
@@ -569,21 +569,21 @@ function eventBtnspasos(){
     * SALIDAS: Ninguna.
     */
     
-    console.log(contNext);
+    //console.log(contNext);
     
     $(".d_menupasosnum").off().on("mouseup",function(){
 
         
         //Detecta si la animacion de intro ya termino
         
-        console.log("CLICK PASO ***********************");
+        //console.log("CLICK PASO ***********************");
         
         //$("#d_btnsopcgrlplaysvg").hide();//Cambia icon de play a reiniciar
         //$("#d_btnsopcgrlreinsvg").show();//Cambia icon de reiniciar a play
         $(".d_menupasosnum").removeClass("d_addbtnpress");//Quita estilo de btn presionado a todos
         $(this).addClass("d_addbtnpress");//Agrega estilo de press al btn presionado
         getBtnpress = $(this).attr("id");//Obtiene el texto (numero de boton)
-        //console.log(getBtnpress);
+        ////console.log(getBtnpress);
         
         $(".d_btngrltextstepnum").text(getBtnpress);
         
@@ -629,7 +629,7 @@ function eventBtnspasos(){
 
         contNext = Number(getBtnpress);//Saber en que paso se esta, ya sea por btn de carrusel o por btn de next y prev
         
-        console.log("Step "+contNext);
+        //console.log("Step "+contNext);
         
         $(".d_laminarope").remove();//Quita btn para abrir la lamina de cuerda
         $(".d_laminaropeconte").remove();//Quita la lamina de cuerda
@@ -661,18 +661,18 @@ function eventBtnspasos(){
             }else{//Tiempo de todos los pasos
                 enabledDisabledbtns("enabled", "all");//Habilita o desabilita btns en los pasos
                 if(contNext === 1){//Acciones para para el primer paso
-                    console.log("INICIO");
+                    //console.log("INICIO");
                     enabledDisabledbtns("disabled", "prev");//Habilita o desabilita btns en los pasos
                 }
                 else if(contNext === totalPasos){//Acciones para el ultimo paso
-                    console.log("FINAL");
+                    //console.log("FINAL");
                     enabledDisabledbtns("disabled", "next");//Habilita o desabilita btns en los pasos
                 }else{//Acciones para pasos intermedios
                     enabledDisabledbtns("enabled", "all");//Habilita o desabilita btns en los pasos
-                    console.log("INTERMWDIO");
+                    //console.log("INTERMWDIO");
                 }
                 clearTimeout(timeSteps);//Limpia tiempo
-            }console.log("TIMEEEEEEEEEEEEEEE");
+            }//console.log("TIMEEEEEEEEEEEEEEE");
         },timeGrl*3);
         jumpBtns();//Rango de botones en que el se esta en el carrusel 
     });
@@ -730,7 +730,7 @@ function keyEvent(event) {
     * SALIDAS: Ninguna.
     */
     var codeKey = event.which || event.keyCode;//Obtiene tecla presionada
-    //console.log(codeKey);
+    ////console.log(codeKey);
     if (codeKey === 37 && contNext > 0){//Desde paso inicial y ya no funciona el enter
         eventBtnsprev();//Clic para preview
     }
@@ -756,7 +756,7 @@ function jumpBtns(){
     //Avanzar btns
     if(contNext === totalBtnsview[conteClic+1]+1){
         nextBtns();//Clic para next de botones de pasos
-        console.log("NEXT "+newVal);
+        //console.log("NEXT "+newVal);
     }
         
     //Retroceder btns
@@ -764,7 +764,7 @@ function jumpBtns(){
         if(newVal === i){//Solo si ya avanzo al siguiente rango de btns
             if(contNext === totalBtnsview[conteClic]){
                 prevBtns();//Clic para prev de botones de pasos
-                console.log("PREV "+newVal);
+                //console.log("PREV "+newVal);
             }
         }
     }
@@ -782,7 +782,7 @@ function playAnima(){
     if(stepsStar === true){
         $("#"+contNext).trigger("mouseup");//Inicia en el primer paso
     }else{
-        console.log("REINICIA");
+        //console.log("REINICIA");
         iniciaAnima();//Inicia la animacion despues de construirse los modelos 3D
     }
     
@@ -806,7 +806,7 @@ function playAnima(){
     if(stateBtn === "rein"){
         //addExpand();//Establece la expancion de las piezas por cada paso
         //setTween();//Establece render de Tween
-        //console.log("reiniciar");
+        ////console.log("reiniciar");
         $("#d_btnsopcgrlplaysvg").show();//Cambia icon de reiniciar a play
         $("#d_btnsopcgrlreinsvg").hide();//Cambia icon de play a reiniciar
         stateBtn = "play";
@@ -816,7 +816,7 @@ function playAnima(){
         $("#d_btnsopcgrlreinsvg").show();//Cambia icon de reiniciar a play
         setTween();//Establece render de Tween
         stateBtn = "rein";
-        //console.log("play");//Saber si el btn de reproducir animacion esta en "play" o "reiniciar"
+        ////console.log("play");//Saber si el btn de reproducir animacion esta en "play" o "reiniciar"
     }
     */
 }
@@ -842,7 +842,7 @@ function eventOpenpiezas(){
         imgPiezas("steps");//Establece la imagen de las piezas por paso
     }
     if(stepsStar === false && animaEnd){
-        console.log("REINICIA");
+        //console.log("REINICIA");
         imgPiezas("general");//Establece la imagen de las piezas generales
     }
 }
@@ -896,7 +896,7 @@ function imgPiezas(type){
         }
         
     }else if(type === "stepsfloat"){
-        console.log("PASO_FLOAT "+contNext);
+        //console.log("PASO_FLOAT "+contNext);
         var timeStep;//Tiempo de animacion piezas
         timeStep = setTimeout(function(){//Tiempo de animacion piezas
             //Agrega las piezas por paso
@@ -923,8 +923,8 @@ function imgPiezas(type){
         stepsResize();//Calcula el tamaño del contenedor de piezas
         $(".d_piezasgrlhead").text("Localiza en tu kit todas las piezas necesarias para construir tu modelo");
         //Agrega todas las piezas
-        console.log("#####################");
-        console.log(svgNumtotal);
+        //console.log("#####################");
+        //console.log(svgNumtotal);
         for(var i=0; i<=svgNumtotal.length-1; i++){
             
             setName(i,"general");//Establece el nombre final de la pieza, en relacion al tecnico
