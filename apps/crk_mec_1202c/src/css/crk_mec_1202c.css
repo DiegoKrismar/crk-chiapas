@@ -1,0 +1,130 @@
+@charset "utf-8";
+/*
+==============================================
+CSS BTNS MATERIALES
+==============================================
+*/
+.d_footerbtnmaterials{/*Las propiedades son generales en la clase "d_btnssimulador"*/}
+.d_footerbtnmaterials_inactive{
+    opacity: 0.4;
+}
+.d_footerbtnmaterial, .d_footerbtnmaterial, .d_footerbtnmaterial{
+    width: 3rem;
+    height: 3rem;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.d_footerbtnsphere{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+}
+.d_footerbtnspherelight, .d_footerbtnspherepoint{
+    position: absolute;
+    border-radius: 50%;
+}
+#d_footerbtnmaterial1 .d_footerbtnsphere{
+    background: #f868e5; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f868e5 0%, #bc4d92 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f868e5 0%,#bc4d92 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f868e5 0%,#bc4d92 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f868e5', endColorstr='#bc4d92',GradientType=0 ); /* IE6-9 */
+}
+#d_footerbtnmaterial1 .d_footerbtnspherelight{
+    width: 76%;
+    height: 60%;
+    top: 5%;
+    left: 12%;
+    background-color: transparent;
+}
+#d_footerbtnmaterial2 .d_footerbtnsphere{
+    background: rgb(0,134,219); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(0,134,219,1) 0%, rgba(0,115,173,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,134,219,1) 0%,rgba(0,115,173,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,134,219,1) 0%,rgba(0,115,173,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0086db', endColorstr='#0073ad',GradientType=0 ); /* IE6-9 */
+}
+#d_footerbtnmaterial2 .d_footerbtnspherelight{
+    width: 76%;
+    height: 60%;
+    top: 5%;
+    left: 12%;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,0.75) 0%,rgba(255,255,255,0) 75%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,0.75) 0%,rgba(255,255,255,0) 75%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+#d_footerbtnmaterial3 .d_footerbtnsphere{
+    background: rgb(160,160,160); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(160,160,160,1) 0%, rgba(68,68,68,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(160,160,160,1) 0%,rgba(68,68,68,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(160,160,160,1) 0%,rgba(68,68,68,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0a0a0', endColorstr='#444444',GradientType=0 ); /* IE6-9 */
+}
+#d_footerbtnmaterial3 .d_footerbtnspherelight{
+    width: 60%;
+    height: 60%;
+    top: 5%;
+    left: 5%;
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+#d_footerbtnmaterial3 .d_footerbtnspherepoint{
+    width: 50%;
+    height: 50%;
+    top: 40%;
+    right: 5%;
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 60%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.d_footerbtntooltip{
+    width: 300%;
+    height: 2rem;
+    position: absolute;
+    top: -3rem;
+    left: -200%;
+    background-color: #ffffff;
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+}
+.d_footerbtntooltip_arrow{
+    width: 0; 
+    height: 0; 
+    border-top: 0.75rem solid #ffffff;
+    border-left: 0.75rem solid transparent;
+    border-right: 0.75rem solid transparent;
+    position: absolute;
+    bottom: -0.75rem;
+    right: 0.75rem;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*****FOOTER*****/
+    .d_footerbtnmaterials{
+        right: 3.5rem;
+        bottom: 0.5rem;
+    }
+    /*****FULLSCREEN*****/
+    .addfullscreen .d_footerbtnmaterials{
+        right: 0.5rem;
+    }
+}

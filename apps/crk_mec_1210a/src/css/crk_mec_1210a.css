@@ -1,0 +1,14 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+    display: none;
+    background-image:
+        url(../../../src/img/crk_mec_1210a_sprite.png);
+}
+.d_instructivobtns:nth-child(1) .d_instructivobtnsin, .d_instructivobtns:nth-child(2) .d_instructivobtnsin, .d_instructivobtns:nth-child(3) .d_instructivobtnsin, .d_instructivobtns:nth-child(4) .d_instructivobtnsin{
+    background-image: url(../../../src/img/crk_mec_1210a_sprite.png);
+}
