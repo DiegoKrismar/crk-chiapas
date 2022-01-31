@@ -291,7 +291,13 @@ function ocultaEmergentes(){
 
 	$("#d_emergentes").hide();//Oculta emergente
 
-    if(!iniciada){//Se cierran instrucciones por primera vez    
+    if(!iniciada){//Se cierran instrucciones por primera vez
+    
+        //iniciaActividad();
+        
+        console.log("CATEGORIA "+defineCategoria);
+        console.log("TIPO SIMULADOR "+getType);
+        
         switch(defineCategoria){//Define el tipo de categoria
             case "simulador":
                 switch(getType){//Define el tipo de simulador

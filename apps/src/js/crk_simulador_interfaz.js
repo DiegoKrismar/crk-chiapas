@@ -275,13 +275,11 @@ function setTexture(){
 	* SALIDAS: Ninguna.
     * VARIABLES: Ninguna
     */
-   //console.log.log(IP+imgPrefijo+"flexLarge_texture.png");
     mdfTexture = new THREE.TextureLoader().load( IP+imgPrefijo+"flexLarge_texture.png" );
     mdfTexture.wrapS = THREE.RepeatWrapping;
     mdfTexture.wrapT = THREE.RepeatWrapping;
     mdfTexture.repeat.set( 1, 1 );
     
-    //console.log.log(IP+rutaSRC+'crk_entorno3d_rutina_sprite.png');
     ledlightTexture = new THREE.TextureLoader().load( IP+rutaSRC+'crk_entorno3d_rutina_sprite.png' );
     ledlightTexture.wrapS = THREE.RepeatWrapping;
     ledlightTexture.wrapT = THREE.RepeatWrapping;
@@ -460,7 +458,6 @@ function classaddGltf(namePieza,visible,num){
     */
     this.creaGltf = function(){
         var loaders = new THREE.GLTFLoader();
-        //console.log.log(IP+gltfPrefijo+namePieza+".gltf");
         loaders.load(
             IP+gltfPrefijo+namePieza+".gltf",
             function(gltf){
@@ -471,7 +468,7 @@ function classaddGltf(namePieza,visible,num){
                 * SALIDAS: Ninguna.
                 * VARIABLES: Ninguna
                 */
-                //console.log.log(gltf.scene);
+                console.log(gltf.scene);
                 //Establece nuevo color para textura de MDF y color componentes
                 gltf.scene.children.forEach(function(item1,index1){
                     /*
@@ -548,7 +545,7 @@ function classaddGltf(namePieza,visible,num){
                         eval("allGltf."+getGltfobj.name+" = getGltfobj;");//Almacena el clon del gltf
                     }
                 }
-                //console.log.log(allGltf);
+                console.log(allGltf);
                 countGltf();//Cuenta los objetos creados para iniciar el render 3D
             },
             function (xhr) {
@@ -560,7 +557,7 @@ function classaddGltf(namePieza,visible,num){
                 * VARIABLES: Ninguna
                 */
                 var preloaderBar = ( xhr.loaded / xhr.total * 100 ).toFixed(2);//Porcentahe cargado
-                //console.log.log(preloaderBar+'%');
+                console.log(preloaderBar+'%');
                 $(".d_loadergrlbar").css({"width":preloaderBar+"%"});//Asigna el % al width del div
             },
             function (error) {
@@ -1345,7 +1342,7 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
                 
                 $(".d_activateultrasonic").on("pointerdown touchstart input", '#d_ultrasonicSlider', function(event){
                     event.stopPropagation();
-                    //console.log.log($(this).val());
+                    console.log($(this).val());
                 });
 
                 
@@ -1545,8 +1542,8 @@ function classClonegltf(namePieza,posX,posY,posZ,rotX,rotY,rotZ,visible,num){
             var setTimecoord = setTimeout(function(){
                 //alert(getThis.clone.name.replace(" ",'').toString());
                 $("#d_pxbentorno3dcoordmove_"+getThis.clone.name.replace(" ",'').toString()).append('<div class="d_coordtxt d_coorA">Pin A:<span>0</span></div><div class="d_coordtxt d_coorB">Pin B:<span>0</span></div><div class="d_coordtxt d_coorC">Pin C:<span>0</span></div><div class="d_coordtxt d_coorD">Pin D:<span>0</span></div><div class="d_coordtxt d_coorE">Pin E:<span>0</span></div><div class="d_coordtxt d_coorF">Pin F:<span>0</span></div><div class="d_coordtxt d_coorG">Pin G:<span>0</span></div><div class="d_coordtxt d_coorH">Pin H:<span>0</span></div>');
-                //console.log.log(status);
-                //console.log.log("d_pxbentorno3dcoordmove_"+getThis.clone.name.replace(" ",'').toString());
+                console.log(status);
+                console.log("d_pxbentorno3dcoordmove_"+getThis.clone.name.replace(" ",'').toString());
                 if(status){//Si es jumper, un pin no muestra coordenada
                     $("#d_pxbentorno3dcoordmove_"+getThis.clone.name.replace(" ",'').toString()).addClass('d_hideImportant');//Oculta coordenada de un pin (caso jumper)
                 }

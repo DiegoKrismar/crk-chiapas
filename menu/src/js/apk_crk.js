@@ -53,6 +53,7 @@ const titleNomenclatura = [
     ["2. Ensambla un elevador de canicas","crk_mec_1207b"],
     ["1. Los engranes","crk_mec_1208a"],
     ["¿Qué tanto sabes de máquinas simples?", "crk_mec_1209a"],
+    ["Manual del docente. Introducción a la electrónica","crk_ele_1300"],
     ["1. Corriente eléctrica","crk_ele_1301a"],
     ["2. Introducción a la electrónica","crk_ele_1301b"],
     ["3. Diagrama pictórico y esquemático","crk_ele_1301c"],
@@ -60,10 +61,20 @@ const titleNomenclatura = [
     ["1. La resistencia", "crk_ele_1303a"],
     ["2. Pinta tu resistencia","crk_ele_1303b"],
     ["1. Diodo emisor de luz","crk_ele_1304a"],
+    ["2. Prende tu LED", "crk_ele_1304b1"],
+    ["3. Conecta tus LEDs en paralelo y en serie", "crk_ele_1304b2"],
     ["1. Interruptores y botones","crk_ele_1305a"],
+    ["2. Prende un LED con un push button y luego con un switch deslizable", "crk_ele_1305b1"],
+    ["3. Interruptores de escalera", "crk_ele_1305b2"],
     ["1. Potenciómetros y fotorresistencias","crk_ele_1306a"],
+    ["2. Incremento en una resistencia", "crk_ele_1306b1"],
+    ["3. Uso del potenciómetro", "crk_ele_1306b2"],
+    ["4. La fotorresistencia", "crk_ele_1306b3"],
+    ["5. El LED multicolor, RGB","crk_ele_1306b4"],
     ["1. Zumbador o buzzer","crk_ele_1307a"],
-    ["5. El LED multicolor, RGB","crk_ele_1306b4"]
+    ["2. El botón de pánico", "crk_ele_1307b1"],
+    ["3. La alarma y el camaleón", "crk_ele_1307b2"],
+    ["¿Qué tanto sabes de máquinas simples?", "crk_ele_1309a"]
 ];
 /***********************************************************************************
 *                                    FUNCIONES

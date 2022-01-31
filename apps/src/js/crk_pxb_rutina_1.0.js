@@ -10,7 +10,11 @@ const KEY = "81";
 const KEY_2 = "87";
 const KEY_3 = "69";
 const KEY_4 = "82"
-const domainsWithDB = []; //Definición de dominios que tiene permitido hacer uso de las funciones de DB
+const domainsWithDB = [
+	"https://krismar.mx/KrismarApps/",
+	"https://www.krismar.mx/KrismarApps/",
+	"https://www.mdt.mx/KrismarApps/",
+]; //Definición de dominios que tiene permitido hacer uso de las funciones de DB
 /***********************************************************************************
  *
  *                                    VARIABLES GLOBALES
@@ -306,11 +310,11 @@ $(document).on("click", "#validar", function () {
 		
 		secuencial = [];
 		transformaSecuencial(principal, 0);
-		//console.log.log(secuencial);
+		console.log(secuencial);
 
 		//Para el audio del zumbador
 		context.resume().then(() => {
-			//console.log.log("Playback resumed successfully");
+			console.log("Playback resumed successfully");
 		});
 
 		setTimeout(function () {
@@ -665,13 +669,13 @@ async function simulacion(array) {
 	let arrayBanderaFin = [];
 	let i = 0;
 	while (i < array.length && vistaPrevia) {
-		//console.log.log("Paso: " + i);
+		console.log("Paso: " + i);
 		if (Array.isArray(array[i])) {
 			if (banderaCondicion || banderaMientras) {
 				//Checa condiciones
 				condicion = condicionPreview(array[i]);
 				arryCondicionhaz.push(condicion);
-				//console.log.log(condicion);
+				console.log(condicion);
 				banderaCondicion = false;
 			}
 		} else {
@@ -798,14 +802,14 @@ async function simulacion(array) {
 						//}
 					}
 
-					//console.log.log(rgb1);
+					console.log(rgb1);
 
 					activo.nombre = array[i].contenido.nombre;
 					activo.contenido1 = colorRGBHex;
 					activo.subtipo = array[i].subtipo;
 					break;
 				case "zumbador":
-					// //console.log.log("ZOMBAA");
+					// console.log("ZOMBAA");
 					if (array[i].contenido.estado === "HIGH") {
 						$("#" + array[i].contenido.nombre).css("display", "block");
 						//Set de frecuencia en la variable onda
@@ -817,7 +821,7 @@ async function simulacion(array) {
 										parseInt(zum1.freq) ==
 										parseInt(array[i].contenido.frecuencia)
 									) {
-										////console.log.log('Frecuencia igual, no pausar');
+										//console.log('Frecuencia igual, no pausar');
 									} else {
 										element.pause();
 									}
@@ -831,7 +835,7 @@ async function simulacion(array) {
 									ondas.push(onda);
 									onda.play();
 								} else {
-									////console.log.log("Se evita el traslape de frecuencias iguales(zum1)");
+									//console.log("Se evita el traslape de frecuencias iguales(zum1)");
 								}
 							} else {
 								ondas2.forEach((element) => {
@@ -839,7 +843,7 @@ async function simulacion(array) {
 										parseInt(zum2.freq) ==
 										parseInt(array[i].contenido.frecuencia)
 									) {
-										////console.log.log('Frecuencia igual, no pausar');
+										//console.log('Frecuencia igual, no pausar');
 									} else {
 										element.pause();
 									}
@@ -853,7 +857,7 @@ async function simulacion(array) {
 									ondas2.push(onda);
 									onda.play();
 								} else {
-									////console.log.log("Se evita el traslape de frecuencias iguales(zum2)");
+									//console.log("Se evita el traslape de frecuencias iguales(zum2)");
 								}
 							}
 						} else {
@@ -882,7 +886,7 @@ async function simulacion(array) {
 					await sleep(parseInt(array[i].contenido.tiempo));
 					break;
 				case "pulso":
-					//console.log.log(activo);
+					console.log(activo);
 
 					let segundo = 1000;
 					if (
@@ -947,7 +951,7 @@ async function simulacion(array) {
 								}
 								break;
 							case "zumbador":
-								//console.log.log(array[i]);
+								console.log(array[i]);
 								onda = T("pulse", {
 									freq: parseInt(activo.contenido1),
 									mul: 0.1,
@@ -967,7 +971,7 @@ async function simulacion(array) {
 											segundo / parseInt(array[i].contenido.repeticiones) / 2
 										);
 										$(".d_pxbpreviewconteinbuzzer").css("display", "none");
-										//console.log.log("low");
+										console.log("low");
 										onda.pause();
 										await sleep(
 											segundo / parseInt(array[i].contenido.repeticiones) / 2
@@ -1042,10 +1046,10 @@ async function simulacion(array) {
 					}
 
 					if (nivelOp === 0) {
-						////console.log.log(variablesPreview.length);
+						//console.log(variablesPreview.length);
 						if (banderaLocal === "local") {
 							for (let a = 0; a < variablesPreview.length; a++) {
-								////console.log.log(i);
+								//console.log(i);
 								if (variablesPreview[a].nombre === izq) {
 									variablesPreview[a].valor = der;
 									break;
@@ -1053,7 +1057,7 @@ async function simulacion(array) {
 							}
 						} else {
 							for (let a = 0; a < variablesGlobales.length; a++) {
-								////console.log.log(i);
+								//console.log(i);
 								if (variablesGlobales[a].nombre === izq) {
 									variablesGlobales[a].valor = der;
 									break;
@@ -1080,7 +1084,7 @@ async function simulacion(array) {
 					if (banderaHaz && banderaFin) {
 						if (!condicion) {
 							i = posOtro - 1;
-							// //console.log.log("hazfintru");
+							// console.log("hazfintru");
 						}
 						banderaHaz = false;
 						banderaFin = false;
@@ -1109,16 +1113,16 @@ async function simulacion(array) {
 							if (arrayBanderaFin.length > 2) {
 								let n = arrayOtro.length - 2;
 								n = n - 1;
-								// //console.log.log("killme",i);
+								// console.log("killme",i);
 								i = posOtro + n;
-								// //console.log.log("killme2",i);
+								// console.log("killme2",i);
 							} else {
-								// //console.log.log("killme",i);
+								// console.log("killme",i);
 								i = posOtro - 1;
-								// //console.log.log("killme2",i);
+								// console.log("killme2",i);
 							}
 						} else {
-							// //console.log.log("entre a el else");
+							// console.log("entre a el else");
 							banderaOtro = true;
 							banderaFin = false;
 							arrayBanderaFin.push(banderaFin);
@@ -1128,7 +1132,7 @@ async function simulacion(array) {
 						if (condicion) {
 							banderaOtro = true;
 							arrayOtro.push(banderaOtro);
-							// //console.log.log("AGREGA",arrayOtro);
+							// console.log("AGREGA",arrayOtro);
 						} else {
 							banderaOtro = false;
 							arrayOtro.push(banderaOtro);
@@ -1137,29 +1141,29 @@ async function simulacion(array) {
 								n = n - 1;
 								i = posOtro + n;
 							} else {
-								// //console.log.log("otro",i);
+								// console.log("otro",i);
 								i = posOtro - 1;
-								// //console.log.log("otro2",i);
+								// console.log("otro2",i);
 							}
 						}
 					}
 					break;
 				case "otro":
-					// //console.log.log("VE ULTIMO", arrayOtro);
+					// console.log("VE ULTIMO", arrayOtro);
 					if (arrayOtro.length > 2) {
 						let n = arrayOtro.length - 2;
 						n = n - 1;
 						if (arrayOtro[arrayOtro.length - 1]) {
-							// //console.log.log("LOL1",i);
+							// console.log("LOL1",i);
 							i = array[i].destino + n;
-							// //console.log.log("LOL2",i);
+							// console.log("LOL2",i);
 							// banderaOtro = false;
 						}
 					} else {
 						if (arrayOtro[arrayOtro.length - 1]) {
-							// //console.log.log("LOL1",i);
+							// console.log("LOL1",i);
 							i = array[i].destino - 1;
-							// //console.log.log("LOL2",i);
+							// console.log("LOL2",i);
 							// banderaOtro = false;
 						}
 					}
@@ -1180,36 +1184,36 @@ async function simulacion(array) {
 								}
 							}
 						} else if (array[i].tipo === "mientras") {
-							// //console.log.log("Fin: meitrneas "+banderaFin);
+							// console.log("Fin: meitrneas "+banderaFin);
 							if (!arrayBanderaFin[arrayBanderaFin.length - 1]) {
 								if (arrayBanderaFin.length > 2) {
 									let n = arrayOtro.length - 2;
 									n = n - 1;
-									// //console.log.log("svmnif",i);
+									// console.log("svmnif",i);
 									i = array[i].destino + n;
-									//  //console.log.log("svmnif",i);
+									//  console.log("svmnif",i);
 								} else {
-									// //console.log.log("svmnelse",i);
+									// console.log("svmnelse",i);
 									i = array[i].destino - 1;
-									//  //console.log.log("svmnelse",i);
+									//  console.log("svmnelse",i);
 								}
 							}
 							arrayBanderaFin.pop();
 						} else {
-							// //console.log.log("Enciende banderaFin = Paso: "+i);
+							// console.log("Enciende banderaFin = Paso: "+i);
 							banderaFin = true;
 							if (arryCondicionhaz[arryCondicionhaz.length - 1]) {
-								// //console.log.log("svmnif",i);
+								// console.log("svmnif",i);
 								i = array[i].destino - 1;
-								// //console.log.log("svmnif",i);
+								// console.log("svmnif",i);
 							}
 							arryCondicionhaz.pop();
 						}
 					} else {
 						banderaSi = false;
-						// //console.log.log("ANTE DELETE",arrayOtro);
+						// console.log("ANTE DELETE",arrayOtro);
 						arrayOtro.pop();
-						// //console.log.log("DEPUES DEL", arrayOtro);
+						// console.log("DEPUES DEL", arrayOtro);
 					}
 					break;
 				default:
@@ -1242,7 +1246,7 @@ async function simulacion(array) {
 								valor_final: parseInt(array[i].valor_final),
 								sigue: true,
 							});
-							//console.log.log(variablesFor.length);
+							console.log(variablesFor.length);
 							let total = variablesFor.length;
 							indexPara = total - 1;
 						}
@@ -1254,7 +1258,7 @@ async function simulacion(array) {
 	}
 
 	if (vistaPrevia) {
-		//console.log.log("Se inició nueva secuencia");
+		console.log("Se inició nueva secuencia");
 		simulacion(secuencial);
 	} else {
 		//Se ha presionado el btn de cerra vista previa
@@ -1282,7 +1286,7 @@ function condicionPreview(array) {
 				}
 				break;
 			case "push":
-				// //console.log.log("#" + array[i].contenido.nombre.attr("estado"));
+				// console.log("#" + array[i].contenido.nombre.attr("estado"));
 				if (
 					array[i].contenido.estado ===
 					$("#" + array[i].contenido.nombre).attr("estado")
@@ -1318,13 +1322,13 @@ function condicionPreview(array) {
 				break;
 			case "comparacion":
 				op = "";
-				//console.log.log(array);
+				console.log(array);
 				let auxCon = condicionComparacion(
 					array[i].contenido_condicion[0],
 					array[i].contenido_entonces[0],
 					array[i].contenido.eleccion
 				);
-				//console.log.log(auxCon);
+				console.log(auxCon);
 				if (eval(auxCon)) {
 					aux = true;
 				} else {
@@ -1507,7 +1511,7 @@ function cronometro() {
 			tiempo.minuto = 0;
 			tiempo.hora++;
 		}
-		////console.log.log(tiempo.segundo);
+		//console.log(tiempo.segundo);
 		$("#hora").text(tiempo.hora < 10 ? "0" + tiempo.hora : tiempo.hora);
 		$("#minuto").text(tiempo.minuto < 10 ? "0" + tiempo.minuto : tiempo.minuto);
 		$("#segundo").text(
@@ -1537,7 +1541,7 @@ function comparaArrays(original, ideal) {
 		if (typeof ideal[i] === "undefined") {
 			//ESTA VACIO
 			//O no esta completo
-			////console.log.log("undefined xd");
+			//console.log("undefined xd");
 			//errores[contador-1].estado = 1;
 		} else {
 			//NO ESTA VACIO
@@ -2269,10 +2273,10 @@ function syncProjects() {
 		//Update de nombres
 		toUpdate = checkUpdatedNames(toKeep);
 
-		//console.log.log("A actualizar: ");
-		//console.log.log(toUpdate);
-		//console.log.log("A eliminar: ");
-		//console.log.log(toDelete);
+		console.log("A actualizar: ");
+		console.log(toUpdate);
+		console.log("A eliminar: ");
+		console.log(toDelete);
 		syncInDB(toUpdate, toDelete);
 	}
 }
@@ -2449,16 +2453,16 @@ function subirArchivo(input) {
      * ENTRADAS: Recibe el input completo del html.
      * SALIDAS: Un json que tiene la estructura de un proyecto.
      
-    //console.log.log(input);
+    console.log(input);
     let file = input.files[0];
-    //console.log.log(file);
+    console.log(file);
     let reader = new FileReader();
 
     reader.onload = function (e) {
         readXml = e.target.result;
         let json = JSON.parse(readXml);
         armaMaqueta(json)
-        //console.log.log(json)
+        console.log(json)
     };
     reader.readAsText(file);
 }
@@ -2510,7 +2514,7 @@ function guardaLocal() {
                     nombre_estructura = valor;
                     $("#obtieneValoresLocal").click();
                     $(this).dialog("close");
-                    ////console.log.log(nombre_archivo);
+                    //console.log(nombre_archivo);
                 } else {
                     window.alert("Nombra tu archivo para continuar.")
                 }
@@ -2553,10 +2557,10 @@ $(document).on('click', '#obtieneValoresLocal', function () {
 
     } else {
         let nomproyec = allLocal.proyectos;
-        //console.log.log(nomproyec)
+        console.log(nomproyec)
         for (var i = 0; i < nomproyec.length; i++) {
-            //console.log.log(nomproyec[i].nombre)
-            //console.log.log(nombre_estructura)
+            console.log(nomproyec[i].nombre)
+            console.log(nombre_estructura)
             if (nomproyec[i].nombre === nombre_estructura) {
                 bandera = 1;
                 index = i;
@@ -2569,7 +2573,7 @@ $(document).on('click', '#obtieneValoresLocal', function () {
         if (bandera == 1) {
             if (confirm("Este proyecto ya existe, ¿Quiere sobre escribirlo?")) {
                 allLocal.proyectos[index].proyecto = principal;
-                //console.log.log(allLocal)
+                console.log(allLocal)
                 localStorage.setItem("proyecto", JSON.stringify(allLocal));
             } else {
 
@@ -2660,7 +2664,7 @@ $(document).on('click', '#abreProyectoLocal', function () {
         vaciaPrograma();
        
     
-        //console.log.log(JSON.stringify( proyectos[pos].proyecto));
+        console.log(JSON.stringify( proyectos[pos].proyecto));
         recreaHTML(proyectos[pos].proyecto, $("#programa"));
         creaYActualiza();
     }
@@ -2699,7 +2703,7 @@ $(document).on('click', '#abreProyectoLocal', function () {
 //                     nombre_archivo = valor + ".txt";
 //                     $("#guardaMaqueta").click();
 //                     $(this).dialog("close");
-//                     //console.log.log(nombre_archivo);
+//                     console.log(nombre_archivo);
 //                 } else {
 //                     window.alert("Nombra tu archivo para continuar.")
 //                 }
@@ -2713,7 +2717,7 @@ $(document).on('click', '#abreProyectoLocal', function () {
 //             $(this).dialog('destroy').remove();
 //         }
 //     }); //fin codigo dialogo
-//     //console.log.log(doc);
+//     console.log(doc);
 //     //Funcion para generar el archivo xml
 // }
 
@@ -2732,7 +2736,7 @@ function traduceTexto(texto) {
 
 	for (let i = 0; i < arrayTexto.length; i++) {
 		let last = undefined;
-		//console.log.log(arrayTexto[i]);
+		console.log(arrayTexto[i]);
 		if (arrayTexto[i].slice(-1) === "." || arrayTexto[i].slice(-1) === ",") {
 			last = arrayTexto[i].substr(arrayTexto[i].length - 1);
 			arrayTexto[i] = arrayTexto[i].slice(0, -1);
@@ -2884,7 +2888,7 @@ function ventanaCarga() {
 					$(this).dialog("close");
 				} else {
 					alert("Archivo no valido");
-					//console.log.log("Archivo no valido");
+					console.log("Archivo no valido");
 				}
 			},
 			Cancelar: function () {
@@ -2967,8 +2971,7 @@ function adjustInterface() {
 	$("#editarBorrarProyecto").attr("onclick", "showEditDelete()");
 
 	//Revisar el dominio
-	//checkDomain(crk_Domain);
-	switchDBuse();
+	checkDomain(crk_Domain);
 
 	//Draggable de la ventana de confi de elementos
 	$(".d_pxbbloquespopupin").draggable({
@@ -2979,7 +2982,7 @@ function adjustInterface() {
 	//Listener para la tecla Enter en el simulador
 	$(document).keyup(function (event) {
 		if (event.which === 13) {
-			//console.log.log(configWindow);
+			console.log(configWindow);
 			switch (configWindow) {
 				case 0:
 					break;
@@ -3019,7 +3022,7 @@ function checkDomain(domain) {
 	 * ENTRADAS: domain --> Dominio desde el cual se accede a la aplicación.
 	 * SALIDAS: Ninguna.
 	 */
-	//console.log.log('Dominio de acceso: '+crk_Domain);
+	console.log('Dominio de acceso: '+crk_Domain);
 	let withDB = false;
 	let posicion;
 	for (var i = 0; i < domainsWithDB.length; i++) {
@@ -3386,8 +3389,8 @@ function getPractices(userID, prefijo) {
 	 * ENTRADAS: userID --> ID del usuario
 	 * SALIDAS: Ninguna.
 	 */
-	//console.log.log('Prefijo de la app: '+prefijo);
-	//console.log.log('ID de usuario: '+userID);
+	console.log('Prefijo de la app: '+prefijo);
+	console.log('ID de usuario: '+userID);
 	let dataAux = [];
 	dataPractices = undefined;
 	$.ajax({
@@ -3443,7 +3446,7 @@ function updatePractices() {
 	 * SALIDAS: Ninguna.
 	 */
 	let timestamp = new Date().getTime();
-	if(is3D)saveObjinf()
+	is3D ? saveObjinf() : console.log("");
 	let principalString = JSON.stringify(is3D ? save_components : principal);
 	let practica_id = repeatedPracticeIndex;
 	$.ajax({

@@ -104,7 +104,6 @@ CSS MEDIA
     .d_contegrl{
         height: 100%;
         width: calc(100% - 6rem);
-        top: 0;
     }
     /*****FULLSCREEN*****/
     .addfullscreen .d_contegrl{
@@ -222,7 +221,7 @@ CSS MEDIA
     box-sizing: border-box;
     border-radius: 0.3em;
     margin: 0.1rem;
-    background-image: url(../img/crk_bloques_rutina_sprite.png);
+    background-image: url(../../../img/crk_bloques_rutina_sprite.png);
     background-size: 1000% 1000%;
     background-repeat: no-repeat;
     box-shadow: 0 0 0.3rem rgb(0 0 0 / 75%);

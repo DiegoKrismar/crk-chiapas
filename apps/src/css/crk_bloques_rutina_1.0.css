@@ -1,0 +1,1281 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+    display: none;
+    background-image:
+        url(../img/crk_bloques_rutina_sprite.png);
+}
+/*
+==============================================
+CSS VISTA BLOQUES
+==============================================
+*/
+.d_emergentegestos{
+    display: none;
+}
+.d_pxbviewelements{
+    width: calc(100% - 0.4rem);
+    height: 13.6rem;
+    max-height: 16rem;
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0.2rem;
+    background-color: #f2f2f2;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+}
+.d_pxbviewelementsconte{
+    width: calc(100% - 1rem);
+    height: calc(100% - 2rem);
+    position: absolute;
+    top: 1.5rem;
+    left: 0.5rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.d_pxbopcion{
+    width: calc(50% - 0.2rem);
+    float: left;
+    transition: all ease 0.5s;
+    margin: 0.1rem 0.1rem 0.1rem 0.1rem;
+}
+.d_pxbopcion_up{
+    width: 20%;
+    margin: 0;
+}
+.d_pxbopcion_active{
+    display: block;
+}
+.d_pxbopcion_inactive{
+    display: none;
+}
+.d_pxbopcionname{
+    width: 100%;
+    float: left;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d_pxbopcionname div{
+    width: calc(100% - 3.5rem);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: center;
+    float: left;
+    padding: 0 0.25rem 0 0.25rem;
+}
+/*Contenedor desplegable de elementos*/
+.d_pxbopcionname svg{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    transform: rotate(-90deg);
+}
+.d_pxbopcionconte{
+    width: 100%;
+    float: left;
+    display: none;
+}
+.d_pxbopcionconte_up{
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+}
+/*Btn para ocultar btn de menu elementos*/
+.d_pxbviewelementsbtn{
+    width: 4rem;
+    height: 2rem;
+    position: absolute;
+    right: calc(50% - 2rem);
+    top: -1rem;
+    background-color: #f2f2f2;
+    border-width: 0.05rem 0.05rem 0 0.05rem;
+    border-style: solid;
+    border-color: #b3b3b3;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.d_pxbviewelementsbtn_hide{
+    top: -2rem;
+}
+.d_pxbviewelementsbtn_hide .d_pxbviewelementssvg{
+    transform: rotate(0deg);
+}
+.d_pxbviewelementssvg{
+    width: 2rem;
+    height: 100%;
+    position: absolute;
+    left: calc(50% - 1rem);
+    top: 0;
+    transform: rotate(180deg);
+}
+/*Btns elementos*/
+.d_pxbopcionbtn{
+    width: 50%;
+    min-height: 3rem;
+    float: left;
+    background-color: #ffffff;
+    border-width: 0.3rem;
+    border-style: solid;
+    box-sizing: border-box;
+}
+.d_pxbopcionbtnicon{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    background-image: url(../img/crk_bloques_rutina_sprite.png);
+    background-size: 1000% 1000%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.d_pxbopcionbtntxt{
+    width: calc(100% - 2.4rem);
+    height: 2.4rem;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d_pxbopcionbtntxt > div{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+}
+/*Icono del icono de cada elemento*/
+.d_iconled{
+    background-position: 0% 0%;
+}
+.d_iconrgb{
+    background-position: 11.11% 0%;
+}
+.d_iconbuzzer{
+    background-position: 22.22% 0%;
+}
+.d_iconmotor{
+    background-position: 33.33% 0%;
+}
+.d_iconpushbutton{
+    background-position: 44.44% 0%;
+}
+.d_icondelay{
+    background-position: 0% 11.11%;
+}
+.d_iconpulse{
+    background-position: 11.11% 11.11%;
+}
+.d_icontimepushed{
+    background-position: 22.22% 11.11%;
+}
+.d_iconbreak{
+    background-position: 33.33% 11.11%;
+}
+.d_iconif{
+    background-position: 0% 22.22%;
+}
+.d_iconifelse{
+    background-position: 11.11% 22.22%;
+}
+.d_iconwhile{
+    background-position: 22.22% 22.22%;
+}
+.d_icondowhile{
+    background-position: 33.33% 22.22%;
+}
+.d_iconfor{
+    background-position: 44.44% 22.22%;
+}
+.d_iconvariable{
+    background-position: 0% 33.33%;
+}
+.d_iconvalue{
+    background-position: 11.11% 33.33%;
+}
+.d_iconcompare{
+    background-position: 0% 44.44%;
+}
+.d_iconoperation{
+    background-position: 11.11% 44.44%;
+}
+/*Agrega el color de elementos por contenedor*/
+.d_pxbelementcolor, .d_pxbelementcolor{
+    background-color: #29abe2;
+}
+.d_pxbelementcolor .d_pxbopcionbtn{
+    border-color: #29abe2;
+    color: #29abe2;
+}
+.d_pxbfunctioncolor{
+    background-color: #c6516d;
+}
+.d_pxbfunctioncolor .d_pxbopcionbtn{
+    border-color: #c6516d;
+    color: #c6516d;
+}
+.d_pxbstructurecolor{
+    background-color: #f9a94b;
+}
+.d_pxbstructurecolor .d_pxbopcionbtn{
+    border-color: #f9a94b;
+    color: #f9a94b;
+}
+.d_pxbvariablecolor{
+    background-color: #8573a7;
+}
+.d_pxbvariablecolor .d_pxbopcionbtn{
+    border-color: #8573a7;
+    color: #8573a7;
+}
+.d_pxbmatcolor{
+    background-color: #39b54a;
+}
+.d_pxbmatcolor .d_pxbopcionbtn{
+    border-color: #39b54a;
+    color: #39b54a;
+}
+/*Extras en btn de elementos antes de drag and drop*/
+.d_pxbopcionbtntxt2{
+    width: calc(100% - 2rem);
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    text-indent: 1rem;
+    margin-bottom: 0.5rem;
+}
+.d_pxbopcionbtnlight, .d_pxbopcionbtnimg, .d_pxbopcionbtntxt2, .d_pxbopcionbtncondition, .d_pxbopcionbtnthen, .d_pxbopcionbtnvalue, .d_pxbopcionbtnoperator{
+    display: none;
+}
+/*Se agregan cambios en algunos elementos al soltarlos (estructuras de control)*/
+.d_pxbopcionbtn_if > .d_pxbopcionbtnicon, .d_pxbopcionbtn_ifelse > .d_pxbopcionbtnicon, .d_pxbopcionbtn_while > .d_pxbopcionbtnicon, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtnicon, .d_pxbopcionbtn_for > .d_pxbopcionbtnicon{
+    /*width: 5rem;
+    height: 5rem;*/
+    display: none;
+}
+.d_pxbopcionbtn_if > .d_pxbopcionbtntxt, .d_pxbopcionbtn_ifelse > .d_pxbopcionbtntxt, .d_pxbopcionbtn_while > .d_pxbopcionbtntxt, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtntxt, .d_pxbopcionbtn_for > .d_pxbopcionbtntxt{
+    width: 5rem;
+    height: 4rem;
+}
+.d_pxbopcionbtn_led > .d_pxbopcionbtnlight, .d_pxbopcionbtn_rgb > .d_pxbopcionbtnlight, .d_pxbopcionbtn_motor > .d_pxbopcionbtnimg, .d_pxbopcionbtn_buzzer > .d_pxbopcionbtnlight, .d_pxbopcionbtn_pushbutton > .d_pxbopcionbtnlight, .d_pxbopcionbtn_timepushed > .d_pxbopcionbtnlight, .d_pxbopcionbtn_if > .d_pxbopcionbtncondition, .d_pxbopcionbtn_if > .d_pxbopcionbtnthen, .d_pxbopcionbtn_ifelse > .d_pxbopcionbtncondition, .d_pxbopcionbtn_ifelse > .d_pxbopcionbtnthen, .d_pxbopcionbtn_ifelse > .d_pxbopcionbtntxt2, .d_pxbopcionbtn_while > .d_pxbopcionbtncondition, .d_pxbopcionbtn_while > .d_pxbopcionbtnthen, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtncondition, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtnthen, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtntxt2, .d_pxbopcionbtn_for > .d_pxbopcionbtncondition, .d_pxbopcionbtn_for > .d_pxbopcionbtnthen, .d_pxbopcionbtn_compare > .d_pxbopcionbtnvalue, .d_pxbopcionbtn_compare > .d_pxbopcionbtnoperator, .d_pxbopcionbtn_operation > .d_pxbopcionbtnvalue, .d_pxbopcionbtn_operation > .d_pxbopcionbtnoperator{
+    display: block;
+}
+.d_pxbopcionbtn_if > .d_pxbopcionbtncondition, .d_pxbopcionbtn_ifelse > .d_pxbopcionbtncondition, .d_pxbopcionbtn_while > .d_pxbopcionbtncondition, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtncondition, .d_pxbopcionbtn_for > .d_pxbopcionbtncondition{
+    width: calc(100% - 6.5rem);
+    min-height: 2.4rem;
+    background-color: #ffffff;
+    float: left;
+    margin: -3rem 1rem 1rem 5rem;
+    padding: 0.3rem;
+    position: relative;
+}
+.d_pxbopcionbtn_dowhile > .d_pxbopcionbtncondition{
+    margin: -4.25rem 1rem 1rem 5rem;
+}
+.d_pxbopcionbtn_if > .d_pxbopcionbtnthen, .d_pxbopcionbtn_ifelse > .d_pxbopcionbtnthen, .d_pxbopcionbtn_while > .d_pxbopcionbtnthen, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtnthen, .d_pxbopcionbtn_for > .d_pxbopcionbtnthen{
+    width: calc(100% + 1rem);
+    min-height: 2.4rem;
+    background-color: #ffffff;
+    margin: 0rem 0 1rem 2rem;
+    float: left;
+    padding: 0.3rem;
+    position: relative;
+}
+.d_pxbopcionbtn_dowhile > .d_pxbopcionbtntxt2{
+    margin: 1rem 0 1rem 0;
+}
+.d_pxbopcionbtn_ifelse > .d_pxbopcionbtntxt  span, .d_pxbopcionbtn_dowhile > .d_pxbopcionbtntxt  span{
+    /*display: none;*/
+}
+/*Se agregan cambios en algunos elementos (led, buzzer, pushbutton, timepushed)*/
+.d_pxbopcionbtn_led > .d_pxbopcionbtnlight, .d_pxbopcionbtn_rgb > .d_pxbopcionbtnlight, .d_pxbopcionbtn_buzzer > .d_pxbopcionbtnlight, .d_pxbopcionbtn_pushbutton > .d_pxbopcionbtnlight, .d_pxbopcionbtn_timepushed > .d_pxbopcionbtnlight{
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,.5);
+    border-width: 0 0.1rem 0 0;
+    border-style: solid;
+    border-color: #f2f2f2;
+    box-sizing: border-box;
+}
+/*Se agregan cambios en algunos elementos (motor)*/
+.d_pxbopcionbtn_motor > .d_pxbopcionbtnimg{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    position: relative;
+}
+.d_pxbopcionbtn_motor > .d_pxbopcionbtnimg > span{
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    background-color: #ffffff;
+    background-image: url(../img/crk_bloques_rutina_sprite.png);
+    background-size: 1000% 1000%;
+    background-repeat: no-repeat;
+    background-position: 88.88% 44.44%;
+    border-radius: 50%;
+}
+.d_pxbopcionbtn_motor > .d_pxbopcionbtntxt{
+    width: calc(100% - 6rem);
+}
+/*Se agregan cambios en algunos elementos (variable, valor, comparacion, operacion)*/
+.d_pxbopcionbtn_variable > .d_pxbopcionbtnicon, .d_pxbopcionbtn_value > .d_pxbopcionbtnicon, .d_pxbopcionbtn_compare > .d_pxbopcionbtnicon, .d_pxbopcionbtn_operation > .d_pxbopcionbtnicon{
+    display: none;
+}
+.d_pxbopcionbtn_variable > .d_pxbopcionbtntxt, .d_pxbopcionbtn_value > .d_pxbopcionbtntxt{
+    width: 100%;
+}
+.d_pxbopcionbtn_compare > .d_pxbopcionbtntxt, .d_pxbopcionbtn_operation > .d_pxbopcionbtntxt{
+    display: none;
+}
+.d_pxbopcionbtn_compare > .d_pxbopcionbtnvalue, .d_pxbopcionbtn_operation > .d_pxbopcionbtnvalue{
+    width: calc(50% - 2.2rem);
+    min-height: 2.4rem;
+    float: left;
+    background-color: #ffffff;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    position: relative;
+}
+.d_pxbopcionbtn_compare > .d_pxbopcionbtnicon, .d_pxbopcionbtn_operation > .d_pxbopcionbtnicon{
+    width: 4rem;
+    height: 4rem;
+}
+.d_pxbopcionbtn_compare > .d_pxbopcionbtntxt, .d_pxbopcionbtn_operation > .d_pxbopcionbtntxt{
+    width: 7rem;
+    height: 4rem;
+}
+.d_pxbopcionbtn_compare > .d_pxbopcionbtnoperator, .d_pxbopcionbtn_operation > .d_pxbopcionbtnoperator{
+    width: 2.4rem;
+    min-height: 2.4rem;
+    float: left;
+    margin: 0.5rem 0 0.5rem 0;
+    border: 0.05rem solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Agrega nueva clase, ya que la antertior (d_pxbopcionbtn) se elimina*/
+.d_pxbopcionblock_led, .d_pxbopcionblock_rgb, .d_pxbopcionblock_buzzer, .d_pxbopcionblock_motor, .d_pxbopcionblock_pushbutton, .d_pxbopcionblock_delay, .d_pxbopcionblock_pulse, .d_pxbopcionblock_timepushed, .d_pxbopcionblock_break, .d_pxbopcionblock_if, .d_pxbopcionblock_ifelse, .d_pxbopcionblock_while, .d_pxbopcionblock_dowhile, .d_pxbopcionblock_for, .d_pxbopcionblock_variable, .d_pxbopcionblock_value, .d_pxbopcionblock_compare, .d_pxbopcionblock_operation{
+    width: 100%;
+    float: left;
+    min-height: 2.4rem;
+    border-width: 0.3rem;
+    border-style: solid;
+    box-sizing: border-box;
+    border-color: #ffffff;
+    color: #ffffff;
+    position: relative;
+}
+/*Color de la clase nueva*/
+.d_pxbopcionblock_led, .d_pxbopcionblock_rgb, .d_pxbopcionblock_buzzer, .d_pxbopcionblock_motor, .d_pxbopcionblock_pushbutton{
+    background-color: #29abe2;
+}
+.d_pxbopcionblock_delay, .d_pxbopcionblock_pulse, .d_pxbopcionblock_timepushed, .d_pxbopcionblock_break{
+    background-color: #c6516d;
+}
+.d_pxbopcionblock_if, .d_pxbopcionblock_ifelse, .d_pxbopcionblock_while, .d_pxbopcionblock_dowhile, .d_pxbopcionblock_for{
+    background-color: #f9a94b;
+}
+.d_pxb_estruct_color1{
+    background-color: #faba6f;
+}
+.d_pxb_estruct_color2{
+    background-color: #fbcb93;
+}
+.d_pxbopcionblock_variable, .d_pxbopcionblock_value{
+    background-color: #8573a7;
+}
+.d_pxbopcionblock_compare, .d_pxbopcionblock_operation{
+    background-color: #39b54a;
+}
+.d_pxb_mat_color1{
+    background-color: #61c46e;
+}
+.d_pxb_mat_color2{
+    background-color: #88d392;
+}
+/*Posicion del icono de la clase nueva*/
+.d_pxbopcionblock_led > .d_iconled, .d_pxbbloquespopuptitleicon_led{
+    background-position: 0% 55.55%;
+}
+.d_pxbopcionblock_rgb > .d_iconrgb{
+    background-position: 11.11% 55.55%;
+}
+.d_pxbopcionblock_buzzer > .d_iconbuzzer{
+    background-position: 22.22% 55.55%;
+}
+.d_pxbopcionblock_motor > .d_iconmotor{
+    background-position: 33.33% 55.55%;
+}
+.d_pxbopcionblock_pushbutton > .d_iconpushbutton{
+    background-position: 44.44% 55.55%;
+}
+.d_pxbopcionblock_delay > .d_icondelay{
+    background-position: 0% 66.66%;
+}
+.d_pxbopcionblock_pulse > .d_iconpulse{
+    background-position: 11.11% 66.66%;
+}
+.d_pxbopcionblock_timepushed > .d_icontimepushed{
+    background-position: 22.22% 66.66%;
+}
+.d_pxbopcionblock_break > .d_iconbreak{
+    background-position: 33.33% 66.66%;
+}
+.d_pxbopcionblock_if > .d_iconif{
+    background-position: 0% 77.77%;
+}
+.d_pxbopcionblock_ifelse > .d_iconifelse{
+    background-position: 11.11% 77.77%;
+}
+.d_pxbopcionblock_while > .d_iconwhile{
+    background-position: 22.22% 77.77%;
+}
+.d_pxbopcionblock_dowhile > .d_icondowhile{
+    background-position: 33.33% 77.77%;
+}
+.d_pxbopcionblock_for > .d_iconfor{
+    background-position: 44.44% 77.77%;
+}
+.d_pxbopcionblock_variable > .d_iconvariable{
+    background-position: 0% 88.88%;
+}
+.d_pxbopcionblock_value > .d_iconvalue{
+    background-position: 11.11% 88.88%;
+}
+.d_pxbopcionblock_compare > .d_iconcompare{
+    background-position: 0% 100%;
+}
+.d_pxbopcionblock_operation > .d_iconoperation{
+    background-position: 11.11% 100%;
+}
+/*Contenedor drop donde se acomodan los bloques*/
+.d_pxbbloquesall{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_pxbviewdrop{
+    width: calc(100% - 1rem);
+    height: calc(100% - 2.5rem);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+.d_pxbviewdropconte{
+    width: 100%;
+    background-color: #ffffff;
+    max-height: 100%;
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_pxbviewdropscroll{
+    width: 80%;
+    max-width: 80%;
+    display: table;
+}
+/*Empiezan los bloques*/
+.d_pxbdropstart{
+    width: 100%;
+    min-height: 3rem;
+    float: left;
+    background-color: #808080;
+    border: 0.3rem solid #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+}
+.d_pxbdropblocks{
+    width: 100%;
+    min-height: 2.4rem;
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    position: relative;
+}
+.d_pxbdropend{
+    width: 100%;
+    height: 3rem;
+    float: left;
+    background-color: #808080;
+    border: 0.3rem solid #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    margin-bottom: 20rem;
+}
+.d_sortable_resalte{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*Tooltip de bloques*/
+.d_pxbblockstooltip{
+    position: absolute;
+    top: -2rem;
+    right: 0.2rem;
+    min-width: 10.4rem;
+}
+.d_pxbtooltipbtn{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: right;
+    border: 0.05rem solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    margin: 0.1rem;
+    background-image: url(../img/crk_bloques_rutina_sprite.png);
+    background-size: 1000% 1000%;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 0.3rem rgba(0,0,0,.75);
+    cursor: pointer;
+    transform: scale(0);
+}
+.d_pxbtooltip_anima1{
+    animation: showBtn 0.2s 0.0s 1 both;
+}
+.d_pxbtooltip_anima2{
+    animation: showBtn 0.2s 0.1s 1 both;
+}
+.d_pxbtooltip_anima3{
+    animation: showBtn 0.2s 0.2s 1 both;
+}
+.d_pxbtooltip_anima4{
+    animation: showBtn 0.2s 0.3s 1 both;
+}
+.d_pxbtooltip_delete{
+    background-position: 100% 100%;
+}
+.d_pxbtooltip_hide{
+    background-position: 88.88% 100%;
+}
+.d_pxbtooltip_edit{
+    background-position: 100% 88.88%;
+}
+.d_pxbtooltip_copy{
+    background-position: 88.88% 88.88%;
+}
+
+/*PASOS*/
+.d_pxbbloquessteps{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background-color: #f2f2f2;
+    border-width: 0 0 0.2rem 0;
+    border-color: #7fced9;
+    border-style: solid;
+}
+.d_pxbbloquessteps_block{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_pxbbloquesstepsbtnsconte{
+    width: 100%;
+    float: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.d_pxbbloquesstepsscrollbtn{
+    width: 28.8rem;
+}
+.d_pxbbloquesstepsscrolliconprev, .d_pxbbloquesstepsscrolliconprev_giro{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    cursor: pointer;
+}
+.d_pxbbloquesstepsscrolliconprev_giro{
+    transform: rotate(180deg);
+}
+.d_pxbbloquesstepsscrolliconprev > svg, .d_pxbbloquesstepsscrolliconprev_giro > svg{
+    width: 100%;
+    height: 100%;
+}
+.d_pxbbloquesstepsscrolliconprev > svg > path, .d_pxbbloquesstepsscrolliconprev > svg > path{
+    fill: #009EB3;
+}
+.d_pxbbloquesstepsbtnsicon{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    cursor: help;
+    display: none;
+}
+.d_pxbbloquesstepsbtns{
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    color: #009EB3;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    float: left;
+}
+.d_pxbbloquesstepsbtns_resalte{
+    background-color: #7fced9;
+    color: #ffffff;
+    border: 0.2rem solid #f2f2f2;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+.d_pxbbloquesstepsbtns_valida{
+    background-color: #8CC63F;
+    color: #ffffff;
+    border: 0.2rem solid #f2f2f2;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+.d_pxbbloquesstepsbtns_novalida{
+    background-color: #c6516d;
+    color: #ffffff;
+    border: 0.2rem solid #f2f2f2;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+.d_pxbbloquesstepstxt{
+    width: calc(100% - 3.4rem);
+    float: left;
+    padding: 0.5rem 2.9rem 0.5rem 0.5rem;
+    display: none;
+    position: relative;
+}
+.d_pxbbloquesstepstxtclose{
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+.d_pxbbloquesstepstxtclose svg{
+    width: 100%;
+    height: 100%;
+}
+.d_pxbbloquesstepstxtclose svg path{
+    fill: #009EB3;
+}
+.d_pxbbloquesstepstxt p{
+    color: #808080;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    margin: 0;
+}
+/*BTN play*/
+.d_pxbbloquesplaybtn{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: #ffffff;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+}
+.d_pxbbloquesplaybtn > svg{
+    width: 100%;
+    height: 100%;
+}
+.d_pxbbloquesplaybtn > svg path{
+    fill: #8DC641;
+}
+/*Warning de los pasos*/
+.li_viewmore,  .li_viewless{
+    cursor:pointer;
+    text-decoration: underline;
+    color: #009eb3 !important;
+}
+.d_pxbviewbloqueswarning{
+    width: 60%;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 20%;
+    background-color: #ffffff;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    margin: 0;
+    display: none;
+    box-shadow: 0 0rem 0.2rem rgba(0,0,0,.35);
+}
+.d_pxbviewbloqueswarningimg{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+}
+.d_pxbviewbloqueswarning li{
+    color: #808080;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    margin: 0.2rem 0.2rem 0.2rem 1.5rem;
+}
+.d_pxbviewbloqueswarning li span{
+    color: #009eb3;
+}
+/*Mensaje final*/
+.d_pxbviewbloquesmessagegrl{
+    width: 80%;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 10%;
+    background-color: #ffffff;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    margin: 0;
+    color: #808080;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    display: none;
+    box-shadow: 0 0rem 0.2rem rgba(0,0,0,.35);
+}
+.d_pxbviewbloquesmessagegrl span{
+    color: #009eb3;
+    font-size: 1.3rem;
+}
+
+/*Popup de bloques*/
+.d_pxbbloquespopup{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*background-color: rgba(242,242,242,.75);*/
+    background-color: rgb(0 0 0 / 0%);
+    display: none;
+}
+.d_pxbbloquespopupin{
+    width: 20rem;
+    max-height: calc(100% - 1rem);
+    position: absolute;
+    left: calc(50% - 10rem);
+    top: 1rem;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,.5);
+    z-index: 1;
+}
+.d_pxbbloquespopuptitle{
+    width: calc(100% - 0.6rem);
+    height: 3rem;
+    display: table;
+    margin: 0.3rem;
+    float: left;
+    cursor: move;
+}
+.d_pxbbloquespopuptitleicon{
+    width: 3rem;
+    height: 100%;
+    float: left;
+    background-image: url(../img/crk_bloques_rutina_sprite.png);
+    background-size: 1000% 1000%;
+    background-repeat: no-repeat;
+}
+.d_pxbbloquespopuptitletxt{
+    width: calc(100% - 3rem);
+    height: 100%;
+    color: #ffffff;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d_pxbbloquespopupconte{
+    width: calc(100% - 2rem);
+    height: calc(100% - 4.2rem);
+    margin: 0.3rem 1rem 0.3rem 1rem;
+    float: left;
+    overflow-y: auto;
+}
+.d_pxbpopupcontetxt{
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    float: left;
+    display: flex;
+    align-items: center;
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+}
+.d_pxbpopupconteselect{
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    float: left;
+    color: #009eb3;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    background-color: #f2f2f2;
+    outline: none;
+}
+.d_pxbpopupcontergb{
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    float: left;
+}
+.d_pxbpopupcontergb > div{
+    width: 2rem;
+    height: 2rem;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.d_pxbpopupcontergb > input{
+    width: calc(100% - 2rem);
+    height: 2rem;
+    float: left;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    color: #009eb3;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    outline: none;
+    border-radius: 0.3em;
+    text-indent: 0.5rem;
+}
+.d_pxbpopupcontestatus{
+    width: 100%;
+    height: 2rem;
+    float: left;
+    margin: 0.5rem 0 0.5rem 0;
+}
+.d_pxbpopupcontestatustxt{
+    margin-right: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    float: left;
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+}
+.d_pxbpopupcontestatusswitch{
+    width: 6rem;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+.d_pxbpopupcontestatusswitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.d_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1rem;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    background-color: #e6e6e6;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.d_slider:before {
+    content: "";
+    background-color: #808080;
+    display: block;
+    width: 50%;
+    height: 70%;
+    border-radius: 1rem;
+    -webkit-transition: all .7s ease;
+    transition: all .7s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    left: 0.3rem;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .d_slider {
+    background-color: #8cc63f;
+    border: 0.05rem solid #8cc63f;
+}
+input:checked + .d_slider:before {
+    left: calc(50% - 0.3rem);
+    background-color: #f2f2f2;
+}
+.d_pxbpopupcontenumber{
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    float: left;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #009eb3;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+    outline: none;
+    border-radius: 0.3em;
+    text-indent: 0.5rem;
+}
+.d_pxbpopupcontemotorgir{
+    width: 100%;
+    margin: 0.5rem 0 0.5rem 0;
+    float: left;
+}
+.d_pxbpopupcontemotor{
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    float: left;
+    display: table;
+}
+.d_d_pxbpopupcontemotorcheck{
+    width: 1.4rem;
+    height: calc(100% - 0.6rem);
+    float: left;
+    margin: 0.3rem;
+    border: 0.05rem solid #b3b3b3;
+}
+.d_d_pxbpopupcontemotoricon{
+    width: 2rem;
+    height: 100%;
+    margin: 0 0.5rem 0 0.5rem;
+    float: left;
+    background-image: url(../img/crk_bloques_rutina_sprite.png);
+    background-size: 1000% 1000%;
+    background-repeat: no-repeat;
+}
+.d_clockwise{
+    background-position: 88.88% 44.44%;
+}
+.d_otherclockwise{
+    background-position: 100% 33.33%;
+}
+.d_stopclockwise{
+    background-position: 88.88% 33.33%;
+}
+.d_d_pxbpopupcontemotortxt{
+    width: calc(100% - 5rem);
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+}
+.d_pxbpopupconteradiosgen{
+    width: 100%;
+    margin: 0.5rem 0 0.5rem 0;
+    float: left;
+}
+.d_pxbpopupconteradios{
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    float: left;
+    display: table;
+}
+.d_d_pxbpopupconteradioscheck{
+    width: 1.4rem;
+    height: calc(100% - 0.6rem);
+    float: left;
+    margin: 0.3rem;
+    border: 0.05rem solid #b3b3b3;
+}
+.d_d_pxbpopupconteradiostxt{
+    width: calc(100% - 2rem);
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    color: #343434;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: left;
+}
+.d_pxbpopupcontetextarea{
+    width: 100%;
+    height: 10rem;
+    background-color: #ffffff;
+    float: left;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    color: #009eb3;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: justify;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    padding: 0.5rem;
+}
+.d_pxbpopupcontetextarea::placeholder {
+    color: #b3b3b3;
+}
+.d_pxbpopupconteinputtext{
+    width: 100%;
+    height: 2rem;
+    background-color: #ffffff;
+    float: left;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    color: #009eb3;
+    font-family: "Berlin Sans FB";
+    font-size: 1.1rem;
+    text-align: justify;
+    outline: none;
+    padding: 0.5rem;
+}
+.d_pxbpopupconteinputtext::placeholder {
+    color: #b3b3b3;
+}
+.d_popupoptions{
+    display: none;
+}
+.d_pxbbloquespopupbtns{
+    width: 100%;
+    display: table;
+    float: left;
+    margin: 0.5rem 0 0.5rem 0;
+}
+.d_pxbbloquespopupbtnsconte{
+    display: table;
+    margin: auto;
+}
+.d_pxbbloquespopupbtnsconteaccept, .d_pxbbloquespopupbtnscontecancel{
+    width: 3rem;
+    height: 3rem;
+    float: left;
+    background-color: brown;
+    margin: 0.3rem;
+    background-color: #f2f2f2;
+    border: 0.05rem solid #b3b3b3;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+.d_pxbbloquespopupbtnsconteaccept > svg, .d_pxbbloquespopupbtnscontecancel > svg{
+    width: 100%;
+    height: 100%;
+}
+/*
+==============================================
+CSS AUXILIARES
+==============================================
+*/
+.d_oculto{
+    display: none;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*****VISTA BLOQUES*****/
+    .d_pxbviewelements{
+        width: 35%;
+        max-width: 20rem;
+        min-width: 8.2rem;
+        height: 100%;
+        max-height: inherit;
+        top: 0;
+        bottom: inherit;
+        left: 0;
+        border-width: 0 0.05rem 0 0;
+    }
+    .d_pxbviewdropscroll{
+        width: 80%;
+        max-width: 36rem;
+        display: table;
+    }
+    .d_pxbviewelementsconte{
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+        top: 1rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .d_pxbopcion{
+        width: 100%;
+        margin: 0.1rem 0 0.1rem 0;
+    }
+    .d_pxbopcionbtn{
+        width: 100%;
+    }
+    .d_pxbviewelementsbtn{
+        width: 2rem;
+        height: 4rem;
+        top: calc(50% - 2rem);
+        right: -1rem;
+        border-width: 0.05rem 0.05rem 0.05rem 0;
+    }
+    .d_pxbviewelementsbtn_hide{
+        right: -2rem;
+    }
+    .d_pxbviewelementsbtn_hide .d_pxbviewelementssvg{
+        transform: rotate(90deg);
+    }
+    .d_pxbviewelementssvg{
+        width: 100%;
+        height: 2rem;
+        top: calc(50% - 1rem);
+        left: 0;
+        transform: rotate(270deg);
+    }
+    /*Disminuir el espacio de trabajo*/
+    .d_pxbviewdrop{
+        width: calc(100% - 2.5rem);
+        height: calc(100% - 1rem);
+        top: 0.5rem;
+        left: 2rem;
+    }
+}
+/*
+==============================================
+CSS KEYFRAMES
+==============================================
+*/
+@keyframes showBtn{
+    0%{
+        transform: scale(0);
+    }
+    80%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* FLASH DE LOS PASOS */
+.d_flash {
+    animation: flash 3s infinite;
+    -webkit-animation: flash 2s infinite;
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        /*opc 1
+        opacity: 1;
+        color: #009EB3;*/
+        /*opc 2*/
+        background-color: #7fced9;
+        color: #ffffff;
+        border: 0.2rem solid #f2f2f2;
+        box-sizing: border-box;
+        border-radius: 50%;
+    }
+    25%, 75% {
+        /*opc1
+        opacity: 0.2;
+        color: #000000;*/
+        /*opc2*/
+        background-color: #f5f5f5;
+        color: #009eb3;
+    }
+}
+
+/* FLASH DEL BTN DE PLAY */
+.d_flash_playbtn {
+    animation: flash_playbtn 2s both infinite;
+    -webkit-animation: flash_playbtn 2s both infinite;
+}
+
+@keyframes flash_playbtn {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+/* ESTILO DE LOS WARNING */
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .5s, opacity .5s linear;
+}
