@@ -1,0 +1,139 @@
+@charset "utf-8";
+/*
+==============================================
+CSS FULLSCREEN
+==============================================
+*/
+.addfullscreen .d_pulleymessage{
+    top: 2rem;
+}
+/*
+==============================================
+CSS OPCIONES DE POLEAS
+==============================================
+*/
+.d_menupulleys{/*Las propiedades son generales en la clase "d_btnssimulador"*/}
+.d_menupulleys_inactive{
+    opacity: 0.4;
+}
+.d_menupulleysoption{
+    height: 3rem;
+    float: left;
+    position: relative;
+    margin: 0 0.3rem 0 0.3rem;
+    //background-color: red;
+}
+.d_onepulley{
+    width: 3rem;
+}
+.d_twopulley{
+    width: 5rem;
+}
+.d_menupulleysoption > svg{
+    width: 100%;
+    height: 100%;
+}
+.d_menupulleysoption > svg > path{
+    fill: #DD9941;
+}
+.d_menupulleysoption > svg > rect{
+    fill: #80331A;
+}
+.d_menupulleysoption > input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+.d_menupulleyaddmarble, .d_menupulleyremovemarble{
+    width: 3rem;
+    height: 3rem;
+    float: left;
+    outline: none;
+    border: 0;
+    margin: 0 0.2rem 0 0.2rem;
+    position: relative;
+}
+.d_menupulleysblock{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_menupulleyaddmarble > input, .d_menupulleyremovemarble > input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.d_menupulleyaddmarble > svg:nth-child(1), .d_menupulleyremovemarble > svg:nth-child(1), .d_menupulleyaddmarble > svg:nth-child(3), .d_menupulleyremovemarble > svg:nth-child(3){
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.d_menupulleyaddmarble > svg:nth-child(3) > path, .d_menupulleyremovemarble > svg:nth-child(3) > path{
+    fill: #F15A24;
+}
+.d_menupulleyaddmarble > svg:nth-child(3), .d_menupulleyremovemarble > svg:nth-child(3){
+    display: none;
+}
+.d_menupulleyremovemarble{
+    //background-color: red;
+}
+.d_inactive{
+    opacity: 0.2;
+    cursor: default;
+}
+.d_inactive > input{
+    cursor: default;
+}
+/*
+==============================================
+CSS TEXTOS DE POLEAS
+==============================================
+*/
+.d_txtA, .d_txtB{
+    background-color: #f2f2f2;
+    border: 0.05rem solid #b3b3b3;
+    border-radius: 0.3em;
+    box-sizing: border-box;
+    color: #009eb3;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 0.5rem;
+    z-index: 0 !important;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    /*****FULLSCREEN*****/
+    .addfullscreen .d_menupulleys{
+        right: 0.5rem;
+    }
+    /*****OPCIONES DE FUERZA*****/
+    .d_menupulleys{
+        right: 3.5rem;
+        bottom: 0.5rem;
+    }
+    /*****OPCIONES DE POLEAS*****/
+    .d_pulleymessage{
+        width: calc(100% - 7rem);
+    }
+}

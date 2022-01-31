@@ -1,0 +1,19 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+    display: none;
+    background-image:
+        url(../../../src/img/crk_mec_1204b_lamina.png);
+}
+/*
+==============================================
+CSS EMERGENTE LAMINA ROPE
+==============================================
+*/
+.d_laminaropeconte{
+    background-image: url(../../../src/img/crk_mec_1204b_lamina.png);
+}
