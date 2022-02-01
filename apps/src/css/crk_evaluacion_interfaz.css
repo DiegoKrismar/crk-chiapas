@@ -27,6 +27,10 @@ CSS FULLSCREEN
     background-position: 0% 0%;
     background-repeat: repeat;
 }
+.addfullscreen .d_contegrlactcenter{
+    top: 4rem;
+    height: calc(100% - 9rem);
+}
 /*
 ==============================================
 CSS CONTENIDO
@@ -158,7 +162,7 @@ CSS BTNS PIEZAS
     animation: pulse 1s infinite;
 }
 .d_btnsolucion > svg{
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 .d_btnsolucion > svg > path{
     fill: #ffffff;
@@ -322,12 +326,17 @@ CSS MEDIA
         top: 0.5rem;
         right: 0.5rem;
     }
+    .addfullscreen .d_contegrlactcenter{
+        height: calc(100% - 6rem);
+        width: calc(100% - 8rem);
+        top: 3rem;
+    }
     .addfullscreen .d_btnsolucion{
         top: 4rem;
         right: 0.5rem;
     }
     .addfullscreen .d_contegrlevacenter{
-        width: calc(100% - 8rem);
+        width: calc(100% - 9rem);
         height: calc(100% - 6rem);
         top: 3rem;
     }

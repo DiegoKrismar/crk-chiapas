@@ -1,0 +1,49 @@
+@charset "utf-8";
+/*
+==============================================
+CSS PRELOADER
+==============================================
+*/
+.d_helperResources{
+    background-image:;
+}
+/*
+==============================================
+CSS DISENO GENERAL ( NO SE CAMBIAN TAMANOS O 
+POSICIONES O MARGENES, SOLO FONDOS, TIPOGRAFIA
+BORDES, SOMBRAS, COLOR Y DISEÑO GENERAL)
+==============================================
+*/
+.d_contegrleva{}
+.d_contegrlevacenter{}
+/*
+==============================================
+CSS ELEMENTOS EXTRAS
+==============================================
+*/
+.d_contegrlevarespuestaimg{
+    background-image: url(../img/crk_mec_1309a_sprite_img.png);
+    background-size: 500% 100%;
+    background-repeat: no-repeat;
+}
+.d_respuesta_led{
+    background-position: 0% 0%;
+}
+.d_respuesta_interruptor{
+    background-position: 25% 0%;
+}
+.d_respuesta_resistencia{
+    background-position: 100% 0%;
+}
+.d_respuesta_potenciometro{
+    background-position: 75% 0%;
+}
+.d_respuesta_zumbador{
+    background-position: 50% 0%;
+}
+/*
+==============================================
+CSS MEDIA (PORTRAIT ES TODO LO QUE ESTE ANTES)
+==============================================
+*/
+@media (orientation: landscape) {}

@@ -243,7 +243,12 @@ function solucionCorrecta(){
 		$(".d_res"+(index+1)).each(function(){
 			respuesta = null;
 			if(compruebaItem(item.respuesta)){
-				respuesta = $(this).find(".d_contegrlevarespuestatxt").find("img").attr("src");
+				itemSplit = item.respuesta.split("/");
+				respuestaSplit = itemSplit[1];//Repuesta correcta
+				respuesta = $(this).find(".d_contegrlevarespuestatxt").hasClass(respuestaSplit);
+				if(respuesta == true){
+					respuesta = item.respuesta
+				}
 			}else{
 				respuesta = $(this).find(".d_contegrlevarespuestatxt").html();
 			}
@@ -296,15 +301,21 @@ function validaResp(){
 	arBancoPregs.forEach(function(item, index){//Para cada item del banco de preguntas
 		txtRespUsu = null;//Respuesta del usuario puede ser texto o la ruta de una imagen
 		opcion = $($(".d_contegrlevapreguntaopcion")[index]);//Opcion (div jquery)
-		respuesta = item.respuesta;//Repuesta correcta
 		respuestausu = $(opcion.find(".d_contegrlevarespuesta_seleccion"));//Respuesta del usuario
-		compRes = compruebaItem(respuesta);//Comprueba que es la ruta de una imagen
+		compRes = compruebaItem(item.respuesta);//Comprueba que es la ruta de una imagen
 		if(compRes){//Es la ruta de una imagen
-			txtRespUsu = respuestausu.find(".d_contegrlevarespuestatxt").find("img").attr("src");
+			itemSplit = item.respuesta.split("/");
+			respuesta = itemSplit[1];//Repuesta correcta
+			txtRespUsu = respuestausu.find(".d_contegrlevarespuestatxt").hasClass(respuesta);
+			if(txtRespUsu == true){
+				txtRespUsu = respuesta;
+			}
 		}else{
+			respuesta = item.respuesta;//Repuesta correcta
 			txtRespUsu =  respuestausu.find(".d_contegrlevarespuestatxt").html()
 		}
 		if(txtRespUsu == respuesta){//Es la respuesta correcta
+			
 			$(opcion.find(".d_contegrlevarespuesta_seleccion")).addClass("d_contegrlevarespuesta_bien");
 			aciertos++;
 		}else{
@@ -377,6 +388,7 @@ function agregaRespDis(item, index, noPreg){
     letra = null;//Letra de la respuesta.
 	contItem = null;//Contenido de la respuesta(imagen ó texto)
 	compItem = compruebaItem(item);//comprueba que la respuesta sea una imagen.
+	splitItem = null;//Para quitar el "img/"
     switch(index){//Dependiendo del indice
         case 0:
             letra = "a";
@@ -392,11 +404,16 @@ function agregaRespDis(item, index, noPreg){
             break;
     }
 	if(compItem){//Ay imagen
-		contItem = "<img src = '"+item+"'>";
+		// contItem = "<img src = '"+item+"'>";
+		splitItem = item.split("/");
+		contItem = splitItem[1]
+		// console.log(contItem);
+		$($(".d_contegrlevarespuestas")[($(".d_contegrlevarespuestas").length-1)]).append(" <div class='d_contegrlevarespuesta d_res"+noPreg+"'> <div class='d_contegrlevarespuestabullet'> <div class='d_contegrlevarespuestabulletin'>"+letra+"</div> </div> <div class='d_contegrlevarespuestatxt d_contegrlevarespuestaimg "+contItem+"'></div> </div>");
 	}else{//Es texto
 		contItem = item;
+		$($(".d_contegrlevarespuestas")[($(".d_contegrlevarespuestas").length-1)]).append(" <div class='d_contegrlevarespuesta d_res"+noPreg+"'> <div class='d_contegrlevarespuestabullet'> <div class='d_contegrlevarespuestabulletin'>"+letra+"</div> </div> <div class='d_contegrlevarespuestatxt'>"+contItem+"</div> </div>");
 	}
-    $($(".d_contegrlevarespuestas")[($(".d_contegrlevarespuestas").length-1)]).append(" <div class='d_contegrlevarespuesta d_res"+noPreg+"'> <div class='d_contegrlevarespuestabullet'> <div class='d_contegrlevarespuestabulletin'>"+letra+"</div> </div> <div class='d_contegrlevarespuestatxt'>"+contItem+"</div> </div>");
+    
 }
 
 function compruebaItem(itemR){
@@ -406,15 +423,14 @@ function compruebaItem(itemR){
 	* ENTRADAS: itemR > cadena
 	* SALIDAS: Valos false o true
 	*/
-	arItem = itemR.split(".");
-	contaItem = 0;
-	arExtensiones = ["png","jpg","svg"];
-	arExtensiones.forEach(function(item){//Para cada formato de imagenes
-		if(arItem.indexOf(item) != -1){
-			contaItem++
-		}
-	});
-	if(contaItem != 0){
+	arItem = itemR.split("/");
+	// arExtensiones = ["png","jpg","svg"];
+	// arExtensiones.forEach(function(item){//Para cada formato de imagenes
+	// 	if(arItem.indexOf(item) != -1){
+	// 		contaItem++
+	// 	}
+	// });
+	if(arItem.length == 2){
 		return true;
 	}else{
 		return false;
