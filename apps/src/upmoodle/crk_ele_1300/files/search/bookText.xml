@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Search><pages Count="20"><page Index="1"><![CDATA[Nivel 1
+
+                                                                                                                                               Bloque 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                       Manual del docente
+
+
+
+
+
+
+
+
+
+
+                                      Introducción a la electrónica]]></page><page Index="2"><![CDATA[Introducción a la mecánica
+
+
+
+
+
+               Índice
+
+
+
+
+
+                        Lo que tienes que saber ................................................................................................................................................................ 3
+
+
+                        Protoboard ..................................................................................................................................................................................... 4
+
+                        Resistencia ..................................................................................................................................................................................... 5
+
+                        LED.................................................................................................................................................................................................. 7
+
+
+                        Interruptores y botones ................................................................................................................................................................ 8
+
+
+                        Potenciómetros y fotorresistencias ............................................................................................................................................ 10
+
+                        Zumbador o buzzer ...................................................................................................................................................................... 11
+
+                        Índice de actividades ................................................................................................................................................................... 12
+
+
+                        Reactivos de actividades ........................................................................................................................................................................................... 14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          2                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="3"><![CDATA[Introducción a la mecánica
+
+
+
+
+               Te damos la más cordial bienvenida al bloque 3, nivel 1 del curso CRK, el cual introduce al estudiante a la electrónica.
+
+
+               Lo que tienes que saber…
+
+
+                   -  Materia se define como todo aquello que ocupa un lugar en el espacio, por lo tanto tiene volumen y masa.
+                   -  La materia está compuesta por átomos, que son elementos microscópicos.
+                   -  Los átomos, a su vez, están compuestos por  núcleo y por unas partículas que todo el tiempo están moviéndose alrededor de
+                      él que se llaman electrones. El núcleo de un átomo está compuesto por protones y neutrones, que están unidas todo el
+                      tiempo por la energía que tienen.
+                   -  Los protones tienen carga positiva, los neutrones carga neutra y la carga de los electrones es negativa.
+                   -  Los átomos tienen la necesidad de estar equilibrados en sus cargas, si le quitamos un electrón a un átomo, se desequilibra y le
+                      quita un electrón al átomo de junto y éste a su vez, hace lo mismo al átomo vecino, generándose así un flujo de electrones y
+                      si los hacemos pasar por un espacio definido se genera lo que se conoce con el nombre de corriente eléctrica.
+                   -  La definición de corriente eléctrica es: flujo de partículas cargadas, como electrones, que se mueven a través de un conductor
+                      eléctrico o un espacio.
+                   -  Electrónica es la rama de la física que estudia el movimiento y comportamiento de los electrones.
+                   -  Si en una corriente eléctrica el flujo de electrones es en un solo sentido, se le llama corriente eléctrica directa o continua,
+                      mientras que si el flujo es en dos sentidos, es decir, los electrones van y vienen, se le llama corriente eléctrica alterna.
+                   -  Ejemplos de corriente directa: la batería de cualquier dispositivo como tu reloj, tableta o celular.
+                   -  Ejemplos de corriente alterna son: la que encontramos en los enchufes de nuestras casas, tostador, horno de microondas,
+                      refrigerador, etc. en general, en equipos más grandes que requieren más energía.
+                   -  En CRK se trabajará con la corriente directa.
+                   -  Los materiales que permiten el paso del flujo de electrones, es decir, el paso de la corriente eléctrica son conocidos como
+                      conductores mientras que los que lo impiden, se les conoce como aislantes eléctricos.
+                   -  Ejemplos de materiales conductores es el oro, plata, cobre, es decir, todos los metales y ejemplos de materiales aislantes son
+                      todos aquellos que tienen plástico, cerámica, vidrio, papel, madera.
+                   -  Un diagrama pictórico es un dibujo realista de un circuito eléctrico que muestra la apariencia física de sus elementos.
+                   -  Un diagrama esquemático es un  es el dibujo de un circuito eléctrico pero con el uso de los símbolos universales de los
+                      elementos o componentes.
+
+
+
+
+                                                                                                                                          3                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="4"><![CDATA[Introducción a la mecánica
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                              Diagrama pictórico                                                                           Diagrama esquemático
+
+               PROTOBOARD
+
+
+                   -  La protoboard se utiliza para realizar pruebas o experimentos de armando, desarmando de circuitos ya que te permite ajustar
+                      fácilmente los elementos que compondrán el circuito electrónico y, posteriormente a la validación del funcionamiento se
+                      toma la decisión si se requieren soldar los componentes en una tarjeta.
+
+                   -  La protoboard es una tableta con perforaciones que está compuesta por un conjunto de tiras metálicas, de tal forma que al
+                      insertar un componente eléctrico en una perforación, el resto de ellas, en esa misma tira estarán conectadas a ese
+                      componente.
+                   -  En los extremos de la protoboard se encuentran dos bandas de perforaciones a cada lado, marcadas como positivo y
+                      negativo. Cabe mencionar que los extremos no están conectados entre sí.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          4                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="5"><![CDATA[Introducción a la mecánica
+
+
+                   -  En la sección central, existen muchas tiras metálicas y la ubicación de cada perforación está indicada por las coordenadas de
+                      una letra y un número, indicado en la protoboard.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               RESISTENCIA
+
+                   -  Es un componente que se opone al paso de la corriente eléctrica o disminuye su intensidad en un punto específico. Es muy
+                      útil para evitar que se quemen otros componentes por exceso de corriente.
+                   -  Tienen un código de colores que nos indica su valor, entre más grande sea el valor, opone mayor resistencia al flujo de la
+                      corriente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          5                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="6"><![CDATA[Introducción a la mecánica
+
+
+
+                   -  La tabla con los colores se presenta a continuación y su medida se expresa en la unidad que se llama Ohm, su símbolo universal
+                      es: Ω
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   -  Para calcular el valor de una resistencia:
+
+                          o  Identifica los colores de las dos primeras bandas en la resistencia
+                          o  Ubícalos en la tabla y forma un número con ellos.
+                          o  Ubica en la tabla el color de la tercera banda de la resistencia.
+                          o  Multiplica el número que formaste por el número que indica la tercera banda de la resistencia.
+                          o  El color de la última banda nos indica la tolerancia, la cual puede ser 2, 5 o 10 por ciento.
+
+                   -  La resistencia funciona dependiendo del material que está hecha, las más comunes son las de carbón o alambre con
+                      cerámica.
+                   -  También varían de acuerdo al tamaño y el grosor del alambre con el que están fabricadas entre más ancho el flujo de
+                      electrones es mayor.
+                   -  Su símbolo universal es:
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          6                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="7"><![CDATA[Introducción a la mecánica
+
+
+
+               LED
+                   -  LED significa “Light Emitting Diode” y en español Diodo Emisor de Luz. Es una fuente de luz, constituida por un material
+                      semiconductor dotado de dos terminales.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   -  Se inventó desde 1961.
+                   -  Los primeros LEDs no fueron visibles para el ojo humano porque eran infrarrojos, como los que se utilizan en los controles de
+                      la televisión.
+                   -  En 1962 se inventó el del color rojo para indicar si un aparato está encendido o apagado. En 1972 se inventó el amarillo y en
+                      1993 el verde y el azul.
+                   -  El LED más complejo fue el de color banco porque para emitir luz blanca se combina el rojo, el azul y el verde.
+                   -  El último LED que se inventó fue el RGB que puede emitir una infinidad de colores diferentes.
+                   -  Es mejor utilizar un LED que un foco normal porque los LEDs no se calientan, no son de vidrio y su vida útil es de 50,000 horas
+                      mientras que la de un foco normal es de 5,000.
+                   -  Permiten el paso de la corriente eléctrica en una sola dirección, tienen una polaridad, es decir, tienen su conector positivo y el
+                      negativo, si se conecta en el sentido opuesto, no encenderá.
+                   -  Su símbolo universal es:
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          7                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="8"><![CDATA[Introducción a la mecánica
+
+
+
+               INTERRUPTORES Y BOTONES
+                   -  Un interruptor tiene una barra que une dos extremos, al juntarlos la corriente eléctrica viaja por el cable que está conectado
+                      en la entrada y en la salida.
+                   -  Mientras está abierto el interruptor, es decir, separados los extremos, la corriente eléctrica no puede viajar y por lo tanto es
+                      como si el aparato que lo tiene estuviera apagado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   -  El interruptor se utiliza por ejemplo en un apagador de luz.
+                   -  El botón es más complejo, ya que tiene un resorte en medio que únicamente permite el contacto entre los extremos cuando
+                      se presiona. También existen botones que hacen lo contrario, en cuanto uno lo aprieta, se separan las placas y por lo tanto
+                      deja de pasar la corriente eléctrica.
+
+
+                                                           Apagado                                               Encendido
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          8                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="9"><![CDATA[Introducción a la mecánica
+
+
+
+
+                                                               Encendido                                          Apagado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   -  Un ejemplo de botón es un timbre, solo suena mientras está presionado.
+                   -  También existen los botones digitales por ejemplo el que pulsas mientras se graba un audio en un teléfono celular.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          9                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="10"><![CDATA[Introducción a la mecánica
+
+
+
+               POTENCIÓMETROS Y FOTORRESISTENCIAS
+
+                   -  El potenciómetro es una resistencia variable, tiene una perilla para regular la cantidad de resistencia que se desea aplicar y así
+                      limitar el flujo de corriente eléctrica, reduciendo así la energía que recibe.
+                   -  Un ejemplo del uso de potenciómetro es la perilla del volumen de un aparato de audio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   -  Su símbolo universal es:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          10                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="11"><![CDATA[Introducción a la mecánica
+
+
+
+               ZUMBADOR O BUZZER
+
+                   -  Este componente es capaz de convertir la energía eléctrica en sonido.
+                   -  Por dentro contiene una placa de cerámica y una placa metálica, que al pasar la corriente eléctrica, se deforman y hacen un
+                      zumbido.
+                   -  Para que el sonido sea constante, cuenta con un oscilador que funciona como un botón automático, bloqueando el paso de la
+                      corriente de manera constante, lo que permite que el material se deforme y regrese a su manera natural y una y otra vez.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   -  Su símbolo universal es:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          11                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="12"><![CDATA[Introducción a la mecánica
+
+
+                   -
+                   -   Índice de actividades
+
+
+                Introducción
+
+                       1.  Corriente eléctrica
+
+                       2.  Introducción a la electrónica
+                       3.  Diagrama pictórico y esquemático
+                       4.
+
+                La protoboard
+
+
+                       1.  La protoboard
+                La resistencia
+
+                       1.  La resistencia
+
+                       2.  Pinta tu resistencia
+
+                 LED
+
+                       1.  Diodo emisor de luz
+
+                       2.  Prende tu LED
+                       3.  Conecta tus LEDs en paralelo y serie
+
+                Interruptores y botones
+
+                       1.  Interruptores y botones
+
+                       2.  Prende un LED con un push button y luego con un switch deslizable
+
+                       3.  Interruptores de escalera
+                 Potenciómetros y fotorresistencias
+
+
+                       1.  Potenciómetros y fotorresistencias
+
+
+
+                                                                                                                                          12                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="13"><![CDATA[Introducción a la mecánica
+
+
+
+                       2.  Incremento en una resistencia
+
+                       3.  Uso del potenciómetro
+
+                       4.  La fotorresistencia
+
+                       5.  El LED multicolor, RGB
+                 Zumbador o buzzer
+
+                       1.  Zumbador o buzzer
+
+                       2.  El botón de pánico
+
+                       3.  La alarma y el camaleón
+
+                 Evaluación
+
+                       ¿Qué tanto sabes de máquinas simples?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          13                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="14"><![CDATA[Introducción a la mecánica
+
+
+
+               Reactivos de actividades
+               Actividad. Evaluación del bloque
+
+                                   Pregunta                          Respuesta            Distractor 1         Distractor 2         Distractor 3
+                ¿Cuál de los ejemplos mencionados tiene         Un gusano             La alegría            La paz              La felicidad
+                materia?
+                ¿Cuál de las opciones muestra características
+                                                                Volumen               Velocidad             Tiempo              Conductividad
+                de la materia?
+                                                                De protones,
+                                                                                      De electrones y       De materia          De electrones y
+                ¿De qué están compuestos los átomos?            neutrones y
+                                                                                      protones              indivisible         neutrones
+                                                                electrones
+
+                                                                Las tres cosas        El número de          El número de        El número de
+                ¿Qué es lo que varía en los distintos átomos?
+                                                                mencionadas           protones              electrones          neutrones
+
+
+                ¿Qué tipo de carga tienen los protones?         Positiva              Negativa              Neutra              No tienen carga
+
+                ¿Qué tipo de carga tienen los electrones?       Negativa              Positiva              Neutra              No tienen carga
+
+                                                                                                                                A veces positiva y
+                ¿Qué tipo de carga tienen los neutrones?        No tienen carga       Positiva              Negativa
+                                                                                                                                a veces negativa
+                                                                Que tienen la
+                                                                                                            Que se sostienen    Que pesan lo
+                ¿Qué quiere decir que los átomos están          misma carga           Que no se pueden      mientras no los     mismo de ambos
+                balanceados?                                    positiva que          caer
+                                                                                                            alteremos           lados
+                                                                negativa
+                ¿Qué es lo que circula en la corriente          Electrones            Protones              Átomos              Neutrones
+                eléctrica?
+
+                                                                Es un dibujo que                            Es un dibujo        Es un dibujo
+                                                                                      Es una maqueta de
+                ¿Qué es un esquema pictórico?                   representa un         un circuito eléctrico   realizado con     formado por letras
+                                                                circuito eléctrico                          símbolos            o números
+
+
+
+
+
+
+
+                                                                                                                                          14                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="15"><![CDATA[Introducción a la mecánica
+
+
+
+                                   Pregunta                          Respuesta            Distractor 1         Distractor 2         Distractor 3
+                                                                Es una imagen que
+                                                                representa un         Es un dibujo que      Es una maqueta      Es un dibujo
+                ¿Qué es un diagrama esquemático?                circuito eléctrico    representa un         de un circuito      formado por letras
+                                                                con símbolos          circuito eléctrico    eléctrico           o números
+                                                                universales
+
+
+                ¿Cuál es la principal función de una            Facilitar la          Conectar cualquier    Estandarizar los    Establecer la ruta
+                protoboard?                                     experimentación       componente            tamaños             más corta
+
+                                                                                                            Para identificar
+                ¿Para qué sirven las bandas laterales de una    Para conectar la      Para conectar los     cual es el anverso   Para lo que quiera
+                protoboard?                                     alimentación          componentes                               el usuario
+                                                                                                            y el reverso
+                                                                                                            Dispositivo
+                                                                Diodo emisor de       Luz emitida por                           Ligero, endeble y
+                ¿Qué significan las siglas LED?                                                             eléctrico y
+                                                                luz                   electrones                                durable
+                                                                                                            luminoso
+                ¿De qué color fue el primer LED que se
+                                                                De color rojo         De color blanco       De color amarillo   De color verde
+                inventó?
+                ¿Cuál LED fue el que más complejo de
+                                                                El blanco             El azul               El amarillo         El morado
+                inventar?
+                                                                Puede mostrar         Puede cambiar la      Puede utilizar      Funciona con
+                ¿Qué característica tiene un LED RGB?
+                                                                cualquier color       intensidad de la luz   diferente voltaje   corriente alterna
+
+
+                Todas las opciones muestran ventajas de los                                                 Reduce el
+                focos de LEDs sobre los focos tradicionales,    Es más barato         No se calienta        impacto             Dura más
+                con excepción de:                                                                           ambiental
+
+
+                Aproximadamente, ¿cuánto tiempo puede
+                                                                50,000 horas          1,000 horas           Una semana          Un mes
+                estar encendido un LED?
+
+
+                                                                                                                                A los componentes
+                ¿A qué familia pertenecen los LEDs?             A los diodos          A los transistores    A los microchips
+                                                                                                                                resistivos
+
+
+
+                                                                                                                                          15                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="16"><![CDATA[Introducción a la mecánica
+
+
+
+                                   Pregunta                          Respuesta            Distractor 1         Distractor 2         Distractor 3
+
+
+                ¿Cuál es el símbolo universal del LED?
+
+
+                                                                                                            Por
+                ¿Por qué el LED tiene una pata más grande       Para identificar el   Porque es más fácil                       Para estabilidad en
+                                                                                                            requerimientos
+                que otra?                                       positivo              detenerlo                                 su instalación
+                                                                                                            de fabricación
+                De los que se mencionan, selecciona al          Un apagador de        El timbre de una      Los números de
+                                                                                                                                El mouse
+                ejemplo de interruptor                          lámpara               casa                  un teléfono
+
+
+
+                Selecciona el símbolo universal de un
+                interruptor
+
+                                                                                                            A las
+                ¿A qué área pertenece la electrónica?           A la física           A la química          matemáticas         A la electricidad
+                                                                                                            aplicadas
+                ¿Cuál es la base de estudio de la electrónica?   Los electrones       Los átomos            La materia          La electricidad
+
+                                                                                      De principios del     De finales del      De principios del
+                ¿De qué época data la electrónica?              Del siglo XIX
+                                                                                      siglo XX              siglo XX            siglo XXI
+                De los que se mencionan, ¿cuál es un ejemplo    Una tableta           La lavadora           Un horno de         Un elevador
+                de un aparato que usa corriente directa?                                                    microondas
+
+                De los que se mencionan, ¿cuál es un ejemplo
+                                                                El refrigerador       Un juguete de pilas   El teléfono celular  Una tableta
+                de un aparato que usa corriente alterna?
+
+                                                                                      Porque se conecta a   Porque el
+                ¿Cómo puedes identificar fácilmente si un       Porque utiliza pilas                                            Porque es muy
+                                                                                      un enchufe de 2       enchufe tiene 3
+                aparato es de corriente directa?                o batería                                                       pequeño
+                                                                                      patas                 patas
+                ¿Cómo puedes identificar fácilmente si un       Porque utiliza un                           Porque es muy       Porque es muy
+                                                                                      Porque tiene pilas
+                aparato es de corriente alterna?                enchufe                                     grande              pequeño
+
+
+
+
+                                                                                                                                          16                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="17"><![CDATA[Introducción a la mecánica
+
+
+
+                                   Pregunta                          Respuesta            Distractor 1         Distractor 2         Distractor 3
+                Además de la corriente directa, ¿cuál otra      La corriente          La corriente          La corriente alta   La corriente de
+                existe?                                         alterna               indirecta                                 potencia
+
+                ¿Cómo se llaman los materiales que permiten
+                                                                Conductores           Aislantes             Semiconductores     Metales
+                fácilmente el paso de la corriente eléctrica?
+
+
+                ¿Cómo se llaman los materiales que impiden el
+                                                                Aislantes             Semiconductores       Conductores         Heterogéneos
+                paso de la corriente eléctrica?
+
+                ¿Cuál de los materiales mostrados es un         El cobre              La madera             El plástico         El vidrio
+                conductor?
+
+                ¿Cuál de las opciones es un material que no
+                                                                La madera             La plata              El aluminio         El agua
+                permite el paso de la corriente eléctrica?
+
+
+                ¿Cuál de los siguientes materiales es un        La arena              La madera             El oro              El agua
+                semiconductor?
+
+                                                                Reducir, regular o
+                ¿Cuál es la función principal de una                                  Proporcionar mayor    Proporcionar        Almacenar
+                                                                impedir el paso de
+                resistencia?                                                          voltaje               mayor corriente     electrones
+                                                                la corriente
+                ¿Cuál es la unidad en que se expresan las       En ohms               En faraday            En newtons          En watts
+                resistencias?
+
+                ¿Cuál es el símbolo de la resistencia?
+
+
+                ¿Cómo se puede saber el valor de una            Por su código de      Por la etiqueta que   Por el empaque      Se mide en el
+                resistencia?                                    colores               trae pegada           en el que viene     protoboard
+                ¿Cuántas bandas determinan el valor de la
+                                                                3 bandas              2 bandas              4 bandas            5 bandas
+                resistencia?
+                                                                                                            Para determinar
+                ¿Para qué sirve la última banda de la           Para conocer la       Para conocer la                           Para conocer el
+                                                                                                            la corriente que
+                resistencia?                                    tolerancia            potencia                                  valor nominal
+                                                                                                            soporta
+
+
+                                                                                                                                          17                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="18"><![CDATA[Introducción a la mecánica
+
+
+
+                                   Pregunta                          Respuesta            Distractor 1         Distractor 2         Distractor 3
+                ¿Qué color me da menor tolerancia en una        El rojo               El dorado             El plateado         El verde
+                resistencia?
+                                                                                                                                Bajando la
+                                                                Bajando el valor de  Subiendo el valor de  Cambiando el
+                ¿Cómo podemos aumentar el brillo de un LED?                                                                     tolerancia de la
+                                                                la resistencia        la resistencia        tipo de LED
+                                                                                                                                resistencia
+                                                                                                            Un conjunto de
+                                                                Una resistencia       Un conjunto de                            Una resistencia de
+                ¿Qué es un potenciómetro?                                                                   resistencias en
+                                                                variable              resistencias en serie                     alta precisión
+                                                                                                            paralelo
+                ¿Cómo se cambia el valor de un                  Ajustando una         Comprando una de      Con un arreglo de  Con un puente de
+                potenciómetro?                                  perilla               otro valor            resistencias        diodos
+                ¿Cuál de los elementos mostrados utiliza un     Todos los             La temperatura de     El control del      La intensidad de la
+                potenciómetro?                                  mencionados           un refrigerador       volumen del radio  luz de un foco
+
+                ¿Cuál es el símbolo del potenciómetro?
+
+
+                ¿Cuál de los componentes mencionados es         Una
+                                                                                      Un diodo              Un LED              Un buzzer
+                muy similar a un potenciómetro?                 fotorresistencia
+                ¿Cómo se le llama al componente que
+                                                                Buzzer                Fotorresistencia      Potenciómetro       Diodo
+                convierte la energía eléctrica en sonido?
+                ¿Dónde utilizamos los zumbadores?               En las alarmas        En el mouse           En una lámpara      En una pecera
+
+                ¿Cuál es el símbolo del zumbador?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          18                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="19"><![CDATA[Introducción a la mecánica
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                          19                                 DESARROLLADO POR KRISMAR EDUCACIÓN]]></page><page Index="20"><![CDATA[www.novaschool.mx
+                                                                    ventas@krismar.com.mx
+
+
+                                                                    soporte@krismar.com.mx
+                                                                             722 271 5705
+                                                                             722 271 69 72]]></page></pages></Search>

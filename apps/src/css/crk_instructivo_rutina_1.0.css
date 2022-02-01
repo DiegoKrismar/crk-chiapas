@@ -122,6 +122,21 @@ CSS OPCIONES INSTRUCTIVO
     font-size: 1.4rem;
     text-align: center;
 }
+.d_instructivotitle{
+    width: calc(100% - 5rem);
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+    font-family: "Berlin Sans FB";
+    font-size: 1.4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    color: #F15A24;
+    text-shadow: 0 0 0.2rem rgba(0,0,0,.35);
+}
 /*
 ==============================================
 CSS BTNS EXPAND

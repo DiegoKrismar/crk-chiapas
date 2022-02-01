@@ -82,7 +82,7 @@ var context;
 
         if (t === undefined) {
             t = new AddNode(args.slice(1));
-            ////console.log.warn("T(\"" + key + "\") is not defined.");
+            //console.warn("T(\"" + key + "\") is not defined.");
         }
 
         var _ = t._;
@@ -2161,12 +2161,12 @@ var context;
             var dfd = new Deferred(this);
 
             if (this.deferred) {
-                //console.log.warn("rec deferred is exists??");
+                console.warn("rec deferred is exists??");
                 return dfd.reject().promise();
             }
 
             if (this.status !== FINISHED_STATE) {
-                //console.log.log("status is not none", this.status);
+                console.log("status is not none", this.status);
                 return dfd.reject().promise();
             }
 
@@ -2176,7 +2176,7 @@ var context;
 
             if (typeof func !== "function") {
                 // throw error??
-                //console.log.warn("no function");
+                console.warn("no function");
                 return dfd.reject().promise();
             }
 
@@ -2525,7 +2525,7 @@ var context;
                         swf.setup(sys.channels, sys.samplerate);
                         timerId = setInterval(onaudioprocess, streammsec);
                     } else {
-                        //console.log.warn("Cannot find " + src);
+                        console.warn("Cannot find " + src);
                     }
                 };
 
@@ -8628,7 +8628,7 @@ var context;
     $.on = $.addListener = function(type, listener) {
         if (type === "mml") {
             type = "data";
-            //console.log.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
+            console.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
         }
         this._.events.on(type, listener);
         return this;
@@ -8637,7 +8637,7 @@ var context;
     $.once = function(type, listener) {
         if (type === "mml") {
             type = "data";
-            //console.log.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
+            console.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
         }
         this._.events.once(type, listener);
         return this;
@@ -8646,7 +8646,7 @@ var context;
     $.off = $.removeListener = function(type, listener) {
         if (type === "mml") {
             type = "data";
-            //console.log.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
+            console.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
         }
         this._.events.off(type, listener);
         return this;
@@ -8654,7 +8654,7 @@ var context;
 
     $.removeAllListeners = function(type) {
         if (type === "mml") {
-            //console.log.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
+            console.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
             type = "data";
         }
         this._.events.removeAllListeners(type);
@@ -8663,7 +8663,7 @@ var context;
 
     $.listeners = function(type) {
         if (type === "mml") {
-            //console.log.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
+            console.warn("A 'mml' event listener was deprecated in ~v13.03.01. use 'data' event listener.");
             type = "data";
         }
         return this._.events.listeners(type);

@@ -1,0 +1,167 @@
+@charset "utf-8";
+/*
+==============================================
+CSS FULLSCREEN
+==============================================
+*/
+/*
+==============================================
+CSS
+==============================================
+*/
+.d_pxbpreviewcontein{
+    background-image: url(../img/crk_bloques_rutina_pattern.png);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: auto;
+}
+.d_pxbpreviewconteinled{
+    width: 9.5%;
+    height: 20%;
+    position: absolute;
+    top: 3%;
+    background-image: url(../img/crk_bloques_rutina_led.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.d_pxbpreviewconteinled:nth-child(1){
+    left: 2%;
+}
+.d_pxbpreviewconteinled:nth-child(2){
+    left: 14%;
+}
+.d_pxbpreviewconteinled:nth-child(3){
+    left: 26%;
+}
+.d_pxbpreviewconteinled:nth-child(4){
+    left: 38%;
+}
+.d_pxbpreviewconteinled:nth-child(5){
+    left: 50%;
+}
+.d_pxbpreviewconteinled:nth-child(6){
+    left: 62.5%;
+}
+.d_pxbpreviewconteinled:nth-child(7){
+    left: 74.5%;
+}
+.d_pxbpreviewconteinled:nth-child(8){
+    left: 86.5%;
+}
+.d_pxbpreviewconteinrgb{
+    width: 9.5%;
+    height: 20%;
+    position: absolute;
+    right: 5%;
+    background-image: url(../img/crk_bloques_rutina_rgb.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+}
+.d_pxbpreviewconteinrgb:nth-child(10){
+    top: 28%;
+}
+.d_pxbpreviewconteinrgb:nth-child(11){
+    top: 53%;
+}
+.d_pxbpreviewconteinrgb:nth-child(12){
+    top: 55%;
+}
+.d_pxbpreviewconteinbuzzer{
+    width: 9.5%;
+    height: 20%;
+    position: absolute;
+    bottom: 38%;
+    background-image: url(../img/crk_bloques_rutina_buzzer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+}
+.d_pxbpreviewconteinbuzzer:nth-child(13){
+    left: 2%;
+}
+.d_pxbpreviewconteinbuzzer:nth-child(14){
+    left: 68%;
+}
+.d_pxbpreviewconteinboton{
+    width: 9.5%;
+    height: 20%;
+    position: absolute;
+    bottom: 3%;
+    background-image: url(../img/crk_bloques_rutina_button.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+}
+.d_pxbpreviewconteinboton:nth-child(15){
+    left: 0%;
+}
+.d_pxbpreviewconteinboton:nth-child(16){
+    left: 23%;
+}
+.d_pxbpreviewconteinboton:nth-child(17){
+    left: 47%;
+}
+
+.d_pxbpreviewconteinboton:nth-child(18){
+    left: 70%;
+}
+.d_pxbpreviewconteinshield{
+    height: 46%;
+    width: 62%;
+    position: absolute;
+    top: 27%;
+    left: 0%;
+    background-image: url(../img/crk_bloques_rutina_shield.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.previewled{
+    width: 44%;
+    height: 29%;
+    position: absolute;
+    border-radius: 50%;
+    top: 15%;
+    left: 29%;
+    background-color: white;
+}
+.previewrgb{
+    width: 44%;
+    height: 29%;
+    position: absolute;
+    border-radius: 50%;
+    top: 15%;
+    left: 29%;
+    background-color: white;
+}
+.previewpush{
+    width: 66%;
+    height: 42%;
+    position: absolute;
+    border-radius: 50%;
+    top: 10%;
+    left: 18%;
+    cursor: pointer;
+}
+.zumbadorSVG{
+    display: none;
+    position: absolute;
+    width: 120%;
+    height: 80%;
+    top: -20%;
+    right: -28%;
+}
+.ocultaElemento{
+    display: none;
+}
+/*
+==============================================
+CSS MEDIA
+==============================================
+*/
+@media (orientation: landscape) {
+    
+}

@@ -1,9 +1,8 @@
 /**
-* @fileoverview Revisa si el dispositivo está ya registrado para la activación de la App.
+* @fileoverview Revisa si el dispositivo está ya registrado para la activación de la App y despliega las apps en la vista.
 * @version 1.0
 * @date 24/01/22
 */
-
 /***********************************************************************************
 *                                    CONSTANTES
 *************************************************************************************/
@@ -25,12 +24,13 @@ const device = 'device-test';
 const model = 'model-test';
 const product = 'product-test';
 const androidID = 'androidID-test';
-
 const deviceData = {apiLevel:apiLevel, device:device, model:model, product:product, androidID:androidID} //Creación de objeto con la info del dispositivo
 const validate = localStorage.getItem('validate'); //Buscar la bandera de validación en el Local Storage
-const IP = "../apps/"; //Dominio
+const IP = "../apps/"; //Path de las apps
+
 const titleNomenclatura = [
     ["Manual. Introducción a la robótica", "crk_rob_1100"],
+    ["Contenido del Kit", "crk_rob_1100a"],
     ["1. ¿Quién es Aztek?", "crk_rob_1101"],
     ["2. Historia de la robótica", "crk_rob_1101a"],
     ["3. Los robots y su historia", "crk_rob_1101b"],
@@ -88,7 +88,9 @@ const titleNomenclatura = [
     ["1. Zumbador o buzzer","crk_ele_1307a"],
     ["2. El botón de pánico", "crk_ele_1307b1"],
     ["3. La alarma y el camaleón", "crk_ele_1307b2"],
-    ["¿Qué tanto sabes de máquinas simples?", "crk_ele_1309a"]
+    ["¿Qué tanto sabes de máquinas simples?", "crk_ele_1309a"],
+    ["3. Enciende tu LED", "crk_pro_2203b"],
+    ["4. ¿Qué hacen un LED y un Retardo juntos?", "crk_pro_2204b"]
 ];
 /***********************************************************************************
 *                                    FUNCIONES
