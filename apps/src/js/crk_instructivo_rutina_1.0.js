@@ -102,7 +102,7 @@ function addBtns(){
     * SALIDAS: Ninguna.
     */
     for(i=1; i<=totalBtns; i++){//Agrega botns
-        $("#d_instructivobtnsconte").append('<div class="d_instructivobtns"><div class="d_instructivobtnsin" id="'+i+'"><div class="d_instructivobtnlight"></div></div></div>');
+        $("#d_instructivobtnsconte").append('<div class="d_instructivobtns"><div class="d_instructivobtnsin" id="'+i+'"><div class="d_instructivobtnlight"></div></div></div>');//Agrega opciones btns a menu
     }
 }
 function clicBtns(){
@@ -112,38 +112,40 @@ function clicBtns(){
     * ENTRADAS: Ninguna.
     * SALIDAS: Ninguna.
     */
-    
-    controls.enabled = false;
-    
-    $(".d_instructivobtnsin").on("pointerup touchend",function(){
-        
-        
-        
-        
-        resetStep();
-        $("#d_instructivobtnsconte").fadeOut();
-        
-        
-        var numBtn = $(this).attr("id");
-        if(numBtn === "1"){
+    controls.enabled = false;//Desabilita opcion de manipulacion 3d
+    $(".d_instructivobtnsin").on("pointerup touchend",function(){//Clic en botones de menu
+        resetStep();//Resetea las animaciones y piezas
+        $("#d_instructivobtnsconte").fadeOut();//Oculta menu de opciones
+        var numBtn = $(this).attr("id");//Obtiene el id del btn que se presiona
+        if(numBtn === "1"){//Caso boton 1
             instructivoOne();//Instructivo 1
+            $(".d_instructivobtnsconte").after('<div class="d_instructivotitle">Armado de piezas</div><div class="d_instructivomessage">Las ranuras sirven para unir dos piezas y no deben ser forzadas al momento de desarmar el modelo.</div>');//Agrega titulo y mensaje
         }
-        if(numBtn === "2"){
+        if(numBtn === "2"){//Caso boton 2
             instructivoTwo();//Instructivo 2
+            $(".d_instructivobtnsconte").after('<div class="d_instructivotitle">Armado con popote y palito de papel</div><div class="d_instructivomessage">Se recomienda introducir el palito de papel más grueso en el popote para facilitar su paso entre los orificios de las piezas.</div>');//Agrega titulo y mensaje
         }
-        if(numBtn === "3"){
+        if(numBtn === "3"){//Caso boton 3
             instructivoThree();//Instructivo 3
+            $(".d_instructivobtnsconte").after('<div class="d_instructivotitle">Armado de poleas</div><div class="d_instructivomessage">En el armado de poleas, se recomienda introducir primero el palito en una de las estructuras, después colocar los topes correspondientes, seguido de la polea y al final, los últimos topes. Mientras se agregan las piezas, se va recorriendo el palito hasta atravesar la segunda estructura. Sigue el mismo procedimiento para el armado de engranes.</div>');//Agrega titulo y mensaje
         }
-        if(numBtn === "4"){
+        if(numBtn === "4"){//Caso boton 4
             instructivoFour();//Instructivo 4
+            $(".d_instructivobtnsconte").after('<div class="d_instructivotitle">Desarmado de piezas</div><div class="d_instructivomessage">Para separar dos piezas, mientras presionas una, jala la otra. Esta presión debe de ser en forma vertical y uniforme.</div>');//Agrega titulo y mensaje
         }
     });
 }
 function resetStep(){
-    
-    $("#d_instructivobtnsconte").fadeIn();
-    
-    $(".d_instructivomessage").remove();
+    /*
+	* NOMBRE: resetStep.
+	* UTILIDAD: Resetea las animaciones y piezas
+	* ENTRADAS: Ninguna.
+	* SALIDAS: Ninguna.
+    * VARIABLES: Ninguna
+    */
+    $("#d_instructivobtnsconte").fadeIn();//Muestra menu de opciones
+    $(".d_instructivomessage").remove();//Quita mensaje
+    $(".d_instructivotitle").remove();//Quita titulo
     
     allClones[0].visible = false;
     allClones[1].visible = false;
@@ -173,7 +175,6 @@ function resetStep(){
     allClones[22].visible = false;
     allClones[23].visible = false;
 
-
     allHelpers.helper1.visible = false;
     allHelpers.helper2.visible = false;
     allHelpers.helper2.children[2].visible = false;
@@ -186,11 +187,7 @@ function resetStep(){
     allHelpers.helper6.visible = false;
     allHelpers.helper7.visible = false;
     allHelpers.helper8.visible = false;
-    allHelpers.helper9.visible = false;
-    
-    /*groupPolea[0].visible = false;*/
-
-    
+    allHelpers.helper9.visible = false;   
 }
 var easingTween = TWEEN.Easing.Quadratic.InOut;
 function instructivoOne(){
@@ -327,14 +324,13 @@ function instructivoOne(){
          var endTime = setTimeout(function(){
              allHelpers.helper1.visible = false;
              console.log('END');
-             resetStep();
+             resetStep();//Resetea las animaciones y piezas
              clearTimeout(endTime);
          },5000);
 
     })
     .delay(2500).easing(easingTween).repeat(0).start();
     
-    $(".d_instructivobtnsconte").after('<div class="d_instructivomessage">Las ranuras sirven para unir dos piezas y no deben ser forzadas al momento de desarmar el modelo.</div>');
 }
 function instructivoTwo(){
     /*
@@ -365,9 +361,6 @@ function instructivoTwo(){
     allHelpers.helper3.visible = true;
     allHelpers.helper4.visible = false;
     
-    
-    
-
     //ANIMA PALITO 1ra PARTE
     var addAnimatepalito = new TWEEN.Tween(allClones[6].position)
     .to({
@@ -432,7 +425,7 @@ function instructivoTwo(){
         .onComplete(function() {
             var endTime = setTimeout(function(){
                 console.log('END');
-                resetStep();
+                resetStep();//Resetea las animaciones y piezas
                 clearTimeout(endTime);
             },3000);
         })
@@ -480,9 +473,7 @@ function instructivoTwo(){
         })
         .easing(easingTween).repeat(0).start();
     }).delay(500).easing(easingTween).repeat(0).start();
-    
-    
-    $(".d_instructivobtnsconte").after('<div class="d_instructivomessage">Se recomienda introducir el palito de papel más grueso en el popote para facilitar su paso entre los orificios de las piezas.</div>');
+      
 }
 function instructivoThree(){
     /*
@@ -539,8 +530,6 @@ function instructivoThree(){
     
     
     console.log(groupPolea);
-    
-    
     
     
     //groupPolea[0].position.y = 20;
@@ -722,7 +711,7 @@ function instructivoThree(){
     .onComplete(function(){
         var endTime = setTimeout(function(){
             console.log('END');
-            resetStep();
+            resetStep();//Resetea las animaciones y piezas
             clearTimeout(endTime);
         },3000);
         
@@ -794,7 +783,6 @@ function instructivoThree(){
     })
     .delay(500).easing(easingTween).start();
     
-    $(".d_instructivobtnsconte").after('<div class="d_instructivomessage">En el armado de poleas, se recomienda introducir primero el palito en una de las estructuras, después colocar los topes correspondientes, seguido de la polea y al final, los últimos topes. Mientras se agregan las piezas, se va recorriendo el palito hasta atravesar la segunda estructura. Sigue el mismo procedimiento para el armado de engranes.</div>');
 }
 function instructivoFour(){
     /*
@@ -922,7 +910,7 @@ function instructivoFour(){
                     
                     var endTime = setTimeout(function(){
                         console.log('END');
-                        resetStep();
+                        resetStep();//Resetea las animaciones y piezas
                         clearTimeout(endTime);
                     },3000);
 
@@ -1099,6 +1087,5 @@ function instructivoFour(){
             }).delay(0).easing(easingTween).repeat(0).start();
         }).delay(0).easing(easingTween).repeat(0).start();
     }).delay(6500).easing(easingTween).repeat(0).start();
-
-    $(".d_instructivobtnsconte").after('<div class="d_instructivomessage">Para separar dos piezas, mientras presionas una, jala la otra. Esta presión debe de ser en forma vertical y uniforme.</div>');
+ 
 }
