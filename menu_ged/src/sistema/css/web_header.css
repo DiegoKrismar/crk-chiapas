@@ -1,0 +1,2406 @@
+@charset "utf-8";
+
+/*
+
+==============================================
+
+CSS TIPOGRAFÍA
+
+==============================================
+
+*/
+
+@font-face {
+
+	font-family:Verdana;
+
+	src: url("../font/verdana.ttf") format("truetype");
+
+}
+
+@font-face {
+
+	font-family:Verdana;
+
+	src: url("../font/verdana.eot");
+
+}
+
+/*
+
+==============================================
+
+CSS BODY
+
+==============================================
+
+*/
+
+.h_body{
+
+    width: 100%;
+
+   /* height: 100%;*/
+
+    position: absolute;
+
+    margin-top: 0%;
+
+    margin-left:0%;
+
+    background: repeat url(../img/web_backgroundrepeat.png) #FEF8E0;
+
+    background-size: auto, auto;
+
+    font-size: 16px;
+
+	/*overflow-y: scroll;*/
+
+	overflow-x: hidden;
+
+	/*-ms-overflow-style: none;*/
+
+	/*overflow: -moz-scrollbars-none;*/
+
+	/*-ms-overflow: -moz-hidden-unscrollable;*/
+
+	/*overflow: -moz-hidden-unscrollable;*/
+
+}
+
+/*::-webkit-scrollbar {
+
+	width: 0 !important;
+
+} */   
+
+/*
+
+==============================================
+
+CSS HEADER
+
+==============================================
+
+*/
+
+.h_header{
+
+    width: 100%;
+
+    height: 100px;
+
+    background: fixed 0% 100% url(../img/web_nextkrismar.png);
+
+    display: table;
+
+    float: left;
+
+}
+
+/*****HEAD CENTER*****/
+
+.h_head{
+
+    width: 1024px;
+
+    display: table;
+
+    margin: auto;
+
+}
+
+.h_headDawn{
+
+    width: 100%;
+
+    height: 30px;
+
+    background: rgba(0, 0, 0, .10);
+
+    float: left;
+
+    margin-bottom: 0px;
+
+    display: block;
+
+}
+
+.h_headcenter{
+
+    width: 1024px;
+
+    height: 100%;
+
+    margin: auto;
+
+}
+
+.h_administracion{
+
+    width: 185px;
+
+    height: 100%;
+
+    float: right;
+
+    cursor: pointer;
+
+}
+
+.h_iconadmi{
+
+    width: 30px;
+
+    height: 100%;
+
+    background: url(../img/web_iconadmi.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+.h_txtadmi{
+
+    width: 155px;
+
+    height: 100%;
+
+    float: left;
+
+    font-family: Verdana;
+
+    font-size: 1.2em;
+
+    text-align: right;
+
+    color: #666666;
+
+    text-align: left;
+
+}
+
+.h_txtadmi:hover{
+
+    text-decoration: underline;
+
+}
+
+/*****LOGO KRISMAR*****/
+
+.h_logoKrismar{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logokrismar.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+.h_logoPlanea{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logokrismar.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+/*****LOGO KRISMAR*****/
+
+.h_logoKrismarN{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logokrismar.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+/*****LOGO KRISMAR*****/
+
+.h_logoKrismarR{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logokrismar.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+/*****LOGO NETICA*****/
+
+.h_logoNetica{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logonetica.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+/*****LOGO ROBOMASTER*****/
+
+.h_logoRoboed{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logoroboed.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+/*****LOGO ROBOMASTER*****/
+
+.h_logoColegioSL{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logocolegiosl.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+
+.h_logoColegioSLMU{
+
+    width: 312px;
+
+    height: 100px;
+
+    background: url(../img/web_logocolegio_slmu.png) no-repeat;
+
+    background-size: contain;
+
+    float: left;
+
+}
+/*****BOTON MENU USUARIO*****/
+
+.h_menuUsuario{
+
+    float: left;
+
+    display: none;
+
+}
+
+/*****INFO USUARIO*****/
+
+.h_usuarioMenu{
+
+    width: 1024px;
+
+    height: 100px;
+
+    position: absolute;
+
+    margin-top: 50px;
+
+    left: 50%;
+
+    margin-left: -512px;
+
+    top: 0%;
+
+}
+
+.h_usuarioMenuConte{
+
+    width: 362px;
+
+    height: 100%;
+
+    float: right;
+
+    position: relative;
+
+}
+
+.h_conteName{
+
+    width: 60%;
+
+    height: 50%;
+
+    float: left;
+
+    font-family: Verdana;
+
+    font-size: 1.1em;
+
+    text-align: left;
+
+    line-height: 3.2em;
+
+    color: #FFFFFF;
+
+    position: relative;
+
+    /*white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;*/
+
+}
+
+.h_conteName_ayuda{
+
+    width: 40px;
+
+    height: 100%;
+
+    position: absolute;;
+
+    top: 0%;
+
+    right: -40px;
+
+    background-image:url(../img/web_btnhelp.png);
+
+    background-size: 70%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+
+
+}
+
+.h_conteMenu{
+    width: 95%;
+    float: left;
+    margin-left: -55px;
+}
+
+.h_btnPrincipal{
+
+    width: 76px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: pointer;
+
+    background-image: url(../img/web_btnprincipal.png), url(../img/web_btnprincipalmin.png);
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+    border-bottom-left-radius: 50px;
+
+}
+
+.h_btnHome{
+
+    width: 76px;
+
+    height: 40px;
+
+    border: 0px;
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    background-image: url(../img/web_btnReturn.png);
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+}
+
+.h_btnHome: hover{
+
+    background-image: url(../img/web_btnReturn.png);
+
+}
+
+.h_licencias {
+
+    width: 100%;
+
+}
+
+.h_licencias > tbody > tr> td{
+
+    width: 100%;
+
+
+
+}
+
+#inf_lic > p{
+
+    width: 100%;
+
+    height: 40px;
+
+    float: left;
+
+    font-family: Verdana;
+
+    font-size: 1em;
+
+    margin: 0px;
+
+    color: #666666;
+
+}
+
+.h_btnPrincipal_press{
+
+    width: 76px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: not-allowed;;
+
+    background-image: url(../img/web_btnprincipal.png), url(../img/web_btnprincipalmin.png);
+
+    background-color: #666666;
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+    border-bottom-left-radius: 50px;
+
+}
+
+.h_btnConfiguracion{
+
+    width: 61px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: pointer;
+
+    background-image: url(../img/web_btnconfiguracion.png), url(../img/web_btnconfiguracionmin.png);
+
+    background-repeat: no-repeat,  no-repeat;
+
+    background-size: contain;
+
+}
+
+.h_btnConfiguracion_press{
+
+    width: 61px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: not-allowed;;
+
+    background: url(../img/web_btnconfiguracion.png), url(../img/web_btnconfiguracionmin.png);
+
+    background-color: #666666;
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+}
+
+.h_btnEstadisticas{
+
+    width: 61px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: pointer;
+
+    background: url(../img/web_btnestadisticas.png), url(../img/web_btnestadisticasmin.png);
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+}
+
+.h_btnEstadisticas_press{
+
+    width: 61px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: not-allowed;;
+
+    background: url(../img/web_btnestadisticas.png), url(../img/web_btnestadisticasmin.png);
+
+    background-color: #666666;
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+}
+
+.h_btnUsuario{
+
+    width: 61px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: pointer;
+
+    background: url(../img/web_btnusuario.png), url(../img/web_btnusuariomin.png);
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+}
+
+.h_btnUsuario_press{
+
+    width: 61px;
+
+    height: 40px;
+
+    float: right;
+
+    cursor: not-allowed;;
+
+    background: url(../img/web_btnusuario.png), url(../img/web_btnusuariomin.png);
+
+    background-color: #666666;
+
+    background-repeat: no-repeat, no-repeat;
+
+    background-size: contain;
+
+}
+
+.h_btnSalir{
+    width: 84px;
+    height: 40px;
+    float: right;
+    cursor: pointer;
+    background: url(../img/web_btnsalir.png), url(../img/web_btnsalirmin.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+}
+.h_btnSalir_press{
+    width: 84px;
+    height: 40px;
+    float: right;
+    cursor: not-allowed;;
+    background: url(../img/web_btnsalir.png), url(../img/web_btnsalirmin.png);
+    background-color: #666666;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+}
+.h_btnPrincipal:hover, .h_btnUsuario:hover, .h_btnEstadisticas:hover, .h_btnConfiguracion:hover, .h_btnSalir:hover{
+    background-color: #666666;
+}
+
+.h_imgUsuario{
+
+    width: 100px;
+
+    height: 100%;
+
+    right: 0%;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    background: rgba(255, 255, 255, .50);
+
+}
+
+.h_avatarUsuarioconte{
+
+    width: 90%;
+
+    height: 90%;
+
+    margin-top: 5%;
+
+    margin-left: 5%;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    background-color: #FEF8E0;
+
+}
+
+.h_avatarUsuario{
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+}
+
+.h_cerrarsesion{
+
+    width: 80%;
+
+    height: 20px;
+
+    position: absolute;
+
+    bottom: 0%;
+
+    left: 10%;
+
+    font-family: Verdana;
+
+    font-size: 0.75em;
+
+    text-align: center;
+
+    display: none;
+
+    border-radius: 10px;
+
+    background: #666666;
+
+    box-sizing:border-box;
+
+    -moz-box-sizing:border-box;
+
+    -webkit-box-sizing:border-box;
+
+    border-color: #FEF8E0;
+
+    border-style: solid;
+
+    border-width: 2px;
+
+    color: #FEF8E0;
+
+    cursor: pointer;
+
+}
+
+.h_cerrarsesion:hover{
+
+    text-decoration: underline;
+
+}
+
+.h_avatarUsuarioconte:hover > div{
+
+    display: block;
+
+}
+
+/*
+
+==============================================
+
+CSS SECTION
+
+==============================================
+
+*/
+
+.h_sectioniframe{
+
+	border: none;
+
+    width: 100%;
+
+	float: left;
+
+    margin: auto;
+
+}
+
+/*
+
+==============================================
+
+CSS BTNS FLOTANTES
+
+==============================================
+
+*/
+
+.h_btnFlotantes{
+
+    width: 40px;
+
+    position: fixed;
+
+    right: 0%;
+
+    bottom: 10%;
+
+    display: none;
+
+}
+
+.h_btnPuntuaciones{
+
+    width: 40px;
+
+    height: 167px;
+
+    background: url(../img/web_btnpuntuaciones.png) no-repeat rgba(0, 0, 0, .10);;
+
+    float: left;
+
+    cursor: pointer;
+
+}
+
+.h_btnAvance{
+
+    width: 40px;
+
+    height: 110px;
+
+    background: url(../img/web_btnavance.png) no-repeat #FF5558;
+
+    float: left;
+
+    cursor: pointer;
+
+}
+
+/*
+
+==============================================
+
+CSS BTNS PRELOADER
+
+==============================================
+
+*/
+
+.h_preloader{
+
+    width: 120px;
+
+    margin: auto;
+
+    margin-top: 80px;
+
+}
+
+/****CUBO 3D****/
+
+.h_preloaderscene3d{
+
+    width: 100%;
+
+    height: 120px;
+
+    position: relative;
+
+    float: left;
+
+}
+
+.h_preloaderobject3d{
+
+    width: 100%;
+
+    height: 100%;
+
+    position: absolute;
+
+    transform-style: preserve-3d;
+
+    -webkit-transform-style: preserve-3d;
+
+    top: 0%;
+
+}
+
+.h_preloadercuboA, .h_preloadercuboB, .h_preloadercuboC, .h_preloadercuboD, .h_preloadercuboE, .h_preloadercuboF{
+
+    width: 75%;
+
+    height: 75%;
+
+    transition: 0.3s linear;
+
+    position: absolute;
+
+    left: 12.5%;
+
+    top: 12.5%;
+
+}
+
+.h_preloadertransition{
+
+    transition: 0.3s linear;
+
+    -webkit-transition: 0.3s linear;
+
+    animation-play-state: play;
+
+    -webkit-animation-play-state: play;
+
+    animation: preloaderrotate3d7 linear infinite 10s;
+
+    -webkit-animation: preloaderrotate3d7 linear infinite 10s;
+
+}
+
+.h_preloadercuboA{
+
+    transform: translateZ(-44px) rotateY(180deg);
+
+    -webkit-transform: translateZ(-44px) rotateY(180deg);
+
+    background-color: #802B2C;
+
+    background-image: url(../img/web_iconkrismar.png);
+
+    background-repeat: no-repeat;
+
+    background-size: contain;
+
+    background-position: center;
+
+}
+
+.h_preloadercuboB{
+
+    transform: translateZ(44px);
+
+    -webkit-transform: translateZ(44px);
+
+    background-image: url(../img/web_iconkrismar.png);
+
+    background-repeat: no-repeat;
+
+    background-size: contain;
+
+    background-position: center;
+
+}
+
+.h_preloadercuboC{
+
+    transform: translateX(50%) rotateY(90deg);
+
+    -webkit-transform: translateX(50%) rotateY(90deg);
+
+    background-image: url(../img/web_iconkrismar.png);
+
+    background-repeat: no-repeat;
+
+    background-size: contain;
+
+    background-position: center;
+
+}
+
+.h_preloadercuboD{
+
+    transform: translateX(-50%) rotateY(-90deg);
+
+    -webkit-transform: translateX(-50%) rotateY(-90deg);
+
+    background-image: url(../img/web_iconkrismar.png);
+
+    background-repeat: no-repeat;
+
+    background-size: contain;
+
+    background-position: center;
+
+}
+
+.h_preloadercuboE{
+
+    transform: translateY(-50%) rotateX(90deg);
+
+    -webkit-transform: translateY(-50%) rotateX(90deg);
+
+    background-image: url(../img/web_iconkrismar.png);
+
+    background-repeat: no-repeat;
+
+    background-size: contain;
+
+    background-position: center;
+
+}
+
+.h_preloadercuboF{
+
+    transform: translateY(50%) rotateX(-90deg);
+
+    -webkit-transform: translateY(50%) rotateX(-90deg);
+
+    background-image: url(../img/web_iconkrismar.png);
+
+    background-repeat: no-repeat;
+
+    background-size: contain;
+
+    background-position: center;
+
+}
+
+.h_preloadertxt{
+
+    margin-top: 40px;
+
+    font-family: Verdana;
+
+    font-size: 1.4em;
+
+    text-align: center;
+
+    float: left;
+
+    color: #666666;
+
+}
+
+/*
+
+==============================================
+
+CSS EMERGENTES
+
+==============================================
+
+*/
+
+.mensajeEmergente{
+
+    width: 100%;
+
+    height: 100%;
+
+    position: fixed;
+
+    top:0%;
+
+    left:0%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+
+
+
+
+}
+
+
+
+.mensajeEmergente > div{
+
+    display: table;
+
+    border: 4px solid #FEF8E0;
+
+    box-sizing: border-box;
+
+    -webkit-box-sizing: border-box;
+
+    -moz-box-sizing: border-box;
+
+    background-color: #B4B300;
+
+    top:50%;
+
+    position: absolute;
+
+    left: 50%;
+
+    margin-top: -170px;
+
+    margin-left: -200px;
+
+    border-radius: 20px;
+
+
+
+}
+
+.mensajeEmergente > div > table{
+
+    max-width: 400px;
+
+    color: #FEF8E0;
+
+    font-family: Verdana;
+
+    font-size: 1.2em;
+
+    text-align: center;
+
+    width: 100%;
+
+    padding: 10px 0px 10px 0px;
+
+
+
+}
+
+
+
+.mensajeEmergente > div > button{
+
+    max-width: 400px;
+
+    color: #4d4d4d;
+
+    font-family: Verdana;
+
+    font-size: 1.2em;
+
+    text-align: center;
+
+    height: 40px;
+
+    
+
+    background-color: transparent;
+
+    border: 0px;
+
+    width: 100%;
+
+    padding: 10px 0px 10px 0px;
+
+    cursor: pointer;
+
+    outline-color: transparent;
+
+
+
+
+
+}
+
+.mensajeEmergente > div > button:hover{
+
+    font-weight: bold;
+
+}
+
+
+
+.mensajeEmergenteCancelar  > div > button{
+
+    width: 50%;
+
+}
+
+/*
+==============================================
+CSS MENU AYUDA
+==============================================
+*/
+.d_menuayuda{
+    max-width: 460px;
+    background-color: rgba(0,0,0,.10);
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    border-bottom-left-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
+    border-top-right-radius: 1.6rem;
+    border-top-left-radius: 1.6rem;
+    display: none;
+}
+.d_menuayudacenter{
+    margin: 0.75rem 0.75rem 0.75rem 0.75rem;
+    display: table;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+    border-top-left-radius: 1.2rem;
+    background: repeat url(../img/web_backgroundrepeat.png) #FEF8E0;
+    background-size: auto;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,.2);
+    padding: 1rem 0 1rem 0;
+}
+.d_menuayudacenterarrow{
+     width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid #FEF8E0;
+    position: absolute;
+    top: -8px;
+    right: 115px;
+}
+.d_menuayudacenter a{
+    width: calc(100% - 5rem);
+    margin-left: 2.5rem;
+    font-family: Verdana;
+    font-size: 1em;
+    line-height: 2.2em;
+    text-align: left;
+    color: #666666;
+    float: left;
+    cursor: pointer;
+   /* text-decoration: underline;*/
+}
+.d_menuayudacenter a:hover{
+    letter-spacing: 0.05rem;
+}
+.d_menuayudaclose{
+    width: 2.2rem;
+    height: 2.2rem;
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    border-radius: 50%;
+    background-image: url(../img/web_btn_cerrar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/*
+
+==============================================
+
+CSS KEYFRAMES ANIMACIÓN PRELOADER
+
+==============================================
+
+*/
+
+@-webkit-keyframes preloaderrotate3d7{
+
+    from { 
+
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+
+    }
+
+    to   { 
+
+        -webkit-transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg); 
+
+    }
+
+}
+
+@keyframes preloaderrotate3d7{
+
+    from { 
+
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+
+    }
+
+    to   { 
+
+        transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg); 
+
+    }
+
+}
+
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 1024px){
+
+    /*****HEAD CENTER*****/
+
+    .h_headDawn{
+
+        margin-bottom: 10px;
+
+    }
+
+    .h_head{
+
+        width: 100%;
+
+        display: table;
+
+        margin: auto;
+
+    }
+
+    .h_headcenter{
+
+        width: 100%;
+
+    }
+
+    /*****INFO USUARIO*****/
+
+    .h_usuarioMenu{
+
+        width: 100%;
+
+        margin-top: 8px;
+
+        left: 0%;
+
+        margin-left: 0px;
+
+    }
+
+    .h_usuarioMenuConte{
+
+        height: 100%;
+
+        float: right;
+
+        margin-right: 2%;
+
+    }
+
+    .h_btnPrincipal{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnprincipalmin.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+        border-bottom-left-radius: 0px;
+
+    }
+
+    .h_btnPrincipal:hover{
+
+        background-image: url(../img/web_btnprincipalblc.png);
+
+        background-repeat: no-repeat;
+
+        background-color: rgba(255, 255, 255, .01);
+
+        background-size: contain;
+
+    }
+
+    .h_btnPrincipal_press{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnprincipalblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+        border-bottom-left-radius: 0px;
+
+    }
+
+    .h_btnConfiguracion{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnconfiguracionmin.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnConfiguracion:hover{
+
+        background-image: url(../img/web_btnconfiguracionblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnConfiguracion_press{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnconfiguracionblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnEstadisticas{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnestadisticasmin.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnEstadisticas:hover{
+
+        background-image: url(../img/web_btnestadisticasblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnEstadisticas_press{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnestadisticasblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnUsuario{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnusuariomin.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnUsuario:hover{
+
+        background-image: url(../img/web_btnusuarioblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnUsuario_press{
+
+        border-top: 2px solid #FFFFFF;
+
+        background-image: url(../img/web_btnusuarioblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+    
+    .h_btnSalir{
+        border-top: 2px solid #FFFFFF;
+        background-image: url(../img/web_btnsalirmin.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .h_btnSalir:hover{
+        background-image: url(../img/web_btnsalirblc.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .h_btnSalir_press{
+        border-top: 2px solid #FFFFFF;
+        background-image: url(../img/web_btnsalirblc.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    /*****SECTION*****/
+
+    .h_sectioniframe{
+
+        width: 100%;
+
+    }
+    
+    /*****MENU AYUDA*****/
+    .d_menuayudacenterarrow{
+        right: 134px;
+    }
+
+}
+
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 880px 5 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 880px){
+
+    /*****INFO USUARIO*****/
+
+    .h_usuarioMenuConte{
+
+        margin-right: 3%;
+
+    }
+
+}
+
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 760px 4 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 760px){
+
+    /*****HEAD*****/
+
+    .h_header{
+
+        height: 80px;
+
+    }
+
+    /*****LOGO KRISMAR*****/
+
+    .h_logoKrismar{
+
+        width: 250px;
+
+        height: 80px;
+
+    }
+
+    .h_logoPlanea{
+
+       width: 250px;
+
+        height: 80px;
+
+    }
+
+    /*****LOGO KRISMAR*****/
+
+    .h_logoKrismarN{
+
+        width: 250px;
+
+        height: 80px;
+
+    }
+
+    /*****LOGO KRISMAR*****/
+
+    .h_logoKrismarR{
+
+        width: 250px;
+
+        height: 80px;
+
+    }
+
+    /*****LOGO NETICA*****/
+
+    .h_logoNetica{
+
+         width: 250px;
+
+        height: 80px;
+
+    }
+
+    /*****LOGO ROBOMASTER*****/
+
+    .h_logoRoboed{
+
+        width: 250px;
+
+        height: 80px;
+
+    }
+
+    /*****LOGO ROBOMASTER*****/
+
+    .h_logoColegioSL{
+        width: 250px;
+        height: 80px;
+    }
+    
+
+    .h_logoColegioSLMU{
+        width: 250px;
+        height: 80px;
+    }
+
+    /*****INFO USUARIO*****/
+
+    .h_usuarioMenu{
+
+        margin-top: 0px;
+
+        height: 80px;
+
+    }
+
+    .h_usuarioMenuConte{
+
+        width: 344px;
+
+        height: 100%;
+
+        float: right;
+
+    }
+
+    .h_conteName{
+
+        width: 60%;
+
+        font-size: 1em;
+
+        line-height: 2.4em;
+
+    }
+
+    .h_conteMenu{
+
+        width: 96%;
+
+        float: left;
+
+    }
+
+    .h_btnPrincipal{
+
+        width: 72px;
+
+        height: 38px;
+
+    }
+
+    .h_btnPrincipal_press{
+
+        width: 72px;
+
+        height: 38px;
+
+    }
+
+    .h_btnConfiguracion{
+
+        width: 58px;
+
+        height: 38px;
+
+    }
+
+    .h_btnConfiguracion_press{
+
+        width: 58px;
+
+        height: 38px;
+
+    }
+
+    .h_btnEstadisticas{
+
+        width: 58px;
+
+        height: 38px;
+
+    }
+
+    .h_btnEstadisticas_press{
+
+        width: 58px;
+
+        height: 38px;
+
+    }
+
+    .h_btnUsuario{
+
+        width: 58px;
+
+        height: 38px;
+
+    }
+
+    .h_btnUsuario_press{
+
+        width: 58px;
+
+        height: 38px;
+
+    }
+    
+    .h_btnSalir{
+        width: 80px;
+        height: 38px;
+    }
+    .h_btnSalir_press{
+        width: 80px;
+        height: 38px;
+    }
+
+    .h_imgUsuario{
+
+        width: 80px;
+
+    }
+    
+    
+
+    .h_avatarUsuario{
+
+        width: 90%;
+
+        height: 90%;
+
+        margin-top: 5%;
+
+        margin-left: 5%;
+
+    }
+
+    /*****PRELOADER*****/
+
+    .h_preloader{
+
+        width: 80px;
+
+        margin-top: 130px;
+
+    }
+
+    .h_preloaderscene3d{
+
+        height: 80px;
+
+    }
+
+    .h_preloadertxt{
+
+        margin-top: 20px;
+
+        font-size: 1em;
+
+    }
+
+    .h_preloadercuboA{
+
+        transform: translateZ(-30px) rotateY(180deg);
+
+        -webkit-transform: translateZ(-30px) rotateY(180deg);
+
+    }
+
+    .h_preloadercuboB{
+
+        transform: translateZ(30px);
+
+        -webkit-transform: translateZ(30px);
+
+    }
+    
+    /*****MENU AYUDA*****/
+    .d_menuayudacenterarrow{
+        right: 128px;
+    }
+
+}
+
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 620px 3 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 620px){
+
+    /*****HEAD CENTER*****/
+
+    .h_headDawn{
+
+        display: none;
+
+    }
+
+    .h_administracion{
+
+        float: none;
+
+        margin: auto;
+
+    }
+
+    /*****INFO USUARIO*****/
+
+    .h_usuarioMenu{
+
+        margin-top: 0px;
+
+        height: 80px;
+
+    }
+
+    .h_usuarioMenuConte{
+
+        width: 160px;
+
+        height: 100%;
+
+        float: right;
+
+    }
+
+    .h_conteName{
+
+        display: none;
+
+    }
+
+    .h_conteMenu{
+
+        display: none;
+
+    }
+
+    .h_iconMenu{
+
+        width: 80px;
+
+        height: 100%;
+
+        position: relative;
+
+        float: left;
+
+    }
+
+    .h_iconMenuIn{
+
+        width: 70%;
+
+        height: 70%;
+
+        margin-top: 15%;
+
+        margin-left: 15%;
+
+        background: url(../img/web_btnMenu.png) no-repeat;
+
+        background-size: contain;
+
+        cursor: pointer;
+
+    }
+
+    .h_imgUsuario{
+
+        width: 80px;
+
+    }
+
+    .h_avatarUsuario{
+
+        width: 90%;
+
+        height: 90%;
+
+        margin-top: 5%;
+
+        margin-left: 5%;
+
+    }
+
+    /*****BOTON MENU USUARIO*****/
+
+    .h_menuUsuario{
+
+        display: none;
+
+        width: 100%;
+
+        background: #333333;
+
+        float: left;
+
+        background: repeat-x url(../img/web_shadowmenuusuario.png), fixed 0% 100% url(../img/web_nextkrismar.png);
+
+    }
+
+    /*****INFO USUARIO*****/
+
+    .h_conteName2{
+
+        font-family: Verdana;
+
+        font-size: 1em;
+
+        line-height: 2em;
+
+        padding-right: 10px;
+
+        color: #FFFFFF;
+
+        float: right;
+
+        position: relative;
+
+        margin-right: 40px;
+
+
+
+    }
+
+    .h_conteName_ayuda {
+
+        background-size: 60%;
+
+
+
+    }
+
+    .h_conteBotones{
+
+        display: table;
+
+        float: left;
+
+    }
+
+    .h_btnPrincipal{
+
+        width: 82px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnprincipalmin.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnPrincipal_press{
+
+        width: 82px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnprincipalblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnPrincipal:hover{
+
+        background-image: url(../img/web_btnprincipalblc.png);
+
+        background-repeat: no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_btnConfiguracion{
+
+        width: 58px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnconfiguracionmin.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .h_btnConfiguracion:hover{
+
+        background-image: url(../img/web_btnconfiguracionblc.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .h_btnConfiguracion_press{
+
+        width: 58px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnconfiguracionblc.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .h_btnEstadisticas{
+
+        width: 58px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnestadisticasmin.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+     .h_btnEstadisticas:hover{
+
+        background-image: url(../img/web_btnestadisticasblc.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .h_btnEstadisticas_press{
+
+        width: 58px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnestadisticasblc.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .h_btnUsuario{
+
+        width: 58px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnusuariomin.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .h_btnUsuario:hover{
+
+        background-image: url(../img/web_btnusuarioblc.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+
+    .h_btnUsuario_press{
+
+        width: 58px;
+
+        height: 38px;
+
+        float: left;
+
+        cursor: pointer;
+
+        border-top-color: rgba(0, 0, 0, .01);
+
+        background-image: url(../img/web_btnusuarioblc.png);
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+    }
+    
+    .h_btnSalir{
+        width: 80px;
+        height: 38px;
+        float: left;
+        cursor: pointer;
+        border-top-color: rgba(0, 0, 0, .01);
+        background-image: url(../img/web_btnsalirmin.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .h_btnSalir:hover{
+        background-image: url(../img/web_btnsalirblc.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .h_btnSalir_press{
+        width: 80px;
+        height: 38px;
+        float: left;
+        cursor: pointer;
+        border-top-color: rgba(0, 0, 0, .01);
+        background-image: url(../img/web_btnsalirblc.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    /*****MENU AYUDA*****/
+    .d_menuayudacenterarrow{
+        right: 12px;
+    }
+    .d_menuayudacenter{
+        border-bottom-left-radius: 1.2rem;
+        border-bottom-right-radius: 1.2rem;
+        border-top-right-radius: 0rem;
+        border-top-left-radius: 1.2rem;
+    }
+    .d_menuayuda{
+        border-bottom-left-radius: 1.6rem;
+        border-bottom-right-radius: 1.6rem;
+        border-top-right-radius: 0rem;
+        border-top-left-radius: 1.6rem;
+    }
+    .d_menuayuda{
+        top: 120px !important;
+    }
+    .h_conteName_ayuda {
+        background-size: 60%;
+    }
+
+}
+
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 460px 2 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 460px){
+
+    .h_body{
+
+        font-size: 14px;
+
+    }
+
+    /*****HEAD*****/
+
+    .h_header{
+
+        height: 60px;
+
+    }
+
+    /*****LOGO KRISMAR*****/
+
+    .h_logoKrismar{
+
+        width: 61px;
+
+        height: 60px;
+
+        background: url(../img/web_iconkrismar.png) no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_logoPlanea{
+
+             width: 61px;
+
+        height: 60px;
+
+        background: url(../img/web_iconkrismar.png) no-repeat;
+
+        background-size: contain;
+
+    }
+
+    /*****LOGO KRISMAR*****/
+
+    .h_logoKrismarN{
+
+         width: 61px;
+
+        height: 60px;
+
+        background: url(../img/web_iconkrismar.png) no-repeat;
+
+        background-size: contain;
+
+    }
+
+    /*****LOGO KRISMAR*****/
+
+    .h_logoKrismarR{
+
+       width: 61px;
+
+        height: 60px;
+
+        background: url(../img/web_iconkrismar.png) no-repeat;
+
+        background-size: contain;
+
+    }
+
+    /*****LOGO NETICA*****/
+
+    .h_logoNetica{
+
+       width: 61px;
+
+        height: 60px;
+
+        background: url(../img/web_iconkrismar.png) no-repeat;
+
+        background-size: contain;
+
+    }
+
+    /*****LOGO ROBOMASTER*****/
+
+    .h_logoRoboed{
+
+       width: 61px;
+
+        height: 60px;
+
+        background: url(../img/web_iconkrismar.png) no-repeat;
+
+        background-size: contain;
+
+    }
+
+    /*****LOGO ROBOMASTER*****/
+
+    .h_logoColegioSL{
+
+       width: 61px;
+
+        height: 60px;
+
+        background: url(../img/web_iconkrismar.png) no-repeat;
+
+        background-size: contain;
+
+    }
+
+    .h_logoColegioSL{
+       width: 61px;
+        height: 60px;
+        background: url(../img/web_logocolegio_slmu2.png) no-repeat;
+        background-size: contain;
+    }
+    /*****INFO USUARIO*****/
+
+    .h_usuarioMenu{
+
+        height: 60px;
+
+    }
+
+    .h_usuarioMenuConte{
+
+        width: 120px;
+
+    }
+
+    .h_iconMenu{
+
+        width: 60px;
+
+        height: 100%;
+
+    }
+
+    .h_imgUsuario{
+
+        width: 60px;
+
+    }
+
+    /*****INFO USUARIO*****/
+
+    .h_conteName2{
+
+        text-align: center;
+
+        padding-right: 0px;
+
+        float: none;
+
+        margin: auto;
+
+    }
+
+    .h_conteName_ayuda {
+
+        right: 0px;
+
+
+
+    }
+
+    .h_conteBotones{
+
+        width: 336px;
+
+        display: table;
+
+        float: none;
+
+        margin: auto;
+
+    }
+    
+    /*****MENU AYUDA*****/
+    .d_menuayuda{
+        top: 90px !important;
+    }
+    .h_conteName_ayuda {
+        right: 0px;
+    }
+
+}

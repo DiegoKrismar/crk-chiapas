@@ -1,0 +1,169 @@
+@charset "utf-8";
+/*
+==============================================
+CSS BODY
+==============================================
+*/
+.i_bodyiframe{
+	overflow:auto;
+}
+/*
+==============================================
+CSS SECTION
+==============================================
+*/
+.i_section{
+    width: 1024px;
+    margin: auto;
+}
+/*
+==============================================
+CSS SECTION CONFIGURACIÓN
+==============================================
+*/
+/*****INGRESO*****/
+.i_ingresobox{
+    width: 300px;
+    margin: auto;
+    margin-top: 0px;
+    position: relative;
+    background: rgba(0, 0, 0, .10);
+    display: table;
+}
+.i_usuario, .i_contrasena, .i_ingresar{
+    width: 280px;
+    float: left;
+    margin: 10px 10px 0px 10px;
+    position: relative;
+}
+.i_usuarioicon{
+    width: 40px;
+    height: 40px;
+    float: left;
+    background-image: url(../img/web_icon_usuario.png);
+    background-repeat: no-repeat;
+    background-size: contain; 
+}
+.i_contrasenaicon{
+    width: 40px;
+    height: 40px;
+    float: left;
+    background-image: url(../img/web_icon_contrasena.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.i_contrasenashow{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    right: 0px; 
+    background-image: url(../img/web_icon_contrasenashow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+.i_contrasenahidden{
+    background-image: url(../img/web_icon_contrasenahidden.png);
+}
+.i_usuarioinput, .i_contrasenainput{
+    width: 238px;
+    height: 38px;
+    float: left;
+    border: 0px;
+    outline: 0px;
+    font-family: Verdana;
+    font-size: 1.2em;
+    text-indent: 1em;
+    background: #FEF8E0;
+    color: #666666;
+}
+.i_ingresar{
+    height: 40px;
+    font-family: Verdana;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 2em;
+    cursor: pointer;
+    border: 0px;
+    color: #FEF8E0;
+}
+.i_ingresar:hover{
+    background: #666666;
+}
+.i_mensaje{
+    width: 280px;
+    float: left;
+    margin: 10px 10px 0px 10px;
+}
+.i_mensajetxt{
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    color: #E46A58;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+span.i_mensajetxt{
+    font-weight: lighter;
+    color: #666666;
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 1024px){
+/*****SECTION*****/
+.i_section{
+    width: 96%;
+	left: 2%;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 880px 5 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 880px){
+
+
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 760px 4 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 760px){
+
+
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 620px 3 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 620px){
+/*****INGRESO*****/
+.i_ingresobox{
+    width: 240px;
+    margin-top: 20px;
+}
+.i_usuario, .i_contrasena, .i_ingresar{
+    width: 220px;
+}
+.i_usuarioinput, .i_contrasenainput{
+    width: 178px;
+}
+.i_mensaje{
+    width: 220px;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 460px 2 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 460px){
+
+}

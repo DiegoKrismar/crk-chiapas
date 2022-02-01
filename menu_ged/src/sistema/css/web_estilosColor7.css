@@ -1,0 +1,508 @@
+@charset "utf-8";
+/*============================================
+==============================================
+==============================================
+================CSS HEAD======================
+==============================================
+==============================================
+============================================*/
+/*
+==============================================
+CSS NOTIFICACIONES
+==============================================
+*/
+
+.mensajeEmergente > div{
+    background-color: #9D5771;
+}
+/*
+==============================================
+CSS HEADER
+==============================================
+*/
+.h_header{
+    background-color: #9D5771;
+}
+/*****INFO USUARIO*****/
+.h_btnPrincipal, .h_btnUsuario, .h_btnEstadisticas, .h_btnConfiguracion, .h_btnSalir{
+    background-color: #9D5771;
+}
+.h_imgUsuario{
+    background-color: #9D5771;
+}
+/*****MENU AYUDA*******/
+.d_menuayudacenter a:hover{
+    color: #9D5771;
+}
+.d_menuayudaclose{
+    background-color: #9D5771;
+}
+/*
+==============================================
+CSS BTNS PRELOADER
+==============================================
+*/
+.h_preloadercuboA{
+    background-color: #4F2C39;
+}
+.h_preloadercuboB{
+    background-color: #764155;
+}
+.h_preloadercuboC{
+    background-color: #9D5771;/*COLOR*/
+}
+.h_preloadercuboD{
+    background-color: #B1798D;
+}
+.h_preloadercuboE{
+    background-color: #C49AAA;
+}
+.h_preloadercuboF{
+    background-color: #D8BCC6;
+}
+.h_preloadertxt{
+    color: #666666;
+}
+/*============================================
+==============================================
+==============================================
+================CSS APPS======================
+==============================================
+==============================================
+============================================*/
+/*
+==============================================
+CSS ASIDE FILTROS
+==============================================
+*/
+/*****BUSCADOR*****/
+.a_iconbuscador{
+    background-color: #9D5771;
+}
+/*****FLITROS*****/
+.a_btnFiltro{
+    background-image: url(../img/web_arrowbtns_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.a_btnFiltro_alumno{
+    border-color: #9D5771;
+    color: #9D5771;
+}
+.a_btnFiltroAplicacion, .a_btnFiltroLectura, .a_btnFiltroVideo, .a_btnFiltroEvaluacion{
+    background-color: #9D5771;
+}
+.a_limpiarfiltrosbtn{
+    color: #9D5771;
+}
+/*
+==============================================
+CSS ARTICLE
+==============================================
+*/
+/*****MENU DE BOTONES*****/
+.a_lista{
+    list-style-image: url(../img/web_vinetaobjetivos_color7.png);
+}
+.a_nivelApp1, .a_nivelApp2, .a_nivelApp3, .a_nivelApp4, .a_nivelApp5{
+    background-color: #9D5771;
+}
+.a_efectividadtxt{
+    color: #9D5771;
+}
+.a_palabrasclavetxt{
+    color: #9D5771;
+}
+.a_btnPlay{
+    background-image: url(../img/web_btnplay_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.a_paginasInfo:hover{
+    color: #9D5771;
+}
+.a_paginasInfo_press{
+    color: #9D5771;
+}
+/*
+==============================================
+CSS TOOLTIP
+==============================================
+*/
+.a_tooltip{
+    color: #9D5771;
+	border-color: #9D5771;
+}
+/*
+==============================================
+CSS FLOTANTE
+==============================================
+*/
+.a_resolver{
+    background-color: #9D5771;
+}
+.a_btnAvance{
+    background-color: #9D5771;
+}
+/*============================================
+==============================================
+==============================================
+================CSS CONF======================
+==============================================
+==============================================
+============================================*/
+/*
+==============================================
+CSS ASIDE FILTROS
+==============================================
+*/
+/*****BUSCADOR*****/
+.c_iconbuscador{
+    background-color: #9D5771;
+}
+.c_cambio{
+    background-color: #9D5771;
+}
+/*****FLITROS*****/
+.c_btnFiltro{
+    background-image: url(../img/web_arrowbtns_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_btnFiltroasignatura{
+    background-image: url(../img/web_arrowbtns_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_btnFiltrocursoopciones{
+    background-image: url(../img/web_arrowbtns_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_btnFiltrocursogrado{
+    background-color: #9D5771;
+}
+.c_btnFiltroAplicacion, .c_btnFiltroLectura, .c_btnFiltroVideo, .c_btnFiltroEvaluacion{
+    background-color: #9D5771;
+}
+.c_limpiarfiltrosbtn{
+    color: #9D5771;
+}
+/*
+==============================================
+CSS ARTICLE
+==============================================
+*/
+/*****MENU DE BOTONES*****/
+.c_lista{
+    list-style-image: url(../img/web_vinetaobjetivos_color7.png);
+}
+/*****MENU DE BOTONES*****/
+.c_nivelApp1, .c_nivelApp2, .c_nivelApp3, .c_nivelApp4, .c_nivelApp5{
+    background-color: #9D5771;
+}
+.c_btnPlay{
+    background-image: url(../img/web_btnplay_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_paginasInfo:hover{
+    color: #9D5771;
+}
+.c_paginasInfo_press{
+    color: #9D5771;
+}
+/*
+==============================================
+CSS SECTION CONFIGURACIÓN
+==============================================
+*/
+.c_desplegarimg{
+    background-color: #9D5771;
+}
+.c_desplegarimg_press{
+    background-color: #9D5771;
+}
+/*****CURSOS*****/
+.c_cursobox{
+    background-color: #9D5771;
+}
+.c_agregarbox{
+    background-color: #9D5771;
+}
+/*****ICON AGREGAR SELECCION*****/
+.c_agregarseleccionicon{
+	background-color: #9D5771;
+}
+/*****CURSO GENERADO*****/
+.c_namecurso{
+	background-color: #9D5771;
+}
+.c_namepaquete{
+    background-color: #9D5771;
+}
+.c_selectnombreprofesor, .chosen-container{
+    background-image: url(../img/web_select_color7.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+.c_selectrolusuario{
+    background-image: url(../img/web_select_color7.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+/*****LISTA ALUMNOS*****/
+/*****FILTROS*****/
+.c_agregarselecciontxt{
+	color: #FEF8E0;
+}
+/*****ICON GUARDAR CURSO*****/
+.c_guardarcursoicon{
+	background-color: #9D5771;
+}
+/*****GRUPOS*****/
+.c_namealumno{
+    background-color: #9D5771;
+}
+/*****ICON TRANSFERIR ALUMNOS*****/
+.c_transferiricon{
+	background-color: #9D5771;
+}
+.c_addicon{
+    background: url(../img/web_icon_alumnoadd_color7.png) no-repeat;
+    background-size: contain;
+}
+/*****ALUMNOS*****/
+.c_obligatorios, .c_obligatorios2{
+    color: #9D5771;
+}
+.c_selectnombrealumnos{
+    background-image: url(../img/web_select_color7.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+.c_descargarplantilla{
+    color: #9D5771;
+    background-image: url("../img/web_btn_descargar_color7.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+.c_seleccionar{
+    color: #9D5771;
+}
+/*****ICON CREAR ALUMNO*****/
+.c_crearalumnoicon{
+	background-color: #9D5771;
+}
+/*****EMERGENTE*****/
+.c_emergentein{
+    border-color: #9D5771;
+}
+/*
+==============================================
+CSS TOOLTIP
+==============================================
+*/
+.c_tooltip{
+    color: #9D5771;
+	border-color: #9D5771;
+}
+.c_flecha_tooltip{
+    width:0px;
+    height:0px;
+    border-left:10px solid transparent; /* izquierda flecha */
+    border-right:10px solid transparent; /* derecha flecha */
+    border-top:10px solid #9D5771; /* base flecha y color*/
+    font-size:0px;
+    line-height:0px;
+}
+/*============================================
+==============================================
+==============================================
+=================CSS USUARIO==================
+==============================================
+==============================================
+============================================*/
+/*
+/*****IMAGEN DE USUARIO*****/
+.u_imagenconte{
+    border-color: #9D5771;
+}
+.u_imagenimg{
+    border-color: #9D5771;
+}
+.u_iconcambiarimg{
+    background-color: #9D5771;
+}
+/*****CAMBIAR CONTRASEÑA*****/
+.u_contrasenamensaje{
+	color: #9D5771;
+}
+/*****ICON GUARDAR CURSO*****/
+.u_guardarcambiosicon{
+	background-color: #9D5771;
+}
+/*****PERSONALIZACIÓN*****/
+.u_vistapreviaimg{
+    background: url(../img/web_ejemplo_color7.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*****COLORES PERSONALIZACIÓN*****/
+.u_colores1, .u_colores1_press{
+    background: rgba(228, 106, 88, 1);
+}
+.u_colores2, .u_colores2_press{
+    background: rgba(0, 165, 178, 1);
+}
+.u_colores3, .u_colores3_press{
+    background: rgba(180, 179, 0, 1);
+}
+.u_colores4, .u_colores4_press{
+    background: rgba(255, 123, 0, 1);
+}
+.u_colores5, .u_colores5_press{
+    background: rgba(149, 187, 131, 1);
+}
+.u_colores6, .u_colores6_press{
+    background: rgba(251, 190, 0, 1);
+}
+.u_colores7, .u_colores7_press{
+    background: rgba(157, 87, 113, 1);
+}
+.u_colores8, .u_colores8_press{
+    background: rgba(166, 124, 82, 1);
+}
+/*============================================
+==============================================
+==============================================
+=================CSS INGRESO==================
+==============================================
+==============================================
+============================================*/
+/*
+/*****INGRESO*****/
+.i_usuarioicon{
+    background-color: #9D5771;
+}
+.i_contrasenaicon{
+    background-color: #9D5771;
+}
+.i_ingresar{
+    background-color: #9D5771;
+}
+.i_mensajetxt{
+    color: #9D5771;
+}
+/*============================================
+==============================================
+==============================================
+===============CSS ESTADISTICA================
+==============================================
+==============================================
+============================================*/
+/*****POR GRUPO*****/
+.e_desplegarimg{
+    background-color: #9D5771;
+}
+.e_desplegarimg_press{
+    background-color: #9D5771;
+}
+.e_btnFiltrocursoopciones{
+    background-image: url(../img/web_arrowbtns_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.e_btnFiltrogrupoopciones{
+    background-image: url(../img/web_arrowbtns_color7.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.e_selectnombreprofesor{
+    background-image: url(../img/web_select_color7.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+.e_tipografica1, .e_tipografica2{
+    background-color: #9D5771;
+}
+/*****GRAFICA*****/
+.e_espaciografica{
+    border-color: #9D5771;
+}
+.e_ubicacion{
+    color: #9D5771;
+}
+.e_iconArrow{
+    background: url(../img/web_iconarrowgrafica_color7.png) no-repeat;
+    background-position: center;
+}
+/*****DATOS*****/
+tr{
+    border-color: #9D5771;
+}
+.e_iconimg{
+    background: #9D5771;
+}
+/*****ICON IMPRIMIR*****/
+.e_imprimirgraficaicon{
+	background-color: #9D5771;
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 1024px
+==============================================
+*/
+@media only screen and (max-width: 1024px){
+/*****INFO USUARIO*****/
+.h_btnPrincipal, .h_btnUsuario, .h_btnEstadisticas, .h_btnConfiguracion, .h_btnSalir{
+    background-color: transparent;
+}
+.h_btnPrincipal:hover, .h_btnUsuario:hover, .h_btnEstadisticas:hover, .h_btnConfiguracion:hover, .h_btnSalir:hover{
+    background-color: transparent;
+}
+.h_btnPrincipal_press, .h_btnUsuario_press, .h_btnEstadisticas_press, .h_btnConfiguracion_press, .h_btnSalir_press{
+    background-color: transparent;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 620px 3 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 620px){
+/*****SECTION*****/
+.c_menuUsuario{
+    background-color: #9D5771;
+}
+.h_menuUsuario{
+    background-color: #9D5771;
+}
+}
+
+.c_tooltipIconoJQueryVal
+{
+    display:none;
+    background-color:#9D5771;
+    border-style:solid;
+    border-color:#ffffff;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    font-family:Verdana;
+    font-size:0.8rem;
+    color:#ffffff;
+    text-align:center;
+    box-shadow:2px 2px 4px rgba(0, 0, 0, .35);
+    border-radius:14px;
+    position: absolute;
+    line-height: 1.2em;
+    text-indent: 0em;
+    padding: 5px;
+    right: 10px;
+   top: 5px;
+}

@@ -1,0 +1,2420 @@
+@charset "utf-8";
+/*20 de enero del 2020*/
+
+div {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.apps_clone_sortable {
+    /* border-width: 2px; 
+
+    border-style: dashed;
+
+    border-color: red; */
+    width: 100px;
+    height: 80px;
+    background: black;
+}
+.apps_clones {
+    cursor: move !important;
+}
+/*20 de enero del 2020*/
+
+/*
+
+==============================================
+
+CSS BODY
+
+==============================================
+
+*/
+
+.c_bodyiframe {
+    overflow: auto;
+}
+/*
+
+==============================================
+
+CSS SECTION
+
+==============================================
+
+*/
+
+section {
+    width: 1024px;
+    margin: auto;
+}
+/*
+
+==============================================
+
+CSS ARTICLE
+
+==============================================
+
+*/
+
+article {
+    width: 100%;
+    float: left;
+}
+/*
+
+==============================================
+
+CSS SECTION CONFIGURACIÓN
+
+==============================================
+
+*/
+
+/*****INFO DE NAVEGACIÓN*****/
+
+.c_icontitle {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    float: left;
+}
+.c_title {
+    padding-left: 60px;
+    font-family: Verdana;
+    font-size: 1.4em;
+    line-height: 2.4em;
+    font-weight: bold;
+    margin-top: 10px;
+    background: url(../img/web_iconconfiguracion.png) no-repeat;
+    color: #666666;
+}
+.c_opciondesplegar {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: rgba(0, 0, 0, .07);
+    float: left;
+    cursor: pointer;
+}
+.c_desplegartitle {
+    font-family: Verdana;
+    font-size: 1em;
+    text-indent: 1em;
+    line-height: 2.5em;
+    float: left;
+    color: #666666;
+}
+.c_desplegarimg {
+    width: 40px;
+    height: 100%;
+    float: right;
+    background-image: url(../img/web_btn_desplegarmostrar.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_desplegarimg_press {
+    width: 40px;
+    height: 100%;
+    float: right;
+    background-image: url(../img/web_btn_desplegarocultar.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/*****CURSOS*****/
+
+.c_ocultar {
+    width: 100%;
+    float: left;
+    display: none;
+}
+.c_ocultar_seccion {
+    display: none;
+    /*z-index: 1;*/
+}
+.c_personalizados {
+    width: 100%;
+    float: left;
+}
+.c_cursos {
+    width: 96%;
+    float: left;
+    margin-left: 2%;
+}
+.c_curso {
+    width: 14.28%;
+    position: relative;
+    float: left;
+}
+.c_cursobox, .c_agregarbox {
+    width: 130px;
+    height: 56px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    color: #FEF8E0;
+}
+.c_agregarbox {
+    background-image: url(../img/web_agregarcurso.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_cursobox:hover, .c_agregarbox:hover {
+    background-color: #666666;
+    color: #FEF8E0;
+}
+.c_cursobox_press {
+    width: 130px;
+    height: 56px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+    margin-top: 10px;
+    /*margin-bottom: 10px;*/
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    background-color: #666666;
+    color: #FEF8E0;
+}
+.c_cursoeliminar {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0%;
+    right: 45%;
+    margin-right: -60px;
+    cursor: pointer;
+    background: url(../img/web_icontrash2.png) no-repeat;
+    background-size: 86% 86%;
+    background-position: center;
+}
+.c_titlefiltros {
+    width: 100%;
+    display: table;
+    font-family: Verdana;
+    font-size: 1.2em;
+    font-weight: bold;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #666666;
+}
+/*
+
+==============================================
+
+CSS ASIDE FILTROS
+
+==============================================
+
+*/
+
+aside {
+    width: 100%;
+    height: auto;
+    background: none;
+}
+/*****BUSCADOR*****/
+
+.c_buscador {
+    width: 71.5%;
+    margin-top: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+}
+.c_buscadorbig {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.c_buscadorbigGrupo {
+    /*display: none;*/
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 0%;
+}
+.c_buscadorin {
+    width: 100%;
+    position: relative;
+    background: rgba(0, 0, 0, .07);
+    float: right;
+}
+.c_buscadorinput {
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    outline: 0px;
+    font-family: Verdana;
+    font-weight: bold;
+    background: transparent;
+    font-size: 1em;
+    text-indent: 0.5em;
+    color: rgba(0, 0, 0, .35);
+}
+.c_buscadorinputIpad {
+    width: 97%;
+    height: 40px;
+    border: 0px;
+    outline: 0px;
+    font-family: Verdana;
+    background: transparent;
+    font-size: 1em;
+    text-indent: 0.5em;
+    color: rgba(0, 0, 0, .35);
+}
+.c_buscadorinput::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, .35);
+    font-weight: bold;
+}
+.c_buscadorinput:-moz-placeholder {
+    color: rgba(0, 0, 0, .35);
+    font-weight: bold;
+}
+.c_buscadorinput::-moz-placeholder {
+    color: rgba(0, 0, 0, .35);
+    font-weight: bold;
+}
+.c_buscadorinput:-ms-input-placeholder {
+    color: rgba(0, 0, 0, .35);
+    font-weight: bold;
+}
+.c_iconbuscador {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+    right: 0%;
+    top: 0%;
+    background-image: url(../img/web_iconbuscador.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: all 1s ease;
+}
+.c_cambio {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+    right: 0%;
+    top: 0%;
+    background-image: url(../img/iconbuscadorSite_clean.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+/*****MENU FILTROS*****/
+
+.c_filtrosA {
+    width: 100%;
+    float: left;
+}
+.c_filtrosB {
+    width: 100%;
+    float: left;
+}
+.c_btnFiltro {
+    width: 22.5%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .05);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    color: #666666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.c_btnFiltro_press {
+    width: 22.5%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .10);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    font-weight: bold;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.c_btnFiltro:hover {
+    background-color: rgba(0, 0, 0, .10);
+    font-weight: bold;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.c_btnFiltroasignatura {
+    width: 22.5%;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, .05);
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    color: #666666;
+}
+.c_btnFiltroasignatura_press {
+    width: 22.5%;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.c_btnFiltroasignatura:hover {
+    background-color: rgba(0, 0, 0, .10);
+    font-weight: bold;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.c_btnFiltrocursogrado {
+    width: 47%;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    color: #FEF8E0;
+}
+.c_btnFiltrocursogrado_press {
+    width: 47%;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    background-color: #666666;
+    color: #FEF8E0;
+}
+.c_btnFiltrocursogrado:hover {
+    background-color: #666666;
+    color: #FEF8E0;
+}
+.c_btnFiltrocursoopciones {
+    width: 30.7%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .05);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    color: #666666;
+}
+.c_btnFiltrocursoopciones_press {
+    width: 30.7%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .10);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.c_btnFiltrocursoopciones:hover {
+    background-color: rgba(0, 0, 0, .10);
+    font-weight: bold;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.c_contFiltros {
+    width: 100%;
+    float: left;
+    display: none;
+}
+.c_filtros {
+    width: 22.5%;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 2%;
+    float: left;
+    position: relative;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    cursor: pointer;
+    border: 1px solid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-color: #666666;
+    color: #666666;
+}
+.c_filtrostxt {
+    width: 100%;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    color: #666666;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0px 5px 0px 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.c_filtroseditar {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    cursor: pointer;
+    background: url(../img/web_iconeditar.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.c_filtroseliminar {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    cursor: pointer;
+    background: url(../img/web_icontrash.png) no-repeat;
+    background-size: 86% 86%;
+    background-position: center;
+}
+.c_filtros_press {
+    width: 22.5%;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 2%;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    display: none;
+    font-weight: bold;
+    text-decoration: underline;
+    border-color: #666666;
+    color: #666666;
+}
+.c_filtrostxt_press {
+    width: calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    height: 100%;
+    float: left;
+    position: absolute;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #666666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.c_filtros:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    border: 2px solid;
+}
+.c_filtrostxt:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.c_btnFiltroAplicacion, .c_btnFiltroLectura, .c_btnFiltroVideo, .c_btnFiltroEvaluacion, .c_btnFiltroSimulador {
+    width: 42.5%;
+
+    height: 40px;
+
+    margin-top: 10px;
+
+    margin-left: 5%;
+
+    float: left;
+
+    cursor: pointer;
+}
+.c_btnFiltroAplicacion {
+    background-image: url(../img/web_iconaplicacion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroLectura {
+    background-image: url(../img/web_iconlectura.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroVideo {
+    background-image: url(../img/web_iconvideo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroEvaluacion {
+    background-image: url(../img/web_iconevaluacion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroSimulador {
+    background-image: url(../img/ind_simuladorcrk.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroAplicacion_press, .c_btnFiltroLectura_press, .c_btnFiltroVideo_press, .c_btnFiltroEvaluacion_press, .c_btnFiltroSimulador_press {
+    width: 42.5%;
+
+    height: 40px;
+
+    margin-top: 10px;
+
+    margin-left: 5%;
+
+    float: left;
+
+    cursor: pointer;
+    background-color: #666666;
+}
+.c_btnFiltroAplicacion_press {
+    background-image: url(../img/web_iconaplicacion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroLectura_press {
+    background-image: url(../img/web_iconlectura.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroVideo_press {
+    background-image: url(../img/web_iconvideo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroEvaluacion_press {
+    background-image: url(../img/web_iconevaluacion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroSimulador_press {
+    background-image: url(../img/ind_simuladorcrk.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_btnFiltroAplicacion:hover, .c_btnFiltroLectura:hover, .c_btnFiltroVideo:hover, .c_btnFiltroEvaluacion:hover,.c_btnFiltroSimulador:hover {
+    background-color: #666666;
+}
+.c_inputfiltros {
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    font-family: Verdana;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .50);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #FEF8E0;
+    border-color: #666666;
+    color: #666666;
+}
+.c_limpiarfiltros {
+    width: 100%;
+    margin-top: 10px;
+    float: left;
+}
+.c_limpiarfiltrosbtn {
+    width: 140px;
+    font-family: Verdana;
+    font-size: 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: right;
+    text-align: right;
+    margin-right: 2%;
+    cursor: pointer;
+}
+.c_limpiarfiltrosbtn:hover {
+    text-decoration: underline;
+}
+/*****BOTÓN APLICACIÓN*****/
+
+.c_icons {
+    width: 770px;
+    position: relative;
+    margin: auto;
+}
+.c_botones {
+    width: 100%;
+    margin-top: 20px;
+}
+.c_btn {
+    width: 154px;
+    height: 102px;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+.c_btn:hover {
+    width: 154px;
+    height: 102px;
+    background: rgba(0, 0, 0, .10);
+    float: left;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px 10px 10px 10px;
+}
+.c_btn_press {
+    width: 154px;
+    height: 102px;
+    background: rgba(0, 0, 0, .10);
+    float: left;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+}
+/*****SVG*****/
+
+.c_btnIn {
+    width: 86%;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 7%;
+}
+/*****ICONO APP*****/
+
+.c_btnIcon {
+    width: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, .2);
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+}
+/*****ICONO CATEGORIA*****/
+
+.c_iconTipo {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    border-bottom-right-radius: 10px;
+}
+/*****CKECKBOX*****/
+
+.c_checkbox {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #FFFFFF;
+    bottom: 0%;
+    left: 0%;
+}
+/*****MENU DE BOTONES*****/
+
+.c_menuBtn {
+    width: 100%;
+    background: rgba(0, 0, 0, .10);
+    position: relative;
+    float: left;
+}
+.c_menuBtnIn {
+    width: 88%;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float: left;
+}
+.c_tituloApp {
+    width: 50%;
+    font-family: Verdana;
+    font-size: 1.2em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+    color: #666666;
+}
+.c_nivelesApp {
+    width: 50%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: left;
+    color: #666666;
+}
+.c_tituloNivel {
+    display: table;
+    font-family: Verdana;
+    font-size: 1.2em;
+    float: left;
+}
+.c_nivelApp1, .c_nivelApp2, .c_nivelApp3, .c_nivelApp4, .c_nivelApp5 {
+    width: 25px;
+    height: 25px;
+    margin-left: 2%;
+    border-radius: 50%;
+    float: left;
+    opacity: .2;
+}
+.c_nivelApp1 {
+    background-image: url(../img/web_iconnivel1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_nivelApp2 {
+    background-image: url(../img/web_iconnivel2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_nivelApp3 {
+    background-image: url(../img/web_iconnivel3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_nivelApp4 {
+    background-image: url(../img/web_iconnivel4.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_nivelApp5 {
+    background-image: url(../img/web_iconnivel5.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.c_nivelApp1:hover, .c_nivelApp2:hover, .c_nivelApp3:hover, .c_nivelApp4:hover, .c_nivelApp5:hover {
+    opacity: 1;
+}
+.c_infoApp {
+    font-family: Verdana;
+    margin-top: 5px;
+    font-size: 1em;
+    color: #666666;
+}
+.c_btnPlay {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    right: 0%;
+    cursor: pointer;
+}
+.c_efectomover {
+    animation: agitar 0.8s infinite;
+    -webkit-animation: agitar 0.8s infinite;
+}
+/*****BOTONES DE NAVEGACIÓN*****/
+
+.c_btnsNavegacion {
+    width: 100%;
+    float: left;
+}
+.c_btnsNavegacionCenter {
+    display: table;
+    margin: auto;
+}
+.c_btnPrev, .c_btnNext {
+    width: 70px;
+    height: 70px;
+    float: left;
+    cursor: pointer;
+}
+.c_btnPrev {
+    background: url(../img/web_btnprevpagina.png) no-repeat;
+    background-size: contain;
+}
+.c_btnNext {
+    background: url(../img/web_btnnextpagina.png) no-repeat;
+    background-size: contain;
+}
+.c_paginas {
+    height: 100%;
+    float: left;
+}
+.c_paginasInfo {
+    width: 54px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1.6em;
+    line-height: 2.8em;
+    text-align: center;
+    cursor: pointer;
+    color: #333333;
+}
+.c_puntos {
+    width: 40px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1.6em;
+    line-height: 2.8em;
+    text-align: center;
+    color: #333333;
+}
+.c_paginasInfo:hover {
+    text-decoration: underline;
+}
+.c_paginasInfo_press {
+    width: 40px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1.6em;
+    line-height: 2.8em;
+    text-align: center;
+    text-decoration: underline;
+}
+.c_leyendaapps {
+    width: 100%;
+    min-height: 20px;
+    font-family: Verdana;
+    font-size: 1em;
+    padding: 5px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: .5;
+    float: left;
+    color: #666666;
+}
+.c_organizarapps {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.c_organizarappstxt {
+    height: 40px;
+    display: table;
+    margin: auto;
+    font-family: Verdana;
+    font-size: 1em;
+    line-height: 2.5em;
+    text-align: center;
+    cursor: pointer;
+    color: #666666;
+}
+.c_organizarappstxt:hover {
+    text-decoration: underline;
+}
+.c_movericons {
+    width: 100%;
+    float: left;
+    background-color: #e6e6e6;
+}
+.c_movericonscenter {
+    display: table;
+    margin: auto;
+}
+.c_moveraplicacion {
+    height: 40px;
+    display: table;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    line-height: 2.5em;
+    text-align: center;
+    float: left;
+    color: #666666;
+}
+.c_iconleft, .c_iconright, .c_botonbasura {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    float: left;
+}
+.c_iconleft {
+    background: url(../img/web_iconmoverleft.png) no-repeat;
+    background-size: contain;
+}
+.c_iconright {
+    background: url(../img/web_iconmoverright.png) no-repeat;
+    background-size: contain;
+}
+.c_botonbasura {
+    background: url(../img/web_botonbasura.png) no-repeat;
+    background-size: contain;
+}
+/*****ICON AGREGAR SELECCION*****/
+
+.c_agregarseleccion {
+    width: 100%;
+    margin-top: 20px;
+    float: left;
+}
+.c_agregarseleccionicon {
+    width: 285px;
+    height: 60px;
+    margin-right: 1.5%;
+    float: right;
+    cursor: pointer;
+}
+.c_agregarseleccionicon:hover {
+    background-color: #666666;
+}
+.c_agregarselecciontxt {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 1.2em;
+}
+/*****AGREGAR CURSO*****/
+
+.c_datoscurso {
+    width: 96%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 2%;
+    float: left;
+    position: relative;
+}
+.c_nombrecurso, .c_descripcioncurso {
+    width: 30%;
+    height: 40px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    color: #666666;
+}
+.c_inputnombrecurso, .c_textdescripcioncurso {
+    float: left;
+    border-width: 1px;
+    background: transparent;
+    outline: 0px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-indent: 0.2em;
+    border-color: #666666;
+    color: #808080;
+}
+.c_selectnombreprofesor {
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-indent: 0.2em;
+    width: 69.5%;
+    height: 40px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    color: #666666;
+    border-color: #666666;
+    background-color: transparent;
+    color: #666666;
+}
+/*APARIENCIA DEL SELECT*/
+
+.c_selectnombreprofesor select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+/*DESPLEGABLE DEL SELECT*/
+
+.c_selectnombreprofesor select option {
+    background: #E6E6E6;
+    text-indent: 1em;
+}
+.c_inputnombrecurso {
+    width: 68.5%;
+    height: 40px;
+}
+.c_textdescripcioncurso {
+    width: 69%;
+    height: 80px;
+    resize: none;
+}
+/*****ALUMNOS*****/
+
+.c_datospersonales {
+    width: 96%;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 2.4em;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 10px;
+    height: 40px;
+    color: #666666;
+}
+.c_campos {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5px;
+    float: left;
+}
+.c_campos2 {
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5px;
+    float: left;
+    display: none;
+}
+.c_campos3 {
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5px;
+    float: left;
+}
+.c_campos4 {
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 5px;
+    float: left;
+}
+.c_obligatorios {
+    width: 100%;
+    font-family: Verdana;
+    font-size: 0.8em;
+    text-align: right;
+    float: right;
+}
+.c_datosalumnos {
+    width: 46%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+    position: relative;
+}
+.c_nombrealumnos, .c_descripcionalumnos {
+    /*width: 100%;*/
+    height: 25px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    color: #666666;
+}
+.c_inputnombrealumnos, .c_textdescripcionalumnos {
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    background: transparent;
+    outline: 0px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-indent: 0.2em;
+    color: #666666;
+    border-color: #666666;
+}
+.c_selectnombrealumnos {
+    width: 100%;
+    height: 40px;
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-indent: 0.2em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border-color: #666666;
+    color: #666666;
+}
+/*APARIENCIA DEL SELECT*/
+
+.c_selectnombrealumnos select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+/*DESPLEGABLE DEL SELECT*/
+
+.c_selectnombrealumnos select option {
+    background: #E6E6E6;
+    text-indent: 1em;
+}
+.c_inputnombrealumnos {
+    width: 100%;
+    height: 40px;
+}
+/*****ROL USUARIO*****/
+
+.c_datosrol {
+    width: 96%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 2%;
+    float: left;
+    position: relative;
+}
+.c_nombrerol {
+    width: 30%;
+    height: 40px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    color: #666666;
+}
+.c_selectrolusuario {
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-indent: 0.2em;
+    width: 69.5%;
+    height: 40px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-color: #666666;
+    background-color: transparent;
+    color: #666666;
+}
+/*APARIENCIA DEL SELECT*/
+
+.c_selectrolusuario select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+/*DESPLEGABLE DEL SELECT*/
+
+.c_selectrolusuario select option {
+    background: #E6E6E6;
+    text-indent: 1em;
+}
+input[type=date] {
+    font-family: Verdana;
+    font-size: 1em;
+    border-width: 1px;
+    border-style: solid;
+    outline: none;
+    background-color: transparent;
+    border-color: #666666;
+    color: #666666;
+}
+input[type=date]::-webkit-clear-button {
+    font-size: 18px;
+    height: 30px;
+    position: relative;
+    right: 5px;
+    margin-right: 4px;
+}
+input[type=date]::-webkit-inner-spin-button {
+    height: 40px;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+    font-size: 1.4em;
+}
+input[type=date]::-webkit-calendar-picker-indicator:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: #666666;
+}
+input[type=date]::-webkit-datetime-edit-month-field {
+    color: #666666;
+}
+input[type=date]::-webkit-datetime-edit-day-field {
+    color: #666666;
+}
+input[type=date]::-webkit-datetime-edit-year-field {
+    color: #666666;
+}
+/*****SUBIR ARCHIVO*****/
+
+.c_subirarchivo {
+    width: 96%;
+    margin-bottom: 5px;
+    margin-left: 2%;
+    float: left;
+}
+.c_descargarexcel, .c_subirexcel {
+    width: 38%;
+    height: 40px;
+    float: left;
+    font-family: Verdana;
+    line-height: 2.4em;
+    font-size: 1em;
+    margin-top: 10px;
+    color: #666666;
+}
+.c_descargarplantilla {
+    width: 61.5%;
+    height: 40px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.4em;
+    margin-top: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666;
+}
+.c_seleccionar {
+    width: 62%;
+    height: 40px;
+    float: left;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.4em;
+    text-indent: 1em;
+    margin-top: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #666666;
+}
+.c_descargarplantilla:hover, .c_seleccionar:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.c_form-control {
+    width: 100%;
+    height: 38px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2em;
+    border: 0px;
+    margin-top: 10px;
+    color: #666666;
+}
+.c_btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.c_btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 10px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: inherit;
+    display: block;
+}
+input[readonly] {
+    /*cursor: text !important;*/
+    background-color: rgba(0, 0, 0, .10) !important;
+    border: 0px;
+    outline: none;
+}
+/*****ICON CREAR ALUMNO*****/
+
+.c_crearalumno {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    float: left;
+}
+.c_crearalumnoicon {
+    width: 220px;
+    height: 40px;
+    margin: auto;
+    cursor: pointer;
+}
+.c_crearalumnoicon:hover {
+    background-color: #666666;
+}
+.c_crearalumnotxt {
+    width: 100%;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    color: #FEF8E0;
+}
+.c_guardarLic {
+    cursor: pointer !important;
+}
+/*****CURSO GENERADO*****/
+
+.c_cursogenerado {
+    width: 96%;
+    margin-top: 20px;
+    margin-left: 2%;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    background: url(../img/web_rejillabackground.png) repeat;
+    border-color: rgba(102, 102, 102, .65);
+}
+.c_infocurso {
+    width: 100%;
+    float: left;
+}
+.c_namepaquete {
+    width: 100%;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.4em;
+    float: left;
+    color: #FEF8E0;
+}
+.c_namecurso {
+    width: 20%;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.4em;
+    float: left;
+    color: #FEF8E0;
+}
+/*****INFO DE NAVEGACIÓN*****/
+
+.c_ubicacioncurso {
+    width: 80%;
+    min-height: 38px;
+    float: left;
+    background: rgba(0, 0, 0, .07);
+}
+.c_ubicacion {
+    height: 20px;
+    font-family: Verdana;
+    margin-left: 2%;
+    margin-top: 10px;
+    float: left;
+    font-size: 1em;
+    float: left;
+    color: #666666;
+}
+.c_iconArrow {
+    width: 30px;
+    height: 20px;
+    margin-top: 10px;
+    border: none;
+    float: left;
+    background: url(../img/web_iconArrow.png) no-repeat;
+    background-position: center;
+}
+.c_botones {
+    width: 100%;
+    margin-top: 20px;
+}
+/*****ICONOS GENERADOS*****/
+
+.c_iconosgenerados {
+    width: 100%;
+    float: left;
+    max-height: 430px;
+    overflow-y: auto;
+}
+/*****ICON GUARDAR CURSO*****/
+
+.c_guardarcurso {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+.c_guardarlicencias {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    float: left;
+}
+.c_guardarcursoicon {
+    width: 180px;
+    height: 40px;
+    float: right;
+    margin-right: 1.5%;
+    cursor: pointer;
+}
+.c_guardarcursoicon:hover {
+    background-color: #666666;
+}
+.c_guardarcursotxt {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    color: #FEF8E0;
+}
+/*****ICONO BASURA*****/
+
+.c_icontrash {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0%;
+    cursor: pointer;
+    left: 0%;
+    background: url(../img/web_icontrash.png) no-repeat;
+    background-size: contain;
+}
+/*****LISTA ALUMNOS*****/
+
+.c_namealumno {
+    width: 100%;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.4em;
+    float: left;
+    color: #FEF8E0;
+}
+.c_alumnos {
+    width: 100%;
+    font-family: Verdana;
+    font-size: 1em;
+    float: left;
+}
+table.c_alumnos {
+    /* width: 400px;
+
+    position: absolute;
+
+    background-color: yellow;*/
+}
+table.c_alumnos>thead, table.c_alumnos>tbody, table.c_alumnos tbody>tr>td {
+    display: block;
+    /*border: 2px solid red;
+
+    box-sizing: border-box;*/
+}
+table.c_alumnos>tbody>tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+table.c_alumnos>tbody {
+    max-height: 400px;
+    overflow-y: auto;
+}
+table.c_alumnos>tbody>tr>td {
+    /*height: 50px;*/
+    float: left;
+}
+table.c_alumnos>thead>tr>th {
+    /*height: 50px;*/
+    /*float: left;*/
+    /*display: block;*/
+}
+table.c_alumnos>thead>tr, table.c_alumnos>tbody>tr {
+    width: 100%;
+    display: block;
+    /*height: 50px;*/
+    /*float: left;*/
+}
+/*****TABLA GRUPOS*****/
+
+.c_alumnosnum {
+    width: 6%;
+    text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: #666666;
+}
+.c_alumnosdatos {
+    width: 76%;
+    text-align: left;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: #666666;
+}
+.c_alumnosborrar {
+    width: 6%;
+}
+.c_alumnoiconborrar {
+    width: 100%;
+    height: 26px;
+    cursor: pointer;
+    background: url(../img/web_icontrash.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*****TABLA ALUMNOS*****/
+
+.c_alumnosnum2 {
+    width: 6%;
+    text-align: center;
+    /*padding-top: 0.7em;
+
+    padding-bottom: 0.7em;*/
+    color: #666666;
+}
+.c_alumnosdatos2 {
+    width: calc(50% - 15px);
+    text-align: left;
+    /*padding-top: 0.7em;
+
+    padding-bottom: 0.7em;*/
+    color: #666666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.c_alumnosusuario2, .c_alumnosgrupo2 {
+    width: 15%;
+    text-align: center;
+    /*padding-top: 0.7em;
+
+    padding-bottom: 0.7em;*/
+    color: #666666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.c_alumnoseditar2 {
+    width: 6%;
+    text-align: left;
+    /*padding-top: 0.7em;
+
+    padding-bottom: 0.7em;*/
+}
+.c_alumnoiconeditar2 {
+    width: 100%;
+    height: 26px;
+    cursor: pointer;
+}
+.c_alumnosborrar2 {
+    width: 6%;
+    text-align: left;
+    /*padding-top: 0.7em;
+
+    padding-bottom: 0.7em;*/
+}
+.c_alumnoiconborrar2 {
+    width: 100%;
+    height: 26px;
+    cursor: pointer;
+}
+.c_alumnoiconeditar2 {
+    background: url(../img/web_iconeditar.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.c_alumnoiconborrar2 {
+    background: url(../img/web_icontrash.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*****TABLA OPCIONES*****/
+
+.c_opcionesalumno {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 1em;
+    float: left;
+    color: #FEF8E0;
+    background: rgba(0, 0, 0, .10);
+}
+.c_alumnosnumopciones {
+    width: 6%;
+    text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: #666666;
+    display: block;
+    float: left;
+}
+.c_alumnosdatosopciones {
+    width: calc(50% - 15px);
+    text-align: left;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    cursor: pointer;
+    color: #666666;
+    display: block;
+    float: left;
+}
+.c_alumnosusuarioopciones, .c_alumnosgrupoopciones {
+    width: 15%;
+    text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    cursor: pointer;
+    color: #666666;
+}
+.c_alumnoseditaropciones, .c_alumnosborraropciones {
+    width: 6%;
+    text-align: center;
+    color: #666666;
+}
+.c_opcionesalumnostabla {
+    width: 100%;
+    background: rgba(0, 0, 0, .10);
+}
+.c_alumnosdatosopciones:hover, .c_alumnosusuarioopciones:hover, .c_alumnosgrupoopciones:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+/*****APARTADO LISTA DE ALUMNOS*****/
+
+.c_show {
+    width: 100%;
+    float: left;
+}
+.c_titleopciongrupo {
+    width: 100%;
+    /*display: table;*/
+    cursor: pointer;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.c_titlegrupoicon {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    float: left;
+    background: url(../img/web_btn_desplegarmostrar2.png) no-repeat;
+    background-size: contain;
+}
+.c_titlegrupoicon_press {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    float: left;
+    background: url(../img/web_btn_desplegarocultar2.png) no-repeat;
+    background-size: contain;
+}
+.c_titlegrupotxt {
+    height: 30px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1.2em;
+    font-weight: bold;
+    float: left;
+    line-height: 1.6em;
+    margin-left: 15px;
+    color: #666666;
+}
+.c_agregaropciongrupo {
+    width: 100%;
+    display: table;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.c_agregargrupoicon {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    float: left;
+}
+.c_agregargrupotxt {
+    height: 30px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1em;
+    float: left;
+    line-height: 1.6em;
+    margin-left: 15px;
+    color: #666666;
+}
+.c_checkboxagregar {
+    width: 24px;
+    height: 24px;
+    margin-left: 2%;
+    float: left;
+}
+/*****CKECKBOX TABLA*****/
+
+.c_checkboxtabla {
+    width: 6%;
+}
+.c_checkboxtablain {
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+.c_alumnosadd {
+    width: 6%;
+}
+.c_addicon {
+    width: 25px;
+    height: 25px;
+    margin: auto;
+}
+/*****ICON TRANSFERIR ALUMNOS*****/
+
+.c_transferir {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    float: left;
+}
+.c_transferiricon {
+    width: 220px;
+    height: 40px;
+    margin: auto;
+    cursor: pointer;
+    background-image: url(../img/web_btn_transferiralumnos.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+.c_transferiricon:hover {
+    background-color: #666666;
+}
+.c_transferirtxt {
+    width: 72%;
+    margin-left: 14px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    color: #FEF8E0;
+}
+/*
+
+==============================================
+
+CSS EMERGENTE EDITAR ALUMNO
+
+==============================================
+
+*/
+
+.c_emergente {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .65);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+.c_emergentein {
+    width: 60%;
+    height: 90%;
+    top: 5%;
+    left: 20%;
+    background-image: url(../img/web_backgroundrepeat.png);
+    background-repeat: repeat;
+    background-size: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+    position: relative;
+    border-radius: 15px;
+    background-color: #FEF8E0;
+    border-width: 2px;
+    border-style: solid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.c_sectionemergente {
+    width: 94%;
+    float: left;
+    margin-left: 2%;
+}
+.c_cerraremergente {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    right: 19%;
+    margin-top: 0px;
+    margin-right: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-width: 2px;
+    border-style: solid;
+    background: #333333 url(../img/web_btn_cerrar.png) no-repeat;
+    background-size: contain;
+    background-position: right;
+    border-color: #FEF8E0;
+}
+.c_cerraremergentetxt:hover {
+    text-decoration: underline;
+}
+/*
+
+==============================================
+
+CSS TOOLTIP
+
+==============================================
+
+*/
+
+.c_tooltip {
+    position: absolute;
+    top: 10%;
+    left: 4%;
+    font-family: Verdana;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .50);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #FEF8E0;
+}
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-HEIGHT : 700px 6 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-height: 700px) and (min-width: 1025px) {
+    /*****EMERGENTE EDITAR ALUMNO*****/
+    .c_emergentein {
+        top: 40px;
+        margin-top: 0px;
+    }
+    .c_cerraremergente {
+        top: 20px;
+        margin-top: 0px;
+    }
+}
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 1024px) {
+    /*****SECTION*****/
+    section {
+        width: 96%;
+        left: 2%;
+    }
+    /*****INFO USUARIO*****/
+    .c_btnPrincipal, .c_btnUsuario, .c_btnEstadisticas, .c_btnConfiguracion {
+        background-color: rgba(255, 255, 255, .01);
+    }
+    .c_btnPrincipal:hover, .c_btnUsuario:hover, .c_btnEstadisticas:hover, .c_btnConfiguracion:hover {
+        background-color: rgba(255, 255, 255, .01);
+    }
+    .c_btnPrincipal_press, .c_btnUsuario_press, .c_btnEstadisticas_press, .c_btnConfiguracion_press {
+        background-color: rgba(255, 255, 255, .01);
+    }
+    /*****CURSOS*****/
+    .c_curso {
+        width: 16.6%;
+        float: left;
+    }
+    /*****ARTICLE*****/
+    article {
+        width: 100%;
+    }
+    .c_icons {
+        width: 616px;
+        margin: 10px;
+        margin: auto;
+    }
+    /*****EMERGENTE EDITAR ALUMNO*****/
+    .c_emergentein {
+        width: 90%;
+        height: 90%;
+        max-width: none;
+        max-height: none;
+        top: 5%;
+        left: 5%;
+        margin-top: 0px;
+        margin-left: 0px;
+        position: absolute;
+    }
+    .c_cerraremergente {
+        position: absolute;
+        top: 4%;
+        right: 4%;
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+}
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 880px 5 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 880px) {
+    /*****CURSOS*****/
+    .c_curso {
+        width: 20%;
+        float: left;
+    }
+    /*****ARTICLE*****/
+    .c_icons {
+        width: 616px;
+        margin: 10px;
+        position: relative;
+        margin: auto;
+    }
+    /*****MENU DE BOTONES*****/
+    .c_menuBtnIn {
+        width: 86%;
+    }
+    .c_namepaquete {
+        width: 100%;
+        height: 30px;
+        line-height: 1.8em;
+    }
+    .c_namecurso {
+        width: 100%;
+        height: 30px;
+        line-height: 1.8em;
+    }
+    /*****INFO DE NAVEGACIÓN*****/
+    .c_ubicacioncurso {
+        width: 100%;
+        height: auto;
+    }
+    .c_ubicacion {
+        margin-top: 5px;
+    }
+    .c_iconArrow {
+        margin-top: 5px;
+    }
+    /*****AGREGAR CURSO*****/
+    .c_nombrecurso, .c_descripcioncurso {
+        width: 100%;
+        height: 25px;
+        text-indent: 0em;
+    }
+    .c_inputnombrecurso {
+        width: 100%;
+    }
+    .c_textdescripcioncurso {
+        width: 100%;
+    }
+    .c_selectnombreprofesor {
+        width: 100%;
+    }
+    .c_nombrerol {
+        width: 100%;
+        height: 25px;
+        text-indent: 0em;
+    }
+    .c_selectrolusuario {
+        width: 100%;
+    }
+}
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 760px 4 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 760px) {
+    /*****CURSOS*****/
+    .c_curso {
+        width: 25%;
+        float: left;
+    }
+    /*****ARTICLE*****/
+    .c_icons {
+        width: 462px;
+        margin: 10px;
+        position: relative;
+        margin: auto;
+    }
+    /*****MENU DE BOTONES*****/
+    .c_menuBtnIn {
+        width: 82%;
+    }
+    .c_tituloApp {
+        width: 100%;
+    }
+    .c_nivelesApp {
+        width: 100%;
+    }
+    .c_tituloNivel {
+        font-size: 1em;
+    }
+    .c_nivelApp1, .c_nivelApp2, .c_nivelApp3, .c_nivelApp4, .c_nivelApp5 {
+        width: 20px;
+        height: 20px;
+    }
+    /*****MENU FILTROS*****/
+    .c_btnFiltrocursoopciones {
+        width: 96%;
+    }
+    .c_btnFiltrocursoopciones_press {
+        width: 96%;
+    }
+    /*****SUBIR ARCHIVO*****/
+    .c_descargarexcel, .c_subirexcel {
+        width: 100%;
+        height: 20px;
+        line-height: 1em;
+        margin-top: 20px;
+    }
+    .c_descargarplantilla {
+        width: 100%;
+    }
+    .c_seleccionar {
+        width: 100%;
+    }
+}
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 620px 3 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 620px) {
+    /*****CURSOS*****/
+    .c_curso {
+        width: 33.3%;
+        float: left;
+    }
+    /*****BUSCADOR*****/
+    .c_buscador {
+        width: 47%;
+    }
+    /*****MENU FILTROS*****/
+    .c_btnFiltro {
+        width: 47%;
+        margin-left: 2%;
+        margin-top: 10px;
+    }
+    .c_btnFiltro_press {
+        width: 47%;
+        margin-left: 2%;
+        margin-top: 10px;
+    }
+    .c_btnFiltroasignatura {
+        width: 47%;
+    }
+    .c_btnFiltroasignatura_press {
+        width: 47%;
+    }
+    .c_filtros {
+        width: 47%;
+        margin-top: 10px;
+        margin-left: 2%;
+    }
+    .c_filtros_press {
+        width: 47%;
+        margin-top: 10px;
+        margin-left: 2%;
+    }
+    /*****ARTICLE*****/
+    .c_icons {
+        width: 308px;
+        margin: 10px;
+        position: relative;
+        margin: auto;
+    }
+    /*****MENU DE BOTONES*****/
+    .c_menuBtnIn {
+        width: 76%;
+    }
+    /*****EMERGENTE EDITAR ALUMNOS*****/
+    .c_emergentein {
+        width: 96%;
+        height: 96%;
+        top: 2%;
+        left: 2%;
+    }
+    .c_cerraremergente {
+        top: 1%;
+        right: 1%;
+    }
+}
+/*
+
+==============================================
+
+CSS MEDIA QUIERIES MAX-WIDTH : 460px 2 COLUMNAS
+
+==============================================
+
+*/
+
+@media only screen and (max-width: 460px) {
+    /*****CURSOS*****/
+    .c_curso {
+        width: 50%;
+        float: left;
+    }
+    /*****ARTICLE*****/
+    .c_icons {
+        width: 308px;
+        margin: 10px;
+        position: relative;
+        margin: auto;
+    }
+    /*****BUSCADOR*****/
+    .c_buscador {
+        width: 98%;
+    }
+    /*****MENU FILTROS*****/
+    .c_btnFiltro {
+        width: 98%;
+    }
+    .c_btnFiltro_press {
+        width: 98%;
+    }
+    .c_btnFiltroasignatura {
+        width: 98%;
+    }
+    .c_btnFiltroasignatura_press {
+        width: 98%;
+    }
+    /*****MENU DE BOTONES*****/
+    .c_menuBtnIn {
+        width: 66%;
+    }
+    /*****BOTONES DE NAVEGACIÓN*****/
+    .c_paginas {
+        height: 100%;
+        float: left;
+    }
+    .c_moveraplicacion {
+        display: none;
+    }
+    /*****ALUMNOS*****/
+    .c_campos2 {
+        width: 96%;
+        display: block;
+    }
+    .c_campos3 {
+        width: 96%;
+    }
+    .c_campos4 {
+        display: none;
+    }
+    .c_datosalumnos {
+        width: 96%;
+    }
+    /*****ICON CREAR ALUMNO*****/
+    .c_crearalumnoicon {
+        width: 96%;
+    }
+    /*****LISTA ALUMNOS*****/
+    .c_alumnos {
+        font-size: 0.8em;
+    }
+}
+/*
+
+==============================================
+
+CSS KEYFRAMES ANIMACIÓN
+
+==============================================
+
+*/
+
+@keyframes agitar {
+    0% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(3deg);
+    }
+    85% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@-webkit-keyframes agitar {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    15% {
+        -webkit-transform: rotate(3deg);
+    }
+    85% {
+        -webkit-transform: rotate(-3deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+/*
+
+.c_tooltipIconoJQueryVal
+
+{
+
+    display:none;
+
+    background-color:#FBB03B;
+
+    border-style:solid;
+
+    border-color:#ffffff;
+
+    box-sizing:border-box;
+
+    -webkit-box-sizing:border-box;
+
+    font-family:Verdana;
+
+    font-size:0.8rem;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    box-shadow:2px 2px 4px rgba(0, 0, 0, .35);
+
+    border-radius:14px;
+
+    position: absolute;
+
+    line-height: 1.2em;
+
+    text-indent: 0em;
+
+    padding: 5px;
+
+    right: 10px;
+
+   top: 5px;
+
+}
+
+*/

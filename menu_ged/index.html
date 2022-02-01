@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/sistema/css/web_header.css" rel="stylesheet" type="text/css" />
+    <link href="src/sistema/css/web_apps.css" rel="stylesheet" type="text/css" />
+    <link href="src/sistema/css/web_conf.css" rel="stylesheet" type="text/css" />
+    <link href="src/sistema/css/web_estilosColor1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="src/sistema/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="src/sistema/js/java.js"></script>
+    <script type="text/javascript" src="src/sistema/js/curso.js"></script>
+    <script type="text/javascript" src="src/sistema/js/viewApps.js"></script>
+    <title>CRK</title>
+  </head>
+
+  <body class="h_body">
+    <!--
+        HEADER
+    -->
+    <header class="h_header">
+      <div class="h_head">
+        <!--HEAD CENTER-->
+        <div class="h_logoKrismar"></div>
+        <!--LOGO KRISMAR-->
+      </div>
+    </header>
+
+    <div class="h_headDawn"></div>
+
+    <div class="h_usuarioMenu">
+      <!--INFO USUARIO-->
+      <div class="h_usuarioMenuConte">
+        <div class="h_conteName">CRK Robótica 1</div>
+        <div class="h_iconMenu">
+          <!--BTN MENU USUARIO-->
+          <div id="menuO" class="h_iconMenuIn"></div>
+        </div>
+        <div class="h_conteMenu">
+          <div id="hdr5" class="h_btnSalir_press"></div>
+          <div id="hdr4" class="h_btnUsuario_press"></div>
+          <div id="hdr3" class="h_btnEstadisticas_press"></div>
+          <div id="hdr2" class="h_btnConfiguracion_press"></div>
+          <div id="hdr1" class="h_btnPrincipal"></div>
+        </div>
+        <div class="h_imgUsuario">
+          <div class="h_avatarUsuarioconte">
+            <img class="h_avatarUsuario" src="src/sistema/img/web_avatarusuario.png" />
+            <!--AVATAR USUARIO-->
+            <!--BTN CERRA SESIÓN-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--MENU USUARIO-->
+   
+    <!--PRELOADER-->
+    <div id="contenedor" class="h_sectioniframe">
+      <!--
+        SECTION APPS
+    -->
+      <section class="a_section">
+        <!---------------->
+        <!--
+        ASIDE FILTROS
+        -->
+        <aside class="a_aside">
+          <div class="a_filtrosA" id="filtrosA">
+            <!--CURSOS-->
+            <div class="a_menucursos"></div>
+            <!--BUSCADOR-->
+            <div class="a_buscador" id="a_buscador">
+              <div class="a_buscadorin">
+                <input class="a_buscadorinput" placeholder="Buscar..." id="cinputB" onkeyup="BusquedaGeneral()" />
+                <div id="cbuscarApps" class="c_iconbuscador"></div>
+              </div>
+            </div>
+
+            <!--OPCIONES-->
+            <!--div class="a_btnFiltro">Grado</div>
+            <div class="a_btnFiltro">Asignatura</div>
+            <div class="a_btnFiltro">Bloque</div>
+            <div class="a_btnFiltro">Lección</div-->
+            <!--MENU FILTROS-->
+            <!--div class="a_filtros">Primero</div>
+            <div class="a_filtros">Segundo</div>
+            <div class="a_filtros">Tercero</div>
+            <div class="a_filtros">Cuarto</div-->
+            <!---------------->
+          </div>
+          <div class="a_filtrosB">
+            <div id="fil1" class="a_btnFiltroAplicacion"></div>
+            <div id="fil2" class="a_btnFiltroLectura"></div>
+            <div id="fil3" class="a_btnFiltroVideo"></div>
+            <div id="fil4" class="a_btnFiltroEvaluacion"></div>
+            <div id="fil5" class="a_btnFiltroSimulador"></div>
+        </div>
+          <div class="a_limpiarfiltros">
+            <div class="a_limpiarfiltrosbtn" onclick="limpiarFiltros()">Limpiar filtro</div>
+          </div>
+        </aside>
+        <!--
+        ARTICLE
+        -->
+        <article class="a_article">
+          <div class="a_icons">
+            <!--INFO DE NAVEGACIÓN-->
+            <div class="a_title">Principal</div>
+            <div class="a_ubicacioncurso">
+              <div class="a_ubicacion" id="mGradou">---</div>
+              <div class="a_iconArrow" ></div>
+              <div class="a_ubicacion" id="mAsignaturau">---</div>
+              <div class="a_iconArrow"></div>
+              <div class="a_ubicacion" id="mBloqueu">---</div>
+              <div class="a_iconArrow"></div>
+              <div class="a_ubicacion" id="mLeccionu">---</div>
+            </div>
+            <!---------------->
+
+            <div id="content" >
+                <article>
+                    <div id="vacio" class="c_icons">
+              <div class="c_botones" id="medida">
+                <div class="h_sectioniframe">
+                  <div class="h_preloader">
+                    <div class="h_preloaderscene3d">
+                      <div class="h_preloaderobject3d h_preloadertransition">
+                        <div class="h_preloadercuboA"></div>
+                        <div class="h_preloadercuboB"></div>
+                        <div class="h_preloadercuboC"></div>
+                        <div class="h_preloadercuboD"></div>
+                        <div class="h_preloadercuboE"></div>
+                        <div class="h_preloadercuboF"></div>
+                      </div>
+                    </div>
+                    <div class="h_preloadertxt">cargando...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="c_btnsNavegacion">
+                <div class="c_btnsNavegacionCenter">
+                    <div id="back" class="c_btnPrev"></div>
+                    <div class="c_paginas">
+                        <div id="pagActual" class="c_paginasInfo">1</div>
+                        <div class="c_paginasInfo">de</div>
+                        <div id="pagTotal" class="c_paginasInfo">1</div>
+                    </div>
+                    <div id="next" class="c_btnNext"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </article>
+</div>
+        </article>
+        <div class="a_espacioflotantes"></div>
+        <!--DIV DE ESPACIO INFERIOR-->
+      </section>
+      <!--
+        BTNS FLOTANTES
+    --></div>
+    <!--
+        BTNS FLOTANTES
+    -->
+    <div class="h_btnFlotantes">
+      <div class="h_btnPuntuaciones"></div>
+      <div class="h_btnAvance"></div>
+    </div>
+    <div id="tooltip" class="c_tooltip" hidden >Aquí va el título de la aplicación</div>
+        <div id="flecha_tooltip" class="c_flecha_tooltip" hidden></div> 
+        <input id="inputfiltros" class="c_inputfiltros" onkeypress="return enter(event)" hidden> 
+        <div id="tooltipC" class="c_tooltip" hidden ></div>
+  </body>
+</html>

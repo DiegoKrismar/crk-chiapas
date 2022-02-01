@@ -1,0 +1,720 @@
+@charset "utf-8";
+/*
+==============================================
+CSS BODY
+==============================================
+*/
+.e_bodyiframe{
+	overflow:auto;
+}
+/*
+==============================================
+CSS SECTION
+==============================================
+*/
+.e_section{
+    width: 1024px;
+    margin: auto;
+}
+/*
+==============================================
+CSS SECTION ESTADISTICA
+==============================================
+*/
+/*****POR ALUMNO*****/
+.e_ocultar{
+    display: none;
+}
+.e_icontitle{
+    width: 100%;
+    position: relative;
+    margin: auto;
+    float: left;
+}
+.e_title{
+    padding-left: 60px;
+    font-family: Verdana;
+    font-size: 1.4em;
+    line-height: 2.4em;
+    font-weight: bold;
+    margin-top: 10px;
+    background: url(../img/web_iconestadistica.png) no-repeat;
+    color: #666666;
+}
+.e_opciondesplegar{
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: rgba(0, 0, 0, .07);
+    float: left;
+    cursor: pointer;
+}
+.e_desplegartitle{
+    font-family: Verdana;
+    font-size: 1em;
+    text-indent: 1em;
+    line-height: 2.5em;
+    float: left;
+    color: #666666;
+}
+.e_desplegarimg{
+    width: 40px;
+    height: 100%;
+    float: right;
+    background-image: url(../img/web_btn_desplegarmostrar.png);
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+.e_desplegarimg_press{
+    width: 40px;
+    height: 100%;
+    float: right;
+    background-image: url(../img/web_btn_desplegarocultar.png);
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+.e_titlefiltros{
+    width: 100%;
+    display: table;
+    font-family: Verdana;
+    font-size: 1.2em;
+    font-weight: bold;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #666666;
+}
+/*****FILTRO*****/
+aside{
+    width: 100%;
+    height: auto;
+    background: none;
+}
+.e_filtrosA{
+    width: 100%;
+    float: left;
+}
+.e_btnFiltrocursoopciones{
+   width: 30.7%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .05);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    color: #666666;
+}
+.e_btnFiltrocursoopciones_press{
+   width: 30.7%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .10);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.e_btnFiltrocursoopciones:hover{
+    background-color: rgba(0, 0, 0, .10);
+    font-weight: bold;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.e_btnFiltrogrupoopciones{
+   width: 47%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .05);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    color: #666666;
+}
+.e_btnFiltrogrupoopciones_press{
+   width: 47%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .10);
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.e_btnFiltrogrupoopciones:hover{
+    background-color: rgba(0, 0, 0, .10);
+    font-weight: bold;
+    background-image: url(../img/web_arrowbtnsover.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #666666;
+}
+.e_contFiltros{
+	width: 100%;
+	float: left;
+	display: block;
+}
+.e_filtros{
+    width: 22.5%;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 2%;
+    float: left;
+    position: relative;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    cursor: pointer;
+    border:1px solid #666666;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    color: #666666;
+}
+.e_filtros:hover{
+    font-weight: bold;
+    text-decoration: underline;
+    border:2px solid;
+}
+.e_filtros_press{
+    width: 22.5%;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 2%;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    display: none;
+    font-weight: bold;
+    text-decoration: underline;
+    border:1px solid #666666;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    color: #666666;
+}
+.e_filtrostxt{
+    width: 100%;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    color: #666666;
+}
+.e_filtrostxt_press{
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    text-decoration: underline;
+    color: #666666;
+}
+.e_filtrostxt:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+/*****ALUMNO*****/
+.e_datoscurso{
+	width: 96%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+    margin-left: 2%;
+	float: left;
+}
+.e_nombrecurso{
+	width: 20%;
+	height: 40px;
+	float: left;
+	font-family: Verdana;
+	font-size: 1em;
+    color: #666666;
+    line-height: 2.5em;
+}
+.e_selectnombreprofesor{
+	float: left;
+	border-width: 1px;
+    border-style: solid;
+	outline: 0px;
+	font-family: Verdana;
+	font-size: 1em;
+	text-indent: 0.2em;
+    width: 79.5%;
+	height: 40px;
+    -moz-appearance: none;
+	-webkit-appearance: none;
+ 	appearance: none;
+    border-color: #666666;
+    background-color: transparent;
+}
+/*APARIENCIA DEL SELECT*/
+.e_selectnombreprofesor select{
+ 	-moz-appearance: none;
+ 	-webkit-appearance: none;
+ 	appearance: none;
+}
+/*DESPLEGABLE DEL SELECT*/
+.e_selectnombreprofesor select option{
+	background:#E6E6E6;
+	text-indent:1em;
+}
+/*****TIPO GRÁFICA*****/
+.e_graficacompleta{
+    width: 100%;
+    float: left;
+}
+.e_graficacompletain{
+    width: 100%;
+    float: left;
+    height: 600px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+/*::-webkit-scrollbar { 
+    display: none; 
+}*/
+.e_tipografica1, .e_tipografica2{
+    width: 47%;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    color: #FEF8E0;
+    background: url(../img/web_icon_graficapuntos.png) no-repeat;
+    background-size: contain;
+    background-position: 15px;
+}
+.e_tipografica1{
+    background: url(../img/web_icon_graficapuntos.png) no-repeat;
+    background-size: contain;
+    background-position: 15px;
+}
+.e_tipografica2{
+    background: url(../img/web_icon_graficabarras.png) no-repeat;
+    background-size: contain;
+    background-position: 15px;
+}
+.e_tipografica1_press, .e_tipografica2_press{
+    width: 47%;
+    height: 40px;
+    margin-left: 2%;
+    margin-top: 10px;
+    font-family: Verdana;
+    font-size: 1em;
+    text-align: center;
+    line-height: 2.5em;
+    float: left;
+    cursor: pointer;
+    background-color: #666666;
+    color: #FEF8E0;
+}
+.e_tipografica1_press{
+    background-image: url(../img/web_icon_graficapuntos.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 15px;
+}
+.e_tipografica2_press{
+    background-image: url(../img/web_icon_graficabarras.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 15px;
+}
+.e_tipografica1:hover, .e_tipografica2:hover{
+    background-color: #666666;
+    color: #FEF8E0;
+}
+/*****GRAFICA*****/
+.e_espaciografica{
+    width: 96%;
+    background: #FFFFFF;
+    padding: 0.5%;
+    float: left;
+    margin-top: 15px;
+    margin-left: 2%;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border-width: 3px;
+    border-style: solid;
+}
+/*****MEMBRETADO*****/
+.e_membretado{
+    width: 100%;
+    float: left;
+}
+.e_membretadologo{
+    width: 211px;
+    height: 60px;
+    background: url(../img/web_logokrismarazul.png) no-repeat;
+    background-position: left;
+    background-size: contain;
+    float: left;
+}
+.e_membretadofecha{
+    width: 38%;
+    height: 60px;
+    float: right;
+    text-align: right;
+    font-family: Verdana;
+    font-size: 1.2em;
+    line-height: 3em;
+    padding-right: 2%;
+    color: #666666;
+}
+.e_navegaciongrafica{
+    width: 98%;
+    float: left;
+    margin: 1%;
+}
+.e_ubicacion{
+    height: 20px;
+    font-family: Verdana;
+    margin-top: 5px;
+    margin-bottom: 5px;
+	float: left;
+    font-size: 1em;
+    float: left;
+    font-weight: bold;
+}
+.e_iconArrow{
+    width: 30px;
+    height: 20px;
+    margin-top: 5px;
+    border: none;
+    float: left;
+    margin-bottom: 5px;
+}
+.e_infografica{
+    width: 100%;
+    height: 120px;
+    float: left;
+}
+.e_infograficatxt{
+    width: 40%;
+    height: 100%;
+    font-family: Verdana;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: #666666;
+    float: left;
+}
+/*****DATOS*****/
+.e_infograficadatos{
+    width: 60%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+.e_tabladatos{
+    width: 78%;
+    height: 70%;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    font-family: Verdana;
+    font-size: 1em;
+    border-color: ;
+    border-collapse: collapse;
+    color: #666666;
+}
+tr{
+    border-width: 1px;
+    border-style: solid;
+}
+.e_vacio{
+    width: 60px;
+}
+.e_tablanumeros{
+    text-align: right;
+    padding-right: 0.5em;
+}
+.e_iconimg{
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    border-radius: 50%;
+}
+.e_iconimgin{
+    width: 94%;
+    height: 94%;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    border-radius: 50%;
+    background: #FEF8E0;
+}
+.e_iconimgin2{
+    width: 88%;
+    height: 88%;
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    border-radius: 50%;
+    background: rgba(254, 248, 224, .2);
+}
+.e_avataricon{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+.e_grafica{
+    width: 100%;
+    height: 260px;
+    background: url(../img/web_grafica.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    float: left;
+}
+/*****ICON IMPRIMIR*****/
+.e_imprimirgrafica{
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	float: left;
+}
+.e_imprimirgraficaicon{
+	width: 220px;
+	height: 40px;
+	float: right;
+	margin-right: 1.8%;
+	cursor: pointer;
+    background: url(../img/web_icon_graficaimprimir.png) no-repeat;
+    background-size: contain;
+    background-position: 10px;
+}
+.e_imprimirgraficaicon:hover{
+	background-color: #666666;
+}
+.e_imprimirgraficatxt{
+	width: 60%;
+	margin-left: 65px;
+	margin-top: 10px;
+	font-family: Verdana;
+	font-size: 1em;
+	text-align: center;
+    color: #FEF8E0;
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 1024px){
+/*****SECTION*****/
+.e_section{
+    width: 96%;
+	left: 2%;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 880px 5 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 880px){
+/*****GRAFICA*****/
+.e_infograficatxt{
+    width: 35%;
+    font-size: 1em;
+    font-weight: bold;
+}
+.e_infograficadatos{
+    width: 65%;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 820px GRÁFICA
+==============================================
+*/
+@media only screen and (max-width: 820px){
+.e_graficacompletain{
+    height: 700px;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 760px 4 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 760px){
+.e_btnFiltrocursoopciones{
+    width: 96%;
+}
+.e_btnFiltrocursoopciones_press{
+   width: 96%;
+}
+.e_btnFiltrogrupoopciones{
+    width: 96%;
+}
+.e_btnFiltrogrupoopciones_press{
+   width: 96%;
+}
+.e_nombrecurso{
+	width: 100%;
+	height: 25px;
+	text-indent: 0em;
+    line-height: 1em;
+}
+.e_selectnombreprofesor{
+    width: 100%;
+    color: #666666;
+}
+/*****TIPO GRÁFICA*****/
+.e_tipografica1, .e_tipografica2{
+    width: 96%;
+    height: 40px;
+    margin-left: 2%;
+}
+.e_tipografica1_press, .e_tipografica2_press{
+    width: 96%;
+    height: 40px;
+    margin-left: 2%;
+}
+.e_imprimirgraficaicon{
+	width: 96.4%;
+	margin-right: 1.8%;
+    margin-right: 1.8%;
+}
+.e_imprimirgraficatxt{
+	margin-left: 25%;
+}
+/*****GRAFICA*****/
+.e_infografica{
+    height: 170px;
+}
+.e_infograficatxt{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+.e_infograficadatos{
+    width: 100%;
+    height: 120px;
+}
+.e_iconimg{
+    left: 4%;
+}
+.e_vacio{
+    width: 70px;
+}
+.e_graficacompletain{
+    height: 720px;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 620px 3 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 620px){
+.e_filtros{
+    width: 47%;
+    margin-top: 10px;
+    margin-left: 2%;
+}
+.e_filtros_press{
+    width: 47%;
+    margin-top: 10px;
+    margin-left: 2%;
+}
+/*****GRAFICA*****/
+.e_iconimg{
+    display: none;
+}
+.e_tabladatos{
+    width: 88%;
+}
+.e_vacio{
+    display: none;
+}
+.e_tipografica1, .e_tipografica2{
+    width: 98%;
+}
+.e_tipografica1_press, .e_tipografica2_press{
+    width: 98%;
+}
+.e_graficacompletain{
+    height: 740px;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 460px 2 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 460px){
+/*****GRAFICA*****/
+.e_infograficadatos{
+    height: 180px;
+}
+.e_infografica{
+    height: 240px;
+}
+.e_graficacompletain {
+    height: 820px;
+}
+/*****MEMBRETADO*****/
+.e_membretado{
+    width: 100%;
+    float: left;
+}
+.e_membretadologo{
+    width: 100%;
+    background-position: center;
+}
+.e_membretadofecha{
+    width: 100%;
+    height: 30px;
+    line-height: 1.6em;
+    text-align: center;
+}
+}

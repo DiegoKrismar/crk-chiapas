@@ -1,0 +1,583 @@
+@charset "utf-8";
+/*
+==============================================
+CSS BODY
+==============================================
+*/
+.u_bodyiframe{
+	overflow:auto;
+}
+/*
+==============================================
+CSS SECTION
+==============================================
+*/
+.u_section{
+    width: 1024px;
+    margin: auto;
+}
+/*
+==============================================
+CSS SECTION CONFIGURACIÓN
+==============================================
+*/
+/*****INFO DE NAVEGACIÓN*****/
+.u_icontitle{
+    width: 100%;
+    position: relative;
+    margin: auto;
+    float: left;
+}
+.u_title{
+    width: 120px;
+    padding-left: 20px;
+    font-family: Verdana;
+    font-size: 1.4em;
+    line-height: 2.4em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    background: url(../img/web_iconusuario.png) no-repeat;
+    color: #666666;
+    float: left;
+}
+.u_cerrarsesion{
+    width: 110px;
+    float: right;
+    font-family: Verdana;
+    font-size: 1em;
+    line-height: 3.4em;
+    cursor: pointer;
+    color: #666666;
+    margin-top: 10px;
+}
+.u_cerrarsesion:hover{
+    text-decoration: underline;
+}
+/*****IMAGEN DE USUARIO*****/
+.u_imagen{
+    width: 22%;
+    float: left;
+}
+.u_imagenconte{
+    width: 180px;
+    height: 180px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border-width: 3px;
+    border-style: solid;
+    position: relative;
+}
+.u_imagenimg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.u_iconcambiarimg{
+    width: 100%;
+    height: 30px;
+    font-family: Verdana;
+    font-size: 1em;
+    line-height: 2em;
+    text-align: center;
+    position: absolute;
+    bottom: 0%;
+    cursor: pointer;
+    color: #FEF8E0;
+}
+.u_iconcambiarimg:hover{
+    text-decoration: underline;
+}
+.u_form-control{
+    width: 100%;
+    height: 28px;
+    position: absolute;
+    font-family: Verdana;
+    font-size: 0.6em;
+	text-align: center;
+	line-height:2em;
+    border: 0px;
+    margin-top: 10px;
+    bottom: 30px;
+    display: none;
+    color: #FEF8E0;
+}
+.u_btn-file {
+    position: absolute;
+    overflow: hidden;
+}
+.u_btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    font-size: 10px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: inherit;
+    display: block;
+}
+input[readonly] {
+    cursor: text !important;
+}
+/*****DATOS DE USUARIO*****/
+.u_datos{
+    width: 77%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    float: left;
+}
+.u_datosusuario{
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	float: left;
+}
+.u_nombrecurso{
+    color: #666666;
+}
+.u_inputnombrecurso{
+	border-color: #666666;
+    color: #808080;
+}
+.u_nombreusuario{
+	width: 17%;
+	height: 40px;
+	float: left;
+	font-family: Verdana;
+	font-size: 1em;
+    padding-left: 1em;
+    color: #666666;
+}
+.u_inputnombreusuario{
+	width: 80%;
+	height: 40px;
+    float: left;
+	border-width: 1px;
+	background: transparent;
+	outline: 0px;
+	font-family: Verdana;
+	font-size: 1em;
+	text-indent: 0.2em;
+    text-indent: 1em;
+    color: #666666;
+    border-color: #666666;
+}
+/*****CAMBIAR CONTRASEÑA*****/
+.u_namecontrasena{
+	width: 17%;
+	height: 40px;
+	float: left;
+	font-family: Verdana;
+	font-size: 1em;
+    padding-left: 1em;
+    color: #666666;
+}
+.u_inputcontrasena{
+	width: 80%;
+	height: 40px;
+    float: left;
+	border-width: 1px;
+	background: transparent;
+	outline: 0px;
+	font-family: Verdana;
+	font-size: 1em;
+	text-indent: 0.2em;
+    text-indent: 1em;
+    border-color: #666666;
+    color: #666666;
+}
+.u_datoscontrasena{
+	width: 50%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	float: left;
+}
+.u_nombrecontrasena{
+	width: 30%;
+	height: 40px;
+	float: left;
+	font-family: Verdana;
+	font-size: 1em;
+    padding-left: 1em;
+    color: #666666;
+}
+.u_inputnombrecontrasena{
+	width: 63.5%;
+	height: 40px;
+    float: left;
+	border-width: 1px;
+	background: transparent;
+	outline: 0px;
+	font-family: Verdana;
+	font-size: 1em;
+    text-indent: 1em;
+    border-color: #666666;
+    color: #666666;
+}
+.u_contrasenamensaje{
+	width: 98%;
+	height: 40px;
+	float: left;
+	font-family: Verdana;
+	font-size: 1em;
+    text-align: center;
+    line-height: 2.4em;
+    font-weight: bold;
+}
+/*****CHECK MOSTRAR CONTRASEÑA*****/
+.u_inputcheck1, .u_inputcheck2, .u_inputcheck3, .u_inputcheck4{
+    height: 40px;
+	float: left;
+    font-family: Verdana;
+	font-size: 1em;
+    text-align: right;
+    line-height: 2.4em;
+    color: #666666;
+}
+.u_inputcheck1{
+	width: 99%;
+}
+.u_inputcheck2{
+    display: none;
+}
+.u_inputcheck3{
+	width: 49%;
+}
+.u_inputcheck4{
+	width: 49.5%;
+}
+/*****PERSONALIZACIÓN*****/
+.u_personalizacion{
+    width: 100%;
+    float: left;
+}
+.u_eligecolor{
+    width: 50%;
+    float: left;
+}
+.u_eligecolortxt{
+    width: 100%;
+    height: 40px;
+    float: left;
+    font-family: Verdana;
+	font-size: 1em;
+	text-indent: 0.2em;
+    text-align: center;
+    line-height: 2.4em;
+    color: #666666;
+}
+.u_eligecolorbox{
+    width: 100%;
+    float: left;
+}
+.u_eligecoloropciones{
+    width: 25%;
+    float: left;
+    position: relative;
+}
+.u_colores1, .u_colores2, .u_colores3, .u_colores4, .u_colores5, .u_colores6, .u_colores7, .u_colores8{
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.u_colores1:hover, .u_colores2:hover, .u_colores3:hover, .u_colores4:hover, .u_colores5:hover, .u_colores6:hover, .u_colores7:hover, .u_colores8:hover{
+    -webkit-filter: brightness(1.3);
+    opacity: .7;
+}
+.u_colores1_press, .u_colores2_press, .u_colores3_press, .u_colores4_press, .u_colores5_press, .u_colores6_press, .u_colores7_press, .u_colores8_press{
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #666666;
+}
+.u_vistaprevia{
+    width: 50%;
+    float: left;
+}
+.u_vistapreviatxt{
+    width: 100%;
+    height: 40px;
+    float: left;
+    font-family: Verdana;
+	font-size: 1em;
+	text-indent: 0.2em;
+    text-align: center;
+    line-height: 2.4em;
+    color: #666666;
+}
+.u_vistapreviaimagen{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.u_vistapreviaimg{
+    width: 373px;
+    height: 218px;
+    margin: auto;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .5);
+}
+/*****ICON GUARDAR CAMBIOS*****/
+.u_guardarcambios{
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	float: left;
+}
+.u_guardarcambiosicon{
+	width: 200px;
+	height: 40px;
+	float: right;
+	margin-right: 1.5%;
+	cursor: pointer;
+}
+.u_guardarcambiosicon:hover{
+	background-color: #666666;
+}
+.u_guardarcambiostxt{
+	width: 80%;
+	margin: auto;
+	margin-top: 10px;
+	font-family: Verdana;
+	font-size: 1em;
+	text-align: center;
+    color: #FEF8E0;
+}
+.u_titleopciongrupo{
+    width: 100%;
+    display: table;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.u_titlegrupotxt{
+    height: 30px;
+    float: left;
+    font-family: Verdana;
+    font-size: 1.2em;
+    font-weight: bold;
+    float: left;
+    line-height: 1.6em;
+    margin-left: 15px;
+    color: #666666;
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 1024px){
+/*****SECTION*****/
+.u_section{
+    width: 96%;
+	left: 2%;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 880px 5 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 880px){
+/*****MENU DE BOTONES*****/
+.u_menuBtnIn{
+    width: 86%;
+}
+/*****INFO DE USUARIO*****/
+.u_imagen{
+    width: 28%;
+}
+/*****DATOS USUARIO*****/
+.u_datos{
+    width: 72%;
+    padding-top: 0px;
+    padding-bottom: 00px;
+}
+.u_datosusuario{
+	width: 100%;
+}
+.u_nombreusuario{
+	width: 78%;
+    height: 22px;
+}
+.u_inputnombreusuario{
+	width: 100%;
+}
+/*****PERSONALIZACIÓN*****/
+.u_colores1, .u_colores2, .u_colores3, .u_colores4, .u_colores5, .u_colores6, .u_colores7, .u_colores8{
+    width: 80px;
+    height: 80px;
+}
+.u_colores1_press, .u_colores2_press, .u_colores3_press, .u_colores4_press, .u_colores5_press, .u_colores6_press, .u_colores7_press, .u_colores8_press{
+    width: 80px;
+    height: 80px;
+}
+.u_vistapreviaimg{
+    width: 338px;
+    height: 198px;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 760px 4 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 760px){
+/*****AGREGAR CURSO*****/
+.u_nombreusuario{
+	width: 30%;
+}
+.u_inputnombreusuario{
+	width: 100%;
+}
+/*****INFO DE USUARIO*****/
+.u_imagen{
+    width: 34%;
+}
+/*****AGREGAR CURSO*****/
+.u_datos{
+    width: 66%;
+}
+/*****PERSONALIZACIÓN*****/
+.u_eligecolor{
+    width: 100%;
+    float: left;
+}
+.u_eligecoloropciones{
+    width: 16.66%;
+}
+.u_colores1, .u_colores2, .u_colores3, .u_colores4, .u_colores5, .u_colores6, .u_colores7, .u_colores8{
+    width: 70px;
+    height: 70px;
+}
+.u_colores1_press, .u_colores2_press, .u_colores3_press, .u_colores4_press, .u_colores5_press, .u_colores6_press, .u_colores7_press, .u_colores8_press{
+    width: 70px;
+    height: 70px;
+}
+.u_vistaprevia{
+    width: 100%;
+}
+.u_vistapreviaimg{
+    width: 304px;
+    height: 178px;
+}
+/*****DATOS CONTRASEÑA*****/
+.u_nombrecontrasena{
+	width: 96%;
+}
+.u_inputnombrecontrasena{
+	width: 100%;
+}
+.u_datoscontrasena{
+	width: 100%;
+}
+.u_namecontrasena{
+	width: 98%;
+}
+.u_inputcontrasena{
+	width: 100%;
+}
+/*****CHECK MOSTRAR CONTRASEÑA*****/
+.u_inputcheck1{
+	width: 100%;
+}
+.u_inputcheck2{
+    width: 100%;
+    display: block;
+}
+.u_inputcheck3{
+	width: 49%;
+    display: none;
+}
+.u_inputcheck4{
+	width:100%;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 620px 3 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 620px){
+/*****IMAGEN USUARIO*****/
+.u_imagen{
+    width: 100%;
+}
+.u_imagenconte{
+    margin: auto;
+}
+/*****DATOS USUARIO*****/
+.u_datos{
+    width: 100%;
+}
+.u_nombreusuario{
+	width: 100%;
+	height: 25px;
+	text-indent: 0em;
+}
+.u_inputnombreusuario{
+	width: 100%;
+}
+/*****PERSONALIZACIÓN*****/
+.u_eligecoloropciones{
+    width: 20%;
+}
+}
+/*
+==============================================
+CSS MEDIA QUIERIES MAX-WIDTH : 460px 2 COLUMNAS
+==============================================
+*/
+@media only screen and (max-width: 460px){
+/*****PERSONALIZACIÓN*****/
+.u_eligecoloropciones{
+    width: 20%;
+}
+.u_colores1, .u_colores2, .u_colores3, .u_colores4, .u_colores5, .u_colores6, .u_colores7, .u_colores8{
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.u_vistapreviaimg{
+    width: 230px;
+    height: 135px;
+}
+.u_colores1_press, .u_colores2_press, .u_colores3_press, .u_colores4_press, .u_colores5_press, .u_colores6_press, .u_colores7_press, .u_colores8_press{
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.u_guardarcambiosicon{
+	float: none;
+	margin-right: none;
+    margin: auto;
+}
+.u_guardarcambiostxt{
+	padding-top: 10px;
+}
+/*****INFO DE NAVEGACIÓN*****/
+.u_cerrarsesion{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 3em;
+    font-size: 1.2em;
+    margin-top: 0px;
+}
+}
