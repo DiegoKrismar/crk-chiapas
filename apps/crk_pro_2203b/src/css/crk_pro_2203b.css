@@ -10,7 +10,7 @@ CSS
 ==============================================
 */
 .d_pxbpreviewcontein{
-    background-image: url(../img/crk_bloques_rutina_pattern.png);
+    background-image: url(../../../src/img/crk_bloques_rutina_pattern.png);
     background-repeat: repeat;
     background-position: center;
     background-size: auto;
@@ -20,7 +20,7 @@ CSS
     height: 20%;
     position: absolute;
     top: 3%;
-    background-image: url(../img/crk_bloques_rutina_led.png);
+    background-image: url(../../../src/img/crk_bloques_rutina_led.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-repeat: no-repeat;
@@ -54,7 +54,7 @@ CSS
     height: 20%;
     position: absolute;
     right: 5%;
-    background-image: url(../img/crk_bloques_rutina_rgb.png);
+    background-image: url(../../../src/img/crk_bloques_rutina_rgb.png);
     background-size: contain;
     background-repeat: no-repeat;
     transform: rotate(90deg);
@@ -73,7 +73,7 @@ CSS
     height: 20%;
     position: absolute;
     bottom: 38%;
-    background-image: url(../img/crk_bloques_rutina_buzzer.png);
+    background-image: url(../../../src/img/crk_bloques_rutina_buzzer.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@ CSS
     height: 20%;
     position: absolute;
     bottom: 3%;
-    background-image: url(../img/crk_bloques_rutina_button.png);
+    background-image: url(../../../src/img/crk_bloques_rutina_button.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-repeat: no-repeat;
@@ -115,7 +115,7 @@ CSS
     position: absolute;
     top: 27%;
     left: 0%;
-    background-image: url(../img/crk_bloques_rutina_shield.png);
+    background-image: url(../../../src/img/crk_bloques_rutina_shield.png);
     background-size: contain;
     background-repeat: no-repeat;
 }

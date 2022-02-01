@@ -325,7 +325,7 @@ $(document).on("click", "#validar", function () {
 			funcionalidadPreview();
 		}, 3000);
 		//Bloquear funcionalidades de uso de la DB
-		switchDBuse();
+		//switchDBuse();
 	} else {
 		$("#d_pxbviewbloqueswarning").empty();
 		$("#d_pxbviewbloqueswarning").append(
@@ -2971,7 +2971,9 @@ function adjustInterface() {
 	$("#editarBorrarProyecto").attr("onclick", "showEditDelete()");
 
 	//Revisar el dominio
-	checkDomain(crk_Domain);
+	//checkDomain(crk_Domain);
+	switchDBuse();
+
 
 	//Draggable de la ventana de confi de elementos
 	$(".d_pxbbloquespopupin").draggable({
