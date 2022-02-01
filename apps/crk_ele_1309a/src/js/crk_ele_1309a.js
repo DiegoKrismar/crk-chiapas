@@ -170,10 +170,10 @@ var allSections = [
             //imagen
             tipo: "om", 
             pregunta: "¿Cuál es el símbolo universal del LED?", 
-            respuesta: IMGPREFIJO+"img01.png" , 
-            distractor1:  IMGPREFIJO+"img02.png",
-            distractor2:  IMGPREFIJO+"img03.png",
-            distractor3:  IMGPREFIJO+"img04.png"}, 
+            respuesta: "img/d_respuesta_led" , 
+            distractor1:  "img/d_respuesta_interruptor",
+            distractor2:  "img/d_respuesta_resistencia",
+            distractor3:  "img/d_respuesta_potenciometro"}, 
         {
             tipo: "om", 
             pregunta: "¿Por qué el LED tiene una pata más grande que otra?", 
