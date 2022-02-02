@@ -12,7 +12,7 @@ const crk = {
         materias: [
           {
             id: 12469,
-            n: "Rob\u00f3tica 1",
+            n: "Rob\u00f3tica",
             position: 1,
             tipo: "materia",
             bloques: [
@@ -35,6 +35,14 @@ const crk = {
                         c: "lectura",
                         pc: "-rob\u00f3tica-manual-contenido-Isaac Asimov-m\u00e1quina-robot-hermanos Capek-robota-trabajo-forzado",
                         o: "- Conoce el contenido del bloque de rob\u00f3tica.",
+                      },
+                      {
+                        i: "9071",
+                        n: "Las piezas en tu kit",
+                        p: "crk_rob_1100a",
+                        c: "lectura",
+                        pc: "-rob\u00f3tica-kit-piezas-barra-flexible-engrane-uni\u00f3n-tope-flecha-hept\u00e1gono-polea-palito-popote-el\u00e1stico-cuerda-canica-bal\u00edn-LED-rojo-verde-RGB-camale\u00f3n-bot\u00f3n-zumbador-resistencia-eliminador-bater\u00eda-Ohms-interruptor-pontenci\u00f3metro-cable-fotorresistencia",
+                        o: "-\tConoce las piezas que contiene tu kit de CRK.",
                       },
                       {
                         i: "8909",
@@ -421,6 +429,14 @@ const crk = {
                     tipo: "leccion",
                     apps: [
                       {
+                        i: "9072",
+                        n: "Manual. Introducci\u00f3n a la electr\u00f3nica",
+                        p: "crk_ele_1300",
+                        c: "lectura",
+                        pc: "-rob\u00f3tica-robot-electr\u00f3nica-LED-resistencia-protoboard-LED-interruptores-botones-bot\u00f3n-push button-potenci\u00f3metro-fotorresistencia-zumbador-buzzer\n",
+                        o: "-\tConoce el contenido del bloque de electr\u00f3nica de CRK.\n",
+                      },
+                      {
                         i: "8832",
                         n: "1. Corriente el\u00e9ctrica",
                         p: "crk_ele_1301a",
@@ -630,6 +646,22 @@ const crk = {
                       },
                     ],
                   },
+                  {
+                    id: 96491,
+                    n: "Evaluaci\u00f3n",
+                    position: 8,
+                    tipo: "leccion",
+                    apps: [
+                      {
+                        i: "8941",
+                        n: "\u00bfQu\u00e9 tanto sabes de electr\u00f3nica b\u00e1sica?",
+                        p: "crk_ele_1309a",
+                        c: "evaluacionC",
+                        pc: "-evaluaci\u00f3n-rob\u00f3tica-electr\u00f3nica-diodo-led-resistencia-potenci\u00f3metro-fotorresistencia-buzzer-zumbador-neutr\u00f3n-prot\u00f3n-electr\u00f3n-materia-\u00e1tomo- carga-corriente el\u00e9ctrica-esquema-diagrama pict\u00f3rico-s\u00edmbolo-aislante- conductor-semiconductor-bot\u00f3n-interruptor-corriente directa-alterna-bater\u00eda-enchufe-cobre-madera-ohm",
+                        o: "Describe qu\u00e9 es la corriente el\u00e9ctrica.\n- Identifica los principales componentes de electr\u00f3nica b\u00e1sica.\n- Reconoce los s\u00edmbolos universales de los componentes de la electr\u00f3nica base.\n",
+                      },
+                    ],
+                  },
                 ],
               },
               {
@@ -668,7 +700,7 @@ const crk = {
             status: 0,
           },
         ],
-      },
+      }
     ],
   },
 };
