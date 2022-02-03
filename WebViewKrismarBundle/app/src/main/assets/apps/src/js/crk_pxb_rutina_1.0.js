@@ -347,7 +347,7 @@ $(document).on("click", ".d_pxbpreviewtitleclose", function () {
 	$("#d_pxbviewbloqueswarning").css("display", "block");
 	vistaPrevia = false;
 	closePreview();
-	switchDBuse();
+	//switchDBuse();
 });
 
 function closePreview() {
