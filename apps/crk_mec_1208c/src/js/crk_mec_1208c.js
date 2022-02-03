@@ -54,15 +54,7 @@ $(window).resize(function(){
     */
     resizeMenu2d();//Resize menu 2d
 });
-$(window).on("orientationchange",function(event){
-    /*
-	* NOMBRE: orientationchange.
-	* UTILIDAD: Detecta cambio de orientacion del dispositivo
-	* ENTRADAS: Ninguno.
-	* SALIDAS: Ninguna.
-    */
-    resizeMenu2d();//Resize menu 2d
-})
+$(window).on("orientationchange",function(event){})
 $(window).on('load',function(){});
 function addClones(){
     /*
@@ -574,15 +566,18 @@ function resizeMenu2d(){
     * VARIABLES: Ninguna
     */
     var setTime = setTimeout(function(){
+        $(".d_footermenu2din").css({"width":"100%","left":"0%"});
+        $(".d_footermenu2din").css({"height":"100%","top":"0%"});
+        var getWidth = $(".d_footermenu2d").outerWidth();
         var getHeight = $(".d_footermenu2d").outerHeight();
-        var getWidth = $(".d_footermenu2din").outerWidth();
-        
-        if(getWidth/2 <= getHeight){
-            $(".d_footermenu2din").css({"height":getWidth/2,"top":"calc(50% - "+(getWidth/4)+"px)"});
+        var getWidthin = $(".d_footermenu2din").outerWidth();
+        var getHeightin = $(".d_footermenu2din").outerHeight();
+        if(getWidthin/2 <= getHeight){
+            $(".d_footermenu2din").css({"height":getWidthin/2,"top":"calc(50% - "+(getWidthin/4)+"px)"});
         }else{
-            $(".d_footermenu2din").css({"height":"100%","top":"0%"});
+            $(".d_footermenu2din").css({"width":getHeight*2,"left":((getWidth-(getHeight*2))/2)-10});
         }
-    },100);
+    },10);
 }
 var girDirection;//Almacena btn que se presiona
 function girMesh(){
