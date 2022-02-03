@@ -1065,12 +1065,12 @@ function getDistance(intersectsPoint,getObject){
         * SALIDAS: Ninguna.
         */
         //if((coordXval.includes(posX) === true && coordZval.includes(posZ) === true) || (coordXvalenergy.includes(posX) === true && coordZvalenergy.includes(posZ) === true) || (coordXvaldigital.includes(posX) === true && coordZvaldigital.includes(posZ) === true) || (coordXvalanalog.includes(posX) === true && coordZvalanalog.includes(posZ) === true)){
-        if((coordXval.includes(posX) === true && coordZval.includes(posZ) === true) || (coordXvalenergy.includes(posX) === true && coordZvalenergy.includes(posZ) === true)){
+        //if((coordXval.includes(posX) === true && coordZval.includes(posZ) === true) || (coordXvalenergy.includes(posX) === true && coordZvalenergy.includes(posZ) === true)){
             removeIndicador();//Elimina indicador de objeto
             getObject.position.x = posX;//Nueva posision del objeto
             getObject.updateMatrixWorld();//Actualiza posicion el objeto
             addIndicador(getObject);//Agrega indicador de objetos
-        }
+        //}
         //addLimitsobj(getObject);//Agrega los limites del objeto, para evitar encimarlos
     }
     function adjustZ(){
@@ -1081,12 +1081,12 @@ function getDistance(intersectsPoint,getObject){
         * SALIDAS: Ninguna.
         */
         //if((coordZval.includes(posZ) === true && coordXval.includes(posX) === true) || (coordZvalenergy.includes(posZ) === true && coordXvalenergy.includes(posX) === true) || (coordZvaldigital.includes(posZ) === true && coordXvaldigital.includes(posX) === true) || (coordZvalanalog.includes(posZ) === true && coordXvalanalog.includes(posX) === true)){
-        if((coordZval.includes(posZ) === true && coordXval.includes(posX) === true) || (coordZvalenergy.includes(posZ) === true && coordXvalenergy.includes(posX) === true)){
+        //if((coordZval.includes(posZ) === true && coordXval.includes(posX) === true) || (coordZvalenergy.includes(posZ) === true && coordXvalenergy.includes(posX) === true)){
             removeIndicador();//Elimina indicador de objeto
             getObject.position.z = posZ;//Nueva posision del objeto
             getObject.updateMatrixWorld();//Actualiza posicion el objeto
             addIndicador(getObject);//Agrega indicador de objetos
-        }
+        //}
         //addLimitsobj(getObject);//Agrega los limites del objeto, para evitar encimarlos
     }
 }

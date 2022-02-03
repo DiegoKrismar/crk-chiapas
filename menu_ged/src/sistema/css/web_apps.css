@@ -603,6 +603,9 @@ CSS ASIDE FILTROS
     cursor: pointer;
 
 }
+.a_btnFiltroSimulador{
+    width: 90.5%;
+}
 
 .a_btnFiltroAplicacion{
 
@@ -678,6 +681,9 @@ CSS ASIDE FILTROS
 
     background-color: #666666;
 
+}
+.a_btnFiltroSimulador_press{
+    width: 90.5%;
 }
 
 .a_btnFiltroAplicacion_press{
@@ -2310,7 +2316,7 @@ CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
 
 .a_btnFiltroAplicacion, .a_btnFiltroLectura, .a_btnFiltroVideo, .a_btnFiltroEvaluacion,.a_btnFiltroSimulador{
 
-    width: 22.5%;
+    width: 17.5%;
 
     margin-left: 2%;
 
@@ -2327,6 +2333,8 @@ CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
     margin-top: 10px;
 
 }
+    
+
 
 .a_limpiarfiltrosbtn{
 

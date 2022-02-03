@@ -618,6 +618,9 @@ aside {
 
     cursor: pointer;
 }
+.c_btnFiltroSimulador {
+    width: 90.5%;
+}
 .c_btnFiltroAplicacion {
     background-image: url(../img/web_iconaplicacion.png);
     background-repeat: no-repeat;
@@ -687,6 +690,7 @@ aside {
     background-position: center;
 }
 .c_btnFiltroSimulador_press {
+    width: 90.5%;
     background-image: url(../img/ind_simuladorcrk.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -766,6 +770,12 @@ aside {
     position: relative;
     cursor: pointer;
     border-radius: 10px 10px 0px 0px;
+}
+.c_btn_press > .c_btnIn{
+    animation: pulseGlow 1.8s ease-in-out infinite;
+}
+.c_btn_press > .c_btnIn > .c_btnIcon{
+    box-shadow: 0 0.1rem 0.1rem 0.1rem #E46A58;
 }
 /*****SVG*****/
 
@@ -2056,6 +2066,16 @@ CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
         margin-top: 0px;
         margin-right: 0px;
     }
+    .c_btnFiltroAplicacion, .c_btnFiltroLectura, .c_btnFiltroVideo, .c_btnFiltroEvaluacion, .c_btnFiltroSimulador {
+        width: 17.5%;
+        margin-left: 2%;
+        margin-top: 10px;
+    }
+    .c_btnFiltroAplicacion_press, .c_btnFiltroLectura_press, .c_btnFiltroVideo_press, .c_btnFiltroEvaluacion_press, .c_btnFiltroSimulador_press {
+        width: 17.5%;
+        margin-left: 2%;
+        margin-top: 10px;
+    }
 }
 /*
 
@@ -2371,6 +2391,17 @@ CSS KEYFRAMES ANIMACIÓN
     }
     100% {
         -webkit-transform: rotate(0deg);
+    }
+}
+@-webkit-keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.075);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 /*

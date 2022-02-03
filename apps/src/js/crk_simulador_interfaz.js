@@ -153,7 +153,7 @@ function setRenderer(){
     altoSet = $("#d_contegrlcanvas").height();//Alto del area de contenido
     /**************/
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){//Es dispositivo
-        renderer = new THREE.WebGLRenderer({antialias:false,powerPreference:"low-power"});
+        renderer = new THREE.WebGLRenderer({precision:"lowp",antialias:false,powerPreference:"low-power"});
         //renderer = new THREE.WebGLRenderer({antialias:false,powerPreference:"low-power"});
     }else{//Es PC
         //renderer = new THREE.WebGLRenderer({antialias:false,powerPreference:"low-power"});
@@ -219,12 +219,13 @@ function setControl(){
     * VARIABLES: Ninguna
     */
     controls = new THREE.OrbitControls(camera, labelRenderer.domElement);
-    controls.maxDistance = 600;
+    controls.maxDistance = 100;
     controls.minDistance = 8;
     if(getType === "armado" || getType === "physi" || getType === "instructivo"){//Acciones de physi
         controls.enablePan = false;
     }
     if(getType === "pxb"){
+        controls.maxDistance = 25;
         controls.maxPolarAngle = 1.1;
     }
     controls.update();
@@ -237,7 +238,8 @@ function setGrid(){
 	* SALIDAS: Ninguna.
     * VARIABLES: Ninguna
     */
-    grid = new THREE.GridHelper(1000, 100, "#c8c8c8", "#c8c8c8");
+    grid = new THREE.GridHelper(100, 50, "#c8c8c8", "#c8c8c8");
+    //grid = new THREE.PolarGridHelper( 100, 64, 8, 64 );
     grid.position.y = gridPosy;
     grid.name = "grl gridHelper";
     scene.add(grid);
