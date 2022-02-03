@@ -29,6 +29,20 @@ const validate = localStorage.getItem('validate'); //Buscar la bandera de valida
 const IP = "../apps/"; //Path de las apps
 
 const titleNomenclatura = [
+    ["Manual de alumno", "crk_help_3101a"],
+    ["Manual de profesor", "crk_help_4101a"],
+    ["Manual de administrador", "crk_help_5101a"],
+    ["Manual de súper administrador", "crk_help_6101a"],
+    ["Video de introducción", "crk_help_3102b"],
+    ["Video general", "crk_help_3102c"],
+    ["Video crear o modificar un grupo", "crk_help_5103a"],
+    ["Video transferir alumnos de un grupo a otro", "crk_help_5103b"],
+    ["Video subir usuarios", "crk_help_6102a"],
+    ["Video crear o modificar un curso", "crk_help_6103a"],
+    ["Video administrar cursos", "crk_help_6103b"],
+   
+   
+    
     ["Manual. Introducción a la robótica", "crk_rob_1100"],
     ["Contenido del Kit", "crk_rob_1100a"],
     ["1. ¿Quién es Aztek?", "crk_rob_1101"],
