@@ -438,10 +438,10 @@ CSS HEADER
 
 }
 
-.h_btnPrincipal:hover .c_tooltip, .h_btnConfiguracion_press:hover .c_tooltip, .h_btnEstadisticas_press:hover .c_tooltip, .h_btnUsuario_press:hover .c_tooltip,.h_btnSalir_press:hover .c_tooltip{
+.h_btnPrincipal:hover .c_tooltip, .h_btnConfiguracion_press:hover .c_tooltip, .h_btnEstadisticas_press:hover .c_tooltip, .h_btnUsuario_press:hover .c_tooltip,.h_btnSalir:hover .c_tooltip{
     visibility: visible;
 }
-.h_btnPrincipal  .c_tooltip, .h_btnConfiguracion_press  .c_tooltip, .h_btnEstadisticas_press  .c_tooltip, .h_btnUsuario_press  .c_tooltip, .h_btnSalir_press  .c_tooltip{
+.h_btnPrincipal  .c_tooltip, .h_btnConfiguracion_press  .c_tooltip, .h_btnEstadisticas_press  .c_tooltip, .h_btnUsuario_press  .c_tooltip, .h_btnSalir  .c_tooltip{
     position: absolute;
     top: 50px;
     display: flex;
@@ -682,6 +682,10 @@ CSS HEADER
     background: url(../img/web_btnsalir.png), url(../img/web_btnsalirmin.png);
     background-repeat: no-repeat, no-repeat;
     background-size: contain;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 .h_btnSalir_press{
     width: 84px;
@@ -693,10 +697,7 @@ CSS HEADER
     background-repeat: no-repeat, no-repeat;
     background-size: contain;
     
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    
 }
 .h_btnPrincipal:hover, .h_btnUsuario:hover, .h_btnEstadisticas:hover, .h_btnConfiguracion:hover, .h_btnSalir:hover{
     background-color: #666666;
