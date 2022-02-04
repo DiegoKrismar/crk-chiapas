@@ -199,7 +199,6 @@ function mostrarApps() {
           element.c +
           '.png">' +
           "</div>" +
-          '<input type="checkbox" class="c_checkbox" hidden onclick="SeleccionarApp(this)">' +
           "</div>";
       } else {
         miniatura = element.p;
@@ -241,7 +240,6 @@ function mostrarApps() {
           element.c +
           '.png">' +
           "</div>" +
-          '<input type="checkbox" class="c_checkbox" hidden onclick="SeleccionarApp(this)">' +
           "</div>";
       }
     }
@@ -389,10 +387,6 @@ function generarMenu(divClik) {
     "</div>" +
     "</div>" +
     '<div class="a_btnPlay" onclick="abrirVentana(' +
-    $id +
-    "," +
-    $boton +
-    "," +
     $prefijo +
     ')"></div>' +
     "</div>";
@@ -408,60 +402,6 @@ function generarMenu(divClik) {
 
 /*INICIO FUNCIONES SOBRE EL CONTENEDOR DE LA APLICACION */
 
-function abrirVentana2($id, $botonV, $prefijo) {
-  /*
-   * NOMBRE: abrirVentana
-   * UTILIDAD:  Correr la aplicación de la cual se desplego su menú
-   * ENTRADAS: $id de la aplicación
-   * SALIDAS:
-   * NOTA : PUEDE SER UNA FUNCION GENERAL USADA EN MAS LUGARES
-   * FECHA ULTIMA MODIFICACIÓN: 5 DE FEBRERO 2019
-   */
-  var dispositivo = navigator.userAgent.toLowerCase();
-  //if( dispositivo.search(/iphone|ipod|ipad|android/) > -1 ){
-  //      var win = window.open(IP+"siteApps/cargarApp/"+$id, '_blank');
-  //  }
-  //else{
-  //obtenemos la pagina que queremos cargar en la ventana y el titulo
-  var strPagina = IP + "index.php/aplicaciones/load_app/" + $id;
-  //var strPagina = IP + "aplicacion_sin_log/cargarApp/" + $id,
-  strTitulo = $nombre;
-  //creamos la nueva ventana para mostrar el contenido y la capa para el titulo
-  var $objVentana = $('<div id="ventana" class="clsVentana">');
-  //creamos la capa que va a mostrar el contenido
-  var $objVentanaContenido = $('<div class="clsVentanaContenido">');
-  //agregamos un iframe y en el source colocamos la pagina que queremos cargar
-  $objVentanaContenido.append('<iframe id="appAct" src="' + strPagina + '">');
-  //agregamos la capa de contenido a la ventana
-  $objVentana.append($objVentanaContenido);
-  //creamos el overlay con sus propiedades css y lo agregamos al body
-  //$pref=$("#btn"+$botonV).attr("prefijo");
-  /*console.log("Cargo...El prefijo de la aplicación a reproducir es: " + $pref);
-                //if ($pref.substr(0, 7) == "red_rob") {
-                if ($pref.indexOf("red_rob") > -1) {
-                    var $objOverlay = $('<div id="divOverlay" class="divOverlay divOverlay_robotica">').css({
-                        //opacity: .8,
-                        display: 'none'
-                    });
-                } else {*/
-  var $objOverlay = $('<div id="divOverlay" class="divOverlay">').css({
-    //opacity: .8,
-    display: "none",
-  });
-  //}
-  $("body").append($objOverlay);
-  //animamos el overlay y cuando su animacion termina seguimos con la ventana
-  $objOverlay.fadeIn(function () {
-    //agregamos la nueva ventana al body
-    $("#divOverlay").append($objVentana);
-    //mostramos la ventana suavemente ;)
-    $objVentana.fadeIn();
-  });
-  $("#home").click(function () {
-    alert("Handler for .click() called.");
-  });
-  //}
-}
 
 function cerrarVen() {
   /*
@@ -1245,7 +1185,7 @@ const RecorridoRecursivo = (data) => {
   }
 };
 
-const  abrirVentana = (id,numero,prefijo)=> {
+const  abrirVentana = (prefijo)=> {
 	/*
 	 * NOMBRE: eventoTouchstart.
 	 * UTILIDAD: Obtiene la info del click
@@ -1254,11 +1194,13 @@ const  abrirVentana = (id,numero,prefijo)=> {
 	 */
 	/*var getId = $(getElement).attr("id").split("_")[2];
 	var prefijo = titleNomenclatura[getId][1];*/
-	window.location.href = "../apps/" +prefijo+'/'+ prefijo + ".html";
+	window.location.href = "../apps/" +String(prefijo)+'/'+ String(prefijo) + ".html";
+  
 }
 const { curso } = crk;
 
-$(document).ready(function () {
+
+const initCurso = ()=>{
   menuPrincipal();
 
   for (let x in curso) {
@@ -1438,4 +1380,13 @@ $(document).ready(function () {
     $("#flecha_tooltip").hide();
   });
   /*FIN EVENTO MOUSEOVER TOOLTIP*/
+}
+$(document).ready(function () {
+  let dataUsus = localStorage.getItem("dataUsu")
+  if(dataUsus !== null){
+    //$("#d_emergenteingreso").hide();
+    initCurso();
+  }else{
+    $("#d_emergenteingreso").show();
+  }
 });

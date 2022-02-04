@@ -1290,7 +1290,7 @@ CSS EMERGENTE INGRESO
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }

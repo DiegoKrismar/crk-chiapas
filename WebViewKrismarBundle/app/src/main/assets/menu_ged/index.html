@@ -12,6 +12,7 @@
     <script type="text/javascript" src="src/sistema/js/java.js"></script>
     <script type="text/javascript" src="src/sistema/js/curso.js"></script>
     <script type="text/javascript" src="src/sistema/js/viewApps.js"></script>
+    <script type="text/javascript" src="src/sistema/js/header.js"></script>
     <title>CRK</title>
   </head>
 
@@ -32,13 +33,14 @@
     <div class="h_usuarioMenu">
       <!--INFO USUARIO-->
       <div class="h_usuarioMenuConte">
-        <div class="h_conteName">CRK Robótica 1</div>
+        <div class="h_conteName">CRK Robótica 1     <a class="h_conteName_ayuda"  ></a></div>
+        
         <div class="h_iconMenu">
           <!--BTN MENU USUARIO-->
           <div id="menuO" class="h_iconMenuIn"></div>
         </div>
         <div class="h_conteMenu">
-            <div id="hdr5" class="h_btnSalir_press">
+            <div id="hdr5" class="h_btnSalir" onClick="cambiarUsuario()">
                 <div class="c_tooltip">Salir<div class="c_flecha_tooltip_up"></div></div>
             </div>
             <div id="hdr4" class="h_btnUsuario_press">
@@ -184,16 +186,24 @@
         <input id="inputfiltros" class="c_inputfiltros" onkeypress="return enter(event)" hidden> 
         <div id="tooltipC" class="c_tooltip" hidden ></div>
     
-    <div class="h_emergenteingreso">
+    <div class="h_emergenteingreso" id="d_emergenteingreso" >
         <div class="h_emergenteingresoback"></div>
         <div class="h_emergenteingresoconte">
             <div class="h_emergenteingresocontein">
                 <div class="h_emergenteingresocontetitle">Bienvenido a tu curso de CRK</div>
                 <div class="h_emergenteingresocontesubtitle">Elige una opción de ingreso</div>
-                <div class="h_emergenteingresocontebtn">Alumno</div>
-                <div class="h_emergenteingresocontebtn">Profesor</div>
+                <div class="h_emergenteingresocontebtn" onClick="selectUsuario('alumno')">Alumno</div>
+                <div class="h_emergenteingresocontebtn" onClick="selectUsuario('profesor')">Profesor</div>
             </div>
         </div>
+    </div>
+        <!--
+    MENU AYUDA
+    -->
+    <div class="d_menuayuda" id="d_menuayuda">
+      <div class="d_menuayudacenter" id="d_menuayudacenter"></div>
+      <div class="d_menuayudacenterarrow"></div>
+      <div class="d_menuayudaclose" id="d_menuayudaclose"></div>
     </div>
   </body>
 </html>
