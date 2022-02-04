@@ -63,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
         String androidID = Secure.getString(this.webView.getContext().getContentResolver(), Secure.ANDROID_ID);
 
         //Redirigir a Recursos
-        webView.loadUrl("file:///android_asset/menu/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
+        //webView.loadUrl("file:///android_asset/menu/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
 
         //Redirigir a GED
-        //webView.loadUrl("file:///android_asset/menu_ged/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
+        webView.loadUrl("file:///android_asset/menu_ged/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
     }
 
     @Override

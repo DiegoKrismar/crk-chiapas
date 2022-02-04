@@ -573,14 +573,6 @@ function eventBtnspasos(){
     //console.log(contNext);
     
     $(".d_menupasosnum").off().on("mouseup",function(){
-
-        //Para conocer cuantos pasos se ha avanzado
-        if($('#d_saltaranima').css('display') == 'none'){ // Si no está el armado automático del inicio
-            if($(this).hasClass('d_addbtnok') == false){ //Si no se ha presionado ese paso
-                pasosCompletados++; //Aumanetar el contador
-                armadoHelper(); //Llamar a la función para saber si se ha terminado
-            }
-        }
         //Detecta si la animacion de intro ya termino
         
         //console.log("CLICK PASO ***********************");

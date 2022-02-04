@@ -659,25 +659,25 @@ function sortableElements(indi) {
 					$(saveDrag).parent("div").parent("div").attr("tipo") ===
 						"matematicas")
 			) {
-				console.log("1");
+				//console.log(("1");
 				if (
 					$(saveDrag).parent("div").attr("contenido") != 1 &&
 					$(saveDrag).attr("tipo") != "estructura" &&
 					$(saveDrag).attr("tipo") != "funcion"
 				) {
-					console.log("2");
+					//console.log(("2");
 					if (
 						$(saveDrag).parent("div").attr("tipo") === "condicion" &&
 						$(saveDrag).attr("subtipo") === "operacion"
 					) {
-						console.log("3");
+						//console.log(("3");
 						$(this).sortable("cancel");
 					} else {
-						console.log("4");
+						//console.log(("4");
 						$(saveDrag).parent("div").attr("contenido", "1");
 					}
 				} else {
-					console.log("5");
+					//console.log(("5");
 					$(this).sortable("cancel");
 				}
 			}
@@ -717,7 +717,7 @@ function sortableElements(indi) {
 				bandera_pasos = false;
 			}
 
-			console.log(principal);
+			//console.log((principal);
 
 			//}
 		},
@@ -1200,7 +1200,7 @@ function iniciaTooltips(objeto) {
 		case "led":
 			//Limitar los pines
 			/*$.each(pool_variables_predefinidas,function(){
-                console.log(this);
+                //console.log((this);
 
                 if(this.nombre === 'led0'){
                     lo22 = lo22 + " disabled";
@@ -1235,7 +1235,7 @@ function iniciaTooltips(objeto) {
 						if(textoBloque != undefined){
 							textoBloque = textoBloque.slice(1, -1);
 						}
-						console.log(textoBloque);
+						//console.log((textoBloque);
 						if (textoBloque === info_bloque.pin)
 							$(this).attr("selected", "selected");
 					});
@@ -1529,15 +1529,15 @@ function iniciaTooltips(objeto) {
 			let do3 = "";
 
 			if (!nuevo) {
-				// console.log("NUEVO");
+				// //console.log(("NUEVO");
 				do1 = info_bloque.tiempo;
-				// console.log(do1);
+				// //console.log((do1);
 				let t = parseInt(info_bloque.tiempo);
 				if (t % 1000 === 0) {
 					do1 = do1 / 1000;
 					do2 = "checked";
 				} else {
-					// console.log("milisss");
+					// //console.log(("milisss");
 					do3 = "checked";
 				}
 			}
@@ -1604,7 +1604,7 @@ function iniciaTooltips(objeto) {
 				"<option disabled selected>Selecciona una variable</option>";
 
 			$.each(pool_de_variables, function () {
-				console.log(this.tipo);
+				//console.log((this.tipo);
 				if (this.tipo === "unsigned long") {
 					t_pul =
 						t_pul +
@@ -1856,7 +1856,7 @@ function iniciaTooltips(objeto) {
 			let bandera_boo = false;
 
 			if (!nuevo) {
-				// console.log("info",info_bloque);
+				// //console.log(("info",info_bloque);
 				varo1 = "";
 				varo4 = "";
 				varo7 = "";
@@ -1922,8 +1922,8 @@ function iniciaTooltips(objeto) {
 				">Elige una variable</option>";
 
 			$.each(pool_de_variables, function () {
-				// console.log(pool_de_variables);
-				// console.log(this.alcance);
+				// //console.log((pool_de_variables);
+				// //console.log((this.alcance);
 				if (bandera_var) {
 					if (this.nombre === info_bloque.nombre) {
 						t_variable1 =
@@ -2608,8 +2608,8 @@ function validaElemento(bloque, subtipo) {
 			// let disponible = validaPin(led_pin,led_color);//Los diferentes shields
 
 			if (led_color != "none" && led_pin != "") {
-				console.log("Despues IF", led_color);
-				console.log("Despues IF", led_pin);
+				//console.log(("Despues IF", led_color);
+				//console.log(("Despues IF", led_pin);
 				bandera = true;
 				// ocupaPin(led_pin,led_color);//Los diferentes shields
 				$(bloque).find("[tipo=icono]").css("background-color", led_color_Set);
@@ -2856,7 +2856,7 @@ function validaElemento(bloque, subtipo) {
 					}
 					break;
 				case 1:
-					console.log("este caso");
+					//console.log(("este caso");
 					push = $("#d_push_op").children("option:selected").val();
 					switch (push) {
 						case "9":
@@ -2876,7 +2876,7 @@ function validaElemento(bloque, subtipo) {
 			}
 			let push_status = $("#d_push_estado").is(":checked");
 			// let push_dis = validaPin(push,"push");
-			console.log(push);
+			//console.log((push);
 			if (push != "" && push != "none") {
 				bandera = true;
 				let push_s = checaEstado(push_status);
@@ -3310,11 +3310,11 @@ function validaVariable(bloque, subtipo) {
 			break;
 	}
 	buscaRutaLogica(idActual, principal, datos);
-	console.log("validamethod", principal);
+	//console.log(("validamethod", principal);
 	return bandera;
 }
 function validaMatematicas(bloque, subtipo) {
-	console.log(bloque);
+	//console.log((bloque);
 	/*
 	 * NOMBRE: validaMatematicas.
 	 * UTILIDAD: Valida las entradas de todos los bloques que vienen de la pestaña de Matematicas.
