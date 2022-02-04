@@ -151,7 +151,9 @@ const selectUsuario = (usu) => {
     ( varUsu !== null ) ? usu :  :*/
   let data = { usu: usu };
   localStorage.setItem("dataUsu", JSON.stringify(data));
-  $("#d_emergenteingreso").hide();
+  // $("#d_emergenteingreso").hide();
+  $("#d_emergenteingreso").css('display','none');
+
   initCurso();
   showHelpmenu(); //Muestra y oculta menu ayuda
 

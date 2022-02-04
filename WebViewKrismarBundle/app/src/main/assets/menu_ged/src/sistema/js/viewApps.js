@@ -1387,6 +1387,8 @@ $(document).ready(function () {
     //$("#d_emergenteingreso").hide();
     initCurso();
   }else{
-    $("#d_emergenteingreso").show();
+    $("#d_emergenteingreso").css('display','flex');
+
+   // $("#d_emergenteingreso").show();
   }
 });
