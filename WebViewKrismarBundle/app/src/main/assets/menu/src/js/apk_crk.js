@@ -1,12 +1,12 @@
 /**
 * @fileoverview Revisa si el dispositivo está ya registrado para la activación de la App y despliega las apps en la vista.
 * @version 1.0
-* @date 24/01/22
+* @date 03/02/22
 */
 /***********************************************************************************
 *                                    CONSTANTES
 *************************************************************************************/
-const endPoint = "https://krismar.mx/KrismarApps/APKActivation/checkActivation"; //EndPoint del servicio de activación de Krismar
+const endPoint = "https://krismar.mx/KrismarApps/APKActivation/checkActivation"; //EndPoint del servicio de activación de Krismar, sin licencia
 //Obtener la información del dispositivo de la URL
 const url_string = window.location.href
 const url = new URL(url_string);
@@ -24,11 +24,13 @@ const device = 'device-test';
 const model = 'model-test';
 const product = 'product-test';
 const androidID = 'androidID-test';
+
 const deviceData = {apiLevel:apiLevel, device:device, model:model, product:product, androidID:androidID} //Creación de objeto con la info del dispositivo
 const validate = localStorage.getItem('validate'); //Buscar la bandera de validación en el Local Storage
 const IP = "../apps/"; //Path de las apps
 
 const titleNomenclatura = [
+    //Apps de ayuda
     ["Manual de alumno", "crk_help_3101a"],
     ["Manual de profesor", "crk_help_4101a"],
     ["Manual de administrador", "crk_help_5101a"],
@@ -40,9 +42,7 @@ const titleNomenclatura = [
     ["Video subir usuarios", "crk_help_6102a"],
     ["Video crear o modificar un curso", "crk_help_6103a"],
     ["Video administrar cursos", "crk_help_6103b"],
-   
-   
-    
+    //Apps de CRK
     ["Manual. Introducción a la robótica", "crk_rob_1100"],
     ["Contenido del Kit", "crk_rob_1100a"],
     ["1. ¿Quién es Aztek?", "crk_rob_1101"],
@@ -122,14 +122,12 @@ function resizeSection() {
 		height: getDocument - getHeader - getDocument * 0.08,
 	});
 }
-
+/**
+ * @param  {Object} getElement: Elemento que se da click.
+ */
 function eventoTouchstart(getElement) {
-	/*
-	 * NOMBRE: eventoTouchstart.
-	 * UTILIDAD: Obtiene la info del click
-	 * ENTRADAS: getElement > elemento que se da click.
-	 * SALIDAS: Ninguna.
-	 */
+	/*NOMBRE: eventoTouchstart.
+    * UTILIDAD: Obtiene la info del click*/
 	var getId = $(getElement).attr("id").split("_")[2];
 	var prefijo = titleNomenclatura[getId][1];
 	window.location.href = IP +prefijo+'/'+ prefijo + ".html";
@@ -160,21 +158,28 @@ function activate(){
 	 * ENTRADAS: Ninguna.
 	 * SALIDAS: Ninguna.
 	 */
-    $.post(
-        endPoint,
-        {deviceData:deviceData},
-        function(data){
-            data = JSON.parse(data);
-            if(data.activated == true){ //Se ha activado
-                alert(data.activated);
-                localStorage.setItem('validate', data.activated);
-                showApps(); //Mostrar las apps
-                resizeSection();
-            }else{ //Ocurrió un error en la activación
-                $('#row_1').text('¡Ups!, ha ocurrido un problema, asegurese de tener una conexión de Internet estable e intentelo de nuevo');
-                $('#row_2, #row_3').text('');
-            }
-    });
+	 $('#row_1').text('Activando, espere un momento ... ');
+	 $('#row_2, #row_3').text('');
+	 if(navigator.onLine){
+        $.post(
+            endPoint,
+            {deviceData:deviceData},
+            function(data){
+                data = JSON.parse(data);
+                console.log(data);
+                if(data.activated == true){ //Se ha activado
+                    localStorage.setItem('validate', data.activated);
+                    showApps(); //Mostrar las apps
+                    resizeSection();
+                }else{ //Ocurrió un error en la activación
+                    $('#row_1').text(data.msgg);
+                    $('#row_2, #row_3').text('');
+                }
+        });
+    }else{
+        $('#row_1').text('Ups!, asegurese de contar con una conexión a internet estable e intentelo de nuevo');
+        $('#row_2, #row_3').text('');
+    }
 }
 
 
@@ -185,7 +190,7 @@ document.onreadystatechange = function () {
                 '<div class="d_apksectionminiaturatxt" style="font-size: 1.5rem" id="row_1">¡<b>Felicidades</b>, ha adquirido el <b>Nivel 1<b> de Crea Robótica con Krismar.!</div>'+
                 '<div class="d_apksectionminiaturatxt" style="font-size: 1.5rem" id="row_2">Para <b>activar</b> su curso y tener acceso a las aplicaciones, haga clic en el siguiente <b>botón</b>.</div>'+
                 '<div class="d_apksectionminiaturatxt id="row_3""><button class="btn" onclick="activate();">Activar</button></div>'
-                );
+            );
         }else{ //Hay registro de la app
             showApps();
             resizeSection();

@@ -1,5 +1,6 @@
 package com.example.myapplication3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -11,6 +12,7 @@ import android.provider.Settings.Secure;
 
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
+    public Boolean isHelpPdf = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url){
                 int index = url.indexOf( "/pdf/"); //Es un PDF
-                if(index!= -1){
+                int index2 = url.indexOf("/pdf/crk_help");
+                isHelpPdf = false;
+                if(index!= -1) { //Es un PDF abierto desde un flip
                     view.loadUrl("file:///android_asset/pdfjs/web/viewer.html?file=" + url + "#zoom=page-width"); //Abrirlo con la libreria pdfjs
+                }
+                if(index2!=-1) { //Es un PDF abierto desde GED
+                    isHelpPdf = true;
                 }
                 return false;
             }
@@ -43,22 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Configuración de la webView
         WebSettings webSettings = webView.getSettings();
-        //webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH); Deprecated
-        //webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        //webSettings.setAppCacheEnabled(true);
-        //webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-        //webSettings.setUseWideViewPort(true);
-        //webSettings.setEnableSmoothTransition(true); Deprecated
-        //webSettings.setDatabaseEnabled(true);
-        //webSettings.setAllowFileAccess(true);
-        //webSettings.setAllowContentAccess(true);
-        //webSettings.setSupportZoom(true);
-        //webSettings.setLoadWithOverviewMode(true);
-
-        //webSettings.setSupportMultipleWindows(true);
-        //webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-        //webSettings.setAllowFileAccessFromFileURLs(true);
-
         webSettings.setJavaScriptEnabled(true); //Habilitar el uso de JavaScript
         webSettings.setDomStorageEnabled(true); //Habilitar el uso de LocalStorage
         webSettings.setAllowUniversalAccessFromFileURLs(true); //Para el acceso a los PDFs
@@ -72,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
         String androidID = Secure.getString(this.webView.getContext().getContentResolver(), Secure.ANDROID_ID);
 
         //Redirigir a Recursos
-        //webView.loadUrl("file:///android_asset/menu/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
+        webView.loadUrl("file:///android_asset/menu/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
 
         //Redirigir a GED
-        webView.loadUrl("file:///android_asset/menu_ged/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
+        //webView.loadUrl("file:///android_asset/menu_ged/index.html?apiLevel="+apiLevel+"&device="+device+"&model="+model+"&product="+product+"&androidID="+androidID); //Cargar la vista principal HTML
     }
 
     @Override
@@ -87,7 +78,13 @@ public class MainActivity extends AppCompatActivity {
          *SALIDAS: Ninguna
          */
         if (webView.canGoBack()) {
-            webView.goBack();
+            if(this.isHelpPdf){ //Si estamos en un PDF de ayuda, iniciar MainActivity al presionar onBack
+                Intent startIntent = new Intent(this.webView.getContext(), MainActivity.class);
+                startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                this.webView.getContext().startActivity(startIntent);
+            }else{
+                webView.goBack();
+            }
         } else {
             super.onBackPressed();
         }
