@@ -40,7 +40,7 @@ CSS BODY
 
     width: 100%;
 
-   /* height: 100%;*/
+    height: 100%;
 
     position: absolute;
 
@@ -428,8 +428,40 @@ CSS HEADER
     background-size: contain;
 
     border-bottom-left-radius: 50px;
+    
+    position: relative;
+    
+    display: flex;
+    
+    justify-content: center;
+    align-items: flex-end;
 
 }
+
+.h_btnPrincipal:hover .c_tooltip, .h_btnConfiguracion_press:hover .c_tooltip, .h_btnEstadisticas_press:hover .c_tooltip, .h_btnUsuario_press:hover .c_tooltip,.h_btnSalir:hover .c_tooltip{
+    visibility: visible;
+}
+.h_btnPrincipal  .c_tooltip, .h_btnConfiguracion_press  .c_tooltip, .h_btnEstadisticas_press  .c_tooltip, .h_btnUsuario_press  .c_tooltip, .h_btnSalir  .c_tooltip{
+    position: absolute;
+    top: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    visibility: hidden;
+
+}
+.c_flecha_tooltip_up{
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #E46A58;
+    font-size: 0px;
+    line-height: 0px;
+    position: absolute;
+    top: -10px;
+}
+  
 
 .h_btnHome{
 
@@ -548,6 +580,11 @@ CSS HEADER
     background-repeat: no-repeat, no-repeat;
 
     background-size: contain;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 
 }
 
@@ -586,6 +623,11 @@ CSS HEADER
     background-repeat: no-repeat, no-repeat;
 
     background-size: contain;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 
 }
 
@@ -624,6 +666,11 @@ CSS HEADER
     background-repeat: no-repeat, no-repeat;
 
     background-size: contain;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 
 }
 
@@ -635,6 +682,10 @@ CSS HEADER
     background: url(../img/web_btnsalir.png), url(../img/web_btnsalirmin.png);
     background-repeat: no-repeat, no-repeat;
     background-size: contain;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 .h_btnSalir_press{
     width: 84px;
@@ -645,6 +696,8 @@ CSS HEADER
     background-color: #666666;
     background-repeat: no-repeat, no-repeat;
     background-size: contain;
+    
+    
 }
 .h_btnPrincipal:hover, .h_btnUsuario:hover, .h_btnEstadisticas:hover, .h_btnConfiguracion:hover, .h_btnSalir:hover{
     background-color: #666666;
@@ -1226,6 +1279,77 @@ CSS MENU AYUDA
 
 ==============================================
 
+CSS EMERGENTE INGRESO
+
+==============================================
+
+*/
+
+.h_emergenteingreso{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.h_emergenteingresoback{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.h_emergenteingresoconte{
+    position: absolute;
+    padding: 1rem;
+    background: repeat url(../img/web_backgroundrepeat.png) #FEF8E0;
+    background-size: auto, auto;
+    box-shadow: 0 0 0.5rem rgba(0,0,0,.35);
+    border-radius: 0.5rem;
+}
+.h_emergenteingresocontein{
+    background-color: rgba(0, 0, 0, .10);
+    padding: 0.5rem 2rem 2rem 2rem;
+    border-radius: 0.5rem;
+}
+.h_emergenteingresocontetitle{
+    font-family: Verdana;
+    font-size: 1.4em;
+    line-height: 2.4em;
+    font-weight: bold;
+    text-align: center;
+    color: #666666;
+}
+.h_emergenteingresocontesubtitle{
+    font-family: Verdana;
+    font-size: 1.2em;
+    line-height: 2.4em;
+    font-weight: normal;
+    text-align: center;
+    color: #E46A58;
+}
+.h_emergenteingresocontebtn{
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 0rem 1rem;
+    color: #FEF8E0;
+    font-family: Verdana;
+    font-size: 1.4em;
+    text-align: center;
+    background: fixed 0% 100% url(../img/web_nextkrismar.png) #E46A58;
+    cursor: pointer;
+}
+.h_emergenteingresocontebtn:hover{
+    transform: scale(1.025);
+    box-shadow: 0 0 0.25rem rgba(0,0,0,.35);
+}
+/*
+
+==============================================
+
 CSS KEYFRAMES ANIMACIÓN PRELOADER
 
 ==============================================
@@ -1335,18 +1459,6 @@ CSS MEDIA QUIERIES MAX-WIDTH : 1024px 6 COLUMNAS
         background-size: contain;
 
         border-bottom-left-radius: 0px;
-
-    }
-
-    .h_btnPrincipal:hover{
-
-        background-image: url(../img/web_btnprincipalblc.png);
-
-        background-repeat: no-repeat;
-
-        background-color: rgba(255, 255, 255, .01);
-
-        background-size: contain;
 
     }
 
