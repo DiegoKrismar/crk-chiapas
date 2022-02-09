@@ -153,7 +153,7 @@ function setRenderer(){
     altoSet = $("#d_contegrlcanvas").height();//Alto del area de contenido
     /**************/
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){//Es dispositivo
-        renderer = new THREE.WebGLRenderer({precision:"lowp",antialias:false,powerPreference:"low-power"});
+        renderer = new THREE.WebGLRenderer({/*precision:"lowp",*/antialias:false,powerPreference:"low-power"});
         //renderer = new THREE.WebGLRenderer({antialias:false,powerPreference:"low-power"});
     }else{//Es PC
         //renderer = new THREE.WebGLRenderer({antialias:false,powerPreference:"low-power"});
